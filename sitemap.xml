@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+      <loc>https://parroquiasantalucia.org/</loc>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/nosotros.html</loc>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/evangelizacion.html</loc>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/sacramentos.html</loc>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/comunidad.html</loc>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/eventos.html</loc>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/contacto.html</loc>
+      <priority>0.8</priority>
+   </url>
+</urlset>

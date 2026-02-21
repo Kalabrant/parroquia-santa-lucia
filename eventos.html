@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos | Parroquia Santa Lucía</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <a href="index.html">PARROQUIA DE SANTA LUCÍA</a>
+        </div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="evangelizacion.html">Evangelización</a></li>
+            <li><a href="sacramentos.html">Sacramentos</a></li>
+            <li><a href="comunidad.html">Comunidad</a></li>
+            <li><a href="eventos.html" style="color: var(--color-azul-esencial);">Eventos</a></li>
+            <li><a href="contacto.html" class="btn-nav">Contáctanos</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero-interno" style="background: linear-gradient(rgba(0, 119, 182, 0.7), rgba(0, 62, 138, 0.8)), url('foto-eventos.webp') center/cover;">
+        <div class="hero-content">
+            <h1>Agenda Pastoral 2026</h1>
+            <p>Caminamos juntos hacia la Pascua y la Misión.</p>
+        </div>
+    </header>
+
+    <section class="contenedor" id="seccion-destacada">
+        <div class="evento-destacado">
+            <div class="destacado-img">
+                <img src="semana-santa.webp" alt="Semana Santa 2026" class="foto-viva">
+            </div>
+            <div class="destacado-info">
+                <span class="etiqueta-alerta">Marzo - Abril</span>
+                <h2>Semana Santa 2026</h2>
+                <p class="fecha-grande"><i class="far fa-calendar-alt"></i> 29 de Marzo - 05 de Abril</p>
+                <p>Viviremos los misterios de nuestra fe: desde la entrada triunfal el Domingo de Ramos, pasando por la Pasión del Señor, hasta la gloriosa Vigilia Pascual.</p>
+                <ul style="margin-bottom: 20px; color: #555;">
+                    <li><strong>Domingo de Ramos:</strong> 29 de Marzo</li>
+                    <li><strong>Jueves Santo:</strong> 2 de Abril</li>
+                    <li><strong>Domingo de Resurrección:</strong> 5 de Abril</li>
+                </ul>
+                <a href="plan-pastoral-2026.pdf" target="_blank" class="btn-principal">Descargar Programa Completo</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-crema" style="padding: 60px 20px;">
+        <div class="contenedor">
+            <h2 style="text-align: center; margin-bottom: 40px; color: var(--color-marron-madera);">Próximas Actividades</h2>
+            
+            <div class="agenda-grid" id="contenedor-eventos"></div>
+
+            <p style="text-align: center; margin-top: 30px; color: #666; font-style: italic;" id="mensaje-final"></p>
+        </div>
+    </section>
+
+    <section class="contenedor" style="text-align: center;">
+        <div class="caja-descarga">
+            <h3>¿Quieres todos los detalles?</h3>
+            <p>Descarga el Plan Pastoral 2026 completo. Incluye fechas de Vía Crucis, Rosarios, Retiros de Emaús y más.</p>
+            <a href="plan-pastoral-2026.pdf" download class="btn-descarga"><i class="fas fa-file-pdf"></i> Descargar Calendario PDF</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Parroquia Santa Lucía. Arquidiócesis de Maracaibo.</p>
+    </footer>
+
+    <script>
+        // --- PARTE 1: OCULTAR TARJETA DE SEMANA SANTA SI YA PASÓ ---
+        const hoyMismo = new Date();
+        const finSemanaSanta = new Date('2026-04-06'); // Fecha límite
+
+        if (hoyMismo > finSemanaSanta) {
+            // Si la fecha actual es mayor al límite, ocultamos la sección destacada
+            const seccion = document.getElementById('seccion-destacada');
+            if (seccion) {
+                seccion.style.display = 'none';
+            }
+        }
+
+        // --- PARTE 2: BASE DE DATOS DE EVENTOS ---
+        const eventosParroquia = [
+            { fecha: '2026-02-20', dia: '20', mes: 'FEB', titulo: '1er Vía Crucis: Caminando con María', hora: '7:00 PM', desc: 'Legión de María + Emaús Mujeres' },
+            { fecha: '2026-02-27', dia: '27', mes: 'FEB', titulo: '2do Vía Crucis: Jóvenes y Caridad', hora: '7:00 PM', desc: 'Zona Santa Lucía. Pastoral Juvenil + Cáritas' },
+            { fecha: '2026-03-06', dia: '06', mes: 'MAR', titulo: '3er Vía Crucis: Liturgia y Palabra', hora: '7:00 PM', desc: 'Lectores y Servidores del Altar' },
+            { fecha: '2026-03-13', dia: '13', mes: 'MAR', titulo: '4to Vía Crucis: La Fuerza de la Oración', hora: '7:00 PM', desc: 'Emaús Hombres + Cursillos' },
+            { fecha: '2026-03-19', dia: '19', mes: 'MAR', titulo: 'Solemnidad de San José', hora: '6:00 PM', desc: 'Misa, bendición de padres y procesión' },
+            { fecha: '2026-03-20', dia: '20', mes: 'MAR', titulo: '5to Vía Crucis: Tradición y Alabanza', hora: '7:00 PM', desc: 'Zona Sto. Tomás. Vasallos y Coros' },
+            { fecha: '2026-03-27', dia: '27', mes: 'MAR', titulo: '6to Vía Crucis: Devoción y Familia', hora: '7:00 PM', desc: 'Soc. Sagrado Corazón + Catequesis' },
+            { fecha: '2026-03-29', dia: '29', mes: 'MAR', titulo: 'Domingo de Ramos', hora: '8:00 AM', desc: 'Procesión solemne y Eucaristías' },
+            { fecha: '2026-04-02', dia: '02', mes: 'ABR', titulo: 'Jueves Santo: Cena del Señor', hora: '7:00 PM', desc: 'Adoración en la reserva hasta el viernes' },
+            { fecha: '2026-04-03', dia: '03', mes: 'ABR', titulo: 'Viernes Santo: Pasión del Señor', hora: '5:00 PM', desc: 'Pasión y Vía Crucis Viviente (7:00 PM)' },
+            { fecha: '2026-04-04', dia: '04', mes: 'ABR', titulo: 'Solemne Vigilia Pascual', hora: '8:00 PM', desc: 'La madre de todas las vigilias' },
+            { fecha: '2026-04-12', dia: '12', mes: 'ABR', titulo: 'Fiesta de la Divina Misericordia', hora: '9:00 AM', desc: 'Eucaristías solemnes (Se suprime misa tarde)' },
+            { fecha: '2026-05-24', dia: '24', mes: 'MAY', titulo: 'Pentecostés y Confirmaciones', hora: '11:00 AM', desc: 'Ven Espíritu Santo' },
+            { fecha: '2026-06-07', dia: '07', mes: 'JUN', titulo: 'Corpus Christi', hora: '6:00 PM', desc: 'Primeras Comuniones y Procesión Eucarística' },
+            { fecha: '2026-09-03', dia: '03', mes: 'SEP', titulo: 'Jueves de Palabra: GPS Bíblico', hora: '7:00 PM', desc: 'Inicio del ciclo de formación bíblica' },
+            { fecha: '2026-10-24', dia: '24', mes: 'OCT', titulo: 'Gran Misión Parroquial', hora: 'Salida', desc: 'Iglesia en salida a los sectores' },
+            { fecha: '2026-11-18', dia: '18', mes: 'NOV', titulo: 'Solemnidad de la Chinita', hora: '8:00 AM', desc: 'Misa Parroquial' },
+            { fecha: '2026-11-28', dia: '28', mes: 'NOV', titulo: 'Bajada de Santa Lucía', hora: '6:00 PM', desc: 'Inicio de las fiestas patronales' },
+            { fecha: '2026-12-13', dia: '13', mes: 'DIC', titulo: 'Solemnidad de Santa Lucía', hora: 'Todo el día', desc: 'Fiesta Patronal y Procesión' }
+        ];
+
+        // --- PARTE 3: LÓGICA PARA MOSTRAR LA LISTA ---
+        const contenedor = document.getElementById('contenedor-eventos');
+        const hoy = new Date();
+        hoy.setHours(0,0,0,0); // Ignoramos la hora exacta, solo importa la fecha
+
+        // Filtramos: Solo eventos cuya fecha sea igual o mayor a hoy
+        const eventosFuturos = eventosParroquia.filter(evento => {
+            const fechaEvento = new Date(evento.fecha + "T23:59:59"); 
+            return fechaEvento >= hoy;
+        });
+
+        // Tomamos solo los próximos 6 eventos
+        const eventosAMostrar = eventosFuturos.slice(0, 6);
+
+        if (eventosAMostrar.length > 0) {
+            eventosAMostrar.forEach(evento => {
+                const html = `
+                <div class="tarjeta-evento">
+                    <div class="fecha-badge">
+                        <span class="dia">${evento.dia}</span>
+                        <span class="mes">${evento.mes}</span>
+                    </div>
+                    <div class="evento-detalle">
+                        <h3>${evento.titulo}</h3>
+                        <p class="hora"><i class="far fa-clock"></i> ${evento.hora}</p>
+                        <p>${evento.desc}</p>
+                    </div>
+                </div>
+                `;
+                contenedor.innerHTML += html;
+            });
+            document.getElementById('mensaje-final').innerText = `Mostrando los próximos ${eventosAMostrar.length} eventos de nuestra agenda.`;
+        } else {
+            // Si no hay eventos próximos este año
+            contenedor.innerHTML = '<p style="text-align:center; width:100%;">No hay eventos próximos registrados por ahora. Descarga el plan pastoral.</p>';
+            document.getElementById('mensaje-final').innerText = '';
+        }
+    </script>
+
+</body>
+</html>
