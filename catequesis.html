@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catequesis Parroquial | Parroquia Santa Lucía</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- ESTILOS ESPECÍFICOS DE ESTA PÁGINA --- */
+        
+        /* Hero */
+        .hero-grupo {
+            background: linear-gradient(rgba(0, 119, 182, 0.8), rgba(0, 62, 138, 0.9)), url('catequesis.webp') center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero-grupo h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+	    color: white !important;
+        }
+        .hero-grupo p.lema {
+            font-size: 1.3rem;
+            font-weight: 300;
+            font-style: italic;
+            max-width: 700px;
+            margin: 0 auto;
+	    color: white !important;
+        }
+
+        /* Contenedor principal más ancho */
+        .seccion-grupo-contenedor {
+            max-width: 1000px; /* Un poco más ancho para acomodar texto + foto */
+            margin: 0 auto;
+            padding: 50px 20px;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        /* Títulos de sección (Centrados por defecto) */
+        .seccion-grupo h2 {
+            color: var(--color-marron-madera, #8b5a2b);
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .seccion-grupo h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #0056b3;
+            margin: 15px auto 0;
+        }
+
+        /* --- NUEVO: Layout de 2 columnas para la Introducción --- */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Móvil: una columna */
+            gap: 40px;
+            align-items: center;
+        }
+        /* Foto destacada de la intro */
+        .foto-destacada-intro {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15); /* Sombra elegante */
+            object-fit: cover;
+            aspect-ratio: 4/3; /* Mantiene una proporción rectangular agradable */
+        }
+
+        /* Media Query para PC (Pantallas grandes) */
+        @media (min-width: 768px) {
+            .intro-grid {
+                grid-template-columns: 1fr 1fr; /* PC: Dos columnas */
+            }
+            /* Alinear texto y título a la izquierda solo en PC para esta sección */
+            .intro-texto {
+                text-align: left;
+            }
+            .intro-texto h2 {
+                text-align: left;
+            }
+            .intro-texto h2::after {
+                margin-left: 0; /* Mueve la línea decorativa a la izquierda */
+            }
+        }
+
+
+        /* --- Tarjetas con FOTOS CIRCULARES --- */
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .servicio-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #0056b3;
+        }
+        .servicio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .servicio-card img.foto-medallon {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #e6f0ff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .servicio-card h3 {
+            color: #0056b3;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* --- Cajas de Horarios --- */
+        .horarios-grid {
+             display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+             gap: 20px;
+        }
+        .horarios-caja {
+            background-color: white;
+            border-left: 5px solid #0056b3;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .horarios-caja:hover {
+             border-left-color: #8b5a2b;
+             transform: translateX(5px);
+             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .horarios-caja h3 {
+            margin-top: 0;
+            color: #0056b3;
+            display: flex;
+            align-items: center;
+        }
+        .horarios-caja h3::before {
+            content: '⏰'; 
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Utilidad para fondo alterno */
+        .bg-crema-suave {
+            background-color: #f9f7f2;
+            padding: 60px 0;
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <a href="index.html">PARROQUIA DE SANTA LUCÍA</a>
+        </div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="evangelizacion.html">Evangelización</a></li>
+            <li><a href="sacramentos.html">Sacramentos</a></li>
+            <li><a href="comunidad.html">Comunidad</a></li>
+            <li><a href="eventos.html">Eventos</a></li> 
+            <li><a href="contacto.html" class="btn-nav">Contáctanos</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero-grupo">
+        <h1>Catequesis Parroquial</h1>
+        <p class="lema">"Dejad que los niños vengan a mí, y no se lo impidáis" (Lc 18, 16)</p>
+    </header>
+
+    <div class="seccion-grupo-contenedor">
+        <section id="quienes-somos" class="seccion-grupo">
+            <div class="intro-grid">
+                <div class="intro-texto">
+                    <h2>Formando Discípulos</h2>
+                    <p style="font-size: 1.1rem;">
+                        Somos el corazón formativo de la parroquia. Un equipo apasionado dedicado a acompañar a niños, jóvenes y adultos en un camino que va más allá del conocimiento intelectual: buscamos propiciar un encuentro personal y transformador con Jesucristo vivo.
+                    </p>
+                    <p>A través de la escucha de la Palabra, la oración y la vida comunitaria, preparamos el terreno para que la semilla de la fe germine y dé frutos abundantes.</p>
+                </div>
+                <div class="intro-imagen">
+                    <img src="intro-catequesis.webp" alt="Comunidad de catequistas y alumnos" class="foto-destacada-intro">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="bg-crema-suave">
+        <div class="seccion-grupo-contenedor" style="padding-top: 0; padding-bottom: 0;">
+             <section id="servicios" class="seccion-grupo">
+                <h2>Nuestros Itinerarios de Fe</h2>
+                
+                <div class="servicios-grid">
+                    <div class="servicio-card">
+                        <img src="cat-ninos.webp" alt="Niños en catequesis" class="foto-medallon">
+                        <h3>Iniciación Cristiana (Niños)</h3>
+                        <p>Acompañamos el despertar religioso de los más pequeños, preparándolos con alegría para la Reconciliación y su Primera Comunión.</p>
+                    </div>
+
+                    <div class="servicio-card">
+                        <img src="cat-jovenes.webp" alt="Jóvenes en confirmación" class="foto-medallon">
+                        <h3>Catequesis Juvenil (Confirmación)</h3>
+                        <p>Un espacio dinámico para profundizar la fe, descubrir los dones del Espíritu Santo y asumir un compromiso maduro con la Iglesia.</p>
+                    </div>
+
+                    <div class="servicio-card">
+                        <img src="cat-adultos.webp" alt="Adultos en RICA" class="foto-medallon">
+                        <h3>Catequesis de Adultos (RICA)</h3>
+                        <p>Para quienes desean iniciarse en la fe católica o completar sus sacramentos (Bautismo, Comunión y Confirmación) en la adultez.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="seccion-grupo-contenedor">
+        
+        <section id="historia" class="seccion-grupo" style="margin-bottom: 60px; text-align: center;">
+            <h2>Un Legado de Fe</h2>
+            <p style="max-width: 800px; margin: 0 auto;">Desde los inicios de Santa Lucía, generación tras generación de catequistas han sembrado la semilla. Hoy seguimos regando esa siembra, viendo florecer vocaciones a la vida cristiana, al matrimonio y al servicio.</p>
+        </section>
+
+        <section id="horarios" class="seccion-grupo">
+            <h2>Horarios de Encuentro</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Nos reunimos en los salones parroquiales para crecer juntos en comunidad.</p>
+            
+            <div class="horarios-grid">
+                <div class="horarios-caja">
+                    <h3>Niños (Comunión)</h3>
+                    <p><strong>Días:</strong> Domingos<br>
+                    <strong>Hora:</strong> 9:00 AM a 11:00 AM</p>
+                </div>
+
+                <div class="horarios-caja">
+                    <h3>Jóvenes (Confirmación)</h3>
+                    <p><strong>Días:</strong> Domingo<br>
+                    <strong>Hora:</strong> 4:00 PM a 6:00 PM</p>
+                </div>
+
+                <div class="horarios-caja">
+                    <h3>Adultos</h3>
+                    <p><strong>A convenir con los catequistas</strong> 
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 30px; font-size: 0.9rem; color: #666;"><em>* Las inscripciones se anuncian al inicio del año escolar en las misas dominicales.</em></p>
+        </section>
+
+    </div>
+
+    <section id="contacto-grupo" style="text-align: center; background-color: #0056b3; color: white; padding: 50px 20px; margin-top: 40px;">
+        <h2 style="margin-top: 0; border: none; color: white; font-size: 1.8rem;">¿Sientes el llamado?</h2>
+        <p style="margin-bottom: 25px; font-size: 1.1rem; max-width: 600px; margin: 0 auto 25px auto;">Ya sea para servir como catequista o para inscribir a tu familia, ¡te esperamos con los brazos abiertos!</p>
+        <a href="contacto.html" style="background-color: #ffffff; color: #0056b3; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">Contactar al Despacho &rarr;</a>
+    </section>
+
+    <footer style="background-color: #222; color: #fff; text-align: center; padding: 20px 0;">
+        <p>&copy; 2026 Parroquia Santa Lucía. Arquidiócesis de Maracaibo.</p>
+    </footer>
+
+</body>
+</html>

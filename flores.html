@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flores de Misericordia | Parroquia Santa Lucía</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- ESTILOS ESPECÍFICOS DE ESTA PÁGINA --- */
+        
+        /* Hero */
+        .hero-grupo {
+            /* Usamos la imagen que ya tiene en su carpeta */
+            background: linear-gradient(rgba(0, 119, 182, 0.8), rgba(0, 62, 138, 0.9)), url('flores.webp') center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero-grupo h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+	    color: white !important;
+        }
+        .hero-grupo p.lema {
+            font-size: 1.3rem;
+            font-weight: 300;
+            font-style: italic;
+            max-width: 700px;
+            margin: 0 auto;
+	    color: white !important;
+        }
+
+        /* Contenedor principal */
+        .seccion-grupo-contenedor {
+            max-width: 1000px; 
+            margin: 0 auto;
+            padding: 50px 20px;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        /* Títulos de sección */
+        .seccion-grupo h2 {
+            color: var(--color-marron-madera, #8b5a2b);
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .seccion-grupo h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #0056b3;
+            margin: 15px auto 0;
+        }
+
+        /* --- Layout de 2 columnas para la Introducción --- */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr; 
+            gap: 40px;
+            align-items: center;
+        }
+        .foto-destacada-intro {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15); 
+            object-fit: cover;
+            aspect-ratio: 4/3; 
+        }
+
+        @media (min-width: 768px) {
+            .intro-grid {
+                grid-template-columns: 1fr 1fr; 
+            }
+            .intro-texto {
+                text-align: left;
+            }
+            .intro-texto h2 {
+                text-align: left;
+            }
+            .intro-texto h2::after {
+                margin-left: 0; 
+            }
+        }
+
+        /* --- Tarjetas con FOTOS CIRCULARES --- */
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .servicio-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #0056b3;
+        }
+        .servicio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .servicio-card img.foto-medallon {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #e6f0ff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .servicio-card h3 {
+            color: #0056b3;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* --- Cajas de Horarios --- */
+        .horarios-grid {
+             display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+             gap: 20px;
+             justify-content: center;
+        }
+        .horarios-caja {
+            background-color: white;
+            border-left: 5px solid #0056b3;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .horarios-caja:hover {
+             border-left-color: #8b5a2b;
+             transform: translateX(5px);
+             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .horarios-caja h3 {
+            margin-top: 0;
+            color: #0056b3;
+            display: flex;
+            align-items: center;
+        }
+        .horarios-caja h3::before {
+            content: '⏰'; 
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Utilidad para fondo alterno */
+        .bg-crema-suave {
+            background-color: #f9f7f2;
+            padding: 60px 0;
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <a href="index.html">PARROQUIA DE SANTA LUCÍA</a>
+        </div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="evangelizacion.html">Evangelización</a></li>
+            <li><a href="sacramentos.html">Sacramentos</a></li>
+            <li><a href="comunidad.html">Comunidad</a></li>
+            <li><a href="eventos.html">Eventos</a></li> 
+            <li><a href="contacto.html" class="btn-nav">Contáctanos</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero-grupo">
+        <h1>Flores de Misericordia</h1>
+        <p class="lema">"Adorad al Señor en la hermosura de su santidad" (Salmo 96, 9)</p>
+    </header>
+
+    <div class="seccion-grupo-contenedor">
+        <section id="quienes-somos" class="seccion-grupo">
+            <div class="intro-grid">
+                <div class="intro-texto">
+                    <h2>La Belleza como Oración</h2>
+                    <p style="font-size: 1.1rem;">
+                        Embellecer la casa de Dios es nuestra forma de orar y servir. El ministerio "Flores de Misericordia" se encarga de transformar el altar y el templo en una ofrenda visual que eleva el espíritu de la comunidad en cada celebración.
+                    </p>
+                    <p>Con devoción, cuidado y creatividad, preparamos el espacio sagrado para que cada eucaristía, solemnidad y fiesta patronal refleje la grandeza y el amor de nuestro Señor.</p>
+                </div>
+                <div class="intro-imagen">
+                    <img src="intro-flores.webp" alt="Arreglos florales en el altar" class="foto-destacada-intro">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="bg-crema-suave">
+        <div class="seccion-grupo-contenedor" style="padding-top: 0; padding-bottom: 0;">
+             <section id="servicios" class="seccion-grupo">
+                <h2>Nuestro Servicio al Altar</h2>
+                
+                <div class="servicios-grid">
+                    <div class="servicio-card">
+                        <img src="flores-liturgia.webp" alt="Ornato Litúrgico" class="foto-medallon">
+                        <h3>Ornato Dominical</h3>
+                        <p>Preparamos los arreglos florales para las misas dominicales, siguiendo los colores y tiempos del año litúrgico.</p>
+                    </div>
+
+                    <div class="servicio-card">
+                        <img src="flores-solemnidades.webp" alt="Solemnidades" class="foto-medallon">
+                        <h3>Solemnidades y Fiestas</h3>
+                        <p>Diseñamos decoraciones especiales para Semana Santa, Navidad y, por supuesto, las fiestas de nuestra patrona Santa Lucía.</p>
+                    </div>
+
+            </section>
+        </div>
+    </div>
+
+    <div class="seccion-grupo-contenedor">
+        
+        <section id="espiritualidad" class="seccion-grupo" style="margin-bottom: 60px; text-align: center;">
+            <h2>Nuestra Espiritualidad</h2>
+            <p style="max-width: 800px; margin: 0 auto;">Quienes conformamos este ministerio encontramos en las flores un reflejo de la creación divina. Nuestro trabajo es silencioso, casi siempre previo a que la asamblea llegue, pero lo hacemos sabiendo que preparamos la "Casita Azul" para recibir al Rey de Reyes.</p>
+        </section>
+
+    </div>
+
+    <section id="contacto-grupo" style="text-align: center; background-color: #0056b3; color: white; padding: 50px 20px; margin-top: 40px;">
+        <h2 style="margin-top: 0; border: none; color: white; font-size: 1.8rem;">¿Te gustaría colaborar?</h2>
+        <p style="margin-bottom: 25px; font-size: 1.1rem; max-width: 600px; margin: 0 auto 25px auto;">No necesitas ser florista profesional, solo tener disposición y amor por la casa de Dios. Si deseas donar flores o unirte a nuestro equipo, contáctanos.</p>
+        <a href="contacto.html" style="background-color: #ffffff; color: #0056b3; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">Contactar al Despacho &rarr;</a>
+    </section>
+
+    <footer style="background-color: #222; color: #fff; text-align: center; padding: 20px 0;">
+        <p>&copy; 2026 Parroquia Santa Lucía. Arquidiócesis de Maracaibo.</p>
+    </footer>
+
+</body>
+</html>
