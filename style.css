@@ -1423,3 +1423,45 @@ section {
     35% { opacity: 0; transform: scale(1.02); }
     100% { opacity: 0; transform: scale(1.02); }
 }
+/* --- ESTILOS DEL POP-UP (MODAL) --- */
+.modal-fondo {
+    display: none; /* Oculto por defecto hasta que el código lo llame */
+    position: fixed;
+    z-index: 9999; /* Para que quede por encima de todo el menú y las fotos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(3px); /* Efecto elegante de cristal empañado */
+    align-items: center;
+    justify-content: center;
+}
+.modal-contenido {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px; /* No será muy ancho para que se vea perfecto en celular */
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+    animation: aparecerModal 0.4s ease-out; /* Animación de entrada */
+}
+@keyframes aparecerModal {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+.cerrar-modal {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.cerrar-modal:hover {
+    color: #333;
+}
