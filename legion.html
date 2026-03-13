@@ -3,53 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>En Construcción | Parroquia Santa Lucía</title>
+    <title>Legión de María | Parroquia Santa Lucía</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .construccion-contenedor {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 60vh;
+        /* --- ESTILOS ESPECÍFICOS DE ESTA PÁGINA --- */
+        
+        /* Hero */
+        .hero-grupo {
+            background: linear-gradient(rgba(0, 119, 182, 0.8), rgba(0, 62, 138, 0.9)), url('hero-legion.webp') center/cover;
+            color: white;
             text-align: center;
-            padding: 40px 20px;
-            background-color: #f9f7f2; 
+            padding: 100px 20px;
         }
-        .icono-construccion {
-            font-size: 5rem;
-            color: #0056b3;
-            margin-bottom: 20px;
-        }
-        .construccion-contenedor h1 {
-            color: var(--color-marron-madera, #8b5a2b);
+        .hero-grupo h1 {
+            font-size: 3rem;
             margin-bottom: 15px;
-            font-size: 2.5rem;
+            font-weight: 700;
+            color: white !important; 
         }
-        .construccion-contenedor p {
-            font-size: 1.2rem;
-            color: #555;
-            max-width: 600px;
-            line-height: 1.6;
+        .hero-grupo p.lema {
+            font-size: 1.3rem;
+            font-weight: 300;
+            font-style: italic;
+            max-width: 700px;
+            margin: 0 auto;
+            color: white !important; 
+        }
+
+        /* Contenedor principal */
+        .seccion-grupo-contenedor {
+            max-width: 1000px; 
+            margin: 0 auto;
+            padding: 50px 20px;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        /* Títulos de sección */
+        .seccion-grupo h2 {
+            color: var(--color-marron-madera, #8b5a2b);
+            font-size: 2rem;
+            text-align: center;
             margin-bottom: 30px;
+            position: relative;
         }
-        .btn-volver {
+        .seccion-grupo h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
             background-color: #0056b3;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            transition: transform 0.2s, background-color 0.3s;
+            margin: 15px auto 0;
         }
-        .btn-volver:hover {
-            background-color: #004494;
-            transform: translateY(-3px);
-            color: white;
+
+        /* --- Layout de 2 columnas para la Introducción --- */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr; 
+            gap: 40px;
+            align-items: center;
+        }
+        .foto-destacada-intro {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15); 
+            object-fit: cover;
+            aspect-ratio: 4/3; 
+        }
+
+        @media (min-width: 768px) {
+            .intro-grid {
+                grid-template-columns: 1fr 1fr; 
+            }
+            .intro-texto {
+                text-align: left;
+            }
+            .intro-texto h2 {
+                text-align: left;
+            }
+            .intro-texto h2::after {
+                margin-left: 0; 
+            }
+        }
+
+        /* --- Tarjetas con FOTOS CIRCULARES --- */
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .servicio-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #0056b3;
+        }
+        .servicio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .servicio-card img.foto-medallon {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 4px solid #e6f0ff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .servicio-card h3 {
+            color: #0056b3;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* --- Cajas de Horarios --- */
+        .horarios-grid {
+             display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+             gap: 20px;
+             justify-content: center;
+        }
+        .horarios-caja {
+            background-color: white;
+            border-left: 5px solid #0056b3;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            max-width: 400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .horarios-caja:hover {
+             border-left-color: #8b5a2b;
+             transform: translateX(5px);
+             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .horarios-caja h3 {
+            margin-top: 0;
+            color: #0056b3;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        /* Utilidad para fondo alterno */
+        .bg-crema-suave {
+            background-color: #f9f7f2;
+            padding: 60px 0;
+            margin: 40px 0;
         }
     </style>
 </head>
@@ -70,18 +181,98 @@
         </ul>
     </nav>
 
-    <main class="construccion-contenedor">
-        <div class="icono-construccion">
-            <i class="fas fa-hammer"></i>
-        </div>
-        <h1>¡Estamos trabajando!</h1>
-        <p>Estamos preparando este espacio con mucho cariño para compartir contigo toda la información sobre este grupo parroquial.</p>
-        <p style="font-size: 1rem; font-style: italic; margin-top: -15px;">Vuelve a visitarnos pronto.</p>
-        
-        <a href="javascript:history.back()" class="btn-volver"><i class="fas fa-arrow-left"></i> Volver a la página anterior</a>
-    </main>
+    <header class="hero-grupo">
+        <h1>Legión de María</h1>
+        <p class="lema">"¿Quién es ésta que surge como la aurora, bella como la luna, brillante como el sol, temible como un ejército en orden de batalla?" (Cantar de los Cantares 6, 10)</p>
+    </header>
 
-    <footer style="background-color: #222; color: #fff; text-align: center; padding: 20px 0; margin-top: auto;">
+    <div class="seccion-grupo-contenedor">
+        <section id="quienes-somos" class="seccion-grupo">
+            <div class="intro-grid">
+                <div class="intro-texto">
+                    <h2>Un Ejército de Paz y Oración</h2>
+                    <p style="font-size: 1.1rem;">
+                        La Legión de María es una asociación apostólica de laicos que, bajo el liderazgo amoroso de nuestra Madre la Virgen María, se pone al servicio de la Iglesia en su lucha perpetua contra el mal y en su misión de llevar a Cristo al mundo.
+                    </p>
+                    <p>Con un espíritu de profunda humildad, obediencia y valentía, los legionarios no solo se congregan a orar el Santo Rosario, sino que realizan un trabajo apostólico activo: visitan a los enfermos, acompañan a los ancianos, catequizan y llevan la presencia de María a todos los hogares de nuestra parroquia.</p>
+                </div>
+                <div class="intro-imagen">
+                    <img src="intro-legion.webp" alt="El altar legionario, la Vexilla o reunión de la Legión" class="foto-destacada-intro">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="bg-crema-suave">
+        <div class="seccion-grupo-contenedor" style="padding-top: 0; padding-bottom: 0;">
+             <section id="servicios" class="seccion-grupo">
+                <h2>Nuestros Praesidia</h2>
+                <p style="text-align: center; margin-bottom: 30px;">En nuestra parroquia contamos con tres grupos (Praesidia) que batallan con fe y amor.</p>
+                
+                <div class="servicios-grid">
+                    <div class="servicio-card">
+                        <img src="legion-natividad.webp" alt="Praesidium Ntra. Sra. de la Natividad" class="foto-medallon">
+                        <h3>Ntra. Sra. de la Natividad</h3>
+                        <p>Fieles entregados a la oración y a la visita constante de los más necesitados, llevando el consuelo maternal de la Virgen a quienes sufren física o espiritualmente.</p>
+                    </div>
+
+                    <div class="servicio-card">
+                        <img src="legion-esposa.webp" alt="Praesidium Esposa del Espíritu Santo" class="foto-medallon">
+                        <h3>María, Esposa del Espíritu Santo</h3>
+                        <p>Con devoción y constancia, este grupo se reúne para la santificación de sus miembros a través del rezo de la Tessera y el trabajo apostólico directo.</p>
+                    </div>
+
+                    <div class="servicio-card">
+                        <img src="legion-juvenil.webp" alt="Praesidium Juvenil María, Madre Purísima" class="foto-medallon">
+                        <h3>María, Madre Purísima</h3>
+                        <p><strong>Praesidium Juvenil.</strong> El rostro joven de la Legión. Chicos y chicas que deciden entregar sus mejores años al servicio de Jesús por las manos de María.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="seccion-grupo-contenedor">
+        
+        <section id="espiritualidad" class="seccion-grupo" style="margin-bottom: 60px; text-align: center;">
+            <h2>Nuestra Espiritualidad</h2>
+            <p style="max-width: 800px; margin: 0 auto;">Nuestra espiritualidad se basa en la "Verdadera Devoción a María" enseñada por San Luis María Grignion de Montfort. Nuestra arma es el Santo Rosario. Sabemos que no actuamos solos, sino unidos a nuestra Reina, repitiendo constantemente: <em>"Soy todo tuyo, Reina mía y Madre mía, y cuanto tengo tuyo es."</em></p>
+        </section>
+
+        <section id="horarios" class="seccion-grupo">
+            <h2>Horarios de Reunión</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Acércate a la reunión semanal del Praesidium que más se ajuste a tu horario.</p>
+            
+            <div class="horarios-grid">
+                <div class="horarios-caja">
+                    <h3><i class="fas fa-crown" style="margin-right: 10px; color: #0056b3;"></i> Ntra. Sra. de la Natividad</h3>
+                    <p><strong>Días:</strong> Martes<br>
+                    <strong>Hora:</strong> 7:00 PM</p>
+                </div>
+
+                <div class="horarios-caja">
+                    <h3><i class="fas fa-dove" style="margin-right: 10px; color: #0056b3;"></i> María, Esposa del E.S.</h3>
+                    <p><strong>Días:</strong> Domingos<br>
+                    <strong>Hora:</strong> 11:00 AM</p>
+                </div>
+                
+                <div class="horarios-caja">
+                    <h3><i class="fas fa-star" style="margin-right: 10px; color: #0056b3;"></i> María, Madre Purísima (Juv)</h3>
+                    <p><strong>Días:</strong> Viernes<br>
+                    <strong>Hora:</strong> 5:30 PM</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <section id="contacto-grupo" style="text-align: center; background-color: #0056b3; color: white; padding: 50px 20px; margin-top: 40px;">
+        <h2 style="margin-top: 0; border: none; color: white; font-size: 1.8rem;">¡Alista tu corazón bajo el mando de María!</h2>
+        <p style="margin-bottom: 25px; font-size: 1.1rem; max-width: 600px; margin: 0 auto 25px auto;">La Virgen María busca apóstoles dispuestos a llevar el amor de su Hijo a todos los rincones de nuestra parroquia. ¿Aceptas el llamado?</p>
+        <a href="contacto.html" style="background-color: #ffffff; color: #0056b3; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">Quiero ser legionario &rarr;</a>
+    </section>
+
+    <footer style="background-color: #222; color: #fff; text-align: center; padding: 20px 0;">
         <p>&copy; 2026 Parroquia Santa Lucía. Arquidiócesis de Maracaibo.</p>
     </footer>
 
