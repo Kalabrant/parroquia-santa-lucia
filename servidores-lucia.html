@@ -3,53 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>En Construcción | Parroquia Santa Lucía</title>
+    <title>Servidores de Santa Lucía | Parroquia Santa Lucía</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .construccion-contenedor {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 60vh;
+        /* --- ESTILOS ESPECÍFICOS DE ESTA PÁGINA --- */
+        
+        /* Hero */
+        .hero-grupo {
+            background: linear-gradient(rgba(0, 119, 182, 0.8), rgba(0, 62, 138, 0.9)), url('hero-servidores-lucia.webp') center/cover;
+            color: white;
             text-align: center;
-            padding: 40px 20px;
-            background-color: #f9f7f2; 
+            padding: 100px 20px;
         }
-        .icono-construccion {
-            font-size: 5rem;
-            color: #0056b3;
-            margin-bottom: 20px;
+        .hero-grupo h1 {
+            font-size: 3rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+            color: white !important; 
         }
-        .construccion-contenedor h1 {
-            color: var(--color-marron-madera, #8b5a2b);
+        .hero-grupo p.fecha-fundacion {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #ffdd99 !important; 
             margin-bottom: 15px;
-            font-size: 2.5rem;
         }
-        .construccion-contenedor p {
-            font-size: 1.2rem;
-            color: #555;
-            max-width: 600px;
-            line-height: 1.6;
+        .hero-grupo p.lema {
+            font-size: 1.3rem;
+            font-weight: 300;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            color: white !important; 
+        }
+
+        /* Contenedor principal */
+        .seccion-grupo-contenedor {
+            max-width: 1000px; 
+            margin: 0 auto;
+            padding: 50px 20px;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        /* Títulos de sección */
+        .seccion-grupo h2 {
+            color: var(--color-marron-madera, #8b5a2b);
+            font-size: 2rem;
+            text-align: center;
             margin-bottom: 30px;
+            position: relative;
         }
-        .btn-volver {
+        .seccion-grupo h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
             background-color: #0056b3;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            transition: transform 0.2s, background-color 0.3s;
+            margin: 15px auto 0;
         }
-        .btn-volver:hover {
-            background-color: #004494;
-            transform: translateY(-3px);
-            color: white;
+
+        /* --- Layout de 2 columnas para la Introducción --- */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr; 
+            gap: 40px;
+            align-items: center;
+        }
+        .foto-destacada-intro {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15); 
+            object-fit: cover;
+            aspect-ratio: 4/3; 
+        }
+
+        @media (min-width: 768px) {
+            .intro-grid {
+                grid-template-columns: 1fr 1fr; 
+            }
+            .intro-texto {
+                text-align: left;
+            }
+            .intro-texto h2 {
+                text-align: left;
+            }
+            .intro-texto h2::after {
+                margin-left: 0; 
+            }
+        }
+
+        /* --- Tarjetas con FOTOS CIRCULARES --- */
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .servicio-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #0056b3;
+        }
+        .servicio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .servicio-card img.foto-medallon {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 4px solid #e6f0ff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .servicio-card h3 {
+            color: #0056b3;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* --- Cajas de Horarios / Admisión --- */
+        .horarios-grid {
+             display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+             gap: 20px;
+             justify-content: center;
+        }
+        .horarios-caja {
+            background-color: white;
+            border-left: 5px solid #0056b3;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            max-width: 450px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .horarios-caja:hover {
+             border-left-color: #8b5a2b;
+             transform: translateY(-5px);
+             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .horarios-caja h3 {
+            margin-top: 0;
+            color: #0056b3;
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        /* Utilidad para fondo alterno */
+        .bg-crema-suave {
+            background-color: #f9f7f2;
+            padding: 60px 0;
+            margin: 40px 0;
         }
     </style>
 </head>
@@ -70,18 +191,93 @@
         </ul>
     </nav>
 
-    <main class="construccion-contenedor">
-        <div class="icono-construccion">
-            <i class="fas fa-hammer"></i>
-        </div>
-        <h1>¡Estamos trabajando!</h1>
-        <p>Estamos preparando este espacio con mucho cariño para compartir contigo toda la información sobre este grupo parroquial.</p>
-        <p style="font-size: 1rem; font-style: italic; margin-top: -15px;">Vuelve a visitarnos pronto.</p>
-        
-        <a href="javascript:history.back()" class="btn-volver"><i class="fas fa-arrow-left"></i> Volver a la página anterior</a>
-    </main>
+    <header class="hero-grupo">
+        <h1>Sociedad Religiosa Servidores de Santa Lucía</h1>
+        <p class="fecha-fundacion">Fundada el 13 de Noviembre de 2009</p>
+        <p class="lema">Hombro a hombro por la fe y la devoción a nuestra excelsa patrona</p>
+    </header>
 
-    <footer style="background-color: #222; color: #fff; text-align: center; padding: 20px 0; margin-top: auto;">
+    <div class="seccion-grupo-contenedor">
+        <section id="quienes-somos" class="seccion-grupo">
+            <div class="intro-grid">
+                <div class="intro-texto">
+                    <h2>Nuestra Historia y Misión</h2>
+                    <p style="font-size: 1.1rem;">
+                        La Sociedad Religiosa Servidores de Santa Lucía (SRSL) es una hermandad de hombres devotos al servicio de nuestra parroquia y de la Arquidiócesis de Maracaibo.
+                    </p>
+                    <p>Heredera de la estirpe de los antiguos "Caballeros de Lucía" (fundados en los años 80), nuestra Sociedad actual fue fundada el 13 de noviembre de 2009, recibiendo su juramentación y bendición formal un año después. Desde entonces, con nuestra estructura directiva y nuestros uniformes de gala y faena, servimos a la parroquia con disciplina, fe y fraternidad.</p>
+                </div>
+                <div class="intro-imagen">
+                    <img src="intro-srsl.webp" alt="Servidores de Santa Lucía en formación o portando la imagen" class="foto-destacada-intro">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="bg-crema-suave">
+        <div class="seccion-grupo-contenedor" style="padding-top: 0; padding-bottom: 0;">
+             <section id="servicios" class="seccion-grupo">
+                <h2>Nuestras Finalidades</h2>
+                
+                <div class="servicios-grid">
+                    <div class="servicio-card">
+                        <img src="srsl-portadores.webp" alt="Servidores cargando el mesón" class="foto-medallon">
+                        <h3>Portadores de la Fe</h3>
+                        <p>Colaboramos en las actividades litúrgicas y procesiones. Somos portadores de las imágenes religiosas, capacitados en técnicas adecuadas para manipular el mesón o la carroza de nuestra venerada patrona.</p>
+                    </div>
+
+                    <div class="servicio-card">
+                        <img src="srsl-fraternidad.webp" alt="Hombres reunidos en fraternidad" class="foto-medallon">
+                        <h3>Fraternidad y Formación</h3>
+                        <p>Somos una plataforma de vida de fe para hombres devotos. Recibimos charlas técnicas, estudios bíblicos, rezamos el Santo Rosario y renovamos constantemente nuestra consagración a Dios.</p>
+                    </div>
+
+                    <div class="servicio-card">
+                        <img src="srsl-cultura.webp" alt="Actividad cultural de la parroquia" class="foto-medallon">
+                        <h3>Custodios de la Tradición</h3>
+                        <p>Promovemos fervientemente el culto a Santa Lucía en la Arquidiócesis y trabajamos en las actividades culturales-religiosas para salvaguardar siempre su genuino sentido cristiano.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="seccion-grupo-contenedor">
+        
+        <section id="admision" class="seccion-grupo" style="margin-bottom: 60px;">
+            <h2>Admisión y Compromisos</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Ser un Servidor de Lucía requiere disciplina, amor por la Iglesia y un compromiso real con nuestra hermandad.</p>
+            
+            <div class="horarios-grid">
+                
+                <div class="horarios-caja" style="border-left-color: #8b5a2b;">
+                    <h3 style="color: #8b5a2b;"><i class="fas fa-user-plus" style="margin-right: 12px;"></i> Proceso de Captación</h3>
+                    <p style="margin-bottom: 15px;">La admisión de nuevos miembros que deseen formar parte de nuestra hermandad se realiza únicamente en un período estricto del año:</p>
+                    <p style="font-size: 1.1rem; text-align: center; background-color: #f9f7f2; padding: 10px; border-radius: 5px;"><strong>Del 13 de Febrero<br>al 13 de Mayo</strong></p>
+                </div>
+
+                <div class="horarios-caja">
+                    <h3><i class="fas fa-calendar-check" style="margin-right: 12px;"></i> Deberes del Servidor</h3>
+                    <p style="margin-bottom: 10px;">Todo miembro activo tiene como requisito fundamental participar en:</p>
+                    <ul style="padding-left: 20px; margin-top: 0;">
+                        <li style="margin-bottom: 8px;">El <strong>homenaje mensual</strong> a nuestra patrona los días 13 de cada mes.</li>
+                        <li style="margin-bottom: 8px;">Encuentros de <strong>oración y formación</strong> todos los días Miércoles.</li>
+                        <li>Las actividades de correspondencia de la sociedad.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <section id="contacto-grupo" style="text-align: center; background-color: #0056b3; color: white; padding: 50px 20px; margin-top: 40px;">
+        <h2 style="margin-top: 0; border: none; color: white; font-size: 1.8rem;">¿Estás llamado a servir?</h2>
+        <p style="margin-bottom: 25px; font-size: 1.1rem; max-width: 600px; margin: 0 auto 25px auto;">Si deseas formar parte de nuestra hermandad de hombres, vivir la fe de manera activa y cargar sobre tus hombros el peso de nuestra tradición, prepárate para nuestro próximo proceso de captación.</p>
+        <a href="contacto.html" style="background-color: #ffffff; color: #0056b3; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">Contactar a la Directiva &rarr;</a>
+    </section>
+
+    <footer style="background-color: #222; color: #fff; text-align: center; padding: 20px 0;">
         <p>&copy; 2026 Parroquia Santa Lucía. Arquidiócesis de Maracaibo.</p>
     </footer>
 
