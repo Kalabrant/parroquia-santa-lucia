@@ -58,6 +58,14 @@
             margin: 15px auto 0;
         }
 
+        /* Título específico para Ollas de la Luz */
+        .titulo-ollas {
+            color: #cc0000 !important;
+        }
+        .titulo-ollas::after {
+            background-color: #cc0000 !important;
+        }
+
         /* --- Layout de 2 columnas para la Introducción --- */
         .intro-grid {
             display: grid;
@@ -158,6 +166,42 @@
             padding-bottom: 10px;
         }
 
+        /* --- Cronograma Ollas de la Luz --- */
+        .ollas-grid {
+             display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+             gap: 20px;
+             margin-top: 30px;
+        }
+        .olla-card {
+            background-color: white;
+            border-left: 5px solid #cc0000;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .olla-card:hover {
+             transform: translateY(-5px);
+             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .olla-fecha {
+            color: #cc0000;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px dashed #f0f0f0;
+            padding-bottom: 8px;
+        }
+        .olla-fecha i { margin-right: 10px; }
+        .olla-lugar {
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.4;
+        }
+
         /* Utilidad para fondo alterno */
         .bg-crema-suave {
             background-color: #f9f7f2;
@@ -194,12 +238,12 @@
                 <div class="intro-texto">
                     <h2>Iluminados por la Verdad</h2>
                     <p style="font-size: 1.1rem;">
-                        Nuestra asociación nace con el profundo deseo de llevar la luz del Evangelio a todos los rincones de nuestra comunidad. Tenemos como objeto principal divulgar la Doctrina Católica a los laicos y fomentar un conocimiento vivo y transformador de Cristo.
+                        Nuestra asociación nace con el profundo deseo de llevar la luz del Evangelio a todos los rincones de nuestra comunidad, fomentando un conocimiento vivo y transformador de Cristo.
                     </p>
-                    <p>Todo nuestro apostolado está abrazado por una tierna devoción mariana y se nutre del estudio de la Biblia, dividiendo nuestro trabajo formativo en dos ramas (femenina y masculina) que se unen en una misma labor de caridad para con los más necesitados.</p>
+                    <p>Todo nuestro apostolado está abrazado por una tierna devoción mariana y se nutre del estudio de la Biblia y la caridad para con los más necesitados.</p>
                 </div>
                 <div class="intro-imagen">
-                    <img src="intro-luz.webp" alt="Miembros de la Asociación reunidos o imagen de la Virgen de la Luz" class="foto-destacada-intro">
+                    <img src="intro-luz.webp" alt="Imagen de la Virgen de la Luz" class="foto-destacada-intro">
                 </div>
             </div>
         </section>
@@ -212,21 +256,21 @@
                 
                 <div class="servicios-grid">
                     <div class="servicio-card">
-                        <img src="luz-mujeres.webp" alt="Mujeres de la Virgen de la Luz" class="foto-medallon">
+                        <img src="luz-mujeres.webp" alt="Rama Femenina" class="foto-medallon">
                         <h3>Virgen de la Luz</h3>
-                        <p><strong>Rama Femenina.</strong> El pilar orante de nuestra asociación. Mujeres dedicadas a la devoción mariana, la formación en la fe y el sostenimiento espiritual de nuestra labor parroquial.</p>
+                        <p><strong>Rama Femenina.</strong> Mujeres dedicadas a la devoción mariana y el sostenimiento espiritual de nuestra labor.</p>
                     </div>
 
                     <div class="servicio-card">
-                        <img src="luz-sanjose.webp" alt="Hombres del Conversatorio San José" class="foto-medallon">
+                        <img src="luz-sanjose.webp" alt="Rama Masculina" class="foto-medallon">
                         <h3>Conversatorio con Jesús</h3>
-                        <p><strong>Rama Masculina.</strong> Los hombres del Conversatorio se reúnen para el estudio profundo de la Biblia, el diálogo fraterno y el crecimiento en la fe.</p>
+                        <p><strong>Rama Masculina.</strong> Hombres dedicados al estudio profundo de la Biblia y el crecimiento en la fe.</p>
                     </div>
 
                     <div class="servicio-card" style="border-top-color: #cc0000;">
-                        <img src="luz-ollas.webp" alt="Las Ollas de la Luz preparando comida" class="foto-medallon" style="border-color: #ffe6e6;">
+                        <img src="luz-ollas.webp" alt="Ollas de la Luz" class="foto-medallon" style="border-color: #ffe6e6;">
                         <h3 style="color: #cc0000;">Ollas de la Luz</h3>
-                        <p><strong>Obras de Misericordia.</strong> La fe hecha acción. Ambas ramas se unen en esta hermosa iniciativa caritativa, preparando y distribuyendo alimentos para saciar el hambre de los más vulnerables.</p>
+                        <p><strong>Obras de Misericordia.</strong> Iniciativa caritativa para saciar el hambre de los más vulnerables en diversos sectores.</p>
                     </div>
                 </div>
             </section>
@@ -237,20 +281,45 @@
         
         <section id="horarios" class="seccion-grupo">
             <h2>Horarios de Formación</h2>
-            <p style="text-align: center; margin-bottom: 30px;">Cada rama tiene su propio espacio de estudio y crecimiento espiritual.</p>
-            
             <div class="horarios-grid">
                 
                 <div class="horarios-caja">
                     <h3><i class="fas fa-female" style="margin-right: 12px; color: #ff66b2;"></i> Virgen de la Luz (Mujeres)</h3>
-                    <p><strong>Días de Reunión:</strong> Jueves<br>
-                    <strong>Hora:</strong> 5:00 PM</p>
+                    <p><strong>Jueves</strong> - 5:00 PM</p>
                 </div>
 
                 <div class="horarios-caja" style="border-left-color: #8b5a2b;">
                     <h3 style="color: #8b5a2b;"><i class="fas fa-male" style="margin-right: 12px;"></i> Conversatorio con Jesús (Hombres)</h3>
-                    <p><strong>Días de Reunión:</strong> Martes<br>
-                    <strong>Hora:</strong> 5:00 PM</p>
+                    <p><strong>Martes</strong> - 5:00 PM</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="cronograma-ollas" class="seccion-grupo" style="margin-top: 70px;">
+            <h2 class="titulo-ollas">Cronograma: Ollas de la Luz 2026</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Fechas y lugares confirmados para nuestras próximas jornadas:</p>
+            
+            <div class="ollas-grid">
+                
+                <div class="olla-card" data-fecha="2026-06-13">
+                    <div class="olla-fecha"><i class="far fa-calendar-alt"></i> 13/06/26</div>
+                    <div class="olla-lugar"><strong>Parroquia Buen Pastor</strong><br>Sector Cuatricentenario</div>
+                </div>
+
+                <div class="olla-card" data-fecha="2026-08-08">
+                    <div class="olla-fecha"><i class="far fa-calendar-alt"></i> 08/08/26</div>
+                    <div class="olla-lugar"><strong>Parroquia Nuestra Señora de la Paz</strong><br>Sector La Victoria</div>
+                </div>
+
+                <div class="olla-card" data-fecha="2026-10-10">
+                    <div class="olla-fecha"><i class="far fa-calendar-alt"></i> 10/10/26</div>
+                    <div class="olla-lugar"><strong>Parroquia San Isidro Labrador</strong></div>
+                </div>
+
+                <div class="olla-card" data-fecha="2026-12-19">
+                    <div class="olla-fecha"><i class="far fa-calendar-alt"></i> 19/12/26</div>
+                    <div class="olla-lugar"><strong>Parroquia Santa Lucía</strong></div>
                 </div>
 
             </div>
@@ -267,6 +336,28 @@
     <footer style="background-color: #222; color: #fff; text-align: center; padding: 20px 0;">
         <p>&copy; 2026 Parroquia Santa Lucía. Arquidiócesis de Maracaibo.</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Obtenemos la fecha actual y eliminamos las horas para comparar solo días
+            const hoy = new Date();
+            hoy.setHours(0, 0, 0, 0);
+
+            // Seleccionamos todas las tarjetas de eventos
+            const tarjetas = document.querySelectorAll('.olla-card');
+
+            tarjetas.forEach(tarjeta => {
+                // Obtenemos la fecha del atributo data-fecha
+                const fechaEventoStr = tarjeta.getAttribute('data-fecha');
+                const fechaEvento = new Date(fechaEventoStr + "T00:00:00");
+
+                // Si la fecha actual es posterior a la del evento, ocultamos la tarjeta
+                if (hoy > fechaEvento) {
+                    tarjeta.style.display = 'none';
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
