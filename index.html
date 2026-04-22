@@ -14,7 +14,7 @@
             <h2 style="color: #0056b3; margin-top: 0; font-size: 1.8rem;">¡Bienvenidos!</h2>
             <p style="font-size: 1.1rem; color: #555; margin-bottom: 20px;">Horarios de la Parroquia Santa Lucía:</p>
             
-        <div style="text-align: left; background-color: #f9f7f2; padding: 15px; border-radius: 8px;">
+            <div style="text-align: left; background-color: #f9f7f2; padding: 15px; border-radius: 8px;">
                 <h3 style="color: #8b5a2b; border-bottom: 2px solid #ddd; padding-bottom: 5px; margin-top: 0;">Misas</h3>
                 <ul style="list-style: none; padding-left: 0; margin-bottom: 20px;">
                     <li style="margin-bottom: 8px;"><strong>Martes a Sábado:</strong> 6:00 PM</li>
@@ -22,10 +22,7 @@
                 </ul>
                 
                 <h3 style="color: #8b5a2b; border-bottom: 2px solid #ddd; padding-bottom: 5px;">Confesiones</h3>
-                <p style="margin-bottom: 20px;">Martes a Domingo:<br>Media hora antes de cada misa</p>
-
-                <h3 style="color: #8b5a2b; border-bottom: 2px solid #ddd; padding-bottom: 5px;">Horario de Oficina</h3>
-                <p style="margin-bottom: 0;">Martes a Viernes:<br>2:00 PM a 5:00 PM</p>
+                <p style="margin-bottom: 0;">Martes a Domingo:<br>Media hora antes de cada misa</p>
             </div>
             
             <button id="btn-entendido" style="margin-top: 25px; width: 100%; background-color: #0056b3; color: white; border: none; padding: 12px; border-radius: 50px; font-weight: bold; cursor: pointer; font-family: 'Montserrat', sans-serif;">Entendido</button>
@@ -41,7 +38,7 @@
         <li><a href="evangelizacion.html">Evangelización</a></li>
         <li><a href="sacramentos.html">Sacramentos</a></li>
         <li><a href="comunidad.html">Comunidad</a></li>
-        <li><a href="eventos.html">Eventos</a></li> <li><a href="contacto.html" class="btn-nav">Contáctanos</a></li>
+        <li><a href="eventos.html">Eventos</a></li> <li><a href="mapa-zonas-pastorales/index.html">Zonas Pastorales <span class="badge-nuevo">¡Nuevo!</span></a></li> <li><a href="contacto.html" class="btn-nav">Contáctanos</a></li>
     </ul>
 </nav>
 
@@ -132,6 +129,16 @@
                 if (event.target == modal) {
                     cerrarModal();
                 }
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var expireDate = new Date('2026-05-22');
+            if (new Date() > expireDate) {
+                var badges = document.querySelectorAll('.badge-nuevo');
+                badges.forEach(function(b) { b.style.display = 'none'; });
             }
         });
     </script>

@@ -20,7 +20,7 @@
             <li><a href="evangelizacion.html">Evangelización</a></li>
             <li><a href="sacramentos.html">Sacramentos</a></li>
             <li><a href="comunidad.html">Comunidad</a></li>
-            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="eventos.html">Eventos</a></li> <li><a href="mapa-zonas-pastorales/index.html">Zonas Pastorales <span class="badge-nuevo">¡Nuevo!</span></a></li>
             <li><a href="contacto.html" class="btn-nav">Contáctanos</a></li>
         </ul>
     </nav>
@@ -89,5 +89,16 @@
         <p>© 2026 Parroquia Santa Lucía. Arquidiócesis de Maracaibo.</p>
     </footer>
 
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var expireDate = new Date('2026-05-22');
+            if (new Date() > expireDate) {
+                var badges = document.querySelectorAll('.badge-nuevo');
+                badges.forEach(function(b) { b.style.display = 'none'; });
+            }
+        });
+    </script>
 </body>
+
 </html>
