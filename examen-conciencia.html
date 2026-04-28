@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen de Conciencia | Parroquia Santa Lucía</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== HERO ===== */
+        .hero-examen {
+            background: linear-gradient(rgba(2, 62, 138, 0.88), rgba(0, 40, 100, 0.95)),
+                        url('reconciliacion.webp') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 110px 20px 90px;
+        }
+        .hero-examen h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: white !important;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        }
+        .hero-examen p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.9) !important;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* ===== SELECTOR ===== */
+        .selector-wrap {
+            background: var(--color-crema);
+            padding: 60px 20px;
+        }
+        .selector-box {
+            max-width: 780px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 18px;
+            padding: 45px 50px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.09);
+        }
+        .selector-box h2 {
+            font-size: 1.7rem;
+            color: var(--color-azul-oscuro);
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .selector-box p.subtitulo {
+            text-align: center;
+            color: #666;
+            margin-bottom: 35px;
+            font-size: 0.97rem;
+        }
+        .campos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 22px;
+            margin-bottom: 32px;
+        }
+        .campo-grupo label {
+            display: block;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+            color: var(--color-azul-oscuro);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .campo-grupo select {
+            width: 100%;
+            padding: 13px 16px;
+            border: 2px solid #dde3ec;
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            color: #333;
+            background: #f8faff;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%230077b6' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+        .campo-grupo select:focus {
+            outline: none;
+            border-color: var(--color-azul-esencial);
+        }
+        .btn-generar {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background: var(--color-azul-esencial);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            letter-spacing: 0.03em;
+        }
+        .btn-generar:hover {
+            background: var(--color-azul-oscuro);
+            transform: translateY(-2px);
+        }
+        .btn-generar:disabled {
+            background: #aaa;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ===== RESULTADO ===== */
+        #resultado {
+            display: none;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 20px 20px 70px;
+        }
+
+        /* Oración */
+        .oracion-bloque {
+            border-radius: 16px;
+            padding: 36px 44px;
+            margin-bottom: 36px;
+            position: relative;
+        }
+        .oracion-inicio {
+            background: linear-gradient(135deg, #e8f4fc, #dbeeff);
+            border-left: 5px solid var(--color-azul-esencial);
+        }
+        .oracion-fin {
+            background: linear-gradient(135deg, #fef6e4, #fdecc8);
+            border-left: 5px solid var(--color-marron-madera);
+        }
+        .oracion-bloque h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .oracion-inicio h3 { color: var(--color-azul-oscuro); }
+        .oracion-fin h3 { color: var(--color-marron-madera); }
+        .oracion-bloque p {
+            font-size: 1rem;
+            line-height: 1.85;
+            color: #444;
+            font-style: italic;
+            margin: 0 0 10px;
+        }
+        .oracion-bloque p:last-child { margin-bottom: 0; }
+
+        /* Mandamientos */
+        .mandamiento-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 22px rgba(0,0,0,0.07);
+            margin-bottom: 26px;
+            overflow: hidden;
+        }
+        .mandamiento-header {
+            background: var(--color-azul-esencial);
+            color: white;
+            padding: 16px 28px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .mandamiento-numero {
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .mandamiento-titulo {
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+        .mandamiento-body {
+            padding: 24px 28px;
+        }
+        .mandamiento-body ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .mandamiento-body ul li {
+            padding: 8px 0 8px 24px;
+            position: relative;
+            color: #444;
+            line-height: 1.6;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.97rem;
+        }
+        .mandamiento-body ul li:last-child { border-bottom: none; }
+        .mandamiento-body ul li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--color-azul-esencial);
+            font-size: 0.7rem;
+            top: 11px;
+        }
+
+        /* Sección resultado */
+        .resultado-header {
+            text-align: center;
+            padding: 50px 20px 30px;
+        }
+        .resultado-header h2 {
+            color: var(--color-azul-oscuro);
+            font-size: 1.9rem;
+            margin-bottom: 8px;
+        }
+        .resultado-header p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        .tag-perfil {
+            display: inline-block;
+            background: var(--color-azul-esencial);
+            color: white;
+            padding: 5px 16px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Botón imprimir */
+        .btn-imprimir {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 11px 28px;
+            border: 2px solid var(--color-azul-esencial);
+            color: var(--color-azul-esencial);
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            background: transparent;
+            transition: all 0.3s;
+        }
+        .btn-imprimir:hover { background: var(--color-azul-esencial); color: white; }
+
+        @media (max-width: 600px) {
+            .selector-box { padding: 30px 22px; }
+            .oracion-bloque { padding: 26px 22px; }
+            .hero-examen h1 { font-size: 2rem; }
+            .mandamiento-header { padding: 14px 18px; }
+            .mandamiento-body { padding: 18px; }
+        }
+
+        @media print {
+            nav, .selector-wrap, .btn-imprimir, .hero-examen { display: none !important; }
+            #resultado { display: block !important; padding: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVEGACIÓN -->
+<nav>
+    <div class="logo">
+        <a href="index.html">PARROQUIA DE SANTA LUCÍA</a>
+    </div>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="evangelizacion.html">Evangelización</a></li>
+        <li><a href="sacramentos.html">Sacramentos</a></li>
+        <li><a href="comunidad.html">Comunidad</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="mapa-zonas-pastorales/index.html">Zonas Pastorales <span class="badge-nuevo">¡Nuevo!</span></a></li>
+        <li><a href="contacto.html" class="btn-nav">Contáctanos</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero-examen">
+    <h1>Examen de Conciencia</h1>
+    <p>Prepárate para recibir el sacramento de la Reconciliación con el corazón abierto y sincero.</p>
+</header>
+
+<!-- SELECTOR -->
+<section class="selector-wrap">
+    <div class="selector-box">
+        <h2>Personaliza tu examen</h2>
+        <p class="subtitulo">Selecciona tu perfil para recibir un examen adaptado a tu situación de vida.</p>
+        <div class="campos-grid">
+            <div class="campo-grupo">
+                <label for="sel-edad">Edad</label>
+                <select id="sel-edad" onchange="toggleEstado()">
+                    <option value="">— Selecciona —</option>
+                    <option value="nino">Niño / Niña (7–12 años)</option>
+                    <option value="adolescente">Adolescente (13–17 años)</option>
+                    <option value="joven">Joven (18–30 años)</option>
+                    <option value="adulto">Adulto (31–59 años)</option>
+                    <option value="mayor">Adulto mayor (60+ años)</option>
+                </select>
+            </div>
+            <div class="campo-grupo">
+                <label for="sel-genero">Género</label>
+                <select id="sel-genero">
+                    <option value="">— Selecciona —</option>
+                    <option value="hombre">Hombre / Niño</option>
+                    <option value="mujer">Mujer / Niña</option>
+                </select>
+            </div>
+            <div class="campo-grupo" id="grupo-estado">
+                <label for="sel-estado">Estado de vida</label>
+                <select id="sel-estado">
+                    <option value="">— Selecciona —</option>
+                    <option value="soltero">Soltero / Soltera</option>
+                    <option value="casado">Casado / Casada</option>
+                    <option value="consagrado">Vida consagrada</option>
+                    <option value="clerigo">Sacerdote / Diácono</option>
+                </select>
+            </div>
+        </div>
+        <button class="btn-generar" id="btn-generar" onclick="generarExamen()">
+            🕊️ &nbsp; Ver mi examen de conciencia
+        </button>
+    </div>
+</section>
+
+<!-- RESULTADO -->
+<section id="resultado">
+    <div class="resultado-header">
+        <h2>Tu examen de conciencia</h2>
+        <div id="tags-perfil"></div>
+        <button class="btn-imprimir" onclick="window.print()">🖨️ Imprimir</button>
+    </div>
+
+    <!-- Oración al Espíritu Santo -->
+    <div class="oracion-bloque oracion-inicio">
+        <h3>🕊️ Oración al Espíritu Santo antes del examen</h3>
+        <p>Ven, Espíritu Santo, llena los corazones de tus fieles y enciende en ellos el fuego de tu amor. Envía tu Espíritu y todo será creado, y renovarás la faz de la tierra.</p>
+        <p>Oh Dios, que iluminaste los corazones de tus hijos con la luz del Espíritu Santo; concédenos que, guiados por el mismo Espíritu, sintamos con rectitud y gocemos siempre de tu divino consuelo. Por Jesucristo Nuestro Señor. Amén.</p>
+        <p>Señor Jesús, antes de acercarme a tu misericordia en el sacramento de la Reconciliación, ilumina mi mente y ablanda mi corazón para que pueda ver con verdad mis pecados, arrepentirme de ellos con sincero dolor y proponer firme enmienda de vida. Que la sangre que derramaste por amor a mí sea el precio de mi perdón. Amén.</p>
+    </div>
+
+    <!-- Mandamientos -->
+    <div id="mandamientos-container"></div>
+
+    <!-- Oración final -->
+    <div class="oracion-bloque oracion-fin">
+        <h3>🙏 Oración por la gracia de la contrición perfecta</h3>
+        <p>Señor mío Jesucristo, Dios y hombre verdadero, me pesa de todo corazón haberte ofendido, porque eres infinitamente bueno y el pecado te desagrada. Propongo firmemente, con tu santa gracia, nunca más pecar, confesarme y cumplir la penitencia que me fuere impuesta.</p>
+        <p>¡Oh Dios mío!, me arrepiento de todos mis pecados no tanto porque temo el infierno, sino principalmente porque te amo a Ti, mi Sumo Bien. Ayúdame a detestarlo todo y a amarte únicamente a Ti. Dame la gracia de la contrición perfecta para que, al confesarme, mis pecados sean perdonados en plenitud por tu infinita misericordia.</p>
+        <p>María Santísima, Madre de misericordia; Santa Lucía, nuestra patrona; y todos los santos: interceded por mí ante el trono de Dios para que alcance un verdadero y sincero arrepentimiento. Amén.</p>
+    </div>
+
+    <p style="text-align:center; color:#888; font-size:0.85rem; margin-top:10px;">
+        Acude con confianza al sacramento de la Reconciliación. El sacerdote te escucha en nombre de Cristo, que te espera con los brazos abiertos.
+    </p>
+</section>
+
+
+<script>
+// ============================================================
+//  BASE DE PREGUNTAS POR MANDAMIENTO
+//  Claves: [mandamiento][grupo] donde grupo combina edad+genero+estado
+//  Estrategia: preguntas base + preguntas por estado de vida +
+//              preguntas específicas por edad/género donde aplica.
+// ============================================================
+
+const mandamientos = [
+    { num: 1, titulo: "Amarás a Dios sobre todas las cosas" },
+    { num: 2, titulo: "No tomarás el nombre de Dios en vano" },
+    { num: 3, titulo: "Santificarás las fiestas" },
+    { num: 4, titulo: "Honrarás a tu padre y a tu madre" },
+    { num: 5, titulo: "No matarás" },
+    { num: 6, titulo: "No cometerás actos impuros" },
+    { num: 7, titulo: "No robarás" },
+    { num: 8, titulo: "No darás falso testimonio ni mentirás" },
+    { num: 9, titulo: "No consentirás pensamientos ni deseos impuros" },
+    { num: 10, titulo: "No codiciarás los bienes ajenos" }
+];
+
+// Preguntas base comunes a casi todos, ajustadas por estado y edad
+const preguntas = {
+
+    // ────────────────────────────────
+    // MANDAMIENTO 1
+    // ────────────────────────────────
+    1: {
+        nino: [
+            "¿Rezo mis oraciones por la mañana y por la noche?",
+            "¿Amo a Dios más que a los juguetes, los videojuegos o cualquier otra cosa?",
+            "¿He creído en cosas mágicas o supersticiones en lugar de confiar en Dios?",
+            "¿Pienso en Dios durante el día y le doy gracias por todo lo que me da?",
+            "¿He dejado de rezar por pereza o porque no quise?"
+        ],
+        adolescente: [
+            "¿Dedico tiempo real a la oración, no solo cuando necesito algo de Dios?",
+            "¿He consultado el horóscopo, el tarot o prácticas similares que contradicen la fe?",
+            "¿Me averguenzo de mi fe delante de mis amigos o en las redes sociales?",
+            "¿He puesto el dinero, la popularidad o la imagen por encima de Dios?",
+            "¿Leo la Biblia o busco crecer en el conocimiento de mi fe?"
+        ],
+        joven_soltero: [
+            "¿Es Dios verdaderamente el centro de mi vida o solo ocupa un lugar secundario?",
+            "¿He recurrido al horóscopo, el esoterismo o prácticas ocultistas?",
+            "¿He descuidado la oración por el trabajo, el entretenimiento o las redes sociales?",
+            "¿Tengo un tiempo fijo de oración personal cada día?",
+            "¿He antepuesto mis propios planes a la voluntad de Dios?"
+        ],
+        joven_casado: [
+            "¿Oro con mi cónyuge y construyo juntos una vida de fe en el hogar?",
+            "¿He descuidado a Dios por las preocupaciones del trabajo o la familia?",
+            "¿Alguna vez he recurrido a la superstición o al esoterismo en momentos de angustia?",
+            "¿Reconozco a Dios como fundamento de mi matrimonio?",
+            "¿Doy gracias a Dios por los dones de mi familia?"
+        ],
+        adulto_soltero: [
+            "¿Mantengo una vida de oración regular y fecunda?",
+            "¿He antepuesto el trabajo, el dinero o el bienestar material a mi relación con Dios?",
+            "¿He recurrido al esoterismo, la magia o cualquier práctica contraria a la fe?",
+            "¿Busco conocer y hacer la voluntad de Dios en las decisiones importantes de mi vida?",
+            "¿He abandonado la práctica de la fe por pereza o desánimo?"
+        ],
+        adulto_casado: [
+            "¿He rezado con mi cónyuge e hijos, transmitiendo la fe en el hogar?",
+            "¿He antepuesto el trabajo o los bienes materiales al amor a Dios?",
+            "¿He recurrido a supersticiones o curanderos en lugar de confiar en Dios?",
+            "¿He dado testimonio de fe cristiana en mi familia y entorno?",
+            "¿Dedico tiempo personal a la oración y la lectura espiritual?"
+        ],
+        adulto_consagrado: [
+            "¿Vivo mis votos como una entrega total a Dios o los cumplo rutinariamente?",
+            "¿Cuido mi vida de oración con fidelidad y fervor?",
+            "¿He caído en el activismo descuidando la contemplación y la relación personal con Dios?",
+            "¿He antepuesto mis preferencias personales a la voluntad de Dios manifestada en la obediencia?",
+            "¿Me esfuerzo por crecer en el amor a Dios cada día?"
+        ],
+        adulto_clerigo: [
+            "¿Celebro la Eucaristía y el Oficio Divino con devoción y no solo por obligación?",
+            "¿He mantenido una oración mental diaria y fiel?",
+            "¿He antepuesto el activismo pastoral a mi propia vida espiritual?",
+            "¿He sido fiel a los tiempos de retiro y revisión de vida?",
+            "¿Predico y enseño lo que la Iglesia enseña o he dado pie a confusión en la fe?"
+        ],
+        mayor_soltero: [
+            "¿Aproveché la cercanía de Dios que la edad trae para profundizar mi vida espiritual?",
+            "¿He mantenido la fidelidad a la oración a pesar del cansancio o la enfermedad?",
+            "¿He sido un testigo de fe para las generaciones más jóvenes?",
+            "¿He confiado en Dios en los momentos de sufrimiento o enfermedad?",
+            "¿He tenido miedo a la muerte en lugar de verla como encuentro con Dios?"
+        ],
+        mayor_casado: [
+            "¿He transmitido la fe a mis hijos y nietos con palabras y con ejemplo?",
+            "¿Acompaño espiritualmente a mi cónyuge, especialmente en la enfermedad?",
+            "¿Ofrezco a Dios los sufrimientos y limitaciones de la vejez?",
+            "¿Mantengo una vida de oración fiel a pesar de las dificultades físicas?",
+            "¿He sido testigo de que Dios es el único bien que sacia el corazón?"
+        ]
+    },
+
+    // ────────────────────────────────
+    // MANDAMIENTO 2
+    // ────────────────────────────────
+    2: {
+        nino: [
+            "¿He dicho el nombre de Dios, de Jesús o de la Virgen María con enfado o sin respeto?",
+            "¿He cumplido las promesas que le hice a Dios?",
+            "¿He jurado algo falso o sin necesidad?"
+        ],
+        adolescente: [
+            "¿Uso el nombre de Dios o de Jesucristo como expresión de enojo o sorpresa?",
+            "¿He hecho votos o promesas a Dios que no cumplí?",
+            "¿Hablo de las cosas sagradas con irreverencia o en tono de burla?",
+            "¿Me río de chistes que ofenden a Dios, a la Virgen o a los santos?"
+        ],
+        base: [
+            "¿He tomado el nombre de Dios o de Jesucristo en vano, como expresión de enojo?",
+            "¿He hecho juramentos en falso o prometido algo a Dios que no cumplí?",
+            "¿He blasfemado o hablado irrespetuosamente de Dios, la Virgen o los santos?",
+            "¿Me he burlado o he reído de bromas que ofenden las cosas sagradas?",
+            "¿He permitido que otros blasfemen sin decir nada cuando podía hacerlo?"
+        ],
+        clerigo: [
+            "¿He sido cuidadoso en el uso del nombre de Dios en mi predicación y catequesis?",
+            "¿He tratado con respeto y reverencia los sacramentos y todo lo sagrado?",
+            "¿He cumplido los compromisos que asumí ante Dios y la Iglesia en mi ordenación?",
+            "¿He blasfemado interiormente en momentos de frustración pastoral?"
+        ]
+    },
+
+    // ────────────────────────────────
+    // MANDAMIENTO 3
+    // ────────────────────────────────
+    3: {
+        nino: [
+            "¿Voy a Misa los domingos y días de fiesta con mis papás?",
+            "¿Pongo atención en la Misa o solo pienso en otras cosas?",
+            "¿Rezo con fe durante la Misa o me comporto mal?"
+        ],
+        adolescente: [
+            "¿He faltado a Misa el domingo sin una razón grave?",
+            "¿Llego tarde a Misa por pereza o por no organizarme bien?",
+            "¿Participo activamente en la Misa o solo estoy de cuerpo presente?",
+            "¿He trabajado o hecho actividades innecesarias en domingo descuidando el descanso y la familia?"
+        ],
+        base: [
+            "¿He faltado a la Misa dominical sin causa grave?",
+            "¿He llegado tarde o salido antes de terminar la Misa sin necesidad?",
+            "¿He participado en la Misa con fe, devoción y atención, o de manera mecánica?",
+            "¿He realizado trabajos serviles y actividades innecesarias en domingo que impidieron el descanso y la familia?",
+            "¿He aprovechado el domingo para la oración, el descanso y el servicio a los demás?"
+        ],
+        casado: [
+            "¿He llevado a mis hijos a Misa y les he enseñado la importancia del domingo?",
+            "¿He organizado actividades familiares del domingo que honren a Dios y fortalezcan la familia?",
+            "¿He permitido que mis hijos se queden sin Misa por comodidad o actividades deportivas?"
+        ],
+        consagrado: [
+            "¿He celebrado la Eucaristía o participado en ella con fe viva y no por rutina?",
+            "¿He cumplido fielmente la Liturgia de las Horas?",
+            "¿He descuidado los tiempos de oración comunitaria de mi comunidad?"
+        ],
+        clerigo: [
+            "¿He celebrado la Eucaristía diaria con profunda devoción?",
+            "¿He sido fiel a la Liturgia de las Horas?",
+            "¿He facilitado a los fieles el acceso a la Misa dominical, especialmente a los más alejados?"
+        ]
+    },
+
+    // ────────────────────────────────
+    // MANDAMIENTO 4
+    // ────────────────────────────────
+    4: {
+        nino: [
+            "¿Obedezco a mis padres y maestros con buena actitud?",
+            "¿Les falto el respeto, les grito o les contesto mal?",
+            "¿Les digo gracias a mis padres por lo que hacen por mí?",
+            "¿Ayudo en casa sin que me lo pidan?"
+        ],
+        adolescente: [
+            "¿Respeto la autoridad de mis padres aunque no siempre esté de acuerdo con ellos?",
+            "¿Les falto el respeto, les respondo con grosería o los ignoro?",
+            "¿Les ayudo en casa o dejo toda la responsabilidad a ellos?",
+            "¿He hecho algo que les causó vergüenza o dolor a mis padres?",
+            "¿Respeto a mis profesores y a las personas mayores?"
+        ],
+        base: [
+            "¿He faltado el respeto a mis padres o personas mayores de palabra o de obra?",
+            "¿Los he abandonado en su enfermedad o en la vejez?",
+            "¿He cumplido con mis responsabilidades cívicas: votar, pagar impuestos, respetar las leyes justas?",
+            "¿He obedecido a las autoridades legítimas en lo que es conforme a la ley de Dios?"
+        ],
+        casado: [
+            "¿He cuidado de mis padres y suegros con amor y respeto, especialmente en su vejez?",
+            "¿He educado a mis hijos con amor, firmeza y ejemplo cristiano?",
+            "¿He fallado en mi deber de autoridad en el hogar por exceso de permisividad o de dureza?",
+            "¿He respetado la autoridad de mi cónyuge en la educación de los hijos?"
+        ],
+        consagrado: [
+            "¿He obedecido a mis superiores con espíritu sobrenatural y no solo por disciplina externa?",
+            "¿He criticado o cuestionado la autoridad de mis superiores ante otros sin la debida prudencia?",
+            "¿He cumplido con mis deberes comunitarios con prontitud y alegría?"
+        ],
+        clerigo: [
+            "¿He obedecido al Obispo y a mis superiores en las indicaciones pastorales?",
+            "¿He hablado con respeto de las autoridades eclesiásticas ante los fieles?",
+            "¿He ejercido mi autoridad como servicio y no como dominio sobre los fieles?"
+        ]
+    },
+
+    // ────────────────────────────────
+    // MANDAMIENTO 5
+    // ────────────────────────────────
+    5: {
+        nino: [
+            "¿He lastimado a otro niño a propósito?",
+            "¿He hecho bullying o me he reído de alguien de manera cruel?",
+            "¿He cuidado mi salud comiendo bien, durmiendo y evitando cosas que me hacen daño?",
+            "¿He dicho cosas crueles que hirieron a alguien?"
+        ],
+        adolescente: [
+            "¿He participado o fomentado el acoso escolar (bullying) en persona o en redes?",
+            "¿He pensado en hacerme daño a mí mismo cuando estaba deprimido?",
+            "¿He consumido alcohol o drogas que dañan mi salud?",
+            "¿He conducido vehículos o motos de manera imprudente poniendo en riesgo vidas?",
+            "¿He insultado o agredido a alguien física o verbalmente?"
+        ],
+        base: [
+            "¿He causado daño físico o moral a otras personas con palabras, actos u omisiones?",
+            "¿He abusado del alcohol, el tabaco u otras sustancias dañando mi salud?",
+            "¿He guardado rencor, odio o deseos de venganza hacia alguien?",
+            "¿He conducido de manera imprudente poniendo en riesgo la vida ajena?",
+            "¿He escandalizado a otros con mi mal ejemplo llevándolos al pecado?"
+        ],
+        hombre: [
+            "¿He usado la violencia física contra alguien, especialmente contra personas indefensas?",
+            "¿He provocado peleas o conflictos innecesarios?"
+        ],
+        mujer: [
+            "¿He buscado hacerme daño a mí misma en momentos de crisis emocional?",
+            "¿He descuidado gravemente mi salud física y emocional?"
+        ],
+        casado: [
+            "¿He ejercido violencia doméstica, de palabra o de obra, contra mi cónyuge o mis hijos?",
+            "¿He fallado en proteger la salud física y emocional de mis hijos?",
+            "¿He permitido que mis hijos estén expuestos a ambientes peligrosos o perjudiciales?"
+        ],
+        consagrado: [
+            "¿He tratado a los hermanos de comunidad con caridad o he sido fuente de conflicto?",
+            "¿He cuidado mi salud física de manera razonable para poder servir mejor a Dios?"
+        ],
+        clerigo: [
+            "¿He sido fuente de paz y reconciliación en la comunidad o de conflicto?",
+            "¿He cuidado la salud de los fieles que me fueron encomendados, especialmente los más vulnerables?",
+            "¿He rechazado con firmeza cualquier forma de abuso en el ejercicio de mi ministerio?"
+        ]
+    },
+
+    // ────────────────────────────────
+    // MANDAMIENTO 6
+    // ────────────────────────────────
+    6: {
+        nino: [
+            "¿He tocado las partes íntimas de mi cuerpo o de otro niño de manera indebida?",
+            "¿He visto cosas en internet que sé que no debería ver?",
+            "¿He hablado de temas sucios o inapropiados con mis amigos?"
+        ],
+        adolescente: [
+            "¿He visto pornografía en internet o en el celular?",
+            "¿He tenido contacto físico íntimo inapropiado con otras personas?",
+            "¿He enviado o recibido imágenes íntimas por redes sociales (sexting)?",
+            "¿He hablado de manera obscena o contado chistes de temas sexuales?",
+            "¿He tenido relaciones sexuales fuera del matrimonio?"
+        ],
+        joven_soltero_hombre: [
+            "¿He tenido relaciones sexuales fuera del matrimonio?",
+            "¿He visto pornografía de manera habitual o esporádica?",
+            "¿He abusado de la masturbación?",
+            "¿He buscado conversaciones o contactos de naturaleza sexual indebida?",
+            "¿He respetado la dignidad de las mujeres con las que me relaciono?",
+            "¿He presionado a alguien para tener relaciones sexuales?"
+        ],
+        joven_soltero_mujer: [
+            "¿He tenido relaciones sexuales fuera del matrimonio?",
+            "¿He visto pornografía o material de contenido sexual explícito?",
+            "¿Me he vestido de manera provocativa sin tener en cuenta la castidad propia y ajena?",
+            "¿He buscado despertar el deseo sexual en otros de manera indebida?",
+            "¿He protegido mi dignidad y castidad en las relaciones de noviazgo?"
+        ],
+        casado_hombre: [
+            "¿He sido fiel a mi esposa en mente, corazón y obra?",
+            "¿He visto pornografía o fantasías con otras mujeres?",
+            "¿He respetado a mi esposa en la intimidad conyugal, sin egoísmo ni violencia?",
+            "¿He rechazado los métodos anticonceptivos artificiales contrarios a la enseñanza de la Iglesia?",
+            "¿He vivido la sexualidad matrimonial como un don sagrado abierto a la vida?"
+        ],
+        casado_mujer: [
+            "¿He sido fiel a mi esposo en mente, corazón y obra?",
+            "¿He respetado la intimidad conyugal como don sagrado de Dios?",
+            "¿He rechazado los métodos anticonceptivos artificiales contrarios a la enseñanza de la Iglesia?",
+            "¿He acogido la vida que Dios quisiera enviar a mi matrimonio con apertura y confianza?",
+            "¿He tratado a mi esposo con respeto y amor en la intimidad?"
+        ],
+        consagrado: [
+            "¿He sido fiel al voto de castidad en pensamientos, palabras y obras?",
+            "¿He evitado con prudencia situaciones, imágenes o conversaciones que pongan en peligro mi castidad?",
+            "¿He sido transparente con mi director espiritual sobre las tentaciones en este campo?",
+            "¿He usado con prudencia internet, el celular y las redes sociales?"
+        ],
+        clerigo: [
+            "¿He sido absolutamente fiel al celibato sacerdotal?",
+            "¿He evitado relaciones o situaciones que pongan en peligro mi celibato?",
+            "¿He guardado el necesario respeto y distancia en el trato con fieles, especialmente menores?",
+            "¿He sido ejemplo de castidad y pureza ante los fieles?",
+            "¿He rechazado con firmeza cualquier conducta inapropiada hacia los fieles que me fueron confiados?"
+        ]
+    },
+
+    // ────────────────────────────────
+    // MANDAMIENTO 7
+    // ────────────────────────────────
+    7: {
+        nino: [
+            "¿He tomado algo que no era mío sin permiso?",
+            "¿He hecho trampa en la escuela?",
+            "¿He cuidado y devuelto lo que me prestaron?",
+            "¿He desperdiciado la comida, el agua u otros bienes que Dios nos da?"
+        ],
+        adolescente: [
+            "¿He robado algo, aunque sea pequeño?",
+            "¿He copiado en exámenes o trabajos escolares?",
+            "¿He descargado música, películas u otros contenidos protegidos de manera ilegal?",
+            "¿He hecho trampa en juegos o competencias?",
+            "¿He desperdiciado el dinero de mis padres en cosas innecesarias?"
+        ],
+        base: [
+            "¿He robado, me he apropiado de bienes ajenos o me he aprovechado injustamente de otros?",
+            "¿He restituido lo que robé o el daño que causé?",
+            "¿He sido honesto en mis tratos comerciales, laborales y económicos?",
+            "¿He pagado justa y puntualmente a quienes trabajan para mí?",
+            "¿He desperdiciado bienes materiales que otros necesitan, siendo indiferente ante la pobreza ajena?"
+        ],
+        casado: [
+            "¿He administrado bien los bienes de la familia, sin derroches ni mezquindades?",
+            "¿He dado a los pobres de mis bienes de manera regular y generosa?",
+            "¿He enseñado a mis hijos el valor del trabajo honesto y la solidaridad con los necesitados?"
+        ],
+        consagrado: [
+            "¿He vivido la pobreza evangélica de manera auténtica?",
+            "¿He usado los bienes de la comunidad como propios o los he derrochado?",
+            "¿He pedido permiso a mis superiores para gastos o uso de bienes según las normas de mi comunidad?"
+        ],
+        clerigo: [
+            "¿He administrado con honradez y transparencia los bienes de la parroquia o institución?",
+            "¿He dado cuenta a quien corresponde de los ingresos y gastos?",
+            "¿He sido ejemplo de sobriedad y desapego de los bienes materiales ante los fieles?"
+        ]
+    },
+
+    // ────────────────────────────────
+    // MANDAMIENTO 8
+    // ────────────────────────────────
+    8: {
+        nino: [
+            "¿He dicho mentiras para no meterme en problemas?",
+            "¿He chismeado o contado secretos de otros niños?",
+            "¿He acusado injustamente a otro compañero?",
+            "¿He cumplido las promesas que hice?"
+        ],
+        adolescente: [
+            "¿He mentido a mis padres sobre mi paradero o lo que hago?",
+            "¿He hablado mal de otras personas a sus espaldas?",
+            "¿He divulgado secretos o rumores que dañaron la reputación de alguien?",
+            "¿He publicado en redes contenidos falsos o hirientes sobre otras personas?",
+            "¿Soy coherente entre lo que digo y lo que hago?"
+        ],
+        base: [
+            "¿He mentido deliberadamente causando daño a otros?",
+            "¿He cometido calumnia (acusar de lo que no hizo) o detracción (revelar faltas ocultas sin necesidad)?",
+            "¿He guardado los secretos que me fueron confiados?",
+            "¿He dado falso testimonio o firmado documentos falsos?",
+            "¿Soy coherente entre mis palabras y mis obras en la vida cotidiana?"
+        ],
+        casado: [
+            "¿He sido sincero con mi cónyuge en asuntos importantes de la vida familiar?",
+            "¿He enseñado a mis hijos el valor de la honestidad con el ejemplo?",
+            "¿He guardado los secretos del hogar con discreción?"
+        ],
+        consagrado: [
+            "¿He sido transparente con mis superiores y hermanos de comunidad?",
+            "¿He guardado los secretos de las personas que me consultaron?",
+            "¿Vivo con autenticidad el carisma de mi comunidad o aparento lo que no soy?"
+        ],
+        clerigo: [
+            "¿He guardado el secreto de confesión de manera absoluta?",
+            "¿He predicado la verdad del Evangelio con valentía, sin adaptarla a lo que la gente quiere escuchar?",
+            "¿He sido honesto con los fieles y mis superiores en las situaciones difíciles?",
+            "¿He protegido la fama y buen nombre de los fieles que me fueron encomendados?"
+        ]
+    },
+
+    // ────────────────────────────────
+    // MANDAMIENTO 9
+    // ────────────────────────────────
+    9: {
+        nino: [
+            "¿He tenido pensamientos feos sobre el cuerpo de otras personas?",
+            "¿He visto imágenes inapropiadas y me he detenido en ellas?"
+        ],
+        adolescente: [
+            "¿He consentido deliberadamente pensamientos de contenido sexual sobre otras personas?",
+            "¿He buscado imágenes o videos de contenido erótico o pornográfico?",
+            "¿He fantaseado con situaciones sexuales impuras?",
+            "¿He luchado activamente contra estos pensamientos cuando aparecen?"
+        ],
+        base: [
+            "¿He consentido deliberadamente pensamientos o deseos impuros?",
+            "¿He buscado voluntariamente imágenes, lecturas o conversaciones que fomentan la fantasía sexual desordenada?",
+            "¿He luchado activamente contra las tentaciones contra la pureza?",
+            "¿He pedido a la Virgen María y al Espíritu Santo la gracia de la castidad interior?"
+        ],
+        casado: [
+            "¿He fantaseado con personas distintas a mi cónyuge de manera deliberada y consentida?",
+            "¿He buscado material erótico o pornográfico que enfrió mi amor conyugal?",
+            "¿He cuidado los pensamientos que alimentan el amor fiel a mi cónyuge?"
+        ],
+        consagrado: [
+            "¿He cuidado la pureza de corazón que mi consagración exige?",
+            "¿He evitado alimentar fantasías o apegos afectivos desordenados?",
+            "¿He sido transparente con mi director espiritual sobre las tentaciones interiores?"
+        ],
+        clerigo: [
+            "¿He guardado la pureza interior que el celibato exige?",
+            "¿He evitado todo apego afectivo o emocional que comprometa mi celibato?",
+            "¿He buscado la ayuda del director espiritual ante las tentaciones en este campo?"
+        ]
+    },
+
+    // ────────────────────────────────
+    // MANDAMIENTO 10
+    // ────────────────────────────────
+    10: {
+        nino: [
+            "¿He tenido envidia de los juguetes, ropa o habilidades de otros niños?",
+            "¿Me alegro cuando les va bien a los demás?",
+            "¿Soy agradecido con lo que tengo?"
+        ],
+        adolescente: [
+            "¿He sentido envidia de los logros, apariencia o posesiones de otros?",
+            "¿He deseado que a otro le vaya mal para que me vaya mejor a mí?",
+            "¿Soy agradecido con lo que tengo o siempre quiero más?",
+            "¿He caído en el consumismo: comprar cosas innecesarias para aparentar?"
+        ],
+        base: [
+            "¿He sentido envidia de los bienes, éxitos o cualidades de otras personas?",
+            "¿He deseado que otros perdiesen lo que tienen para que yo lo pudiera tener?",
+            "¿He vivido con espíritu de gratitud por los dones que Dios me ha dado?",
+            "¿He caído en la avaricia o el consumismo, poniendo la felicidad en los bienes materiales?",
+            "¿Me alegro sinceramente por el bien ajeno?"
+        ],
+        casado: [
+            "¿He comparado mi familia o situación económica con la de otros de manera que generó resentimiento?",
+            "¿He enseñado a mis hijos la gratitud y el desapego de los bienes materiales?",
+            "¿He vivido en la familia un estilo de vida sobrio, solidario y agradecido?"
+        ],
+        consagrado: [
+            "¿He vivido el desapego de los bienes y del éxito personal que mis votos exigen?",
+            "¿He sentido envidia de los cargos, carismas o reconocimientos de otros hermanos?",
+            "¿Es la voluntad de Dios lo que más deseo, por encima de cualquier otra cosa?"
+        ],
+        clerigo: [
+            "¿He deseado cargos eclesiásticos, reconocimientos o influencia por razones de vanidad?",
+            "¿He vivido el desapego de los bienes materiales que el ministerio exige?",
+            "¿Me alegro sinceramente por los éxitos pastorales de otros sacerdotes y comunidades?"
+        ]
+    }
+};
+
+// ============================================================
+//  MOSTRAR / OCULTAR ESTADO DE VIDA
+// ============================================================
+function toggleEstado() {
+    const edad = document.getElementById('sel-edad').value;
+    const grupoEstado = document.getElementById('grupo-estado');
+    const selEstado   = document.getElementById('sel-estado');
+    const menor = edad === 'nino' || edad === 'adolescente';
+    grupoEstado.style.display = menor ? 'none' : '';
+    if (menor) selEstado.value = 'soltero'; // valor neutro por defecto
+}
+
+// ============================================================
+//  FUNCIÓN PRINCIPAL
+// ============================================================
+function generarExamen() {
+    const edad   = document.getElementById('sel-edad').value;
+    const genero = document.getElementById('sel-genero').value;
+    const menor  = edad === 'nino' || edad === 'adolescente';
+    const estado = menor ? 'soltero' : document.getElementById('sel-estado').value;
+
+    if (!edad || !genero || (!menor && !estado)) {
+        alert('Por favor selecciona todos los campos antes de continuar.');
+        return;
+    }
+
+    // Tags visibles
+    const etiquetasEdad = {
+        nino: 'Niño/Niña (7–12 años)', adolescente: 'Adolescente (13–17 años)',
+        joven: 'Joven (18–30 años)', adulto: 'Adulto (31–59 años)', mayor: 'Adulto mayor (60+)'
+    };
+    const etiquetasGenero = { hombre: 'Hombre', mujer: 'Mujer' };
+    const etiquetasEstado = {
+        soltero: 'Soltero/a', casado: 'Casado/a',
+        consagrado: 'Vida consagrada', clerigo: 'Sacerdote / Diácono'
+    };
+    document.getElementById('tags-perfil').innerHTML =
+        `<span class="tag-perfil">${etiquetasEdad[edad]}</span>
+         <span class="tag-perfil">${etiquetasGenero[genero]}</span>
+         ${!menor ? `<span class="tag-perfil">${etiquetasEstado[estado]}</span>` : ''}`;
+
+    // Generar preguntas por mandamiento
+    const container = document.getElementById('mandamientos-container');
+    container.innerHTML = '';
+
+    mandamientos.forEach(m => {
+        const pregs = obtenerPreguntas(m.num, edad, genero, estado);
+        const card = document.createElement('div');
+        card.className = 'mandamiento-card';
+        card.innerHTML = `
+            <div class="mandamiento-header">
+                <div class="mandamiento-numero">${m.num}</div>
+                <div class="mandamiento-titulo">${m.titulo}</div>
+            </div>
+            <div class="mandamiento-body">
+                <ul>${pregs.map(p => `<li>${p}</li>`).join('')}</ul>
+            </div>`;
+        container.appendChild(card);
+    });
+
+    document.getElementById('resultado').style.display = 'block';
+    document.getElementById('resultado').scrollIntoView({ behavior: 'smooth' });
+}
+
+function obtenerPreguntas(num, edad, genero, estado) {
+    const banco = preguntas[num];
+    let lista = [];
+
+    // Niños: prioridad total
+    if (edad === 'nino') {
+        return banco.nino || banco.base || [];
+    }
+
+    // Adolescentes
+    if (edad === 'adolescente') {
+        if (banco.adolescente) return banco.adolescente;
+        return mezclar(banco.base || [], banco[genero] || [], 2);
+    }
+
+    // Clérigo
+    if (estado === 'clerigo') {
+        return banco.clerigo || mezclar(banco.base || [], banco[genero] || [], 2);
+    }
+
+    // Vida consagrada
+    if (estado === 'consagrado') {
+        return banco.consagrado || mezclar(banco.base || [], banco[genero] || [], 2);
+    }
+
+    // Joven soltero
+    if (edad === 'joven' && estado === 'soltero') {
+        const clave = `joven_soltero_${genero}`;
+        if (banco[clave]) return banco[clave];
+        if (banco['joven_soltero']) return banco['joven_soltero'];
+        return mezclar(banco.base || [], banco[genero] || [], 2);
+    }
+
+    // Joven casado
+    if (edad === 'joven' && estado === 'casado') {
+        const clave = `casado_${genero}`;
+        if (banco[clave]) return banco[clave];
+        if (banco['casado']) return banco['casado'];
+        return mezclar(banco.base || [], banco[genero] || [], 2);
+    }
+
+    // Adulto soltero
+    if ((edad === 'adulto' || edad === 'mayor') && estado === 'soltero') {
+        const clave = `adulto_soltero`;
+        if (banco[clave]) return banco[clave];
+        return mezclar(banco.base || [], banco[genero] || [], 2);
+    }
+
+    // Adulto casado
+    if ((edad === 'adulto' || edad === 'mayor') && estado === 'casado') {
+        const clave = `adulto_casado`;
+        if (banco[clave]) return banco[clave];
+        const clave2 = `casado_${genero}`;
+        if (banco[clave2]) return banco[clave2];
+        if (banco['casado']) return banco['casado'];
+        return mezclar(banco.base || [], banco[genero] || [], 2);
+    }
+
+    // Fallback: base + género
+    return mezclar(banco.base || [], banco[genero] || [], 2);
+}
+
+// Combina dos listas sin duplicados
+function mezclar(a, b, nExtra) {
+    const resultado = [...a];
+    let count = 0;
+    for (const item of b) {
+        if (count >= nExtra) break;
+        if (!resultado.includes(item)) {
+            resultado.push(item);
+            count++;
+        }
+    }
+    return resultado;
+}
+</script>
+
+</body>
+</html>
