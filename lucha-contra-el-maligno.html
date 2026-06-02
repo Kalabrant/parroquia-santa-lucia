@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucha contra el Maligno | Parroquia Santa Lucía</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* === Estilos exclusivos de esta página === */
+
+        /* Introducción */
+        .intro-lucha {
+            max-width: 820px;
+            margin: 0 auto 50px auto;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #444;
+        }
+        .intro-lucha p { margin-bottom: 18px; }
+
+        /* Bloques de oración */
+        .bloque-oracion {
+            background: var(--color-crema);
+            border-left: 5px solid var(--color-azul-esencial);
+            border-radius: 12px;
+            padding: 30px 35px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+        .bloque-oracion h3 {
+            color: var(--color-azul-oscuro);
+            margin-top: 0;
+            margin-bottom: 18px;
+            font-size: 1.2rem;
+        }
+        .bloque-oracion p {
+            font-size: 1rem;
+            line-height: 1.75;
+            color: var(--color-texto);
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .bloque-oracion .firma {
+            font-style: italic;
+            color: var(--color-marron-madera);
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* Letanías estilo dos columnas */
+        .letanias-tabla {
+            background: var(--blanco);
+            border: 1px solid var(--color-crema);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+        .letanias-tabla .par {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 20px;
+            padding: 8px 0;
+            border-bottom: 1px dashed rgba(0,0,0,0.06);
+            font-size: 0.98rem;
+        }
+        .letanias-tabla .par:last-child { border-bottom: none; }
+        .letanias-tabla .par .invoc { color: var(--color-azul-oscuro); font-weight: 600; }
+        .letanias-tabla .par .resp { color: var(--color-marron-madera); font-style: italic; }
+        .letanias-tabla .seccion-titulo {
+            color: var(--color-marron-madera);
+            font-weight: 700;
+            margin: 20px 0 10px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Aviso llamativo (sacerdote) */
+        .aviso-sacerdote {
+            background: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
+            color: var(--blanco);
+            border-radius: 18px;
+            padding: 35px 40px;
+            margin: 50px auto;
+            max-width: 900px;
+            box-shadow: 0 10px 30px rgba(192, 57, 43, 0.25);
+            text-align: center;
+            border: 3px solid #fff;
+            outline: 2px solid #c0392b;
+        }
+        .aviso-sacerdote .icono-aviso {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .aviso-sacerdote h3 {
+            color: var(--blanco);
+            font-size: 1.5rem;
+            margin: 0 0 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .aviso-sacerdote p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Tarjeta de Sacramental */
+        .sacramental {
+            background: var(--blanco);
+            border: 1px solid var(--color-crema);
+            border-radius: 18px;
+            padding: 35px 40px;
+            margin-bottom: 35px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--color-azul-esencial);
+        }
+        .sacramental-cabecera {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--color-crema);
+            padding-bottom: 15px;
+        }
+        .sacramental-cabecera .emoji-sac {
+            font-size: 2rem;
+        }
+        .sacramental-cabecera h3 {
+            color: var(--color-azul-oscuro);
+            margin: 0;
+            font-size: 1.6rem;
+        }
+
+        .sacramental h4 {
+            color: var(--color-marron-madera);
+            margin: 25px 0 10px;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-left: 4px solid var(--color-azul-esencial);
+            padding-left: 12px;
+        }
+        .sacramental .texto-ritual {
+            background: var(--color-crema);
+            border-radius: 10px;
+            padding: 22px 25px;
+            font-size: 0.97rem;
+            line-height: 1.75;
+            color: var(--color-texto);
+            white-space: pre-line;
+            margin-bottom: 10px;
+        }
+        .sacramental .texto-ritual em {
+            color: var(--color-azul-oscuro);
+            font-weight: 600;
+        }
+        .sacramental .manual-uso {
+            background: #f0f7fa;
+            border-left: 4px solid var(--color-azul-esencial);
+            border-radius: 10px;
+            padding: 22px 25px;
+            font-size: 0.97rem;
+            line-height: 1.7;
+        }
+        .sacramental .manual-uso ul {
+            margin: 10px 0 0 0;
+            padding-left: 20px;
+        }
+        .sacramental .manual-uso ul li { margin-bottom: 8px; }
+        .sacramental .manual-uso strong { color: var(--color-azul-oscuro); }
+
+        .nota-materia {
+            background: #fff8e1;
+            border-left: 4px solid #d4a017;
+            border-radius: 8px;
+            padding: 15px 20px;
+            font-size: 0.9rem;
+            color: #5d4e1e;
+            margin-top: 15px;
+        }
+
+        /* Badge nuevo dentro de la portada */
+        .hero-interno .badge-hero {
+            display: inline-block;
+            background-color: #ff3b30;
+            color: white;
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 12px;
+            box-shadow: 0 0 15px rgba(255, 59, 48, 0.5);
+            animation: pulseBadge 1.5s infinite ease-in-out;
+        }
+
+        /* Tabla de contenidos */
+        .indice-pagina {
+            background: var(--blanco);
+            border: 1px solid var(--color-crema);
+            border-radius: 15px;
+            padding: 25px 30px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+        .indice-pagina h3 {
+            color: var(--color-azul-oscuro);
+            margin-top: 0;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .indice-pagina ol {
+            columns: 2;
+            column-gap: 30px;
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+        .indice-pagina ol li {
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+        .indice-pagina a {
+            color: var(--color-azul-esencial);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .indice-pagina a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .indice-pagina ol { columns: 1; }
+            .bloque-oracion { padding: 22px 20px; }
+            .sacramental { padding: 25px 22px; }
+            .letanias-tabla .par { grid-template-columns: 1fr; gap: 4px; }
+            .letanias-tabla .par .resp { padding-left: 20px; }
+            .aviso-sacerdote { padding: 25px 22px; margin: 35px 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">
+        <a href="index.html">PARROQUIA DE SANTA LUCÍA</a>
+    </div>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="evangelizacion.html">Evangelización</a></li>
+        <li><a href="sacramentos.html">Sacramentos</a></li>
+        <li><a href="comunidad.html">Comunidad</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="mapa-zonas-pastorales/index.html">Zonas Pastorales</a></li>
+        <li><a href="contacto.html" class="btn-nav">Contáctanos</a></li>
+    </ul>
+</nav>
+
+<header class="hero-interno" style="background: linear-gradient(rgba(2, 62, 138, 0.78), rgba(0, 30, 70, 0.9)), url('hero-lucha-maligno.webp') center/cover;">
+    <div class="hero-content">
+        <span class="badge-hero badge-nuevo-hero">¡Nuevo!</span>
+        <h1>Lucha contra el Maligno</h1>
+        <p>Súplicas, invocaciones y sacramentales para el combate espiritual del fiel cristiano.</p>
+    </div>
+</header>
+
+<section class="contenedor">
+
+    <div class="intro-lucha">
+        <p><strong>«Vestíos de las armas de Dios, para que podáis resistir las asechanzas del diablo»</strong> (Ef 6, 11).</p>
+        <p>La vida cristiana es también un combate espiritual. La Iglesia nos ofrece oraciones, súplicas e invocaciones que el fiel puede usar privadamente para implorar la protección de Dios, de la Santísima Virgen, de San Miguel Arcángel y de todos los santos contra las insidias del Maligno. Junto a la oración, los <em>sacramentales</em> —agua bendita, sal y aceite exorcizados, la medalla de San Benito— son signos sagrados instituidos por la Iglesia que disponen al alma a recibir la gracia de Dios.</p>
+    </div>
+
+    <div class="indice-pagina">
+        <h3>Índice</h3>
+        <ol>
+            <li><a href="#oraciones">Oraciones de súplica</a></li>
+            <li><a href="#trinidad">Invocaciones a la Santísima Trinidad</a></li>
+            <li><a href="#jesucristo">Invocaciones a Jesucristo</a></li>
+            <li><a href="#otras-senor">Otras invocaciones al Señor</a></li>
+            <li><a href="#maria">Invocaciones a santa María Virgen</a></li>
+            <li><a href="#san-miguel">Invocación a san Miguel Arcángel</a></li>
+            <li><a href="#letanias">Letanías</a></li>
+            <li><a href="#sacramentales">Sacramentales especiales</a></li>
+        </ol>
+    </div>
+
+    <!-- ========================================= -->
+    <!--  CONTENIDO DEL PDF: SÚPLICAS DE LOS FIELES -->
+    <!-- ========================================= -->
+
+    <div class="categoria-sacramentos" id="oraciones">
+        <h2 class="titulo-categoria">Súplicas privadas en la lucha contra el poder de las tinieblas</h2>
+        <p style="text-align: center; max-width: 760px; margin: 0 auto 30px auto; color: #555; font-size: 0.98rem;">
+            Estas súplicas pueden ser utilizadas privadamente por los fieles en la lucha contra el poder de las tinieblas.
+        </p>
+
+        <div class="bloque-oracion">
+            <h3>1. Por la redención del Señor</h3>
+            <p>Señor Dios, apiádate de mí, siervo tuyo,
+que, a causa de muchas insidias,
+me he vuelto como un objeto perdido;
+sálvame de la mano de mis enemigos
+y ven a buscarme si estoy perdido,
+acógeme cuando me encuentres,
+y no me abandones,
+así podré agradarte por siempre,
+porque sé que me has redimido con tu fuerza.</p>
+            <p class="firma">Por Jesucristo, nuestro Señor. Amén.</p>
+        </div>
+
+        <div class="bloque-oracion">
+            <h3>2. Por la victoria sobre el adversario</h3>
+            <p>Dios todopoderoso,
+que das cobijo a los afligidos en tu casa
+y conduces a los cautivos a la prosperidad,
+mira mi aflicción
+y ven en mi auxilio;
+derrota al enemigo malvado,
+para que, una vez vencida la acción del adversario,
+la libertad me conduzca a la paz,
+de modo que restablecido en la piedad serena,
+proclame que eres admirable,
+Tú que diste fuerza a tu pueblo.</p>
+            <p class="firma">Por Jesucristo, nuestro Señor. Amén.</p>
+        </div>
+
+        <div class="bloque-oracion">
+            <h3>3. Por la gracia del bautismo</h3>
+            <p>Oh, Dios, creador y defensor del género humano,
+que formaste al hombre a tu imagen
+y lo recreaste más admirablemente
+con la gracia del bautismo,
+dirige tu mirada sobre mí, siervo tuyo,
+y sé propicio a mis súplicas.
+Te pido que nazca en mi corazón
+el esplendor de tu gloria
+para que, eliminado plenamente todo temor,
+pueda alabarte
+con ánimo y espíritu sereno,
+junto a mis hermanos en tu Iglesia.</p>
+            <p class="firma">Por Jesucristo, nuestro Señor. Amén.</p>
+        </div>
+
+        <div class="bloque-oracion">
+            <h3>4. Por el suplicio de la Cruz</h3>
+            <p>Oh, Dios, origen de toda misericordia
+y de toda bondad,
+que quisiste que tu Hijo
+sufriera por nosotros el suplicio de la cruz
+para librarnos del poder del enemigo;
+mira propicio mi humillación y dolor,
+y concédeme,
+pues me renovaste en la fuente bautismal,
+que, habiendo vencido el ataque del Maligno,
+me colme la gracia de tu bendición.</p>
+            <p class="firma">Por Jesucristo, nuestro Señor. Amén.</p>
+        </div>
+
+        <div class="bloque-oracion">
+            <h3>5. Por la gracia de la adopción</h3>
+            <p>Oh, Dios, que por la gracia de la adopción,
+quisiste que yo fuera hijo de la luz,
+te pido que me concedas
+no verme envuelto en las tinieblas de los demonios
+sino que pueda por siempre permanecer plenamente
+en el esplendor de la libertad recibida de ti.</p>
+            <p class="firma">Por Jesucristo, nuestro Señor. Amén.</p>
+        </div>
+    </div>
+
+    <!-- ========================================= -->
+    <!--  INVOCACIONES A LA SANTÍSIMA TRINIDAD       -->
+    <!-- ========================================= -->
+
+    <div class="categoria-sacramentos" id="trinidad">
+        <h2 class="titulo-categoria">Invocaciones a la Santísima Trinidad</h2>
+        <div class="letanias-tabla">
+            <div class="par"><span class="invoc">Gloria al Padre, y al Hijo, y al Espíritu Santo.</span><span class="resp"></span></div>
+            <div class="par"><span class="invoc">Solo a Dios honor y gloria.</span><span class="resp"></span></div>
+            <div class="par"><span class="invoc">Bendigamos al Padre, y al Hijo, y al Espíritu Santo;</span><span class="resp">sea alabado y ensalzado por los siglos de los siglos.</span></div>
+            <div class="par"><span class="invoc">Te invocamos, te alabamos, te adoramos, oh, santa Trinidad.</span><span class="resp">Esperanza nuestra, salvación nuestra, honor nuestro, oh, santa Trinidad.</span></div>
+            <div class="par"><span class="invoc">Líbrame, sálvame, vivifícame,</span><span class="resp">oh, santa Trinidad.</span></div>
+            <div class="par"><span class="invoc">Santo, Santo, Santo es el Señor, Dios todopoderoso,</span><span class="resp">el que era, el que es y el que vendrá.</span></div>
+            <div class="par"><span class="invoc">A ti el honor y la fuerza, oh, santa Trinidad,</span><span class="resp">a ti la gloria y el poder por los siglos de los siglos.</span></div>
+            <div class="par"><span class="invoc">A ti la alabanza, a ti la gloria, a ti la acción de gracias</span><span class="resp">por los siglos de los siglos, oh, santa Trinidad.</span></div>
+            <div class="par"><span class="invoc">Santo Dios, Santo fuerte, Santo inmortal,</span><span class="resp">ten piedad de mí.</span></div>
+        </div>
+    </div>
+
+    <!-- ========================================= -->
+    <!--  INVOCACIONES A JESUCRISTO                  -->
+    <!-- ========================================= -->
+
+    <div class="categoria-sacramentos" id="jesucristo">
+        <h2 class="titulo-categoria">Invocaciones a nuestro Señor Jesucristo</h2>
+        <div class="letanias-tabla">
+            <p class="seccion-titulo">A</p>
+            <div class="par"><span class="invoc">Jesús, Hijo de Dios vivo.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Jesús, imagen del Padre.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Jesús, Sabiduría eterna.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Jesús, resplandor de la luz eterna.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Jesús, Palabra de vida.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Jesús, hijo de la Virgen María.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Jesús, Dios y hombre.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Jesús, sumo Sacerdote.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Jesús, heraldo del reino de Dios.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Jesús, camino, verdad y vida.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Jesús, pan de vida.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Jesús, vid verdadera.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Jesús, hermano de los pobres.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Jesús, amigo de los pecadores.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Jesús, médico del alma y del cuerpo.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Jesús, salvación de los oprimidos.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Jesús, descanso de los abandonados.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Tú que viniste a este mundo.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Tú que libraste a los oprimidos por el diablo.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Tú que estuviste colgado en la cruz.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Tú que aceptaste la muerte por nosotros.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Tú que yaciste en el sepulcro.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Tú que descendiste a los infiernos.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Tú que resucitaste de entre los muertos.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Tú que subiste a los cielos.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Tú que enviaste el Espíritu Santo sobre los apóstoles.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Tú que te sientas a la derecha del Padre.</span><span class="resp">Ten piedad de mí.</span></div>
+            <div class="par"><span class="invoc">Tú que vendrás a juzgar a vivos y muertos.</span><span class="resp">Ten piedad de mí.</span></div>
+
+            <p class="seccion-titulo">B</p>
+            <div class="par"><span class="invoc">Por tu encarnación.</span><span class="resp">Líbrame, Señor.</span></div>
+            <div class="par"><span class="invoc">Por tu nacimiento.</span><span class="resp">Líbrame, Señor.</span></div>
+            <div class="par"><span class="invoc">Por tu bautismo y santo ayuno.</span><span class="resp">Líbrame, Señor.</span></div>
+            <div class="par"><span class="invoc">Por tu pasión y cruz.</span><span class="resp">Líbrame, Señor.</span></div>
+            <div class="par"><span class="invoc">Por tu muerte y sepultura.</span><span class="resp">Líbrame, Señor.</span></div>
+            <div class="par"><span class="invoc">Por tu santa resurrección.</span><span class="resp">Líbrame, Señor.</span></div>
+            <div class="par"><span class="invoc">Por tu admirable ascensión.</span><span class="resp">Líbrame, Señor.</span></div>
+            <div class="par"><span class="invoc">Por el envío del Espíritu Santo.</span><span class="resp">Líbrame, Señor.</span></div>
+            <div class="par"><span class="invoc">Por tu gloriosa venida.</span><span class="resp">Líbrame, Señor.</span></div>
+        </div>
+    </div>
+
+    <!-- ========================================= -->
+    <!--  OTRAS INVOCACIONES AL SEÑOR                -->
+    <!-- ========================================= -->
+
+    <div class="categoria-sacramentos" id="otras-senor">
+        <h2 class="titulo-categoria">Otras invocaciones al Señor</h2>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto 25px auto; font-style: italic; color: var(--color-marron-madera);">
+            Cuando se nombra la Cruz, puede el fiel oportunamente hacer la señal de la cruz.
+        </p>
+        <div class="bloque-oracion">
+            <p>— Sálvame, Cristo Salvador, por la fuerza de la Cruz ✝:
+tú que salvaste a Pedro en el mar, ten piedad de mí.</p>
+            <p>— Por la señal de la santa Cruz ✝,
+de nuestros enemigos líbranos, Señor, Dios nuestro.</p>
+            <p>— Por tu Cruz ✝ sálvanos, oh, Cristo Redentor,
+tú que muriendo destruiste nuestra muerte
+y resucitando restauraste la vida.</p>
+            <p>— Tu Cruz ✝ adoramos, Señor,
+tu gloriosa pasión contemplamos:
+ten misericordia de nosotros,
+Tú que padeciste por nosotros.</p>
+            <p>— Te adoramos, oh, Cristo, y te bendecimos,
+porque con tu Cruz ✝ has redimido al mundo.</p>
+        </div>
+    </div>
+
+    <!-- ========================================= -->
+    <!--  INVOCACIONES A SANTA MARÍA VIRGEN          -->
+    <!-- ========================================= -->
+
+    <div class="categoria-sacramentos" id="maria">
+        <h2 class="titulo-categoria">Invocaciones a santa María Virgen</h2>
+
+        <div class="bloque-oracion">
+            <h3>Bajo tu protección</h3>
+            <p>Bajo tu protección nos acogemos,
+santa Madre de Dios;
+no deseches las súplicas
+que te dirigimos en nuestras necesidades;
+antes bien, líbranos siempre de todo peligro,
+oh, Virgen gloriosa y bendita.</p>
+        </div>
+
+        <div class="letanias-tabla">
+            <div class="par"><span class="invoc">Consoladora de los afligidos,</span><span class="resp">ruega por nosotros.</span></div>
+            <div class="par"><span class="invoc">Auxilio de los cristianos,</span><span class="resp">ruega por nosotros.</span></div>
+            <div class="par"><span class="invoc">Dígnate aceptar mis alabanzas, oh, Virgen santa;</span><span class="resp">hazme fuerte contra tus enemigos.</span></div>
+            <div class="par"><span class="invoc">Madre mía,</span><span class="resp">confianza mía.</span></div>
+            <div class="par"><span class="invoc">María, Virgen Madre de Dios,</span><span class="resp">ruega a Jesús por mí.</span></div>
+        </div>
+
+        <div class="bloque-oracion" style="margin-top: 25px;">
+            <h3>Dignísima Reina del mundo</h3>
+            <p>Dignísima Reina del mundo,
+Virgen perpetua María,
+intercede por nuestra paz y salvación,
+tú que engendraste a Cristo Señor, Salvador de todos.</p>
+        </div>
+
+        <div class="bloque-oracion">
+            <h3>María, Madre de gracia</h3>
+            <p>María, Madre de gracia,
+Madre de misericordia,
+defiéndenos del enemigo,
+y ampáranos en la hora de la muerte.</p>
+        </div>
+
+        <div class="bloque-oracion">
+            <h3>Socórreme, oh piadosísima Virgen María</h3>
+            <p>Socórreme, oh, piadosísima Virgen María,
+en todas mis tribulaciones,
+angustias y necesidades,
+alcánzame de tu Hijo querido
+la liberación de todos los males
+y de los peligros de alma y cuerpo.</p>
+        </div>
+
+        <div class="bloque-oracion">
+            <h3>Acuérdate (Memorare)</h3>
+            <p>Acuérdate, oh, piadosísima Virgen María,
+que jamás se ha oído decir
+que ni uno solo de cuantos han acudido a tu protección
+e implorado tu socorro
+haya sido desamparado por ti.
+Yo, pecador, animado con esta confianza,
+acudo a ti, oh, Madre, Virgen de las vírgenes;
+a ti vengo,
+ante ti me presento con dolor.
+No desprecies, Madre del Verbo, mis súplicas,
+antes bien inclina a ellas tus oídos
+y dígnate atenderlas favorablemente.</p>
+        </div>
+    </div>
+
+    <!-- ========================================= -->
+    <!--  INVOCACIÓN A SAN MIGUEL ARCÁNGEL           -->
+    <!-- ========================================= -->
+
+    <div class="categoria-sacramentos" id="san-miguel">
+        <h2 class="titulo-categoria">Invocación a san Miguel arcángel</h2>
+        <div class="bloque-oracion">
+            <p>Arcángel san Miguel, defiéndenos en la lucha;
+sé nuestro amparo contra la maldad
+y las asechanzas del demonio.
+Pedimos suplicantes
+que Dios lo mantenga bajo su imperio;
+y tú, Príncipe de la milicia celestial,
+arroja con el poder divino en el infierno
+a Satanás y los otros espíritus malignos
+que andan por el mundo
+tratando de perder las almas.</p>
+            <p class="firma">Amén.</p>
+        </div>
+    </div>
+
+    <!-- ========================================= -->
+    <!--  LETANÍAS                                  -->
+    <!-- ========================================= -->
+
+    <div class="categoria-sacramentos" id="letanias">
+        <h2 class="titulo-categoria">Letanías</h2>
+        <div class="letanias-tabla">
+            <div class="par"><span class="invoc">Señor, ten piedad.</span><span class="resp">Señor, ten piedad.</span></div>
+            <div class="par"><span class="invoc">Cristo, ten piedad.</span><span class="resp">Cristo, ten piedad.</span></div>
+            <div class="par"><span class="invoc">Señor, ten piedad.</span><span class="resp">Señor, ten piedad.</span></div>
+
+            <p class="seccion-titulo">Santos intercesores</p>
+            <div class="par"><span class="invoc">Santa María, Madre de Dios.</span><span class="resp">Ruega por nosotros (por mí).</span></div>
+            <div class="par"><span class="invoc">San Miguel.</span><span class="resp">Ruega por nosotros (por mí).</span></div>
+            <div class="par"><span class="invoc">San Gabriel.</span><span class="resp">Ruega por nosotros (por mí).</span></div>
+            <div class="par"><span class="invoc">San Rafael.</span><span class="resp">Ruega por nosotros (por mí).</span></div>
+            <div class="par"><span class="invoc">Santos ángeles custodios.</span><span class="resp">Rogad por nosotros (por mí).</span></div>
+            <div class="par"><span class="invoc">San Juan Bautista.</span><span class="resp">Ruega por nosotros (por mí).</span></div>
+            <div class="par"><span class="invoc">San José.</span><span class="resp">Ruega por nosotros (por mí).</span></div>
+            <div class="par"><span class="invoc">San Pedro.</span><span class="resp">Ruega por nosotros (por mí).</span></div>
+            <div class="par"><span class="invoc">San Pablo.</span><span class="resp">Ruega por nosotros (por mí).</span></div>
+            <div class="par"><span class="invoc">San Juan.</span><span class="resp">Ruega por nosotros (por mí).</span></div>
+            <div class="par"><span class="invoc">Todos los santos apóstoles.</span><span class="resp">Rogad por nosotros (por mí).</span></div>
+            <div class="par"><span class="invoc">Santa María Magdalena.</span><span class="resp">Ruega por nosotros (por mí).</span></div>
+            <p style="font-size: 0.85rem; color: #888; font-style: italic; margin: 10px 0;">(Pueden añadirse los nombres de otros santos y beatos)</p>
+
+            <p class="seccion-titulo">Súplica de liberación</p>
+            <div class="par"><span class="invoc">De todo mal.</span><span class="resp">Líbranos (líbrame), Señor.</span></div>
+            <div class="par"><span class="invoc">De todo pecado.</span><span class="resp">Líbranos (líbrame), Señor.</span></div>
+            <div class="par"><span class="invoc">De las insidias del diablo.</span><span class="resp">Líbranos (líbrame), Señor.</span></div>
+            <div class="par"><span class="invoc">De la muerte eterna.</span><span class="resp">Líbranos (líbrame), Señor.</span></div>
+
+            <p class="seccion-titulo">Clamor final</p>
+            <div class="par"><span class="invoc">Cristo, óyenos (óyeme).</span><span class="resp">Cristo, óyenos (óyeme).</span></div>
+            <div class="par"><span class="invoc">Cristo, escúchanos (escúchame).</span><span class="resp">Cristo, escúchanos (escúchame).</span></div>
+        </div>
+    </div>
+
+    <!-- ========================================= -->
+    <!--  SACRAMENTALES ESPECIALES                   -->
+    <!-- ========================================= -->
+
+    <div class="categoria-sacramentos" id="sacramentales">
+        <h2 class="titulo-categoria">Sacramentales especiales</h2>
+        <p style="text-align: center; max-width: 780px; margin: 0 auto 30px auto; color: #555; font-size: 0.98rem;">
+            Los sacramentales son signos sagrados instituidos por la Iglesia que, a imitación de los sacramentos, disponen al fiel a recibir la gracia y santifican las diversas circunstancias de la vida (cfr. <em>Catecismo de la Iglesia Católica</em>, 1667). Su eficacia depende de la fe con que se usen y de la intercesión de la Iglesia.
+        </p>
+
+        <!-- AVISO LLAMATIVO -->
+        <div class="aviso-sacerdote">
+            <span class="icono-aviso">⚠️</span>
+            <h3>Aviso importante</h3>
+            <p>Estas bendiciones <strong>se proporcionan únicamente con fines informativos y devocionales</strong>. La bendición y exorcismo del agua, la sal, el aceite y la medalla de San Benito <strong>solamente pueden ser realizadas por un sacerdote católico válidamente ordenado</strong>, según el Ritual Romano de la Iglesia. Los fieles pueden acercar estos elementos al sacerdote para que él los bendiga; el laico no puede pronunciar válidamente la fórmula de bendición y exorcismo.</p>
+            <p style="margin-top: 15px;"><a href="contacto.html" style="color: #fff; text-decoration: underline; font-weight: 700;">Contacta con la parroquia para solicitar la bendición →</a></p>
+        </div>
+
+        <!-- MEDALLA SAN BENITO -->
+        <div class="sacramental">
+            <div class="sacramental-cabecera">
+                <span class="emoji-sac">✝</span>
+                <h3>Bendición y exorcismo de la Medalla de San Benito</h3>
+            </div>
+            <p>La cruz y medalla de San Benito es uno de los sacramentales más antiguos de la tradición latina. Su uso devocional, con bendición particular concedida por Benedicto XIV (1741), está acompañado de numerosas indulgencias para quienes la llevan con fe.</p>
+
+            <h4>Bendición de la medalla</h4>
+            <div class="texto-ritual"><em>V.</em> Señor, escucha mi oración.
+<em>R.</em> Y llegue a ti mi clamor.
+
+<em>Oremos.</em> Dios omnipotente, dador de todos los bienes, te suplicamos humildemente que, por la intercesión de nuestro Padre san Benito, infundas tu bendición ✝ sobre esta sagrada medalla, a fin de que quien la lleve, dedicándose a las buenas obras, merezca conseguir la salud del alma y del cuerpo, la gracia de la santificación y todas las indulgencias que se nos otorgan, y que por la ayuda de tu misericordia, se esfuerce en evitar las acechanzas y engaños del diablo, y merezca aparecer santo y limpio en tu presencia. Te lo pedimos por Cristo, nuestro Señor. <em>Amén.</em></div>
+
+            <h4>Exorcismo de la medalla</h4>
+            <div class="texto-ritual"><em>V.</em> Nuestra ayuda nos viene del Señor.
+<em>R.</em> Que hizo el cielo y la tierra.
+
+Te ordeno, espíritu del mal, que abandones esta medalla, en el nombre de Dios Padre Omnipotente ✝, que hizo el cielo y la tierra, el mar y todo lo que en ellos se contiene.
+
+Que desaparezcan y se alejen de esta medalla toda la fuerza del adversario, todo el poder del diablo, todos los ataques e ilusiones de Satanás, a fin de que todos los que la usaren gocen de la salud de alma y cuerpo.
+
+En el nombre del Padre Omnipotente ✝ y de su Hijo, nuestro Señor ✝, y del Espíritu Santo Paráclito ✝, y por la caridad de Jesucristo, que ha de venir a juzgar a los vivos y a los muertos y al mundo por el fuego. <em>Amén.</em>
+
+<em>(Se asperjan las medallas con agua bendita.)</em></div>
+
+            <h4>Manual de uso</h4>
+            <div class="manual-uso">
+                <p>La medalla, una vez bendecida, se lleva habitualmente al cuello, en la muñeca o como recuerdo en el hogar.</p>
+                <ul>
+                    <li><strong>Llevarla con fe</strong> como signo de protección y de pertenencia a Cristo; no es un amuleto, sino una profesión de fe.</li>
+                    <li><strong>Besarla</strong> al levantarse y antes de dormir, pidiendo a san Benito su intercesión contra las asechanzas del Maligno.</li>
+                    <li><strong>Colocarla</strong> en la cuna de los niños, en el lecho de los enfermos, sobre la puerta de la casa o en el vehículo.</li>
+                    <li><strong>Rezar</strong> ante ella la jaculatoria de san Benito: <em>«¡Crux sacra sit mihi lux! ¡Nunquam draco sit mihi dux! Vade retro, Satana, nunquam suade mihi vana. Sunt mala quae libas, ipse venena bibas!»</em> («La Santa Cruz sea mi luz; el demonio no sea mi guía. Retírate, Satanás, no me sugieras tus vanidades. Malas son las cosas que ofreces, ¡bebe tú mismo tu veneno!»).</li>
+                    <li><strong>Acompañarla siempre</strong> de los sacramentos: confesión frecuente y Eucaristía. Sin vida de gracia, la medalla pierde su sentido espiritual.</li>
+                </ul>
+                <div class="nota-materia"><strong>Materia:</strong> la medalla debe tener el diseño oficial aprobado por la Iglesia (cara con San Benito sosteniendo cruz y libro de la Regla; reverso con la cruz y las iniciales latinas del exorcismo).</div>
+            </div>
+        </div>
+
+        <!-- SAL EXORCIZADA -->
+        <div class="sacramental">
+            <div class="sacramental-cabecera">
+                <span class="emoji-sac">🧂</span>
+                <h3>Exorcismo y bendición de la sal</h3>
+            </div>
+            <p>El uso de la sal exorcizada está atestiguado desde los primeros siglos de la Iglesia y aparece en el Ritual Romano (Tít. IX, cap. II). Recuerda el llamado de Jesús a ser <em>«sal de la tierra»</em> (Mt 5, 13) y simboliza la preservación de la corrupción.</p>
+
+            <h4>Exorcismo de la sal</h4>
+            <div class="texto-ritual"><em>V.</em> Nuestro auxilio es el Nombre del Señor.
+<em>R.</em> Que hizo el cielo y la tierra.
+
+Te exorcizo, creatura de la sal, por Dios ✝ vivo, por Dios ✝ verdadero, por Dios ✝ santo, por Dios que ordenó, por medio del profeta Eliseo, que fueses puesta en el agua para sanar su esterilidad; para que te conviertas como sal exorcizada en salud para los creyentes, para que seas salud de alma y cuerpo para todos aquellos que te consuman; para que huya y se aparte del lugar donde seas puesta, toda maldad, toda acción del demonio, todo espíritu inmundo, conjurado por este Señor que ha de venir a juzgar a los vivos y a los muertos y el siglo por medio del fuego. <em>Amén.</em>
+
+<em>Oremos.</em> Imploramos humildemente tu inmensa clemencia, omnipotente y eterno Dios, para que te dignes con tu piedad bendecir ✝ y santificar ✝ esta creatura de la sal que Tú creaste para uso del género humano: a fin de que se convierta en salud de alma y cuerpo para todos los que la consuman; y para que todo aquello que sea tocado por esta sal carezca de toda inmundicia y de toda impregnación del espíritu del mal. Por Nuestro Señor Jesucristo. <em>Amén.</em></div>
+
+            <h4>Manual de uso</h4>
+            <div class="manual-uso">
+                <p>La sal exorcizada se usa para implorar la protección de Dios sobre los lugares y las personas:</p>
+                <ul>
+                    <li><strong>En el umbral del hogar:</strong> se esparce una pequeña cantidad en la entrada principal pidiendo al Señor que aleje toda influencia del Maligno.</li>
+                    <li><strong>En los cuatro ángulos</strong> de las habitaciones, especialmente de los dormitorios, como signo de consagración del espacio a Dios.</li>
+                    <li><strong>En los vehículos:</strong> una pequeña porción colocada con discreción, pidiendo la protección de Dios durante los viajes.</li>
+                    <li><strong>Mezclada con la comida</strong> en pequeñísima cantidad, como signo de bendición del alimento y de la mesa familiar (uso tradicional).</li>
+                    <li><strong>Acompañando la oración:</strong> el sacramental es signo, no acción mágica. Su eficacia se vive en la fe, la oración y la vida en gracia.</li>
+                </ul>
+                <div class="nota-materia"><strong>Materia:</strong> sal de mesa común (cloruro sódico), sin aditivos.</div>
+            </div>
+        </div>
+
+        <!-- AGUA BENDITA -->
+        <div class="sacramental">
+            <div class="sacramental-cabecera">
+                <span class="emoji-sac">💧</span>
+                <h3>Exorcismo y bendición del agua</h3>
+            </div>
+            <p>El agua bendita es el sacramental más universal y antiguo de la Iglesia. Nos recuerda nuestro bautismo y es signo de purificación, de protección y de la presencia salvífica de Dios. El Ritual Romano contempla su exorcismo y bendición unida a la sal.</p>
+
+            <h4>Exorcismo del agua</h4>
+            <div class="texto-ritual">Te exorcizo, creatura del agua, en el nombre de Dios ✝ Padre omnipotente, en el nombre de Jesucristo ✝ su Hijo, nuestro Señor, y con el poder del Espíritu ✝ Santo: para que seas agua exorcizada para ahuyentar toda fuerza del Enemigo y para que puedas erradicar y arrancar al mismo Enemigo con sus ángeles apóstatas, por virtud del mismo Jesucristo nuestro Señor que ha de venir a juzgar a los vivos y a los muertos y este siglo por el fuego. <em>Amén.</em>
+
+<em>Oremos.</em> Oh Dios, sé propicio a nuestras súplicas e infunde la fuerza de tu bendición ✝ a esta agua que hemos preparado con estas purificaciones, para que esta tu creatura sirva para alejar a los demonios, sanar las enfermedades; para que al ser derramada sobre las casas y los hogares de los fieles, éstos queden libres de toda inmundicia y de todo mal; que no resida allí un espíritu pestilente, se alejen todas las insidias del Enemigo y, si hay algo que perjudique a los que habiten en ella o a su tranquilidad, por la aspersión de esta agua huyan, para que la salud que te pedimos por invocación de tu Nombre quede defendida de toda impugnación del Maligno, por Jesucristo nuestro Señor. <em>Amén.</em></div>
+
+            <h4>Mezcla de la sal y el agua</h4>
+            <div class="texto-ritual"><em>(El sacerdote echa tres veces la sal en el agua en forma de cruz, diciendo:)</em>
+
+Que esta mezcla de la sal y del agua se realice en el nombre del Padre ✝ y del Hijo ✝ y del Espíritu Santo ✝. <em>Amén.</em>
+
+<em>V.</em> El Señor esté con vosotros.
+<em>R.</em> Y con tu espíritu.
+
+<em>Oremos.</em> Oh Dios, autor de todo poder y rey insuperable de todo dominio, y siempre triunfador magnífico, que reprimes las fuerzas del dominio del mal, que superas la sevicia del Enemigo, que poderosamente vences a las huestes enemigas: a ti, humildes, te pedimos, Señor, que mires con bondad estas creaturas de sal y agua y las santifiques con tu bondad, para que doquiera que sean regadas, por la invocación de tu santo Nombre desaparezca toda infestación del espíritu inmundo, sea alejado el terror de la serpiente infernal, y, mediante la presencia del Espíritu Santo, nos concedas benigno tu misericordia ya que humildemente te la suplicamos. Por Nuestro Señor Jesucristo, tu Hijo, que vive y reina contigo en la unidad del Espíritu Santo y es Dios por los siglos de los siglos. <em>Amén.</em></div>
+
+            <h4>Manual de uso</h4>
+            <div class="manual-uso">
+                <p>El Ritual Romano permite a los fieles llevar agua bendita a sus hogares <em>«para rociar a los enfermos, sus hogares, campos, viñedos y cosas por el estilo»</em>.</p>
+                <ul>
+                    <li><strong>Al entrar y salir de casa:</strong> persignarse con agua bendita haciendo la señal de la cruz, renovando la gracia bautismal.</li>
+                    <li><strong>Pila en la puerta:</strong> colocar una pequeña pila en la entrada del hogar y de los dormitorios para usar diariamente.</li>
+                    <li><strong>Bendecir a los hijos:</strong> los padres pueden trazar la señal de la cruz en la frente de los hijos al despedirse o al acostarse.</li>
+                    <li><strong>Aspersión del hogar:</strong> rociar las habitaciones, especialmente al mudarse de casa, después de un funeral, en tiempos de prueba o tras una pelea familiar, invocando la protección de Dios.</li>
+                    <li><strong>Con los enfermos:</strong> bendecir suavemente al enfermo o trazar la cruz en su frente acompañando la oración.</li>
+                    <li><strong>Vehículos y objetos:</strong> aspersión de coches, herramientas de trabajo, casa nueva, etc.</li>
+                </ul>
+                <div class="nota-materia"><strong>Materia:</strong> agua natural —corriente o mineral— sin aditivos.</div>
+            </div>
+        </div>
+
+        <!-- ACEITE EXORCIZADO -->
+        <div class="sacramental">
+            <div class="sacramental-cabecera">
+                <span class="emoji-sac">🫒</span>
+                <h3>Exorcismo y bendición del aceite</h3>
+            </div>
+            <p>El aceite exorcizado <strong>no sustituye</strong> al Sacramento de la Unción de los Enfermos (que solo el sacerdote puede administrar), pero es un sacramental antiguo que evoca la unción bautismal y confirmatoria, y se usa por los fieles para implorar la protección y sanación de Dios.</p>
+
+            <h4>Exorcismo del aceite</h4>
+            <div class="texto-ritual">Te exorcizo, creatura del aceite, por Dios Padre omnipotente ✝, que hizo el cielo, la tierra, el mar y todo lo que existe. Que se aleje de este aceite toda fuerza del adversario, toda acción diabólica y toda incursión de Satanás, a fin de que conceda a todos los que lo usen salud mental y corporal, en el Nombre de Dios Padre Omnipotente ✝, de Jesucristo su Hijo nuestro Señor ✝, y del Espíritu Santo Paráclito ✝. <em>Amén.</em>
+
+<em>Oremos.</em> Señor Dios omnipotente, delante de quien está con temor el ejército de los ángeles, dígnate mirar ✝, bendecir ✝ y santificar ✝ este aceite, a fin de que, una vez obtenida la salud, la fuerza y la liberación, te demos gracias a ti, Dios vivo y verdadero. Te rogamos que cuantos usen este aceite que bendecimos ✝ en tu nombre queden libres de toda enfermedad, de todo dolor y de todas las insidias del enemigo, y así mismo se libren de toda adversidad y nunca sean heridos por la mordedura de la antigua serpiente, ya que los has redimido por la Sangre de Cristo que contigo vive y reina por los siglos de los siglos. <em>Amén.</em></div>
+
+            <h4>Manual de uso</h4>
+            <div class="manual-uso">
+                <p>El aceite exorcizado se usa como signo devocional de unción y protección. <strong>No es válido como Unción de los Enfermos</strong>, sacramento reservado al ministerio del sacerdote.</p>
+                <ul>
+                    <li><strong>Auto-unción devocional:</strong> trazar suavemente con una gota la señal de la cruz sobre la propia frente, manos o zona dolorida, pidiendo a Dios salud de alma y cuerpo.</li>
+                    <li><strong>Bendición en familia:</strong> los padres pueden ungir con una gota la frente de los hijos enfermos o angustiados, acompañando con la señal de la cruz y una oración.</li>
+                    <li><strong>Puertas y ventanas:</strong> trazar pequeñas cruces con el dedo untado en aceite en los marcos del hogar, pidiendo la protección divina.</li>
+                    <li><strong>Acompañamiento del sufrimiento:</strong> usarlo con fe en momentos de prueba, ansiedad o enfermedad, unido a la oración y los sacramentos.</li>
+                    <li><strong>Discreción y respeto:</strong> conservarlo en lugar digno; nunca tratarlo como remedio mágico ni sustituto de la medicina o de los sacramentos.</li>
+                </ul>
+                <div class="nota-materia"><strong>Materia:</strong> aceite de oliva extra virgen, sin mezclas ni añadidos.</div>
+            </div>
+        </div>
+
+        <!-- Llamado de cierre -->
+        <div class="bloque-oracion" style="text-align: center; background: var(--color-azul-esencial); border-left: none; color: var(--blanco); margin-top: 50px;">
+            <h3 style="color: var(--blanco);">¿Deseas que el sacerdote bendiga tu medalla, sal, agua o aceite?</h3>
+            <p style="color: rgba(255,255,255,0.95);">Acércate a la parroquia con el sacramental que quieres llevar; con gusto te atenderemos.</p>
+            <a href="contacto.html" style="display: inline-block; margin-top: 15px; background: var(--blanco); color: var(--color-azul-oscuro); padding: 12px 28px; border-radius: 30px; text-decoration: none; font-weight: 800;">Contactar con la parroquia →</a>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>&copy; 2026 Parroquia Santa Lucía. Arquidiócesis de Maracaibo.</p>
+</footer>
+
+<script>
+    // Badge "Nuevo" que desaparece dentro de un mes (publicado: 2026-06-02 → expira: 2026-07-02)
+    document.addEventListener("DOMContentLoaded", function() {
+        var expireDate = new Date('2026-07-02');
+        if (new Date() > expireDate) {
+            var badges = document.querySelectorAll('.badge-hero, .badge-nuevo-hero, .badge-nuevo');
+            badges.forEach(function(b) { b.style.display = 'none'; });
+        }
+    });
+</script>
+
+</body>
+</html>
