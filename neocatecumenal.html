@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camino Neocatecumenal | Parroquia Santa Lucía</title>
+    <meta name="description" content="El Camino Neocatecumenal es un itinerario de formación católica para redescubrir el Bautismo, vivido en pequeñas comunidades a la luz de la Palabra, la Liturgia y la fraternidad. ¡Iniciamos en octubre!">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* --- ESTILOS ESPECÍFICOS DE ESTA PÁGINA --- */
+
+        /* Hero */
+        .hero-grupo {
+            background: linear-gradient(rgba(0, 119, 182, 0.82), rgba(2, 62, 138, 0.92)), url('intro-neocatecumenal.webp') center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero-grupo h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            color: white !important;
+        }
+        .hero-grupo p.lema {
+            font-size: 1.3rem;
+            font-weight: 300;
+            font-style: italic;
+            max-width: 720px;
+            margin: 0 auto;
+            color: white !important;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 28px;
+            background: #ffd166;
+            color: #5a3e00;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.95rem;
+            padding: 10px 22px;
+            border-radius: 50px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+        }
+
+        /* Contenedor principal */
+        .seccion-grupo-contenedor {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        /* Títulos de sección */
+        .seccion-grupo h2 {
+            color: var(--color-marron-madera, #8b5a2b);
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .seccion-grupo h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #0056b3;
+            margin: 15px auto 0;
+        }
+
+        /* --- Layout de 2 columnas para la Introducción --- */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .intro-icono-wrap {
+            text-align: center;
+        }
+        .intro-icono-wrap img {
+            width: 260px;
+            max-width: 80%;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            border: 6px solid #fff;
+        }
+        .intro-icono-wrap figcaption {
+            margin-top: 12px;
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #777;
+        }
+
+        @media (min-width: 768px) {
+            .intro-grid {
+                grid-template-columns: 1.4fr 1fr;
+            }
+            .intro-texto { text-align: left; }
+            .intro-texto h2 { text-align: left; }
+            .intro-texto h2::after { margin-left: 0; }
+        }
+
+        /* --- Tarjetas con FOTOS CIRCULARES (El Trípode) --- */
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .servicio-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #0056b3;
+        }
+        .servicio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .servicio-card img.foto-medallon {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 4px solid #e6f0ff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .servicio-card h3 {
+            color: #0056b3;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* --- Itinerario (etapas) --- */
+        .etapas-lista {
+            max-width: 760px;
+            margin: 30px auto 0;
+            position: relative;
+        }
+        .etapa {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            background: #fff;
+            border-left: 5px solid #0056b3;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 18px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .etapa:hover { transform: translateX(5px); }
+        .etapa .num {
+            flex: 0 0 auto;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0077b6, #023e8a);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .etapa h3 {
+            margin: 0 0 6px 0;
+            color: #023e8a;
+            font-size: 1.15rem;
+        }
+        .etapa p { margin: 0; }
+
+        /* --- Cajas de Horarios --- */
+        .horarios-grid {
+             display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+             gap: 20px;
+             justify-content: center;
+        }
+        .horarios-caja {
+            background-color: white;
+            border-left: 5px solid #0056b3;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            max-width: 400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .horarios-caja:hover {
+             border-left-color: #8b5a2b;
+             transform: translateX(5px);
+             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .horarios-caja h3 {
+            margin-top: 0;
+            color: #0056b3;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Cita destacada */
+        .cita-biblica {
+            max-width: 760px;
+            margin: 10px auto 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.25rem;
+            color: #023e8a;
+            line-height: 1.6;
+        }
+        .cita-biblica span {
+            display: block;
+            margin-top: 12px;
+            font-size: 0.95rem;
+            font-style: normal;
+            color: #8b5a2b;
+            font-weight: 700;
+        }
+
+        /* Utilidad para fondo alterno */
+        .bg-crema-suave {
+            background-color: #f9f7f2;
+            padding: 60px 0;
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <a href="index.html">PARROQUIA DE SANTA LUCÍA</a>
+        </div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="evangelizacion.html">Evangelización</a></li>
+            <li><a href="sacramentos.html">Sacramentos</a></li>
+            <li><a href="comunidad.html">Comunidad</a></li>
+            <li><a href="eventos.html">Eventos</a></li> <li><a href="mapa-zonas-pastorales/index.html">Zonas Pastorales <span class="badge-nuevo">¡Nuevo!</span></a></li>
+            <li><a href="contacto.html" class="btn-nav">Contáctanos</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero-grupo">
+        <h1>Camino Neocatecumenal</h1>
+        <p class="lema">"Un itinerario para redescubrir el inmenso tesoro de tu Bautismo."</p>
+        <span class="hero-badge"><i class="fas fa-seedling"></i> Iniciamos en octubre</span>
+    </header>
+
+    <div class="seccion-grupo-contenedor">
+        <section id="quienes-somos" class="seccion-grupo">
+            <div class="intro-grid">
+                <div class="intro-texto">
+                    <h2>¿Qué es el Camino?</h2>
+                    <p style="font-size: 1.1rem;">
+                        El Camino Neocatecumenal es un <strong>itinerario de formación católica</strong> al servicio del obispo y del párroco, pensado para los que ya están bautizados y desean redescubrir y vivir en plenitud lo que recibieron el día de su Bautismo.
+                    </p>
+                    <p>No es una asociación ni un grupo cerrado: es un camino de iniciación cristiana vivido en <strong>pequeñas comunidades</strong>, donde, poco a poco y de la mano de la Palabra de Dios, la Liturgia y la fraternidad, cada persona va madurando en la fe hasta llegar a una fe adulta y a un amor capaz de servir y perdonar.</p>
+                    <p>Está abierto a <strong>todos</strong>: a quienes se sienten lejos de la Iglesia, a quienes buscan profundizar, a familias, jóvenes y mayores. Nadie queda fuera.</p>
+                </div>
+                <figure class="intro-icono-wrap">
+                    <img src="neocatecumenal.webp" alt="Icono de la Virgen del Camino, símbolo del Camino Neocatecumenal">
+                    <figcaption>La Virgen del Camino, que acompaña a cada comunidad.</figcaption>
+                </figure>
+            </div>
+        </section>
+    </div>
+
+    <section style="background:#0056b3; color:#fff; padding: 50px 20px; text-align:center;">
+        <p class="cita-biblica" style="color:#fff;">
+            "El que cree en mí, aunque haya muerto, vivirá."
+            <span style="color:#ffd166;">— Juan 11, 25</span>
+        </p>
+    </section>
+
+    <div class="bg-crema-suave">
+        <div class="seccion-grupo-contenedor" style="padding-top: 0; padding-bottom: 0;">
+             <section id="tripode" class="seccion-grupo">
+                <h2>El Trípode: Palabra, Liturgia y Comunidad</h2>
+                <p style="text-align:center; max-width:760px; margin:0 auto 10px;">El Camino se apoya, como un taburete de tres patas, en tres realidades inseparables que sostienen toda la vida cristiana:</p>
+
+                <div class="servicios-grid">
+                    <div class="servicio-card">
+                        <img src="neo-palabra.webp" alt="La Palabra de Dios anunciada" class="foto-medallon">
+                        <h3>La Palabra de Dios</h3>
+                        <p>Cada semana celebramos la Palabra: escuchamos las Escrituras, las resonamos en la propia vida y descubrimos que Dios sigue hablándonos hoy, en lo concreto de nuestra historia.</p>
+                    </div>
+
+                    <div class="servicio-card">
+                        <img src="neo-liturgia.webp" alt="La Eucaristía celebrada en el altar" class="foto-medallon">
+                        <h3>La Liturgia</h3>
+                        <p>El centro es la Eucaristía, celebrada en pequeña comunidad el sábado por la noche, como hacían los primeros cristianos: la Pascua del Señor vivida y celebrada con alegría.</p>
+                    </div>
+
+                    <div class="servicio-card">
+                        <img src="neo-comunidad.webp" alt="La comunidad reunida" class="foto-medallon">
+                        <h3>La Comunidad</h3>
+                        <p>Caminamos junto a otros hermanos en una comunidad concreta donde aprendemos a amar, a perdonar y a llevar las cargas los unos de los otros, como signo del amor de Cristo.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="seccion-grupo-contenedor">
+        <section id="itinerario" class="seccion-grupo">
+            <h2>Un itinerario por etapas</h2>
+            <p style="text-align:center; max-width:760px; margin:0 auto;">Inspirado en el catecumenado de la Iglesia antigua, el Camino es un proceso gradual. No hay prisa: cada etapa tiene su tiempo y prepara para la siguiente, hasta llegar a renovar las promesas del Bautismo.</p>
+
+            <div class="etapas-lista">
+                <div class="etapa">
+                    <div class="num">1</div>
+                    <div>
+                        <h3>Catequesis iniciales</h3>
+                        <p>Un ciclo de catequesis, abierto a todos, en el que se anuncia el Kerigma: el amor de Dios y la Buena Noticia de la salvación en Jesucristo.</p>
+                    </div>
+                </div>
+                <div class="etapa">
+                    <div class="num">2</div>
+                    <div>
+                        <h3>Nace la comunidad</h3>
+                        <p>Tras una primera convivencia, los que han hecho las catequesis forman una comunidad y comienzan a caminar juntos en la fe.</p>
+                    </div>
+                </div>
+                <div class="etapa">
+                    <div class="num">3</div>
+                    <div>
+                        <h3>El camino del catecumenado</h3>
+                        <p>A lo largo de varias etapas y "pasos", la comunidad se ejercita en la escucha de la Palabra, la oración, la liturgia y el servicio, descubriendo poco a poco las riquezas de la fe.</p>
+                    </div>
+                </div>
+                <div class="etapa">
+                    <div class="num">4</div>
+                    <div>
+                        <h3>Renovación del Bautismo</h3>
+                        <p>La meta del itinerario: una fe adulta y madura que renueva las promesas bautismales y se hace testimonio vivo en la familia, el trabajo y la sociedad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="bg-crema-suave">
+        <div class="seccion-grupo-contenedor" style="padding-top: 0; padding-bottom: 0;">
+            <section id="como-empezar" class="seccion-grupo" style="text-align:center;">
+                <h2>¿Cómo empezar?</h2>
+                <p style="max-width: 800px; margin: 0 auto 30px;">Todo comienza con las <strong>catequesis iniciales</strong>, abiertas a cualquier persona, sin requisitos previos. Solo hace falta el deseo de escuchar. <strong>¡Iniciamos en octubre!</strong></p>
+
+                <div class="horarios-grid">
+                    <div class="horarios-caja">
+                        <h3><i class="fas fa-calendar-day"></i> Catequesis iniciales</h3>
+                        <p><strong>Inicio:</strong> Octubre de 2026<br>
+                        <strong>Lugar:</strong> Parroquia de Santa Lucía</p>
+                        <p style="font-size: 0.9rem; color: #666; margin-top: 10px;"><em>* Las fechas y el horario exacto se anunciarán en las misas y en nuestras redes. ¡Estate atento a la sección de Noticias!</em></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <section id="contacto-grupo" style="text-align: center; background-color: #0056b3; color: white; padding: 50px 20px; margin-top: 40px;">
+        <h2 style="margin-top: 0; border: none; color: white; font-size: 1.8rem;">¿Quieres redescubrir tu Bautismo?</h2>
+        <p style="margin-bottom: 25px; font-size: 1.1rem; max-width: 600px; margin: 0 auto 25px auto;">Acércate sin compromiso a las catequesis iniciales. Hay un lugar para ti en este Camino.</p>
+        <a href="contacto.html" style="background-color: #ffffff; color: #0056b3; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">Pedir información &rarr;</a>
+    </section>
+
+    <footer style="background-color: #222; color: #fff; text-align: center; padding: 20px 0;">
+        <p>&copy; 2026 Parroquia Santa Lucía. Arquidiócesis de Maracaibo.</p>
+    </footer>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var expireDate = new Date('2026-05-22');
+            if (new Date() > expireDate) {
+                var badges = document.querySelectorAll('.badge-nuevo');
+                badges.forEach(function(b) { b.style.display = 'none'; });
+            }
+        });
+    </script>
+</body>
+
+</html>
