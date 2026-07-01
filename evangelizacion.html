@@ -41,6 +41,17 @@
 
             <div class="tarjeta-ministerio destacado">
                 <div class="min-foto-caja">
+                    <img src="comunidades-palabra/logo-proyecto.jpg" alt="Comunidades de la Palabra" class="min-foto-viva">
+                </div>
+                <div class="min-contenido">
+                    <h3>Comunidades de la Palabra <span class="badge-nuevo">¡Nuevo!</span> <span class="badge-nuevo badge-implementacion" style="background-color: #1f7a36; box-shadow: 0 0 10px rgba(31, 122, 54, 0.4);">En implementación</span></h3>
+                    <p>Pequeñas comunidades en cada sector de la parroquia que profundizan y celebran la Palabra de Dios. Mira cada semana las lecturas del domingo, los siete pasos de la lectura orante y las sugerencias para los grupos, y descarga el Manual del Animador.</p>
+                    <a href="comunidades-palabra/index.html" style="display: inline-block; margin-top: 15px; color: #1f7a36; font-weight: bold; text-decoration: none;">Entra a las Comunidades de la Palabra &rarr;</a>
+                </div>
+            </div>
+
+            <div class="tarjeta-ministerio destacado">
+                <div class="min-foto-caja">
                     <img src="lector-oracion.webp" alt="Meditar con la Palabra de Dios" class="min-foto-viva">
                 </div>
                 <div class="min-contenido">
@@ -168,8 +179,12 @@
         document.addEventListener("DOMContentLoaded", function() {
             var expireDate = new Date('2026-05-22');
             if (new Date() > expireDate) {
-                var badges = document.querySelectorAll('.badge-nuevo');
+                var badges = document.querySelectorAll('.badge-nuevo:not(.badge-implementacion)');
                 badges.forEach(function(b) { b.style.display = 'none'; });
+            }
+            // Aviso "En implementación": visible hasta el 30-09-2026
+            if (new Date() >= new Date(2026, 9, 1)) {
+                document.querySelectorAll('.badge-implementacion').forEach(function(b) { b.style.display = 'none'; });
             }
         });
     </script>
