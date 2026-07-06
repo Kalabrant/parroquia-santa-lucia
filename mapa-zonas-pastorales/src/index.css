@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-azul-esencial: #0077b6;
+  --color-azul-oscuro: #023e8a;
+  --color-marron-madera: #7f5539;
+  --color-crema: #f4f1ee;
+  
+  --font-sans: 'Montserrat', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-crema/20 text-gray-800 antialiased selection:bg-azul-esencial selection:text-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold text-azul-esencial;
+  }
+}

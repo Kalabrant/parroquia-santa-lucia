@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "nombre": "Santa Lucía",
+    "eslogan": "Centro de la Fe y la Luz",
+    "coordenadas": {
+      "x": "28.8%",
+      "y": "63.5%"
+    },
+    "patrono": {
+      "nombre": "Santa Lucía de Siracusa",
+      "hagiografia": "Virgen y mártir, protectora de la vista. Famosa por llevar alimento a los cristianos escondidos en las catacumbas. Su devoción nos invita a mantener la luz de la fe encendida en medio de las oscuridades del mundo moderno, siendo faros de esperanza.",
+      "fiesta": "13 de Diciembre",
+      "genero": "F"
+    }
+  },
+  {
+    "id": 2,
+    "nombre": "Natividad de Ntra. Señora",
+    "eslogan": "El Amanecer de la Esperanza",
+    "coordenadas": {
+      "x": "31.5%",
+      "y": "82.7%"
+    },
+    "patrono": {
+      "nombre": "Natividad de la Virgen María",
+      "hagiografia": "Conmemoración del nacimiento de la Virgen María, aurora de nuestra salvación. Este acontecimiento marca el preludio del plan divino, trayendo consigo la pureza y la anticipación de la encarnación del Salvador.",
+      "fiesta": "8 de Septiembre",
+      "genero": "F"
+    }
+  },
+  {
+    "id": 3,
+    "nombre": "Ntra. Sra. del Perpetuo Socorro",
+    "eslogan": "Amparo en todo Momento",
+    "coordenadas": {
+      "x": "54.5%",
+      "y": "75.3%"
+    },
+    "patrono": {
+      "nombre": "Nuestra Señora del Perpetuo Socorro",
+      "hagiografia": "Advocación mariana que nos recuerda la constante ayuda y socorro que la Virgen brinda a sus devotos. Su ícono oriental nos enseña a acudir a ella con confianza filial en los momentos de angustia, sabiendo que sus brazos siempre están abiertos para consolarnos.",
+      "fiesta": "27 de Junio",
+      "genero": "F"
+    }
+  },
+  {
+    "id": 4,
+    "nombre": "Santa Rita",
+    "eslogan": "Abogada de lo Imposible",
+    "coordenadas": {
+      "x": "39.9%",
+      "y": "53.2%"
+    },
+    "patrono": {
+      "nombre": "Santa Rita de Casia",
+      "hagiografia": "Patrona de las causas imposibles, símbolo de paz y reconciliación familiar. Su vida es un extraordinario testimonio de paciencia, perdón y sufrimiento entregado por amor, demostrando que mediante la gracia, todo obstáculo puede superarse.",
+      "fiesta": "22 de Mayo",
+      "genero": "F"
+    }
+  },
+  {
+    "id": 5,
+    "nombre": "Ntra. Sra. de Lourdes",
+    "eslogan": "Manantial de Sanación",
+    "coordenadas": {
+      "x": "25.4%",
+      "y": "42.8%"
+    },
+    "patrono": {
+      "nombre": "Nuestra Señora de Lourdes",
+      "hagiografia": "Advocación asociada al milagro del agua sanadora en la gruta de Massabielle. Su aparición a Santa Bernadette subraya el amor preferencial de Dios por los humildes y los enfermos, invitándonos a la conversión y la oración reparadora.",
+      "fiesta": "11 de Febrero",
+      "genero": "F"
+    }
+  },
+  {
+    "id": 6,
+    "nombre": "San José",
+    "eslogan": "Custodio y Trabajador Fiel",
+    "coordenadas": {
+      "x": "10.9%",
+      "y": "32.9%"
+    },
+    "patrono": {
+      "nombre": "San José",
+      "hagiografia": "Padre adoptivo de Jesús y patrón de la Iglesia Universal. Modelo por excelencia del silencio activo y del trabajo digno, su obediencia y entrega total lo convierten en el protector silencioso de todas las familias cristianas.",
+      "fiesta": "19 de Marzo",
+      "genero": "M"
+    }
+  },
+  {
+    "id": 7,
+    "nombre": "Santo Tomás de Aquino",
+    "eslogan": "Luz de la Verdad",
+    "coordenadas": {
+      "x": "28.3%",
+      "y": "32.1%"
+    },
+    "patrono": {
+      "nombre": "Santo Tomás de Aquino",
+      "hagiografia": "Doctor de la Iglesia, patrón de los estudiantes y de las escuelas católicas. Su brillante intelecto logró armonizar la fe y la razón, dejándonos una vasta obra teológica que sigue siendo la brújula y pilar angular de la doctrina católica universal.",
+      "fiesta": "28 de Enero",
+      "genero": "M"
+    }
+  },
+  {
+    "id": 8,
+    "nombre": "San Benito de Palermo",
+    "eslogan": "Alegría y Humildad Africana",
+    "coordenadas": {
+      "x": "48.3%",
+      "y": "43.0%"
+    },
+    "patrono": {
+      "nombre": "San Benito de Palermo",
+      "hagiografia": "Religioso franciscano, santo negro muy venerado por su profunda humildad y caridad. Su devoción criolla, sumamente popular en nuestra región, nos refleja la alegría festiva, enseñando el valor del servicio franciscano a los más desposeídos.",
+      "fiesta": "4 de Abril (tradicionalmente venerado a fin de año en la región)",
+      "genero": "M"
+    }
+  },
+  {
+    "id": 9,
+    "nombre": "Ntra. Sra. de la Soledad",
+    "eslogan": "Consuelo en el Dolor",
+    "coordenadas": {
+      "x": "73.7%",
+      "y": "54.0%"
+    },
+    "patrono": {
+      "nombre": "Nuestra Señora de la Soledad",
+      "hagiografia": "Advocación que recuerda el dolor y soledad de María desde el Santo Entierro hasta la Resurrección. Su figura silente nos reconforta en nuestros propios duelos, enseñándonos íntimamente que incluso en la más profunda oscuridad del Sábado Santo, la esperanza nunca muere.",
+      "fiesta": "Sábado Santo / Viernes de Dolores",
+      "genero": "F"
+    }
+  }
+]

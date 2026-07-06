@@ -752,6 +752,25 @@ footer { text-align: center; padding: 40px; background: var(--color-azul-esencia
     margin-bottom: 10px;
 }
 
+/* Etiqueta a color para carismas que ya tienen fecha de inicio */
+.etiqueta-inicio {
+    background: linear-gradient(135deg, var(--color-azul-esencial), var(--color-azul-oscuro));
+    color: #fff;
+    font-size: 0.72rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 8px rgba(0, 119, 182, 0.25);
+}
+
+.etiqueta-inicio i { font-size: 0.8rem; }
+
 /* --- SECCIÓN CARIDAD --- */
 
 .cabecera-caridad {
@@ -1487,4 +1506,62 @@ section {
     0% { transform: scale(1); box-shadow: 0 0 5px rgba(255, 59, 48, 0.4); }
     50% { transform: scale(1.1); box-shadow: 0 0 15px rgba(255, 59, 48, 0.7); }
     100% { transform: scale(1); box-shadow: 0 0 5px rgba(255, 59, 48, 0.4); }
+}
+
+/* --- ENLACE DORADO "150 AÑOS" EN EL MENÚ --- */
+.btn-nav-dorado {
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #b8860b, #d4af37, #b8860b);
+    color: #fff !important;
+    padding: 10px 25px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(184, 134, 11, 0.35);
+    letter-spacing: 0.3px;
+    transition: 0.3s;
+}
+/* Destello que recorre el botón para invitar a la fiesta */
+.btn-nav-dorado::after {
+    content: "";
+    position: absolute;
+    top: 0; left: -75%;
+    width: 50%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+    transform: skewX(-20deg);
+    animation: destelloOro 3.5s ease-in-out infinite;
+}
+@keyframes destelloOro {
+    0% { left: -75%; }
+    45% { left: 125%; }
+    100% { left: 125%; }
+}
+.btn-nav-dorado:hover {
+    background: linear-gradient(135deg, #8B1A1A, #a52222);
+    color: #d4af37 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(139, 26, 26, 0.35);
+}
+
+@media (max-width: 768px) {
+    /* Que la píldora móvil no le quite el dorado */
+    nav ul li a.btn-nav-dorado {
+        background: linear-gradient(135deg, #b8860b, #d4af37, #b8860b) !important;
+        color: #fff !important;
+        box-shadow: none;
+    }
+}
+
+/* --- MENÚ COMPACTO EN PANTALLAS MEDIANAS ---
+   Con 9 elementos el menú se apretaba y los enlaces
+   se partían en dos líneas entre 769px y 1400px. */
+nav ul li a { white-space: nowrap; }
+
+@media (min-width: 769px) and (max-width: 1400px) {
+    nav { padding: 20px 3%; }
+    .logo { font-size: 1.2rem; }
+    nav ul li { margin-left: 14px; }
+    nav ul li a { font-size: 0.82rem; }
+    .btn-nav, .btn-nav-dorado { padding: 9px 16px; }
 }
