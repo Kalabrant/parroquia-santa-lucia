@@ -1,0 +1,12 @@
+# Tratar archivos binarios como binarios (evita conversión de saltos de línea)
+*.pdf   binary
+*.webp  binary
+*.jpg   binary
+*.jpeg  binary
+*.png   binary
+*.gif   binary
+*.ico   binary
+*.woff  binary
+*.woff2 binary
+*.mp4   binary
+*.webm  binary
