@@ -15,8 +15,9 @@
     var CLAVE_ULTIMAS = 'sl-descubre-vistas';
     var RECORDAR = 5;   // no repetir ninguna de las últimas N
 
-    var destino = document.getElementById('has-visto');
-    if (!destino || typeof DESCUBRE === 'undefined' || !DESCUBRE.length) return;
+    var seccion = document.getElementById('has-visto');
+    var destino = document.getElementById('has-visto-tarjeta');
+    if (!seccion || !destino || typeof DESCUBRE === 'undefined' || !DESCUBRE.length) return;
 
     function escapa(t) {
         return String(t == null ? '' : t)
@@ -54,7 +55,6 @@
                 '<img src="' + escapa(ficha.i) + '" alt="" loading="lazy" decoding="async">' +
             '</div>' +
             '<div class="hv-cuerpo">' +
-                '<p class="hv-kicker">¿Has visto…?</p>' +
                 '<h3>' + escapa(ficha.t) + '</h3>' +
                 '<p class="hv-desc">' + escapa(ficha.d) + '</p>' +
                 '<span class="hv-cta">Verlo &rarr;</span>' +
@@ -65,7 +65,7 @@
         '</button>';
 
     guardarUltima(ficha.u);
-    destino.hidden = false;
+    seccion.hidden = false;
 
     /* Botón para seguir descubriendo sin tener que recargar */
     document.getElementById('hv-otra').addEventListener('click', function () {
