@@ -14,6 +14,12 @@
     --blanco: #ffffff;
 }
 
+/* Reset de caja. Sin esto, el patrón "width: 100% + padding" que usan
+   varias páginas (.horarios-caja está en 15 de ellas) suma el relleno AL
+   ancho y provoca scroll horizontal. Va al principio para que cualquier
+   regla posterior pueda anularlo si hiciera falta. */
+*, *::before, *::after { box-sizing: border-box; }
+
 /* Estilo Base */
 body {
     font-family: 'Montserrat', sans-serif;
@@ -1440,11 +1446,15 @@ section {
    se partían en dos líneas entre 769px y 1400px. */
 nav ul li a { white-space: nowrap; }
 
+/* Este bloque venía del CSS original, cuando el menú era un <nav> a secas.
+   El "nav { padding }" alcanzaba a CUALQUIER <nav>, incluidas las migas de
+   pan, y les metía 20px de relleno. Ahora se acota al menú clásico, que es
+   el único que lo necesita: .nav-principal ya se ajusta con clamp(). */
 @media (min-width: 769px) and (max-width: 1400px) {
-    nav { padding: 20px 3%; }
-    .logo { font-size: 1.2rem; }
-    nav ul li { margin-left: 14px; }
-    nav ul li a { font-size: 0.82rem; }
+    nav:not(.nav-principal):not(.migas) { padding: 20px 3%; }
+    nav:not(.nav-principal):not(.migas) .logo { font-size: 1.2rem; }
+    nav:not(.nav-principal):not(.migas) ul li { margin-left: 14px; }
+    nav:not(.nav-principal):not(.migas) ul li a { font-size: 0.82rem; }
     .btn-nav, .btn-nav-dorado { padding: 9px 16px; }
 }
 
@@ -1748,19 +1758,21 @@ input:focus-visible, textarea:focus-visible, summary:focus-visible {
    MIGAS DE PAN
    ========================================================================== */
 .migas {
-    max-width: 1100px; margin: 0 auto;
-    padding: var(--e4) var(--e5) 0;
-    font-size: 0.83rem;
+    padding: 0;                    /* explícito: no heredar el de ningún <nav> */
+    background: var(--color-crema);
+    border-bottom: 1px solid var(--linea);
+    font-size: 0.86rem;
 }
 .migas ol {
     display: flex; flex-wrap: wrap; align-items: center; gap: var(--e2);
-    list-style: none; margin: 0; padding: 0;
+    list-style: none; margin: 0 auto; padding: var(--e3) var(--e5);
+    max-width: 1100px;
 }
 .migas li { display: flex; align-items: center; gap: var(--e2); color: var(--texto-suave); }
 .migas li:not(:last-child)::after { content: '\203A'; color: #b7c0ca; }
 .migas a { color: var(--texto-suave); text-decoration: none; }
 .migas a:hover { color: var(--color-azul-esencial); text-decoration: underline; }
-.migas [aria-current="page"] { color: var(--color-texto); font-weight: 600; }
+.migas [aria-current="page"] { color: var(--color-azul-oscuro); font-weight: 700; }
 
 /* ==========================================================================
    PIE DE PÁGINA
@@ -2650,4 +2662,117 @@ body.modo-oracion .evangelio-tarjeta {
 @media (max-width: 640px) {
     .aviso-hub { padding: var(--e5); }
     .aviso-hub h2 { font-size: 1.3rem; }
+}
+
+/* ==========================================================================
+   NAVEGACIÓN CLÁSICA — solo para páginas con identidad propia
+   comunidades-palabra/ tiene su propia cabecera (logo Proyecto Palabra) y
+   está fuera de tools/sincronizar.py a propósito. Usa el marcado antiguo
+   <nav><ul><li>, así que necesita estas reglas: al crear .nav-principal se
+   borraron las originales y su menú se quedó con viñetas y subrayados.
+   Se excluye .nav-principal (el menú nuevo) y .migas: las migas de pan
+   también son un <nav>, y sin excluirlas heredaban fondo blanco, relleno
+   de menú y hasta position:sticky.
+   ========================================================================== */
+nav:not(.nav-principal):not(.migas) {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: var(--e5);
+    padding: var(--e4) clamp(1rem, 4vw, 3rem);
+    background: var(--blanco);
+    border-bottom: 1px solid var(--linea);
+    position: sticky; top: 0; z-index: 100;
+}
+nav:not(.nav-principal):not(.migas) ul {
+    display: flex; align-items: center; flex-wrap: wrap;
+    gap: var(--e2);
+    list-style: none; margin: 0; padding: 0;
+}
+nav:not(.nav-principal):not(.migas) ul li { margin: 0; }
+nav:not(.nav-principal):not(.migas) ul li a {
+    display: inline-flex; align-items: center;
+    padding: var(--e2) var(--e3);
+    font-family: var(--fuente-texto);
+    font-size: 0.86rem; font-weight: 600;
+    color: var(--color-texto); text-decoration: none;
+    border-radius: var(--radio-s); white-space: nowrap;
+    transition: color 0.2s, background-color 0.2s;
+}
+nav:not(.nav-principal):not(.migas) ul li a:hover {
+    color: var(--color-azul-esencial); background: var(--azul-tenue);
+}
+nav:not(.nav-principal):not(.migas) .logo img { height: 38px; width: auto; border-radius: 6px; }
+nav:not(.nav-principal):not(.migas) .logo a { display: flex; align-items: center; gap: var(--e3); text-decoration: none; }
+
+@media (max-width: 820px) {
+    nav:not(.nav-principal):not(.migas) { flex-direction: column; align-items: flex-start; gap: var(--e3); }
+    nav:not(.nav-principal):not(.migas) ul { width: 100%; }
+}
+
+/* ==========================================================================
+   TARJETA "¿HAS VISTO…?"
+   Una página del sitio al azar en cada visita, para que el contenido que
+   vive en rincones profundos tenga ocasión de asomarse a la portada.
+   ========================================================================== */
+.seccion-has-visto { padding-bottom: 0; }
+
+.has-visto-tarjeta {
+    display: grid;
+    grid-template-columns: minmax(0, 260px) 1fr;
+    align-items: stretch;
+    background: #fff;
+    border: 1px solid var(--azul-borde);
+    border-radius: var(--radio-l);
+    overflow: hidden;
+    text-decoration: none; color: inherit;
+    box-shadow: var(--sombra-s);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.has-visto-tarjeta:hover { transform: translateY(-4px); box-shadow: var(--sombra-l); }
+
+.hv-img { background: var(--color-crema); overflow: hidden; min-height: 190px; }
+.hv-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.hv-cuerpo { padding: var(--e6); display: flex; flex-direction: column; }
+.hv-kicker {
+    font-family: var(--fuente-texto);
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--color-marron-madera);
+    margin: 0 0 var(--e2);
+}
+.hv-cuerpo h3 {
+    margin: 0 0 var(--e3);
+    font-size: 1.5rem; color: var(--color-azul-oscuro);
+}
+.hv-desc {
+    margin: 0 0 var(--e4);
+    color: var(--texto-suave); line-height: 1.7; font-size: 0.94rem;
+}
+.hv-cta { margin-top: auto; font-weight: 700; color: var(--color-azul-oscuro); }
+
+.hv-otra {
+    display: inline-flex; align-items: center; gap: var(--e2);
+    margin: var(--e4) auto 0;
+    padding: var(--e2) var(--e5);
+    font-family: var(--fuente-texto); font-size: 0.84rem; font-weight: 600;
+    color: var(--texto-suave);
+    background: transparent;
+    border: 1px solid var(--linea); border-radius: var(--radio-pastilla);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+}
+.hv-otra:hover { border-color: var(--azul-borde); color: var(--color-azul-esencial); background: var(--azul-tenue); }
+#has-visto { display: flex; flex-direction: column; }
+
+.hv-entra { animation: hvAparecer 0.35s ease both; }
+@keyframes hvAparecer {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: none; }
+}
+
+@media (max-width: 720px) {
+    .has-visto-tarjeta { grid-template-columns: 1fr; }
+    .hv-img { min-height: 0; aspect-ratio: 16 / 9; }
+    .hv-cuerpo { padding: var(--e5); }
+    .hv-cuerpo h3 { font-size: 1.25rem; }
 }

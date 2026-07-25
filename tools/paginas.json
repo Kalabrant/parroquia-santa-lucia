@@ -6,10 +6,12 @@
     "imagen": "foto-templo.webp",
     "seccion": null,
     "datos": [
-      "js/agenda-datos.js"
+      "js/agenda-datos.js",
+      "js/descubre-datos.js"
     ],
     "scripts": [
-      "js/portada.js"
+      "js/portada.js",
+      "js/descubre.js"
     ]
   },
   "horarios.html": {

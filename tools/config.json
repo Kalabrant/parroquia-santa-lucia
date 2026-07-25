@@ -1,7 +1,7 @@
 {
   "_comentario": "Fuente única de verdad del sitio. Cambia un dato aquí y ejecuta 'py tools/sincronizar.py' para propagarlo a todas las páginas.",
   "_comentarioVersion": "Sube este número cada vez que cambies style.css o js/*.js. Se añade como ?v=N a esos archivos para que los visitantes que ya tenían la web en caché reciban la versión nueva y no una mezcla rota.",
-  "version": 18,
+  "version": 23,
   "sitio": {
     "nombre": "Parroquia Santa Lucía",
     "nombreLargo": "Parroquia de Santa Lucía",

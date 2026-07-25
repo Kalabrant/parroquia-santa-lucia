@@ -581,6 +581,42 @@ def actualizar_version_sw(cfg):
     return v
 
 
+def generar_descubre(paginas):
+    """Genera js/descubre-datos.js para la tarjeta "¿Has visto…?" de la portada.
+
+    Solo entran páginas de CONTENIDO. Se dejan fuera las que ya tienen su
+    sitio en "¿Qué necesitas hoy?" (portada, agenda, horarios, contacto y los
+    índices de sección): sugerir lo que ya está justo debajo no descubre nada.
+
+    Es un archivo aparte y no el índice del buscador porque aquel pesa 63 KB
+    y solo se descarga cuando alguien busca; este ronda los 6 KB y lo carga
+    la portada en cada visita.
+    """
+    FUERA = {"index.html", "contacto.html", "horarios.html", "eventos.html",
+             "oracion.html", "comunidad.html", "evangelizacion.html",
+             "sacramentos.html"}
+
+    fichas = []
+    for pagina, meta in paginas.items():
+        if pagina.startswith("_") or pagina in FUERA:
+            continue
+        if not (RAIZ / pagina).exists():
+            continue
+        fichas.append({
+            "u": pagina,
+            "t": meta["titulo"].split("|")[0].split("—")[0].strip(),
+            "d": meta["desc"],
+            "i": meta.get("imagen", "foto-templo.webp"),
+        })
+
+    js = ("/* Generado por tools/sincronizar.py — no editar a mano. */\n"
+          "const DESCUBRE = " +
+          json.dumps(fichas, ensure_ascii=False, separators=(",", ":")) + ";\n")
+    (RAIZ / "js").mkdir(exist_ok=True)
+    (RAIZ / "js" / "descubre-datos.js").write_text(js, encoding="utf-8", newline="\n")
+    return len(fichas)
+
+
 def generar_robots(cfg):
     txt = ("User-agent: *\n"
            "Allow: /\n\n"
@@ -644,6 +680,9 @@ def main():
         n = generar_sitemap(cfg, paginas)
         generar_robots(cfg)
         print("sitemap.xml regenerado con {} páginas · robots.txt actualizado".format(n))
+
+        n_desc = generar_descubre(paginas)
+        print("tarjetas de «Has visto…»: {}".format(n_desc))
 
         n_idx, peso = generar_indice_busqueda(paginas)
         print("índice del buscador: {} páginas, {:.0f} KB".format(n_idx, peso / 1024))
