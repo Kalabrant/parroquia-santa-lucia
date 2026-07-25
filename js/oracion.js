@@ -29,7 +29,12 @@
 
     /* ── Tamaño de letra ────────────────────────────────── */
     function aplicarTamano() {
-        doc.body.setAttribute('data-tamano-texto', tamano);
+        // El atributo va en <html> y NO en <body> a propósito: casi todo el
+        // texto del sitio está declarado en rem, y rem se calcula sobre el
+        // tamaño de fuente de la raíz. Poniéndolo en <body> (o escalando
+        // <main>, como estaba antes) el valor cambiaba pero el texto no se
+        // movía ni un píxel.
+        doc.documentElement.setAttribute('data-tamano-texto', tamano);
         escribir(CLAVE_TAMANO, tamano);
         var menos = barra.querySelector('[data-accion="menos"]');
         var mas = barra.querySelector('[data-accion="mas"]');

@@ -2378,10 +2378,17 @@ body.buscador-abierto { overflow: hidden; }
 .bo-icono { min-width: 40px; justify-content: center; font-weight: 700; }
 .bo-btn[aria-pressed="true"] { background: var(--color-azul-esencial); color: #fff; }
 
-/* Escala de lectura: afecta a todo el contenido, no solo a un bloque */
-body[data-tamano-texto="1"] main { font-size: 1.08em; }
-body[data-tamano-texto="2"] main { font-size: 1.2em; }
-body[data-tamano-texto="3"] main { font-size: 1.34em; }
+/* Escala de lectura.
+   Se cambia el tamaño de fuente de la RAÍZ porque el texto del sitio está
+   escrito en rem (192 declaraciones en las páginas de oración, frente a 5
+   en px), y rem depende de la raíz. Escalar <main> no servía de nada. */
+:root[data-tamano-texto="1"] { font-size: 106.25%; }  /* 17px */
+:root[data-tamano-texto="2"] { font-size: 112.5%; }   /* 18px */
+:root[data-tamano-texto="3"] { font-size: 125%; }     /* 20px */
+
+/* La barra de herramientas no debe crecer con el texto: si lo hiciera,
+   en el paso 3 ocuparía media pantalla en un móvil. */
+.barra-oracion { font-size: 16px; }
 
 /* ── El modo en sí ──────────────────────────────────────── */
 body.modo-oracion {

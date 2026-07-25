@@ -92,30 +92,60 @@
         }
     }
 
-    /* ── 5. Vídeo de portada solo cuando compensa ────────────
-       El vídeo pesa 3 MB. En móvil, con datos limitados o con
-       "ahorro de datos" activado, dejamos la foto fija: se ve
-       prácticamente igual y no cuesta nada.                    */
+    /* ── 5. Vídeo de portada ─────────────────────────────────
+       En móvil se sirve una versión ligera (388 KB en vez de 3,1 MB)
+       en lugar de omitir el vídeo. Solo se renuncia a él cuando el
+       usuario ha pedido ahorrar datos, la red es muy lenta o ha
+       pedido menos movimiento: en esos casos queda la foto fija.   */
     function cargarVideoPortada() {
         var video = doc.querySelector('video[data-video]');
         if (!video) return;
 
-        var pantallaPequena = window.matchMedia('(max-width: 900px)').matches;
-        var ahorroDatos = navigator.connection && navigator.connection.saveData;
-        var redLenta = navigator.connection &&
-                       /2g|slow-2g/.test(navigator.connection.effectiveType || '');
+        var conexion = navigator.connection || {};
+        var ahorroDatos = !!conexion.saveData;
+        var redLenta = /2g|slow-2g/.test(conexion.effectiveType || '');
         var menosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        if (pantallaPequena || ahorroDatos || redLenta || menosMovimiento) return;
+        if (ahorroDatos || redLenta || menosMovimiento) return;
+
+        var pantallaPequena = window.matchMedia('(max-width: 900px)').matches;
+        var ligero = video.getAttribute('data-video-movil');
+        var archivo = (pantallaPequena && ligero) ? ligero : video.getAttribute('data-video');
 
         var fuente = doc.createElement('source');
-        fuente.src = video.getAttribute('data-video');
+        fuente.src = archivo;
         fuente.type = 'video/mp4';
         video.appendChild(fuente);
         video.load();
-        video.play().then(function () {
+
+        // El vídeo se muestra cuando EMPIEZA a reproducirse de verdad.
+        // Antes se mostraba en cuanto la promesa de play() resolvía, y esa
+        // promesa puede resolver con el vídeo todavía parado: se revelaba
+        // un rectángulo negro encima de la foto.
+        video.addEventListener('playing', function () {
             video.classList.add('video-listo');
-        }).catch(function () { /* si el navegador lo bloquea, queda la foto */ });
+        });
+
+        function intentarReproducir() {
+            var intento = video.play();
+            if (intento && intento.catch) intento.catch(function () { /* bloqueado */ });
+        }
+
+        intentarReproducir();
+        video.addEventListener('canplay', intentarReproducir);
+
+        // Los móviles bloquean el autoplay hasta que el usuario interactúa.
+        // Si pasa eso, lo reintentamos al primer gesto y luego nos quitamos
+        // de en medio.
+        function alPrimerGesto() {
+            intentarReproducir();
+            ['touchstart', 'pointerdown', 'scroll'].forEach(function (ev) {
+                window.removeEventListener(ev, alPrimerGesto);
+            });
+        }
+        ['touchstart', 'pointerdown', 'scroll'].forEach(function (ev) {
+            window.addEventListener(ev, alPrimerGesto, { once: true, passive: true });
+        });
     }
 
     /* ── 6. Registro del service worker (modo sin conexión) ─ */
