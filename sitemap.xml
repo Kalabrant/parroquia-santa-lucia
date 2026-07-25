@@ -5,15 +5,19 @@
       <priority>1.0</priority>
    </url>
    <url>
+      <loc>https://parroquiasantalucia.org/horarios.html</loc>
+      <priority>0.9</priority>
+   </url>
+   <url>
       <loc>https://parroquiasantalucia.org/nosotros.html</loc>
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://parroquiasantalucia.org/evangelizacion.html</loc>
-      <priority>0.8</priority>
+      <loc>https://parroquiasantalucia.org/sacramentos.html</loc>
+      <priority>0.9</priority>
    </url>
    <url>
-      <loc>https://parroquiasantalucia.org/sacramentos.html</loc>
+      <loc>https://parroquiasantalucia.org/evangelizacion.html</loc>
       <priority>0.8</priority>
    </url>
    <url>
@@ -22,14 +26,118 @@
    </url>
    <url>
       <loc>https://parroquiasantalucia.org/eventos.html</loc>
-      <priority>0.8</priority>
+      <priority>0.9</priority>
    </url>
    <url>
       <loc>https://parroquiasantalucia.org/contacto.html</loc>
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://parroquiasantalucia.org/meditacion-palabra.html</loc>
+      <loc>https://parroquiasantalucia.org/150-anos.html</loc>
       <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/ambientes-seguros.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/oracion.html</loc>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/rezar-rosario-coronilla.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/novena-perpetua.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/meditacion-palabra.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/tiempo-para-dios.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/examen-conciencia.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/lucha-contra-el-maligno.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/catequesis.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/lectores.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/musica.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/servidores.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/flores.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/ostiariado.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/enfermos.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/juvenil.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/emaus.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/neocatecumenal.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/legion.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/cursillos.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/cofradias.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/divina-misericordia.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/perpetuo-socorro.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/sociedad-santa-lucia.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/servidores-lucia.html</loc>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://parroquiasantalucia.org/virgen-luz.html</loc>
+      <priority>0.6</priority>
    </url>
 </urlset>

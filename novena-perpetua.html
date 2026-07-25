@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--#meta-->
+    <title>Novena Perpetua | Parroquia Santa Lucía</title>
+    <meta name="description" content="Arma tu novena a cualquier devoción o santo: la Santísima Trinidad, Cristo, el Espíritu Santo, advocaciones marianas, ángeles y santos. Nueve días de oración guardando por dónde vas.">
+    <link rel="canonical" href="https://parroquiasantalucia.org/novena-perpetua.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Parroquia Santa Lucía">
+    <meta property="og:locale" content="es_VE">
+    <meta property="og:title" content="Novena Perpetua | Parroquia Santa Lucía">
+    <meta property="og:description" content="Arma tu novena a cualquier devoción o santo: la Santísima Trinidad, Cristo, el Espíritu Santo, advocaciones marianas, ángeles y santos. Nueve días de oración guardando por dónde vas.">
+    <meta property="og:url" content="https://parroquiasantalucia.org/novena-perpetua.html">
+    <meta property="og:image" content="https://parroquiasantalucia.org/novena-vela.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#0077b6">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=16">
+    <script>window.__vSitio=16;</script>
+    <script src="js/sitio.js?v=16" defer></script>
+    <script src="js/buscador.js?v=16" defer></script>
+    <script src="js/oracion.js?v=16" defer></script>
+<!--/#meta-->
+    <style>
+        .hero-novena {
+            background: linear-gradient(rgba(90, 40, 10, 0.85), rgba(50, 20, 5, 0.95)), url('corazon-jesus.webp') center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero-novena h1 { font-size: 3rem; margin-bottom: 15px; font-weight: 700; color: white !important; }
+        .hero-novena p.lema { font-size: 1.2rem; max-width: 650px; margin: 0 auto; color: rgba(255,255,255,0.9) !important; }
+
+        .seccion-novena {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        .seccion-novena h2 {
+            color: var(--color-marron-madera);
+            font-size: 1.9rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .seccion-novena h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--color-azul-esencial);
+            margin: 12px auto 0;
+        }
+
+        /* ---- FORMULARIO NUEVA NOVENA ---- */
+        .form-nueva-novena {
+            background: #f9f7f2;
+            border-radius: 12px;
+            padding: 35px;
+            border: 1px solid #e8e0d5;
+        }
+        .form-nueva-novena label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        .form-nueva-novena select,
+        .form-nueva-novena input[type="text"] {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            color: #333;
+            background: white;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+        .form-nueva-novena select:focus,
+        .form-nueva-novena input[type="text"]:focus {
+            outline: none;
+            border-color: var(--color-azul-esencial);
+        }
+        .campo-extra { margin-top: 16px; display: none; }
+        .btn-iniciar {
+            margin-top: 20px;
+            background-color: var(--color-marron-madera);
+            color: white;
+            border: none;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .btn-iniciar:hover { background-color: #6b4730; transform: translateY(-2px); }
+
+        /* ---- TARJETAS DE NOVENA ---- */
+        .novena-card {
+            background: white;
+            border-radius: 12px;
+            border-top: 5px solid #888;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        .novena-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 22px 25px 10px;
+        }
+        .novena-card-header h3 {
+            margin: 0 0 4px 0;
+            font-size: 1.3rem;
+            text-align: left;
+        }
+        .novena-fecha { font-size: 0.8rem; color: #999; }
+        .btn-eliminar {
+            background: none;
+            border: 1px solid #ddd;
+            color: #aaa;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            transition: all 0.2s;
+        }
+        .btn-eliminar:hover { background: #fee; border-color: #e55; color: #e55; }
+
+        /* Barra de progreso */
+        .progreso-novena { padding: 8px 25px 16px; }
+        .progreso-barra { background: #eee; border-radius: 20px; height: 7px; overflow: hidden; margin-bottom: 6px; }
+        .progreso-fill { height: 100%; border-radius: 20px; transition: width 0.4s ease; }
+        .progreso-texto { font-size: 0.8rem; color: #888; }
+
+        /* Banner de completada */
+        .novena-completada-banner {
+            margin: 0 25px 16px;
+            padding: 14px 18px;
+            border-radius: 8px;
+            border: 2px solid;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .btn-archivar {
+            background: none;
+            border: 2px solid currentColor;
+            padding: 5px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: inherit;
+            transition: opacity 0.2s;
+        }
+        .btn-archivar:hover { opacity: 0.7; }
+
+        /* Lista de días */
+        .dias-lista { padding: 0 25px 20px; }
+        .dia-item {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+        .dia-item.dia-completado { background: #f9fff6; border-color: #c3e6c3; }
+        .dia-item.dia-completado .dia-titulo { text-decoration: line-through; color: #888; }
+
+        .dia-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .dia-header:hover { background: rgba(0,0,0,0.02); }
+        .dia-info { display: flex; align-items: center; gap: 10px; }
+        .dia-icono { font-size: 1rem; color: #aaa; width: 18px; text-align: center; }
+        .dia-item.dia-completado .dia-icono { color: #4caf50; }
+        .dia-titulo { font-size: 0.9rem; font-weight: 600; color: #444; }
+        .dia-controles { display: flex; align-items: center; gap: 12px; }
+        .dia-chevron { color: #aaa; font-size: 0.85rem; }
+
+        .check-dia { display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 0.8rem; color: #888; }
+        .check-dia input[type="checkbox"] { cursor: pointer; accent-color: #4caf50; width: 16px; height: 16px; }
+        .check-dia span { white-space: nowrap; }
+
+        /* Contenido de la oración */
+        .dia-oracion { padding: 0 16px 16px; border-top: 1px solid #f0f0f0; }
+        .oracion-intro {
+            background: #fafaf8;
+            border-left: 3px solid #ccc;
+            padding: 12px 15px;
+            border-radius: 0 6px 6px 0;
+            margin: 14px 0;
+            font-size: 0.88rem;
+            color: #666;
+            line-height: 1.7;
+        }
+        .oracion-meditacion, .oracion-texto { margin: 14px 0; }
+        .oracion-meditacion h4, .oracion-texto h4 {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #aaa;
+            margin: 0 0 8px 0;
+            text-align: left;
+        }
+        .oracion-meditacion p, .oracion-texto p { font-size: 0.92rem; color: #555; line-height: 1.75; margin: 0; }
+        .oracion-cierre { margin-top: 16px; padding-top: 16px; border-top: 1px dashed #ddd; }
+        .oracion-base { font-size: 0.85rem; color: #777; line-height: 1.7; margin: 0 0 10px 0; font-style: italic; }
+        .jaculatoria-cierre {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #555;
+            text-align: center;
+            margin: 10px 0 0 0;
+            padding: 10px;
+            background: #fafaf6;
+            border-radius: 6px;
+        }
+
+        .sin-novenas {
+            text-align: center;
+            color: #aaa;
+            font-size: 1rem;
+            padding: 40px 20px;
+            background: #fafaf8;
+            border-radius: 12px;
+            border: 2px dashed #ddd;
+        }
+        .bg-crema-novena { background-color: #f9f7f2; }
+
+        @media (max-width: 600px) {
+            .hero-novena h1 { font-size: 2rem; }
+            .novena-card-header { padding: 16px 16px 8px; }
+            .dias-lista { padding: 0 14px 16px; }
+            .progreso-novena { padding: 6px 16px 12px; }
+            .novena-completada-banner { margin: 0 16px 12px; flex-direction: column; gap: 10px; text-align: center; }
+            .check-dia span { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!--#nav-->
+<a class="saltar-contenido" href="#contenido">Saltar al contenido</a>
+<nav class="nav-principal" aria-label="Navegación principal">
+    <div class="logo">
+        <a href="index.html">
+            <img src="favicon.svg" alt="" width="34" height="34" class="logo-icono" aria-hidden="true" decoding="async">
+            <span>PARROQUIA DE SANTA LUCÍA</span>
+        </a>
+    </div>
+
+    <button type="button" class="nav-buscar" data-abrir-buscador aria-label="Buscar en el sitio">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path>
+        </svg>
+        <span class="nav-buscar-texto">Buscar</span>
+    </button>
+
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+        <span class="nav-toggle-barras" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="sr-only">Abrir menú</span>
+    </button>
+
+    <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Inicio</a></li>
+
+        <li class="tiene-submenu">
+            <button type="button" class="submenu-toggle" aria-expanded="false">La Parroquia<span class="chevron" aria-hidden="true"></span></button>
+            <ul class="submenu">
+                <li><a href="nosotros.html">Nuestra identidad</a></li>
+                <li><a href="150-anos.html">150 Años de historia</a></li>
+                <li><a href="ambientes-seguros.html">Ambientes Seguros</a></li>
+                <li><a href="mapa-zonas-pastorales/index.html">Zonas Pastorales</a></li>
+            </ul>
+        </li>
+
+        <li><a href="sacramentos.html">Sacramentos</a></li>
+
+        <li class="tiene-submenu">
+            <button type="button" class="submenu-toggle activo" aria-expanded="false">Oración<span class="chevron" aria-hidden="true"></span></button>
+            <ul class="submenu">
+                <li><a href="oracion.html">Todas las guías</a></li>
+                <li><a href="rezar-rosario-coronilla.html">Rosario y Coronilla</a></li>
+                <li><a href="novena-perpetua.html" aria-current="page">Novena Perpetua</a></li>
+                <li><a href="meditacion-palabra.html">Lectio Divina</a></li>
+                <li><a href="tiempo-para-dios.html">Tiempo para Dios</a></li>
+                <li><a href="examen-conciencia.html">Examen de conciencia</a></li>
+                <li><a href="lucha-contra-el-maligno.html">Lucha contra el Maligno</a></li>
+            </ul>
+        </li>
+
+        <li class="tiene-submenu">
+            <button type="button" class="submenu-toggle" aria-expanded="false">Comunidad<span class="chevron" aria-hidden="true"></span></button>
+            <ul class="submenu">
+                <li><a href="comunidad.html">Grupos y carismas</a></li>
+                <li><a href="evangelizacion.html">Ministerios</a></li>
+                <li><a href="catequesis.html">Catequesis</a></li>
+                <li><a href="juvenil.html">Pastoral Juvenil</a></li>
+                <li><a href="enfermos.html">Visita a enfermos</a></li>
+            </ul>
+        </li>
+
+        <li><a href="eventos.html">Agenda</a></li>
+        <li><a href="horarios.html" class="enlace-horarios">Horarios</a></li>
+        <li><a href="contacto.html" class="btn-nav">Contáctanos</a></li>
+    </ul>
+</nav>
+<!--/#nav-->
+
+<main id="contenido">
+<!--#migas-->
+<nav class="migas" aria-label="Ruta de navegación">
+    <ol>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="oracion.html">Oración</a></li>
+        <li><span aria-current="page">Novena Perpetua</span></li>
+    </ol>
+</nav>
+<!--/#migas-->
+
+    <header class="hero-novena">
+        <h1>Novena Perpetua</h1>
+        <p class="lema">"Pedid y se os dará; buscad y encontraréis; llamad y se os abrirá." — Mt 7,7</p>
+    </header>
+
+    <!-- NUEVA NOVENA -->
+    <div class="bg-crema-novena">
+        <div class="seccion-novena">
+            <h2>Comenzar una Nueva Novena</h2>
+            <div class="form-nueva-novena">
+
+                <label for="sel-devocion">Elige tu devoción:</label>
+                <select id="sel-devocion">
+                    <option value="">— Selecciona una devoción —</option>
+                    <optgroup label="✦ La Santísima Trinidad">
+                        <option value="santisima-trinidad">La Santísima Trinidad</option>
+                    </optgroup>
+                    <optgroup label="✦ Personas Divinas">
+                        <option value="dios-padre">Dios Padre</option>
+                        <option value="sagrado-corazon">Sagrado Corazón de Jesús</option>
+                        <option value="preciosa-sangre">Preciosa Sangre de Jesucristo</option>
+                        <option value="santisima-eucaristia">Santísima Eucaristía</option>
+                        <option value="divina-misericordia">Divina Misericordia</option>
+                        <option value="cristo-rey">Cristo Rey del Universo</option>
+                        <option value="santo-nombre">Santo Nombre de Jesús</option>
+                        <option value="nino-jesus">Niño Jesús</option>
+                        <option value="jesus-nazareno">Jesús Nazareno</option>
+                        <option value="espiritu-santo">Dios Espíritu Santo</option>
+                    </optgroup>
+                    <optgroup label="✦ Nuestra Señora">
+                        <option value="nuestra-senora-chiquinquira">Ntra. Sra. de Chiquinquirá</option>
+                        <option value="nuestra-senora-perpetuo">Ntra. Sra. del Perpetuo Socorro</option>
+                        <option value="nuestra-senora-guadalupe">Ntra. Sra. de Guadalupe</option>
+                        <option value="nuestra-senora-rosario">Ntra. Sra. del Rosario</option>
+                        <option value="inmaculada-concepcion">Ntra. Sra. de la Inmaculada Concepción</option>
+                        <option value="nuestra-senora-fatima">Ntra. Sra. de Fátima</option>
+                        <option value="nuestra-senora-lourdes">Ntra. Sra. de Lourdes</option>
+                        <option value="nuestra-senora-personalizada">Otra advocación de Nuestra Señora…</option>
+                    </optgroup>
+                    <optgroup label="✦ San José">
+                        <option value="san-jose">San José, Padre y Esposo</option>
+                    </optgroup>
+                    <optgroup label="✦ Los Ángeles">
+                        <option value="san-miguel">San Miguel Arcángel</option>
+                        <option value="san-gabriel">San Gabriel Arcángel</option>
+                        <option value="san-rafael">San Rafael Arcángel</option>
+                        <option value="angel-guarda">Ángel de la Guarda</option>
+                        <option value="todos-angeles">Todos los Santos Ángeles</option>
+                    </optgroup>
+                    <optgroup label="✦ Patrona de la Parroquia">
+                        <option value="santa-lucia">Santa Lucía, Virgen y Mártir</option>
+                    </optgroup>
+                    <optgroup label="✦ Santos y Santas — elige el coro">
+                        <option value="coro-apostoles">Apóstoles</option>
+                        <option value="coro-martires">Mártires</option>
+                        <option value="coro-pastores">Pastores (Papas y Obispos)</option>
+                        <option value="coro-confesores">Confesores (Sacerdotes y Religiosos)</option>
+                        <option value="coro-virgenes">Vírgenes</option>
+                        <option value="coro-casados">Santos Casados</option>
+                        <option value="coro-jovenes">Santos Jóvenes</option>
+                        <option value="coro-doctores">Doctores de la Iglesia</option>
+                        <option value="coro-misticos">Místicos y Contemplativos</option>
+                        <option value="coro-ermitanos">Ermitaños y Penitentes</option>
+                    </optgroup>
+                </select>
+
+                <!-- Campo para advocación personalizada de María -->
+                <div class="campo-extra" id="campo-personalizado">
+                    <label for="nombre-personalizado">Nombre de la advocación:</label>
+                    <input type="text" id="nombre-personalizado" placeholder="Ej: Nuestra Señora de la Paz, Nuestra Señora de Coromoto…">
+                </div>
+
+                <!-- Selector de santo específico (coros) -->
+                <div class="campo-extra" id="selector-santo-container">
+                    <label for="sel-santo">Elige el/la santo/a:</label>
+                    <select id="sel-santo">
+                        <option value="">— Primero selecciona el coro —</option>
+                    </select>
+                </div>
+
+                <!-- Campo para santo personalizado -->
+                <div class="campo-extra" id="campo-santo-personalizado">
+                    <label for="nombre-santo">Nombre del/la santo/a:</label>
+                    <input type="text" id="nombre-santo" placeholder="Ej: San Ignacio de Loyola, Santa Rita de Casia…">
+                </div>
+
+                <button class="btn-iniciar" onclick="crearNovena()">✝ Iniciar Novena</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MIS NOVENAS -->
+    <div>
+        <div class="seccion-novena">
+            <h2>Mis Novenas</h2>
+            <div id="lista-novenas"></div>
+            <p id="sin-novenas" class="sin-novenas" style="display:none;">
+                Aún no has comenzado ninguna novena.<br>¡Elige una devoción arriba para iniciar!
+            </p>
+        </div>
+    </div>
+
+    </main>
+
+<!--#footer-->
+<footer class="pie-sitio">
+    <div class="pie-grid">
+
+        <div class="pie-col pie-col-marca">
+            <img src="favicon.svg" alt="" width="46" height="46" aria-hidden="true" loading="lazy" decoding="async">
+            <p class="pie-nombre">Parroquia de Santa Lucía</p>
+            <p class="pie-lema">La Casita Azul de El Empedrao.<br>Luz y fe en el corazón de Maracaibo.</p>
+            <div class="pie-social">
+                <a href="https://instagram.com/parroquia.santaluciamcbo" target="_blank" rel="noopener noreferrer" aria-label="Instagram de la parroquia">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 6.31A3.53 3.53 0 1 0 15.53 12 3.53 3.53 0 0 0 12 8.47zm0 5.82A2.29 2.29 0 1 1 14.29 12 2.29 2.29 0 0 1 12 14.29zm4.5-5.96a.82.82 0 1 0-.83-.82.82.82 0 0 0 .83.82z"/></svg>
+                </a>
+                <a href="https://wa.me/584143676212?text=%C2%A1Buenos%20d%C3%ADas%21%20Escribo%20desde%20la%20p%C3%A1gina%20web%20de%20la%20parroquia.%20Quisiera%20consultar%20sobre%3A%0A%0A" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp de la parroquia">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.24 8.24 0 0 1 0 16.48zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.8-.78.97-.15.16-.29.19-.53.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.44.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.47a.9.9 0 0 0-.66.31c-.22.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.06-.11-.23-.17-.47-.29z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="pie-col">
+            <h3>Horarios de Misa</h3>
+            <p class="pie-horario"><span class="dia">Martes a Sábado</span><span class="hora">6:00 PM</span></p>
+            <p class="pie-horario"><span class="dia">Domingos</span><span class="hora">9:00 AM · 11:00 AM · 6:00 PM</span></p>
+            <p class="pie-nota"><strong>Confesiones:</strong> de martes a domingo, media hora antes de cada Misa.</p>
+            <a href="horarios.html" class="pie-enlace-destacado">Ver todos los horarios &rarr;</a>
+        </div>
+
+        <div class="pie-col">
+            <h3>Dónde estamos</h3>
+            <p>Calle 90, Sector El Empedrado<br>Santa Lucía, Maracaibo, Zulia</p>
+            <p class="pie-nota"><strong>Despacho parroquial:</strong><br>Martes a viernes, 2:00 PM – 5:00 PM</p>
+            <a href="https://maps.google.com/maps?q=Iglesia%20de%20Santa%20Luc%C3%ADa%20Maracaibo" target="_blank" rel="noopener noreferrer" class="pie-enlace-destacado">Abrir en Google Maps &rarr;</a>
+        </div>
+
+        <div class="pie-col">
+            <h3>Trámites frecuentes</h3>
+            <ul class="pie-lista">
+                <li><a href="contacto.html#tramites">Partida de bautismo</a></li>
+                <li><a href="contacto.html#tramites">Intención de Misa</a></li>
+                <li><a href="contacto.html#tramites">Inscribir un bautizo</a></li>
+                <li><a href="contacto.html#tramites">Trámite de matrimonio</a></li>
+                <li><a href="sacramentos.html">Todos los sacramentos</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="pie-legal">
+        <p>&copy; 2026 Parroquia Santa Lucía · Arquidiócesis de Maracaibo</p>
+        <p class="pie-legal-enlaces">
+            <a href="ambientes-seguros.html">Ambientes Seguros</a> ·
+            <a href="contacto.html">Contacto</a> ·
+            <a href="horarios.html">Horarios</a>
+        </p>
+    </div>
+</footer>
+<!--/#footer-->
+
+<script>
+// ================================================================
+//  DATOS DE DEVOCIONES (no-coro)
+// ================================================================
+const DEVOCIONES = {
+    "santisima-trinidad": {
+        nombre: "La Santísima Trinidad",
+        invocacion: "Santísima Trinidad, Padre, Hijo y Espíritu Santo, un solo Dios verdadero",
+        tratamiento: "Señor",
+        jaculatoria: "Santísima Trinidad, un solo Dios, ten misericordia de nosotros.",
+        color: "#4a3a7a",
+        fondo: "#f5f4fd",
+        intro: "Santísima Trinidad, Padre, Hijo y Espíritu Santo, misterio central de nuestra fe y de la vida cristiana, en esta novena adoramos Tu unidad y trinidad perfectas, y te pedimos que nuestra vida entera sea una gloria a Tu nombre tres veces santo."
+    },
+    "dios-padre": {
+        nombre: "Dios Padre",
+        invocacion: "Padre Eterno, Dios de amor infinito",
+        tratamiento: "Padre",
+        jaculatoria: "Abbá, Padre nuestro, hágase Tu voluntad.",
+        color: "#7f5539",
+        fondo: "#fdf6ef",
+        intro: "Padre Celestial, en esta novena nos acercamos a Ti con corazón filial. Nos amas desde antes de la fundación del mundo, y en Ti vivimos, nos movemos y existimos. Que esta oración nos acerque a Tu corazón paterno."
+    },
+    "espiritu-santo": {
+        nombre: "Dios Espíritu Santo",
+        invocacion: "Ven, Espíritu Santo, Señor y Dador de vida",
+        tratamiento: "Espíritu Santo",
+        jaculatoria: "Ven, Espíritu Santo, llena los corazones de Tus fieles y enciende en ellos el fuego de Tu amor.",
+        color: "#c44b00",
+        fondo: "#fdf3ef",
+        intro: "Dios Espíritu Santo, que en Pentecostés descendiste sobre los Apóstoles en forma de lenguas de fuego, en esta novena te invocamos con fe viva, pidiéndote que renueves y transformes nuestros corazones con Tu presencia divina."
+    },
+    "sagrado-corazon": {
+        nombre: "Sagrado Corazón de Jesús",
+        invocacion: "Corazón Sacratísimo de Jesús",
+        tratamiento: "Señor Jesús",
+        jaculatoria: "Sagrado Corazón de Jesús, en Ti confío.",
+        color: "#c0392b",
+        fondo: "#fef5f5",
+        intro: "Señor Jesús, cuyo Corazón abierto en la Cruz derramó agua y sangre por nuestra redención, venimos ante Ti en esta novena con humildad y amor, buscando la infinita misericordia que fluye de Tu Corazón adorable."
+    },
+    "preciosa-sangre": {
+        nombre: "Preciosa Sangre de Jesucristo",
+        invocacion: "Preciosa Sangre de Nuestro Señor Jesucristo",
+        tratamiento: "Señor Jesús",
+        jaculatoria: "Sangre de Cristo, cáliz de salvación eterna, sálvanos.",
+        color: "#8e1b1b",
+        fondo: "#fdf2f2",
+        intro: "Señor Jesús, cuya Preciosa Sangre derramada en la Cruz es precio de nuestra redención y fuente de toda gracia, en esta novena contemplamos el amor sin medida que te llevó a entregar Tu vida por nosotros."
+    },
+    "santisima-eucaristia": {
+        nombre: "Santísima Eucaristía",
+        invocacion: "Señor Jesús, presente en la Santísima Eucaristía",
+        tratamiento: "Señor Jesús",
+        jaculatoria: "Adorote devote, Deus latens. Dios escondido, te adoro con toda mi alma.",
+        color: "#c49a00",
+        fondo: "#fdfaf0",
+        intro: "Señor Jesús, Pan vivo bajado del cielo, fuente y cumbre de la vida cristiana, en esta novena adoramos Tu presencia real, verdadera y sustancial en la Eucaristía y te pedimos que seas siempre el centro de nuestras vidas."
+    },
+    "divina-misericordia": {
+        nombre: "Divina Misericordia de Jesús",
+        invocacion: "Jesús, fuente de misericordia",
+        tratamiento: "Señor Jesús",
+        jaculatoria: "Jesús, en Ti confío.",
+        color: "#0077b6",
+        fondo: "#f0f7fd",
+        intro: "Jesús misericordioso, cuya misericordia se extiende de generación en generación, en esta novena nos acogemos al manto de Tu infinita compasión, pidiendo misericordia para nosotros y para el mundo entero."
+    },
+    "cristo-rey": {
+        nombre: "Cristo Rey del Universo",
+        invocacion: "Cristo Rey del universo, Rey de reyes y Señor de señores",
+        tratamiento: "Señor Jesús",
+        jaculatoria: "¡Viva Cristo Rey! ¡Que reine Jesucristo!",
+        color: "#2c3e7f",
+        fondo: "#f2f4fd",
+        intro: "Cristo Rey, Señor del cielo y de la tierra, en esta novena reconocemos Tu soberanía sobre nuestras vidas, nuestras familias y toda la creación, y te pedimos que reines en nuestros corazones y en toda la sociedad."
+    },
+    "santo-nombre": {
+        nombre: "Santo Nombre de Jesús",
+        invocacion: "Jesús, nombre sobre todo nombre",
+        tratamiento: "Señor Jesús",
+        jaculatoria: "Jesús, Jesús, Jesús. Dulcísimo nombre sobre todo nombre.",
+        color: "#1a6b4a",
+        fondo: "#f0fdf6",
+        intro: "Señor Jesús, cuyo nombre es la salvación del mundo, en esta novena meditamos el poder y la dulzura de Tu Santo Nombre, ante el cual toda rodilla se dobla en el cielo, en la tierra y en los abismos."
+    },
+    "nino-jesus": {
+        nombre: "Niño Jesús",
+        invocacion: "Dulcísimo Niño Jesús, Dios eterno hecho pequeño",
+        tratamiento: "Niño Dios",
+        jaculatoria: "Niño Jesús, Tú eres mi Dios. Te amo sobre todas las cosas.",
+        color: "#c4880a",
+        fondo: "#fdf9f0",
+        intro: "Dulcísimo Niño Jesús, Dios eterno que te hiciste pequeño por amor a nosotros, en esta novena contemplamos el misterio de Tu encarnación y nos acogemos con sencillez y amor filial a Tus brazos divinos."
+    },
+    "jesus-nazareno": {
+        nombre: "Jesús Nazareno",
+        invocacion: "Señor Jesús Nazareno, nuestro Redentor crucificado",
+        tratamiento: "Señor Jesús",
+        jaculatoria: "Por Tu Cruz y Pasión, sálvanos, Señor Jesús.",
+        color: "#4a1a6b",
+        fondo: "#f9f0fd",
+        intro: "Señor Jesús Nazareno, que cargaste la Cruz por amor a nosotros y sufriste la Pasión para nuestra redención, en esta novena contemplamos Tu amor redentor y pedimos la gracia de abrazar nuestras propias cruces con fe y esperanza."
+    },
+    "nuestra-senora-chiquinquira": {
+        nombre: "Nuestra Señora de Chiquinquirá",
+        invocacion: "Nuestra Señora de Chiquinquirá, patrona de Venezuela y Colombia",
+        tratamiento: "Señora",
+        jaculatoria: "Nuestra Señora de Chiquinquirá, patrona nuestra, ruega por nosotros.",
+        color: "#1a5a8a",
+        fondo: "#f0f6fd",
+        intro: "Santísima Virgen de Chiquinquirá, patrona amadísima de Venezuela y Colombia, cuya sagrada imagen fue milagrosamente renovada en los tiempos de la evangelización, en esta novena recurrimos a ti con fe sencilla y corazón confiado, seguros de tu maternal intercesión."
+    },
+    "nuestra-senora-perpetuo": {
+        nombre: "Nuestra Señora del Perpetuo Socorro",
+        invocacion: "Nuestra Señora del Perpetuo Socorro",
+        tratamiento: "Señora",
+        jaculatoria: "Madre del Perpetuo Socorro, ruega por nosotros.",
+        color: "#0077b6",
+        fondo: "#f0f7fd",
+        intro: "Oh Madre del Perpetuo Socorro, que con tanta ternura tienes al Niño Jesús entre tus brazos, en esta novena recurrimos a ti con plena confianza, pidiendo tu intercesión maternal ante el trono de la gracia."
+    },
+    "nuestra-senora-guadalupe": {
+        nombre: "Nuestra Señora de Guadalupe",
+        invocacion: "Nuestra Señora de Guadalupe, Madre de América",
+        tratamiento: "Señora",
+        jaculatoria: "¿No estoy yo aquí, yo que soy tu Madre?",
+        color: "#3a7d44",
+        fondo: "#f0fdf4",
+        intro: "Santísima Virgen de Guadalupe, que te apareciste al bendito Juan Diego dándonos consuelo y esperanza, en esta novena venimos ante tu sagrada imagen con corazón sencillo y confiado, buscando tu amparo maternal."
+    },
+    "nuestra-senora-rosario": {
+        nombre: "Nuestra Señora del Rosario",
+        invocacion: "Nuestra Señora del Santísimo Rosario",
+        tratamiento: "Señora",
+        jaculatoria: "Oh María, sin pecado concebida, ruega por nosotros que recurrimos a Ti.",
+        color: "#6b21a8",
+        fondo: "#faf5ff",
+        intro: "Nuestra Señora del Rosario, Reina del cielo y de la tierra, que nos enseñaste a contemplar los misterios de tu Hijo rezando el Santo Rosario, en esta novena te pedimos que nos conduzcas por el camino de la oración contemplativa."
+    },
+    "inmaculada-concepcion": {
+        nombre: "Ntra. Sra. de la Inmaculada Concepción",
+        invocacion: "Virgen Inmaculada, llena de gracia desde el primer instante de tu concepción",
+        tratamiento: "Virgen Inmaculada",
+        jaculatoria: "Toda hermosa eres, oh María, y la mancha original no está en Ti.",
+        color: "#1e60a8",
+        fondo: "#f0f5fd",
+        intro: "Santísima Virgen María, a quien Dios preservó del pecado original por singular privilegio desde el primer instante de tu concepción, en esta novena veneramos el misterio de tu Inmaculada Concepción y te pedimos que intercedas por nosotros ante el trono de tu Hijo."
+    },
+    "nuestra-senora-fatima": {
+        nombre: "Nuestra Señora de Fátima",
+        invocacion: "Nuestra Señora de Fátima",
+        tratamiento: "Señora",
+        jaculatoria: "Oh María, sin pecado concebida, ruega por nosotros que recurrimos a Ti.",
+        color: "#b07020",
+        fondo: "#fdf7f0",
+        intro: "Nuestra Señora de Fátima, que pediste oración y penitencia para la conversión de los pecadores y la paz en el mundo, en esta novena acogemos tu mensaje con corazón dócil y te ofrecemos nuestra oración y sacrificio diarios."
+    },
+    "nuestra-senora-lourdes": {
+        nombre: "Nuestra Señora de Lourdes",
+        invocacion: "Nuestra Señora de Lourdes",
+        tratamiento: "Señora",
+        jaculatoria: "Nuestra Señora de Lourdes, sana nuestras almas y cuerpos.",
+        color: "#2563a8",
+        fondo: "#f0f6fd",
+        intro: "Nuestra Señora de Lourdes, que te apareciste a la pequeña Bernardita revelándote como la Inmaculada Concepción, en esta novena venimos ante ti trayendo nuestras enfermedades del alma y del cuerpo, confiados en tu intercesión."
+    },
+    "nuestra-senora-personalizada": {
+        nombre: "Nuestra Señora",
+        invocacion: "Santísima Virgen María",
+        tratamiento: "Señora",
+        jaculatoria: "Bajo tu amparo nos acogemos, oh Santa Madre de Dios.",
+        color: "#6b21a8",
+        fondo: "#faf5ff",
+        intro: "Santísima Virgen María, Madre de Dios y Madre nuestra, en esta novena recurrimos a ti con filial confianza, seguros de que tus ruegos ante el trono de tu Hijo son siempre escuchados con bondad."
+    },
+    "santa-lucia": {
+        nombre: "Santa Lucía, Virgen y Mártir",
+        invocacion: "Gloriosa virgen y mártir Santa Lucía, luz de nuestra parroquia",
+        tratamiento: "Santa Lucía",
+        jaculatoria: "Santa Lucía, que en tu nombre llevas la luz, ilumina nuestro camino hacia Dios.",
+        color: "#a8004a",
+        fondo: "#fdf0f6",
+        intro: "Gloriosa virgen y mártir Santa Lucía, patrona amadísima de nuestra parroquia, que en Siracusa consagraste tu virginidad a Cristo y ofrendaste tu vida antes que renegar de tu fe, en esta novena recurrimos a ti con especial confianza, pues eres nuestra madre, intercesora y modelo. Tu nombre lleva grabada la luz, y a esa luz nos encomendamos para caminar sin tropiezos hacia Dios."
+    },
+    "san-jose": {
+        nombre: "San José",
+        invocacion: "Glorioso San José, padre virginal de Jesucristo y esposo purísimo de María",
+        tratamiento: "San José",
+        jaculatoria: "A ti, oh bienaventurado San José, acudimos en nuestra tribulación.",
+        color: "#7f5539",
+        fondo: "#fdf6ef",
+        intro: "Glorioso San José, Patrón de la Iglesia Universal, en esta novena recurrimos a ti como a nuestro padre y protector, pidiendo tu poderosa intercesión ante el Señor Jesús, a quien serviste y amaste con toda el alma."
+    },
+    "san-miguel": {
+        nombre: "San Miguel Arcángel",
+        invocacion: "Glorioso Arcángel San Miguel, Príncipe de las milicias celestiales",
+        tratamiento: "San Miguel",
+        jaculatoria: "San Miguel Arcángel, defiéndenos en la batalla contra el mal.",
+        color: "#1a3a6b",
+        fondo: "#f0f4fd",
+        intro: "Glorioso Arcángel San Miguel, que en la batalla celestial proclamaste '¿Quién como Dios?' y venciste al dragón infernal, en esta novena te pedimos que defiendas a la Iglesia y a cada uno de nosotros contra las potencias del mal."
+    },
+    "san-gabriel": {
+        nombre: "San Gabriel Arcángel",
+        invocacion: "Glorioso Arcángel San Gabriel, mensajero de Dios",
+        tratamiento: "San Gabriel",
+        jaculatoria: "San Gabriel, heraldo de Dios, lleva nuestras oraciones al Altísimo.",
+        color: "#0f766e",
+        fondo: "#f0fdf9",
+        intro: "Glorioso Arcángel San Gabriel, mensajero del Altísimo que anunciaste el misterio de la Encarnación a la Santísima Virgen, en esta novena te pedimos que lleves nuestras oraciones ante el trono de Dios y nos traigas Su mensaje de gracia."
+    },
+    "san-rafael": {
+        nombre: "San Rafael Arcángel",
+        invocacion: "Glorioso Arcángel San Rafael, medicina de Dios",
+        tratamiento: "San Rafael",
+        jaculatoria: "San Rafael, medicina de Dios, sana nuestras almas y cuerpos.",
+        color: "#2d6a4f",
+        fondo: "#f0fdf6",
+        intro: "Glorioso Arcángel San Rafael, cuyo nombre significa 'medicina de Dios', que acompañaste al joven Tobías en su camino y devolviste la vista a su padre, en esta novena te pedimos que nos acompañes en nuestra peregrinación y nos traigas sanación divina."
+    },
+    "angel-guarda": {
+        nombre: "Ángel de la Guarda",
+        invocacion: "Santo Ángel de mi guarda, mi fiel custodio",
+        tratamiento: "Ángel mío",
+        jaculatoria: "Ángel de Dios, mi querido custodio, ilumíname, guárdame, rige y gobiérname.",
+        color: "#4a90d9",
+        fondo: "#f0f7fd",
+        intro: "Santo Ángel de mi guarda, mensajero de Dios enviado para custodiar mi alma, en esta novena reconozco con gratitud tu presencia fiel a mi lado y te pido que me guíes siempre por el camino de la santidad."
+    },
+    "todos-angeles": {
+        nombre: "Todos los Santos Ángeles",
+        invocacion: "Santos Ángeles, ministros del Altísimo",
+        tratamiento: "Santos Ángeles",
+        jaculatoria: "Bendito sea Dios en Sus Ángeles y en Sus Santos.",
+        color: "#1e4b8a",
+        fondo: "#f0f5fd",
+        intro: "Santos Ángeles del cielo, que adoran sin descanso ante el trono de Dios y están al servicio de nuestra salvación, en esta novena les pedimos que rodeen a nuestra comunidad con su protección celestial y nos eleven en la oración."
+    }
+};
+
+// ================================================================
+//  DATOS DE COROS DE SANTOS
+// ================================================================
+const CORO_DATA = {
+    "coro-apostoles": {
+        tituloSingular: "Apóstol",
+        color: "#b07020", fondo: "#fdf7f0",
+        intro:      (n) => `${n}, glorioso Apóstol de Nuestro Señor Jesucristo, que dejaste todo para seguir al Maestro y llevaste el Evangelio hasta los confines de la tierra con ardor apostólico, en esta novena pedimos tu intercesión ante el Señor.`,
+        invocacion: (n) => `Glorioso Apóstol ${n}`,
+        jaculatoria:(n) => `${n}, Apóstol de Cristo, ruega por nosotros.`,
+        santos: [
+            "San Pedro","San Pablo","San Juan Evangelista","Santiago el Mayor",
+            "San Andrés","Santo Tomás","San Felipe Apóstol","San Bartolomé",
+            "San Mateo","San Simón el Zelote","San Judas Tadeo","San Matías"
+        ]
+    },
+    "coro-martires": {
+        tituloSingular: "Mártir",
+        color: "#9b1a1a", fondo: "#fdf0f0",
+        intro:      (n) => `${n}, ilustre mártir de Cristo, que entregaste tu vida como supremo testimonio de fe en Jesucristo resucitado, en esta novena contemplamos tu heroísmo y pedimos la gracia de una fe inquebrantable por tu poderosa intercesión.`,
+        invocacion: (n) => `Ilustre mártir ${n}`,
+        jaculatoria:(n) => `${n}, mártir de Cristo, ruega por nosotros.`,
+        santos: [
+            "San Esteban","San Ignacio de Antioquía","San Policarpo de Esmirna",
+            "Santa Inés","San Sebastián","San Lorenzo Diácono","Santa Perpetua",
+            "Santa Felícitas","Santo Tomás Moro","San Juan Fisher",
+            "Santa Cecilia","San Maximiliano Kolbe","San Isaac Jogues",
+            "Santos Mártires de Uganda"
+        ]
+    },
+    "coro-pastores": {
+        tituloSingular: "Pastor",
+        color: "#4a4a8a", fondo: "#f4f4fd",
+        intro:      (n) => `${n}, insigne Pastor de la Iglesia de Cristo, que apacentaste la grey de Dios con sabiduría, celo apostólico y vida santa, en esta novena invocamos tu intercesión por la Iglesia y por todos sus pastores.`,
+        invocacion: (n) => `Glorioso Pastor ${n}`,
+        jaculatoria:(n) => `${n}, fiel Pastor de la Iglesia, ruega por nosotros.`,
+        santos: [
+            "San León Magno","San Gregorio Magno","San Ambrosio de Milán",
+            "San Juan Crisóstomo","San Agustín de Hipona","San Nicolás de Bari",
+            "San Carlos Borromeo","San Francisco de Sales","San Pío X",
+            "San Juan XXIII","San Pablo VI","San Juan Pablo II"
+        ]
+    },
+    "coro-confesores": {
+        tituloSingular: "Confesor",
+        color: "#1a5a4a", fondo: "#f0fdf8",
+        intro:      (n) => `${n}, ilustre confesor de la fe, que dedicaste tu vida al servicio de Dios y del prójimo con heroica generosidad, en esta novena pedimos tu intercesión para que sigamos tu ejemplo de entrega y santidad.`,
+        invocacion: (n) => `Ilustre confesor ${n}`,
+        jaculatoria:(n) => `${n}, siervo fiel de Dios, ruega por nosotros.`,
+        santos: [
+            "San Francisco de Asís","San Antonio de Padua","San Juan María Vianney",
+            "San Pío de Pietrelcina","San Juan Bosco","San Ignacio de Loyola",
+            "San Benito de Nursia","San Domingo de Guzmán","San Felipe Neri",
+            "San Vicente de Paúl","San Alfonso María de Ligorio","San José de Calasanz",
+            "San Camilo de Lelis"
+        ]
+    },
+    "coro-virgenes": {
+        tituloSingular: "Virgen",
+        color: "#8a1a6a", fondo: "#fdf0fa",
+        intro:      (n) => `${n}, virgen consagrada a Cristo, que entregaste tu corazón y toda tu vida al Señor con amor indiviso, en esta novena pedimos tu intercesión para que todos los consagrados y consagradas de hoy vivan con fidelidad y alegría su donación a Dios.`,
+        invocacion: (n) => `Gloriosa virgen ${n}`,
+        jaculatoria:(n) => `${n}, esposa de Cristo, ruega por nosotros.`,
+        santos: [
+            "Santa Teresa de Ávila","Santa Teresa de Lisieux","Santa Catalina de Siena",
+            "Santa Clara de Asís","Santa Rosa de Lima","Santa Faustina Kowalska",
+            "Santa Gema Galgani","Santa Bernardita Soubirous","Santa Hildegarda de Bingen",
+            "Santa Ángela de Foligno","Santa Escolástica","Santa Margarita María de Alacoque"
+        ]
+    },
+    "coro-casados": {
+        tituloSingular: "Santo/a Casado/a",
+        color: "#7f5539", fondo: "#fdf6ef",
+        intro:      (n) => `${n}, modelo del sacramento del Matrimonio y de la vida familiar cristiana, que santificaste el amor conyugal y la vida en el hogar según el Evangelio, en esta novena pedimos tu intercesión por todos los matrimonios y familias.`,
+        invocacion: (n) => `Glorioso/a ${n}`,
+        jaculatoria:(n) => `${n}, modelo de vida familiar cristiana, ruega por nosotros.`,
+        santos: [
+            "Santa Mónica","Santa Isabel de Hungría","Santa Gianna Beretta Molla",
+            "San Luis Martín","Santa Zélie Martin","Santa Isabel de Portugal",
+            "San Isidro Labrador","Santa María de la Cabeza","San Joaquín y Santa Ana",
+            "San Tomás More (casado)"
+        ]
+    },
+    "coro-jovenes": {
+        tituloSingular: "Santo/a Joven",
+        color: "#2a7a3a", fondo: "#f0fdf4",
+        intro:      (n) => `${n}, luz de la juventud cristiana, que alcanzaste la santidad en la flor de la vida con heroica fidelidad a Cristo, en esta novena pedimos tu intercesión para que los jóvenes de hoy descubran en Jesús el sentido pleno de su existencia.`,
+        invocacion: (n) => `Glorioso/a ${n}`,
+        jaculatoria:(n) => `${n}, modelo de juventud cristiana, ruega por nosotros.`,
+        santos: [
+            "Santo Domingo Savio","Santa María Goretti","San Estanislao de Kostka",
+            "San Juan Berchmans","Santa Juana de Arco","San Carlo Acutis",
+            "San Tarcisio","San Luis Gonzaga","Beata Chiara Badano",
+            "San Simón de Rojas"
+        ]
+    },
+    "coro-doctores": {
+        tituloSingular: "Doctor/a de la Iglesia",
+        color: "#4a3a8a", fondo: "#f4f3fd",
+        intro:      (n) => `${n}, insigne Doctor de la Iglesia, que iluminaste al Pueblo de Dios con tu sabiduría teológica y tu vida santa, en esta novena pedimos tu intercesión para que la Iglesia crezca en el conocimiento y amor de la verdad revelada.`,
+        invocacion: (n) => `Ilustre Doctor de la Iglesia, ${n}`,
+        jaculatoria:(n) => `${n}, Doctor de la Iglesia, ilumínanos con tu sabiduría.`,
+        santos: [
+            "San Agustín de Hipona","Santo Tomás de Aquino","San Jerónimo",
+            "San Juan Crisóstomo","San Buenaventura","Santa Teresa de Ávila",
+            "Santa Catalina de Siena","San Juan de la Cruz","San Roberto Belarmino",
+            "Santa Teresa de Lisieux","San Alfonso María de Ligorio","San Pedro Damián",
+            "San Bernardo de Claraval"
+        ]
+    },
+    "coro-misticos": {
+        tituloSingular: "Místico/a",
+        color: "#5a3a6a", fondo: "#f8f4fd",
+        intro:      (n) => `${n}, alma privilegiada que en la oración y el silencio alcanzaste las cumbres de la unión con Dios, en esta novena pedimos tu intercesión para que nuestras almas, desprendiéndose de las cosas terrenas, busquen a Dios con todo su ser.`,
+        invocacion: (n) => `Glorioso/a ${n}`,
+        jaculatoria:(n) => `${n}, alma contemplativa, enséñanos el camino de la oración.`,
+        santos: [
+            "San Juan de la Cruz","Santa Teresa de Ávila","San Bernardo de Claraval",
+            "Santa Hildegarda de Bingen","Santa Catalina de Siena","Santa Faustina Kowalska",
+            "San Francisco de Asís","Santa Ángela de Foligno","San Ignacio de Loyola",
+            "Santa Margarita María de Alacoque"
+        ]
+    },
+    "coro-ermitanos": {
+        tituloSingular: "Ermitaño/a",
+        color: "#6b4a1a", fondo: "#fdf8f0",
+        intro:      (n) => `${n}, ilustre ermitaño y penitente, que abrazaste la pobreza, la soledad y la penitencia por amor puro a Dios, en esta novena pedimos tu intercesión para que nuestros corazones se desprendan del mundo y busquen a Dios con toda el alma.`,
+        invocacion: (n) => `Glorioso/a ${n}`,
+        jaculatoria:(n) => `${n}, solitario/a de Dios, ruega por nosotros.`,
+        santos: [
+            "San Antonio Abad","San Pablo Ermitaño","San Benito de Nursia",
+            "San Simeón el Estilita","Santa María Magdalena","San Romualdo",
+            "San Martín de Tours","San Juan Bautista","San Pedro Damián"
+        ]
+    }
+};
+
+const COROS_IDS = Object.keys(CORO_DATA);
+
+// ================================================================
+//  TEMAS DE LOS 9 DÍAS — 6 CONJUNTOS SEGÚN CATEGORÍA TEOLÓGICA
+// ================================================================
+
+// --- 1. PERSONAS DIVINAS (Trinidad, Padre, Jesús, Espíritu Santo)
+//        Oración directa a Dios. Sin lenguaje de intercesión.
+const TEMAS_DIVINOS = [
+    { numero:1, titulo:"Día 1 — Fe y Confianza", icono:"✞",
+      meditacion:"En este primer día contemplamos que Tú, Señor, eres al mismo tiempo el objeto y la fuente de nuestra fe. No creemos en un principio abstracto, sino en el Dios vivo que se ha revelado y que ha entrado en la historia. La fe no es obra nuestra: es Tu don gratuito que Tú enciendes y sostienes. «Aumenta nuestra fe», pedían los Apóstoles (Lc 17,5), y esa misma súplica ponemos hoy en Tus manos.",
+      oracion:"Señor, aumenta nuestra fe. En los momentos de duda y oscuridad hazte presente en nuestro corazón para que Tu luz interior disipe toda sombra. Que esta novena afiance nuestra confianza en Tu amor y en Tu providencia sobre nuestras vidas. Amén." },
+    { numero:2, titulo:"Día 2 — Esperanza y Perseverancia", icono:"✦",
+      meditacion:"La esperanza cristiana no reposa en nuestras capacidades sino en Tus promesas, Señor. Prometiste no dejarnos huérfanos, prometiste la resurrección, prometiste estar con nosotros todos los días hasta el fin del mundo (Mt 28,20). Esas promesas son la roca sobre la que edificamos nuestra esperanza cuando todo lo demás tiembla bajo nuestros pies.",
+      oracion:"Señor, cuando el peso de las pruebas quiera ahogar nuestra esperanza, recuérdanos Tu fidelidad a lo largo de los siglos. Que miremos el pasado con gratitud, el presente con confianza y el futuro con esperanza viva, sabiendo que Tu amor nunca abandona a quien en Ti confía. Amén." },
+    { numero:3, titulo:"Día 3 — Amor y Caridad", icono:"♥",
+      meditacion:"Tú eres amor en Tu misma esencia, Señor. El Padre ama al Hijo en el Espíritu Santo desde la eternidad, y esa corriente de amor desborda hacia nosotros en la creación y en la redención. «Tanto amó Dios al mundo que entregó a Su Hijo Unigénito» (Jn 3,16): en esa entrega total está la medida insondable de Tu amor por nosotros.",
+      oracion:"Señor, que Tu amor nos transforme por dentro. Que recibirlo nos haga capaces de amar: a Ti sobre todas las cosas y al prójimo como a nosotros mismos. Consume en nosotros todo lo que no es amor, y haz que nuestra vida sea reflejo, aunque tenue, de la caridad que arde en Tu corazón. Amén." },
+    { numero:4, titulo:"Día 4 — Humildad y Conversión", icono:"☩",
+      meditacion:"Ante Tu santidad, Señor, toda criatura descubre su pequeñez y su pecado. Isaías exclamó: «¡Ay de mí, que soy un hombre de labios impuros!» al contemplar Tu gloria (Is 6,5). Pero Tú no buscas nuestra destrucción sino nuestra conversión: «¿Acaso quiero la muerte del malvado y no que se convierta y viva?» (Ez 18,23). Tu santidad es fuego que purifica, no que destruye.",
+      oracion:"Señor, convierte nuestros corazones. Ayúdanos a reconocer con humildad nuestros pecados y a no huir de Tu presencia como Adán, sino a correr hacia Ti como el hijo pródigo. Que esta novena sea un tiempo de sincera renovación interior. Amén." },
+    { numero:5, titulo:"Día 5 — Alabanza y Gratitud", icono:"★",
+      meditacion:"Toda la creación te alaba, Señor: los ángeles cantan sin cesar «Santo, Santo, Santo»; los astros proclaman Tu gloria. El ser humano es la única criatura que puede alabarte con conciencia y libertad, y esa alabanza consciente y libre es la ofrenda más preciosa que podemos presentarte. Nada te podemos dar que no sea ya Tuyo, excepto el corazón que se dobla ante Ti en adoración.",
+      oracion:"Señor, acepta la pequeña alabanza de esta novena. Que no sea solo oración de labios, sino adoración de toda nuestra vida: en el trabajo, en el descanso, en las alegrías y en las pruebas. Que todo lo que hagamos sea para Tu mayor gloria y el bien de nuestros hermanos. Amén." },
+    { numero:6, titulo:"Día 6 — Por la Familia", icono:"⊕",
+      meditacion:"Tú, Señor, eres el origen de toda paternidad en el cielo y en la tierra (Ef 3,15). La familia humana es reflejo, débil pero real, de la comunión de las Personas Divinas. Por eso, cuando las familias se destruyen se oscurece la imagen de Dios en el mundo; y cuando florecen en el amor, Tu gloria resplandece en ellas.",
+      oracion:"Señor, visita nuestras familias con Tu gracia. Sana las heridas que el pecado ha causado en nuestros hogares; fortalece los vínculos del amor conyugal y filial; haz que Tu paz reine en cada rincón de nuestras casas. Que cada familia de nuestra parroquia sea una pequeña Iglesia doméstica. Amén." },
+    { numero:7, titulo:"Día 7 — Por la Iglesia", icono:"✠",
+      meditacion:"La Iglesia es Tu obra, Señor: la fundaste sobre Pedro, la edificas con Tu Palabra y los sacramentos, la guías con Tu Espíritu. Ninguna tormenta humana puede destruirla porque Tú mismo la sostienes. Pero también nos llamas a ser Iglesia viva: cuerpo de Cristo en el mundo, sal de la tierra y luz de las gentes.",
+      oracion:"Señor, renueva Tu Iglesia desde adentro. Santifica al Papa, a los obispos, a los sacerdotes y a todos los fieles. Que nuestra parroquia sea una comunidad donde se viva el Evangelio con autenticidad y se dé testimonio de Tu amor ante el mundo. Amén." },
+    { numero:8, titulo:"Día 8 — Por los Difuntos", icono:"✙",
+      meditacion:"Tú, Señor, eres el Dios de vivos y no de muertos (Mt 22,32). Los que han partido de este mundo no han desaparecido: están en Tus manos, que son manos de misericordia. Nuestra oración por los difuntos es acto de fe en Tu poder sobre la muerte y confianza en el amor que no abandona a nadie.",
+      oracion:"Señor, en Tu misericordia acoge a todos nuestros difuntos, especialmente a los más olvidados. Que Tu luz perpetua los alumbre, y que aquellos que aún están en proceso de purificación sean llevados por Tu gracia a la plenitud de la vida en Ti. Que pronto gocen de Tu visión cara a cara para siempre. Amén." },
+    { numero:9, titulo:"Día 9 — Petición Especial y Consagración", icono:"✿",
+      meditacion:"Al llegar al último día de esta novena, nos ponemos completamente en Tus manos, Señor. No como quien presenta una demanda, sino como hijo que confía en el Padre. Tú conoces lo que necesitamos antes de que lo pidamos (Mt 6,8), pero nos invitas a pedir porque en el pedir expresamos nuestra dependencia amorosa de Ti.",
+      oracion:"Señor, te presentamos nuestra petición especial (pausa). Pero sobre todo pedimos que Tu voluntad se haga en nuestras vidas, pues sabemos que Tu voluntad es siempre amor y providencia. Que esta novena nos haya acercado más a Ti y que su fruto perdure en nosotros. Amén." }
+];
+
+// --- 2. NUESTRA SEÑORA (todas las advocaciones marianas)
+//        Intercesión maternal. Referencias a su papel en la historia de la salvación.
+const TEMAS_MARIA = [
+    { numero:1, titulo:"Día 1 — Fe y Confianza", icono:"✞",
+      meditacion:"Al comenzar esta novena contemplamos la fe heroica de María, que creyó las palabras del ángel cuando ningún ojo humano podía ver su cumplimiento. «Bienaventurada la que creyó que se cumplirían las cosas dichas por el Señor» (Lc 1,45). En ella fe y maternidad son inseparables: creyó primero con el corazón antes de concebir con el cuerpo.",
+      oracion:"{INVOCACION}, intercede por nosotros para que nuestra fe se parezca a la tuya: humilde, confiada y fecunda. Que en los momentos en que no comprendamos los caminos de Dios, aprendamos de ti a decir también nosotros: «Hágase en mí según Tu palabra.» Amén." },
+    { numero:2, titulo:"Día 2 — Esperanza y Perseverancia", icono:"✦",
+      meditacion:"María permaneció de pie junto a la Cruz (Jn 19,25) cuando todo parecía perdido. Su esperanza no se apagó en la noche del Viernes Santo, porque su fe en la promesa de la resurrección era más fuerte que el dolor. Ella es para la Iglesia modelo de esperanza que no se rinde, que persevera en la oración junto con los demás discípulos en el Cenáculo.",
+      oracion:"{INVOCACION}, acompáñanos en nuestras noches oscuras como acompañaste a los Apóstoles antes de Pentecostés. Que tu presencia maternal nos recuerde que ningún Viernes Santo dura para siempre y que la Pascua es la última palabra de Dios. Intercede para que perseveremos con esperanza viva. Amén." },
+    { numero:3, titulo:"Día 3 — Amor y Caridad", icono:"♥",
+      meditacion:"El amor de María es el amor de una madre que todo lo da y nada retiene para sí. Dio a su Hijo al Padre desde el primer momento, lo ofreció al mundo en Belén y lo entregó al pie de la Cruz. Ese mismo amor materno lo extiende ahora a todos los hijos adoptivos que Jesús le confió al morir: «He ahí a tu madre» (Jn 19,27).",
+      oracion:"{INVOCACION}, enséñanos a amar con la generosidad con que tú amaste. Que nuestro amor no sea calculador ni egoísta, sino entregado y fecundo. Intercede ante tu Hijo para que Su amor transforme nuestros corazones y nos haga capaces de amar como Él nos amó. Amén." },
+    { numero:4, titulo:"Día 4 — Humildad y Conversión", icono:"☩",
+      meditacion:"María es la «llena de gracia»: en ella no hubo sombra de pecado, y por eso su presencia nos invita a desear esa misma pureza. No para desanimarnos por nuestra miseria, sino para confiar en que Dios puede obrar maravillas también en nosotros. Ella misma proclamó: «El Poderoso ha hecho en mí grandes cosas» (Lc 1,49).",
+      oracion:"{INVOCACION}, intercede por nuestra conversión. Lleva ante tu Hijo nuestro arrepentimiento sincero y pide por nosotros la gracia de alejarnos del pecado con firmeza. Que tu pureza sea nuestro horizonte, tu humildad nuestro camino y tu fidelidad nuestro modelo. Amén." },
+    { numero:5, titulo:"Día 5 — Alabanza y Gratitud", icono:"★",
+      meditacion:"El Magnificat es la gran oración de alabanza de María, y en él enseña a toda la Iglesia cómo agradecer a Dios. «Mi alma glorifica al Señor y mi espíritu se alegra en Dios mi Salvador» (Lc 1,46-47). Alabar a Dios no es solo pronunciar palabras, sino reconocer con todo el ser que todo lo bueno viene de Él.",
+      oracion:"{INVOCACION}, enséñanos a orar el Magnificat con el corazón, no solo con los labios. Que como tú, podamos reconocer las maravillas que Dios ha obrado en nuestra vida y alabarle en todo momento, en la alegría y en la prueba, con gratitud sincera. Amén." },
+    { numero:6, titulo:"Día 6 — Por la Familia", icono:"⊕",
+      meditacion:"María vivió en el seno de la Sagrada Familia de Nazaret, escuela de amor, trabajo, oración y silencio. Allí, junto a José y al Niño Jesús, se santificó la vida cotidiana: las comidas, el descanso, el trabajo del taller. Ella sabe desde adentro lo que significa ser esposa, madre y alma de un hogar.",
+      oracion:"{INVOCACION}, visita nuestros hogares como visitaste el de Isabel y como recibiste a Jesús en el tuyo. Intercede por cada familia de nuestra parroquia; protege los matrimonios; acompaña a los padres en su misión; consuela a los hijos en sus angustias. Que María sea la reina de cada hogar. Amén." },
+    { numero:7, titulo:"Día 7 — Por la Iglesia", icono:"✠",
+      meditacion:"María es Madre de la Iglesia: el mismo Jesús la entregó como madre a todos sus discípulos en la persona de Juan. Ella estuvo en el Cenáculo orando con los Apóstoles antes de Pentecostés, y su intercesión sigue acompañando a la Iglesia en todos los siglos. Donde hay devoción mariana genuina, florece la vida cristiana.",
+      oracion:"{INVOCACION}, intercede por la Iglesia universal y por nuestra parroquia de Santa Lucía. Que nuestra comunidad sea digna de llamarse hija tuya: fiel al Evangelio, generosa en la caridad y ardiente en la oración. Bajo tu amparo presentamos a nuestros pastores y a todos los fieles. Amén." },
+    { numero:8, titulo:"Día 8 — Por los Difuntos", icono:"✙",
+      meditacion:"María estuvo presente en la muerte de su Hijo y recibió Su cuerpo entre sus brazos. Por eso conoce el dolor de la pérdida y la esperanza de la resurrección mejor que nadie. Ella, asunta al cielo en cuerpo y alma, es prenda y signo de lo que Dios promete a todos los que le aman.",
+      oracion:"{INVOCACION}, intercede ante tu Hijo por las almas de nuestros difuntos. Tú que acompañaste a Jesús hasta la muerte y lo viste resucitado, llévalos ante el trono de su misericordia. Que alcancen pronto el descanso eterno en la luz sin ocaso. Amén." },
+    { numero:9, titulo:"Día 9 — Petición Especial y Consagración", icono:"✿",
+      meditacion:"En Caná, María fue la primera en advertir la necesidad y la primera en interceder: «No tienen vino» (Jn 2,3). Sin insistir ni exigir, simplemente presentó la necesidad a su Hijo y confió. Ese es el modelo de toda petición a través de María: presentar la necesidad con sencillez y hacer siempre lo que Él diga.",
+      oracion:"{INVOCACION}, presenta ante tu Hijo nuestra petición especial (pausa). Como en Caná dijiste «no tienen vino», di hoy ante Él lo que nos falta. Y enséñanos a hacer siempre lo que Él diga, aunque Su respuesta supere nuestros planes y expectativas. Amén." }
+];
+
+// --- 3. SAN JOSÉ
+//        Lenguaje propio de su papel como padre virginal, justo, custodio y patrono.
+const TEMAS_JOSE = [
+    { numero:1, titulo:"Día 1 — Fe y Confianza", icono:"✞",
+      meditacion:"José creyó en silencio. No dejó testimonios escritos, no pronunció discursos, no hizo milagros: simplemente obedeció con fe lo que el ángel le comunicó en sueños, una y otra vez. Su fe era la del hombre justo que escucha a Dios y actúa sin pedir explicaciones. «Hizo como el ángel del Señor le había mandado» (Mt 1,24).",
+      oracion:"San José, intercede por nosotros para que nuestra fe sea como la tuya: silenciosa, obediente y operante. Que no esperemos entender todo para confiar en Dios, sino que, como tú, actuemos según Su voluntad aunque el camino no nos resulte del todo claro. Amén." },
+    { numero:2, titulo:"Día 2 — Esperanza y Perseverancia", icono:"✦",
+      meditacion:"José vivió experiencias que habrían podido ahogar la esperanza de cualquiera: la perplejidad ante el embarazo de María, la huida a Egipto en la noche, el exilio en tierra extraña. Sin embargo, en cada momento mantuvo la confianza en Dios y protegió a su familia. Su esperanza era la de quien sabe que Dios nunca abandona a los suyos.",
+      oracion:"San José, acompáñanos en los momentos de incertidumbre y miedo. Intercede especialmente por quienes hoy se sienten desterrados, solos o sin futuro, para que encuentren en Dios el mismo amparo que tú encontraste en el destierro de Egipto. Amén." },
+    { numero:3, titulo:"Día 3 — Amor y Caridad", icono:"♥",
+      meditacion:"El amor de José se expresó en actos concretos: custodiar, proteger, trabajar, velar, partir al exilio cuando fue necesario. No fue un amor de palabras sino de servicio callado y constante. En él vemos que el amor verdadero no busca el propio protagonismo, sino el bien del amado, aunque eso cueste sacrificio diario.",
+      oracion:"San José, intercede por nosotros para que aprendamos a amar como tú amaste: con obras más que con palabras, con paciencia y fidelidad cotidiana. Que este amor concreto santifique nuestra vida familiar y laboral, y nos haga crecer en la semejanza con Cristo. Amén." },
+    { numero:4, titulo:"Día 4 — Humildad y Conversión", icono:"☩",
+      meditacion:"El Evangelio llama a San José «justo» (Mt 1,19), lo que en el lenguaje bíblico significa vivir en íntima comunión con Dios, dócil a Su voluntad. Esa justicia no era arrogancia sino docilidad: el hombre justo es el que se deja moldear por Dios. Su ejemplo nos invita a examinar nuestra propia vida y a desear esa misma docilidad interior.",
+      oracion:"San José, ayúdanos a cultivar la docilidad al Espíritu Santo que tú tuviste. Intercede para que reconozcamos con humildad nuestras infidelidades y nos dejemos renovar por la gracia de Dios. Que caminemos cada día un poco más por la senda de la justicia evangélica. Amén." },
+    { numero:5, titulo:"Día 5 — Alabanza y Gratitud", icono:"★",
+      meditacion:"San José pasó su vida en Nazaret con Jesús y María, casi completamente ignorado por el mundo. Su santidad fue invisible a los ojos humanos, pero Dios vio su corazón y lo colmó de gracias. Hoy la Iglesia lo venera como el mayor de los santos después de la Virgen, prueba de que ante Dios el valor no se mide por el ruido sino por el amor fiel y cotidiano.",
+      oracion:"San José, enséñanos a no buscar el aplauso humano sino el agrado de Dios. Que trabajemos, amemos y oremos en el silencio fecundo de Nazaret, sabiendo que el Padre que ve en lo secreto recompensará en la eternidad lo que hacemos hoy por amor. Amén." },
+    { numero:6, titulo:"Día 6 — Por la Familia", icono:"⊕",
+      meditacion:"A San José fue confiada la familia más santa de la historia, y él respondió con toda su vida. Hoy el Señor sigue confiando familias enteras al cuidado de padres y madres que, como José, están llamados a ser custodios del don que Dios les ha entregado: un hogar, un matrimonio, unos hijos.",
+      oracion:"San José, patrono de la familia cristiana, intercede por todos los esposos y padres. Dales fortaleza para cumplir su misión, ternura para amar sin condiciones y sabiduría para guiar a sus hijos por el camino de Dios. Protege especialmente a las familias más vulnerables. Amén." },
+    { numero:7, titulo:"Día 7 — Por la Iglesia", icono:"✠",
+      meditacion:"El Papa Pío IX proclamó a San José patrono de la Iglesia universal. Quien custodió al Hijo de Dios hecho carne cuida también de Su cuerpo místico que es la Iglesia. En tiempos de confusión y persecución, la Iglesia mira a José como modelo de firmeza callada y fidelidad sin ostentación.",
+      oracion:"San José, patrono de la Iglesia universal, intercede por el Santo Padre, por los obispos y por toda la comunidad cristiana. Que como protegiste a la Sagrada Familia, protejas hoy a la familia de Dios en el mundo de los ataques del enemigo y de sus propias debilidades internas. Amén." },
+    { numero:8, titulo:"Día 8 — Por los Difuntos", icono:"✙",
+      meditacion:"San José es el patrono de la buena muerte, porque la tradición piadosa sostiene que murió en brazos de Jesús y María, la muerte más dulce que se pueda imaginar. Por eso la Iglesia lo invoca especialmente por quienes agonizan y por las almas del Purgatorio. Su intercesión es poderosa ante el Señor de la vida y de la muerte.",
+      oracion:"San José, patrono de la buena muerte, intercede ante el Señor por las almas de nuestros difuntos. Por tu poderosa intercesión, alcánzales la misericordia divina y el descanso eterno. Que quienes aún están en proceso de purificación lleguen pronto a la plenitud de la vida en Dios. Amén." },
+    { numero:9, titulo:"Día 9 — Petición Especial y Consagración", icono:"✿",
+      meditacion:"Santa Teresa de Ávila decía no recordar haberle pedido algo a San José que no obtuviera. Con esa misma confianza presentamos hoy nuestra petición especial. José, que fue fiel en lo poco, es poderoso en lo mucho; quien cuidó del Hijo de Dios no puede desentenderse de las necesidades de Sus hermanos.",
+      oracion:"San José, padre y custodio nuestro, te presentamos con plena confianza nuestra petición especial (pausa). Llévala ante Dios con tu poderosa intercesión. Si es conforme a nuestra salvación, alcánzanosla; si no, pídele al Señor que nos dé lo que verdaderamente necesitamos. Amén." }
+];
+
+// --- 4. LOS ÁNGELES
+//        Ministerio angélico. Mensajeros, custodios, adoradores.
+const TEMAS_ANGELES = [
+    { numero:1, titulo:"Día 1 — Fe y Confianza", icono:"✞",
+      meditacion:"Los ángeles son los primeros adoradores de Dios, y su existencia misma es un artículo de fe que profesamos en el Credo. Ellos creen y ven; nosotros creemos sin ver. «Bienaventurados los que no han visto y han creído» (Jn 20,29). Al invocar a los ángeles pedimos que su contemplación de Dios fortalezca nuestra fe peregrina.",
+      oracion:"{INVOCACION}, fortalece nuestra fe con tu intercesión. Tú que contemplas el rostro de Dios sin velo, alcánzanos una fe más viva y ardiente para que en nuestra peregrinación terrena nos acerquemos cada vez más a esa visión que tú ya gozas eternamente. Amén." },
+    { numero:2, titulo:"Día 2 — Esperanza y Perseverancia", icono:"✦",
+      meditacion:"Los ángeles son mensajeros de la esperanza de Dios para la humanidad: Gabriel anunció la Encarnación; el ángel comunicó a los pastores el nacimiento del Salvador; el ángel del sepulcro proclamó la Resurrección. Cada gran momento de esperanza en la historia de la salvación llegó a los hombres a través de un mensajero celestial.",
+      oracion:"{INVOCACION}, intercede para que vivamos en la esperanza que tú anuncias. Que las buenas nuevas del Evangelio sean siempre el alimento de nuestra alma, y que no permitamos que la angustia o el desaliento apaguen en nosotros la luz de Cristo. Amén." },
+    { numero:3, titulo:"Día 3 — Amor y Caridad", icono:"♥",
+      meditacion:"Los ángeles son espíritus de amor puro que participan del mismo amor de Dios y lo comunican a las almas que custodian. El ángel guardián no acompaña por obligación sino por amor a Dios y a la persona a quien sirve. En esa devoción fiel y silenciosa está la lección: el amor verdadero es constante, no se cansa aunque no sea visto ni correspondido.",
+      oracion:"{INVOCACION}, alcánzanos de Dios un corazón más amoroso. Que tu ejemplo de servicio fiel y silencioso nos inspire a amar a Dios y al prójimo sin buscar reconocimiento ni recompensa. Presenta ante el Señor nuestra petición de un amor más puro y más constante. Amén." },
+    { numero:4, titulo:"Día 4 — Humildad y Conversión", icono:"☩",
+      meditacion:"Los ángeles, espíritus puros, no necesitan conversión, pero su misión incluye ayudarnos a nosotros en la nuestra. Cuando Agar huía al desierto, el ángel la encontró y la devolvió al camino; cuando Elías estaba agotado, el ángel le dio de comer para que pudiera continuar. Son instrumentos de la misericordia de Dios para los pecadores fatigados.",
+      oracion:"{INVOCACION}, lleva ante Dios nuestro arrepentimiento y nuestro deseo de convertirnos. Ayúdanos a no huir de Su presencia como Adán, sino a correr hacia Él como el hijo pródigo. Intercede para que recibamos la gracia de una verdadera renovación interior. Amén." },
+    { numero:5, titulo:"Día 5 — Alabanza y Gratitud", icono:"★",
+      meditacion:"«Santo, Santo, Santo es el Señor, Dios del universo»: este es el himno que los serafines cantan sin cesar ante el trono de Dios (Is 6,3). Cuando en la Misa proclamamos el Sanctus, nos unimos a ese coro eterno de los ángeles. Rezar es adelantar en la tierra la liturgia del cielo, y en esa liturgia los ángeles nos llevan ventaja infinita.",
+      oracion:"{INVOCACION}, une nuestra pobre alabanza al himno glorioso que elevas sin cesar ante Dios. Que nuestra oración en esta novena sea eco del Sanctus celestial, y que un día podamos unirnos a ti en la adoración eterna del Dios Uno y Trino. Amén." },
+    { numero:6, titulo:"Día 6 — Por la Familia", icono:"⊕",
+      meditacion:"La devoción al ángel de la guarda ha sido siempre devoción familiar: padres que enseñan a sus hijos a invocarlo, familias que se saben acompañadas por una cohorte de protectores celestiales. Cada miembro de la familia tiene su ángel custodio, y esos ángeles trabajan unidos por la salvación de quienes les han sido confiados.",
+      oracion:"{INVOCACION}, protege a nuestra familia con tu intercesión. Aleja de nuestros hogares todo peligro espiritual y material. Que los ángeles custodios de cada miembro de nuestra familia nos conduzcan a todos, unidos, por el camino de la santidad y de la vida eterna. Amén." },
+    { numero:7, titulo:"Día 7 — Por la Iglesia", icono:"✠",
+      meditacion:"Los Padres de la Iglesia hablan de ángeles custodios de los pueblos y de las comunidades. El Apocalipsis dirige sus cartas a los ángeles de las siete Iglesias (Ap 2-3). La Iglesia tiene, pues, guardianes angélicos, y en cada celebración eucarística los ángeles se unen invisiblemente a nuestra asamblea litúrgica.",
+      oracion:"{INVOCACION}, intercede por nuestra parroquia y por la Iglesia universal. Defiéndela de los ataques del Maligno; fortalece la fe de los débiles; ilumina a los pastores; guía de regreso a los alejados. Que la Iglesia sea siempre fiel al Evangelio que los ángeles anunciaron al mundo. Amén." },
+    { numero:8, titulo:"Día 8 — Por los Difuntos", icono:"✙",
+      meditacion:"En la parábola del rico Epulón, Lázaro muere y los ángeles lo llevan al seno de Abraham (Lc 16,22). Esta imagen piadosa nos habla del ministerio angélico en la hora de la muerte: acompañar las almas en su tránsito hacia Dios. Por eso la liturgia pide en el In Paradisum que los ángeles conduzcan al difunto al paraíso.",
+      oracion:"{INVOCACION}, lleva ante el trono de Dios las almas de todos nuestros difuntos. Que tu ministerio celestial alcance especialmente a quienes murieron más necesitados de la misericordia divina. Que pronto lleguen a la visión beatífica que tú ya gozas eternamente. Amén." },
+    { numero:9, titulo:"Día 9 — Petición Especial y Consagración", icono:"✿",
+      meditacion:"El libro del Apocalipsis muestra al ángel presentando ante Dios las oraciones del pueblo como incienso que sube al cielo (Ap 8,3-4): imagen hermosa del ministerio angélico que recoge, purifica y eleva nuestras pobres oraciones ante el trono divino. Hoy pedimos a {NOMBRE} que haga lo mismo con nuestra petición especial.",
+      oracion:"{INVOCACION}, toma nuestra petición especial (pausa) y preséntala ante Dios como incienso fragante. Si lo que pedimos es conforme a Su voluntad, alcánzanoslo; si no, que Su sabiduría nos dé lo que realmente conviene a nuestra salvación. Amén." }
+];
+
+// --- 5. SANTA LUCÍA (patrona de la parroquia — novena propia)
+//        Imágenes de luz, martirio, patronazgo. Lenguaje singular y eclesial.
+const TEMAS_LUCIA = [
+    { numero:1, titulo:"Día 1 — Fe y Confianza", icono:"✞",
+      meditacion:"Santa Lucía creyó con una fe que no pedía condiciones ni comodidades. Cuando la amenazaron con el deshonor y la muerte para que renegara de Cristo, respondió que el cuerpo solo se contamina cuando el alma consiente. Esa convicción profunda es signo de una fe que ha echado raíces en lo más hondo del ser, más allá de los miedos y del instinto de supervivencia.",
+      oracion:"Santa Lucía, intercede por nosotros para que nuestra fe sea tan firme como la tuya. Que no sea una fe de tiempos fáciles, sino una fe que resiste en la adversidad y se afianza en la prueba. Que como tú, sepamos que nadie puede arrebatarnos la luz interior que Cristo enciende en el alma. Amén." },
+    { numero:2, titulo:"Día 2 — Esperanza y Perseverancia", icono:"✦",
+      meditacion:"Santa Lucía fue llevada ante el juez pagano, amenazada con la prostitución y con la muerte. Sin embargo, en ningún momento perdió la paz ni la esperanza, porque sabía que el martirio no era el final sino el comienzo. «El que guarda mi palabra no verá la muerte para siempre» (Jn 8,51): esa promesa la sostuvo hasta el último instante.",
+      oracion:"Santa Lucía, modelo de esperanza inquebrantable, intercede por nosotros en los momentos en que el miedo o el desaliento quieran vencernos. Que tu ejemplo nos recuerde que la muerte no tiene la última palabra para quien vive en Cristo, y que la fidelidad perseverante obtiene la corona de la vida eterna. Amén." },
+    { numero:3, titulo:"Día 3 — Amor y Caridad", icono:"♥",
+      meditacion:"El amor de Santa Lucía a Cristo fue tan ardiente que la llevó a rechazar la riqueza y el matrimonio para consagrarse enteramente al Señor. Distribuyó su herencia entre los pobres porque amar a Cristo implicaba amar a Sus más pequeños. En su martirio consumó ese amor con la ofrenda de su propia sangre.",
+      oracion:"Santa Lucía, patrona nuestra, intercede para que el amor a Cristo sea la fuerza que mueva todas nuestras acciones. Que no amemos a Dios solo con palabras, sino con la generosidad concreta de quien distribuye su tiempo, sus bienes y su vida al servicio de los demás. Amén." },
+    { numero:4, titulo:"Día 4 — Humildad y Conversión", icono:"☩",
+      meditacion:"La leyenda piadosa cuenta que Santa Lucía llevaba una corona de velas en la cabeza para alumbrar el camino hacia los cristianos escondidos en las catacumbas, con las manos libres para llevarles el alimento. Esa imagen es símbolo de la vida cristiana: la conversión no es solo dejar el mal, sino ponerse activamente al servicio del bien, siendo luz para los demás.",
+      oracion:"Santa Lucía, luz de nuestra parroquia, intercede para que nuestra conversión sea verdadera y fecunda. Que no nos quedemos en el arrepentimiento estéril, sino que, convertidos, nos volvamos también portadores de la luz de Cristo a quienes nos rodean. Amén." },
+    { numero:5, titulo:"Día 5 — Alabanza y Gratitud", icono:"★",
+      meditacion:"El nombre de Santa Lucía viene del latín lux, luz. Toda su vida fue una alabanza luminosa a Dios: la luz de su virginidad consagrada, la luz de su caridad con los pobres, la luz de su testimonio ante el juez, la luz de su martirio. Hoy, siglos después, su nombre ilumina el calendario de la Iglesia y da nombre a nuestra parroquia.",
+      oracion:"Santa Lucía, enséñanos a ser luz en el mundo como tú lo fuiste en Siracusa. Que nuestra vida sea también alabanza visible a Dios: que quien nos vea vea en nosotros algo que lo lleve a glorificar al Padre que está en los cielos (Mt 5,16). Amén." },
+    { numero:6, titulo:"Día 6 — Por la Familia", icono:"⊕",
+      meditacion:"Santa Lucía honró a su madre con amor filial y fue con ella a visitar la tumba de Santa Ágata para pedirle su curación. El amor de Lucía por su familia era inseparable de su amor a Dios. Su hogar fue escuela de fe antes de convertirse en escuela de martirio, y en él aprendió a amar a Dios sobre todas las cosas.",
+      oracion:"Santa Lucía, patrona nuestra, intercede por nuestras familias. Que la fe cultivada en cada hogar dé frutos de santidad, como la fe cultivada en el tuyo te preparó para dar tu vida por Cristo. Protege especialmente a los hijos jóvenes de nuestra parroquia. Amén." },
+    { numero:7, titulo:"Día 7 — Por la Iglesia", icono:"✠",
+      meditacion:"Santa Lucía murió en Siracusa durante la persecución de Diocleciano, en los últimos años en que el Imperio Romano perseguía a la Iglesia. Su sangre, como la de todos los mártires, fue semilla fecunda de nuevos creyentes. Hoy la Iglesia sigue necesitando testigos valientes: el martirio ha cambiado de forma, pero no ha desaparecido del mundo.",
+      oracion:"Santa Lucía, intercede por la Iglesia que lleva tu nombre en nuestra parroquia. Que seamos dignos de la patrona que nos protege: valientes en el testimonio, generosos en la caridad, fieles en la oración diaria. Que tu luz ilumine el camino de toda nuestra comunidad. Amén." },
+    { numero:8, titulo:"Día 8 — Por los Difuntos", icono:"✙",
+      meditacion:"Santa Lucía conoce la muerte desde adentro: ella misma fue ejecutada por amor a Cristo. Como mártir, su paso por la muerte fue tránsito directo hacia Dios. Ahora desde el cielo intercede por todos los que aún peregrinan, incluyendo a quienes se purifican en el umbral de la eternidad. Su intercesión tiene el poder de quien ha vencido la muerte en Cristo.",
+      oracion:"Santa Lucía, intercede ante el Señor por las almas de nuestros difuntos, especialmente por quienes pertenecieron a esta parroquia que lleva tu nombre. Que encuentren en ti una intercesora poderosa, y que pronto lleguen a contemplar la luz de Dios que tú ya gozas eternamente. Amén." },
+    { numero:9, titulo:"Día 9 — Petición Especial y Consagración", icono:"✿",
+      meditacion:"Terminamos esta novena a nuestra patrona con gratitud por el don de tenerla como madre y protectora. Una parroquia con santa patrona no está sola: tiene en el cielo a quien la acompaña, la defiende y la presenta ante Dios. En este último día renovamos nuestra consagración a Santa Lucía y le pedimos que siga iluminando el camino de nuestra comunidad.",
+      oracion:"Santa Lucía, patrona y madre nuestra, recibe la ofrenda de esta novena y lleva ante el Señor nuestra petición especial (pausa). Continúa siendo la luz que alumbra nuestra parroquia en tiempos de oscuridad. Y cuando llegue el fin de nuestra peregrinación, recíbenos en el cielo donde tú ya resplandeces para siempre. Amén." }
+];
+
+// --- 6. SANTOS Y COROS (santos individuales de cualquier coro)
+//        Intercesión estándar. Referencias a comunión de santos. {NOMBRE}/{INVOCACION}.
+const TEMAS_SANTOS = [
+    { numero:1, titulo:"Día 1 — Fe y Confianza", icono:"✞",
+      meditacion:"Comenzamos esta novena a {NOMBRE} meditando sobre la fe que fue el fundamento de su santidad. Los santos no nacieron santos: llegaron a serlo porque creyeron con toda su alma en las promesas de Dios y actuaron en consecuencia, a veces a contracorriente de su época. La fe de {NOMBRE} nos interpela hoy: ¿con esa misma radicalidad creemos nosotros?",
+      oracion:"{INVOCACION}, intercede por nosotros para que nuestra fe se inspire en la tuya. Que el Señor, que te concedió creer hasta el heroísmo, nos conceda también una fe más viva, más valiente y más fecunda en las obras de la caridad. Amén." },
+    { numero:2, titulo:"Día 2 — Esperanza y Perseverancia", icono:"✦",
+      meditacion:"{NOMBRE} vivió también momentos de prueba, de oscuridad y de incomprensión humana. Lo que lo/la distinguió fue la perseverancia: no se rindió cuando las circunstancias eran adversas, sino que ancló su esperanza en Dios más que en los resultados visibles. En esa perseverancia esperanzada está una de las claves de su santidad.",
+      oracion:"{INVOCACION}, intercede por nosotros en los momentos de prueba. Que como tú, aprendamos a no medir el amor de Dios por las consolaciones que sentimos, sino por la fe en Sus promesas eternas. Alcánzanos la gracia de perseverar con alegría y confianza. Amén." },
+    { numero:3, titulo:"Día 3 — Amor y Caridad", icono:"♥",
+      meditacion:"El amor fue la médula de la santidad de {NOMBRE}. Los santos no son admirables principalmente por sus penitencias o sus poderes, sino por la radicalidad con que amaron a Dios y al prójimo. Ese amor los hizo capaces de gestos que el mundo no comprende: la entrega total, el perdón a los enemigos, el servicio incondicional hasta el final.",
+      oracion:"{INVOCACION}, alcánzanos de Dios la gracia de amar como tú amaste. Que nuestro corazón, tantas veces atado al egoísmo, se dilate bajo la acción del Espíritu Santo para amar con la libertad y la generosidad de los verdaderos hijos de Dios. Amén." },
+    { numero:4, titulo:"Día 4 — Humildad y Conversión", icono:"☩",
+      meditacion:"La mayoría de los santos no llegaron a la santidad de un solo paso: pasaron por procesos de conversión, a veces lentos y dolorosos. Agustín tardó años en dar el paso definitivo; Pedro negó a Cristo antes de morir por Él. La santidad no es ausencia de caídas sino fidelidad en el levantarse. {NOMBRE} nos muestra ese camino exigente y posible.",
+      oracion:"{INVOCACION}, intercede por nuestra conversión. Lleva ante el Señor nuestro deseo sincero de cambiar, nuestro arrepentimiento por el pasado y nuestro propósito firme de enmienda. Que la gracia de Dios, que te transformó a ti, nos transforme también a nosotros. Amén." },
+    { numero:5, titulo:"Día 5 — Alabanza y Gratitud", icono:"★",
+      meditacion:"Los santos son la mayor alabanza que la humanidad eleva a Dios, porque en ellos se ve lo que la gracia puede hacer con la fragilidad humana. «Admirable es Dios en Sus santos» (Sal 68,36): al venerar a {NOMBRE} estamos glorificando al Dios que lo/la santificó. La canonización no termina mirando al santo sino a Dios, que lo hizo santo.",
+      oracion:"{INVOCACION}, únete a nuestra alabanza en esta novena. Que tu intercesión amplifique nuestra pobre oración y la eleve ante el trono de Dios enriquecida con los méritos de tu vida santa. Gloria a Dios, admirable en Sus santos. Amén." },
+    { numero:6, titulo:"Día 6 — Por la Familia", icono:"⊕",
+      meditacion:"{NOMBRE}, cualquiera que haya sido su estado de vida, vivió sus relaciones humanas como camino de santificación. Los santos nos enseñan que la familia no es obstáculo para la santidad sino su escuela más exigente: amar a los que están cerca, perdonar a quienes conviven, servir a los que dependen de uno sin esperar reconocimiento.",
+      oracion:"{INVOCACION}, presenta ante el trono de Dios a nuestras familias. Intercede especialmente por los matrimonios en crisis, por los hijos alejados de la fe, por los ancianos solos y por los hogares marcados por el sufrimiento. Que la gracia de Dios los visite y los sane. Amén." },
+    { numero:7, titulo:"Día 7 — Por la Iglesia", icono:"✠",
+      meditacion:"Los santos no se salvaron solos: pertenecieron a la Iglesia, se nutrieron de sus sacramentos y fueron formados por su tradición de siglos. Y a su vez la enriquecieron con sus carismas y su testimonio. {NOMBRE} amó a la Iglesia con sus luces y sus sombras, y desde el cielo sigue intercediendo por ella.",
+      oracion:"{INVOCACION}, intercede por la Iglesia universal y por nuestra parroquia de Santa Lucía. Que los pastores sean santos, que los fieles sean misioneros y que los alejados encuentren el camino de regreso. Que seamos dignos de la herencia espiritual que santos como tú nos han dejado. Amén." },
+    { numero:8, titulo:"Día 8 — Por los Difuntos", icono:"✙",
+      meditacion:"La comunión de los santos une a todos los bautizados: a los que peregrinan en la tierra, a los que se purifican en el umbral del cielo y a los que ya gozan de Dios en el paraíso. {NOMBRE} forma parte de esa comunión gloriosa y desde allí puede interceder poderosamente por nuestros difuntos, como un amigo fiel ante el Rey.",
+      oracion:"{INVOCACION}, lleva ante el trono de Dios las almas de todos nuestros difuntos. Por los méritos de tu vida santa y de la Preciosa Sangre de Jesucristo, alcánzales la misericordia divina y el descanso eterno. Que pronto entren en la plena comunión del cielo. Amén." },
+    { numero:9, titulo:"Día 9 — Petición Especial y Consagración", icono:"✿",
+      meditacion:"Terminamos esta novena a {NOMBRE} renovando nuestra devoción y nuestra confianza en su intercesión. Los santos no son rivales de Cristo sino Sus mejores amigos ante el Padre, y esa amistad con Dios hace poderosa su intercesión. Presentamos hoy con toda confianza nuestra petición especial, seguros de que {NOMBRE} la llevará ante el Señor.",
+      oracion:"{INVOCACION}, te presentamos nuestra petición especial (pausa). Llévala ante Dios con tu intercesión, y si es conforme a Su voluntad, alcánzanosla. En todo caso, que esta novena nos haya acercado más a Dios y que tu ejemplo siga inspirando nuestra vida cristiana. Amén." }
+];
+
+// ================================================================
+//  GESTIÓN DE DATOS (localStorage)
+// ================================================================
+const STORAGE_KEY = 'parroquia_santa_lucia_novenas_v2';
+
+function cargarNovenas() {
+    try { const d = localStorage.getItem(STORAGE_KEY); return d ? JSON.parse(d) : []; }
+    catch(e) { return []; }
+}
+function guardarNovenas(n) { localStorage.setItem(STORAGE_KEY, JSON.stringify(n)); }
+function generarId() { return Date.now().toString(36) + Math.random().toString(36).substr(2); }
+
+// ================================================================
+//  UI: SELECTOR EN CASCADA
+// ================================================================
+document.getElementById('sel-devocion').addEventListener('change', function() {
+    const val = this.value;
+    const esCoro = COROS_IDS.includes(val);
+    const esMaria = val === 'nuestra-senora-personalizada';
+
+    document.getElementById('campo-personalizado').style.display = esMaria ? 'block' : 'none';
+    document.getElementById('selector-santo-container').style.display = esCoro ? 'block' : 'none';
+    document.getElementById('campo-santo-personalizado').style.display = 'none';
+
+    if (esCoro) {
+        const coro = CORO_DATA[val];
+        const sel = document.getElementById('sel-santo');
+        sel.innerHTML = '<option value="">— Elige el/la santo/a —</option>';
+        coro.santos.forEach(s => {
+            const opt = document.createElement('option');
+            opt.value = s; opt.textContent = s;
+            sel.appendChild(opt);
+        });
+        const otro = document.createElement('option');
+        otro.value = '__otro__'; otro.textContent = 'Otro/a santo/a…';
+        sel.appendChild(otro);
+    }
+});
+
+document.getElementById('sel-santo').addEventListener('change', function() {
+    document.getElementById('campo-santo-personalizado').style.display =
+        this.value === '__otro__' ? 'block' : 'none';
+});
+
+// ================================================================
+//  ACCIONES
+// ================================================================
+function crearNovena() {
+    const tipo = document.getElementById('sel-devocion').value;
+    if (!tipo) { alert('Por favor selecciona una devoción.'); return; }
+
+    let novena;
+    const esCoro = COROS_IDS.includes(tipo);
+
+    if (esCoro) {
+        const santoSel = document.getElementById('sel-santo').value;
+        if (!santoSel) { alert('Por favor elige un/a santo/a.'); return; }
+
+        let nombreSanto;
+        if (santoSel === '__otro__') {
+            nombreSanto = document.getElementById('nombre-santo').value.trim();
+            if (!nombreSanto) { alert('Por favor escribe el nombre del/la santo/a.'); return; }
+        } else {
+            nombreSanto = santoSel;
+        }
+
+        novena = {
+            id: generarId(),
+            tipo: 'santo-especifico',
+            coro: tipo,
+            nombre: nombreSanto,
+            fechaCreacion: new Date().toLocaleDateString('es-VE'),
+            diasCompletados: [false,false,false,false,false,false,false,false,false],
+            completada: false
+        };
+    } else {
+        let nombreFinal;
+        if (tipo === 'nuestra-senora-personalizada') {
+            nombreFinal = document.getElementById('nombre-personalizado').value.trim();
+            if (!nombreFinal) { alert('Por favor escribe el nombre de la advocación.'); return; }
+        } else {
+            nombreFinal = DEVOCIONES[tipo].nombre;
+        }
+
+        novena = {
+            id: generarId(),
+            tipo: tipo,
+            nombre: nombreFinal,
+            fechaCreacion: new Date().toLocaleDateString('es-VE'),
+            diasCompletados: [false,false,false,false,false,false,false,false,false],
+            completada: false
+        };
+    }
+
+    const novenas = cargarNovenas();
+    novenas.unshift(novena);
+    guardarNovenas(novenas);
+
+    // Reset form
+    document.getElementById('sel-devocion').value = '';
+    document.getElementById('campo-personalizado').style.display = 'none';
+    document.getElementById('selector-santo-container').style.display = 'none';
+    document.getElementById('campo-santo-personalizado').style.display = 'none';
+    document.getElementById('nombre-personalizado').value = '';
+    document.getElementById('nombre-santo').value = '';
+
+    renderizarNovenas();
+    setTimeout(() => {
+        const el = document.getElementById('novena-' + novena.id);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+}
+
+function toggleDia(novenaId, diaIndex) {
+    const novenas = cargarNovenas();
+    const novena = novenas.find(n => n.id === novenaId);
+    if (!novena) return;
+    novena.diasCompletados[diaIndex] = !novena.diasCompletados[diaIndex];
+    if (novena.diasCompletados.every(Boolean)) novena.completada = true;
+    guardarNovenas(novenas);
+    renderizarNovenas();
+}
+
+function eliminarNovena(id) {
+    if (!confirm('¿Deseas eliminar esta novena?')) return;
+    guardarNovenas(cargarNovenas().filter(n => n.id !== id));
+    renderizarNovenas();
+}
+
+function toggleOracion(novenaId, diaIndex) {
+    const el = document.getElementById('oracion-' + novenaId + '-' + diaIndex);
+    if (!el) return;
+    const chevron = el.closest('.dia-item').querySelector('.dia-chevron');
+    const abierto = el.style.display !== 'none';
+    el.style.display = abierto ? 'none' : 'block';
+    if (chevron) chevron.textContent = abierto ? '▸' : '▾';
+}
+
+// ================================================================
+//  RENDER
+// ================================================================
+function obtenerTemas(novena) {
+    if (novena.tipo === 'santo-especifico') return TEMAS_SANTOS;
+    if (novena.tipo === 'santa-lucia') return TEMAS_LUCIA;
+    if (novena.tipo === 'san-jose') return TEMAS_JOSE;
+    if (['san-miguel','san-gabriel','san-rafael','angel-guarda','todos-angeles'].includes(novena.tipo)) return TEMAS_ANGELES;
+    if (novena.tipo.startsWith('nuestra-senora') || novena.tipo === 'inmaculada-concepcion') return TEMAS_MARIA;
+    return TEMAS_DIVINOS;
+}
+
+function obtenerTextoOracion(novena, diaIndex) {
+    let dev;
+    if (novena.tipo === 'santo-especifico') {
+        const coro = CORO_DATA[novena.coro];
+        dev = {
+            nombre:     novena.nombre,
+            invocacion: coro.invocacion(novena.nombre),
+            tratamiento:novena.nombre,
+            jaculatoria:coro.jaculatoria(novena.nombre),
+            intro:      coro.intro(novena.nombre)
+        };
+    } else {
+        const base = DEVOCIONES[novena.tipo] || DEVOCIONES['nuestra-senora-personalizada'];
+        dev = { ...base, nombre: novena.nombre };
+    }
+
+    const temas = obtenerTemas(novena);
+    const tema = temas[diaIndex];
+    const rep = t => t
+        .replace(/\{NOMBRE\}/g, dev.nombre)
+        .replace(/\{INVOCACION\}/g, dev.invocacion)
+        .replace(/\{TRATAMIENTO\}/g, dev.tratamiento);
+
+    return {
+        titulo:      tema.titulo,
+        icono:       tema.icono,
+        meditacion:  rep(tema.meditacion),
+        oracion:     rep(tema.oracion),
+        intro:       dev.intro,
+        jaculatoria: dev.jaculatoria
+    };
+}
+
+function getEstilo(novena) {
+    if (novena.tipo === 'santo-especifico') {
+        const c = CORO_DATA[novena.coro];
+        return { color: c.color, fondo: c.fondo };
+    }
+    const d = DEVOCIONES[novena.tipo] || DEVOCIONES['nuestra-senora-personalizada'];
+    return { color: d.color, fondo: d.fondo };
+}
+
+function renderizarTarjeta(novena) {
+    const est = getEstilo(novena);
+    const diasComp = novena.diasCompletados.filter(Boolean).length;
+    const progreso = Math.round((diasComp / 9) * 100);
+
+    let diasHtml = '';
+    for (let i = 0; i < 9; i++) {
+        const comp = novena.diasCompletados[i];
+        const oracion = obtenerTextoOracion(novena, i);
+        diasHtml += `
+        <div class="dia-item ${comp ? 'dia-completado' : ''}" id="dia-${novena.id}-${i}">
+            <div class="dia-header" onclick="toggleOracion('${novena.id}',${i})">
+                <div class="dia-info">
+                    <span class="dia-icono">${comp ? '✔' : oracion.icono}</span>
+                    <span class="dia-titulo">${oracion.titulo}</span>
+                </div>
+                <div class="dia-controles">
+                    <label class="check-dia" onclick="event.stopPropagation()">
+                        <input type="checkbox" ${comp ? 'checked' : ''} onchange="toggleDia('${novena.id}',${i})">
+                        <span>${comp ? 'Completado' : 'Marcar'}</span>
+                    </label>
+                    <span class="dia-chevron">▸</span>
+                </div>
+            </div>
+            <div class="dia-oracion" id="oracion-${novena.id}-${i}" style="display:none;">
+                <div class="oracion-intro"><p><em>${oracion.intro}</em></p></div>
+                <div class="oracion-meditacion">
+                    <h4>Meditación</h4>
+                    <p>${oracion.meditacion}</p>
+                </div>
+                <div class="oracion-texto">
+                    <h4>Oración</h4>
+                    <p>${oracion.oracion}</p>
+                </div>
+                <div class="oracion-cierre">
+                    <p class="oracion-base">Padre Nuestro que estás en los cielos, santificado sea Tu nombre. Venga Tu reino. Hágase Tu voluntad así en la tierra como en el cielo. Danos hoy nuestro pan de cada día y perdona nuestras ofensas como también nosotros perdonamos a los que nos ofenden. No nos dejes caer en la tentación, mas líbranos del mal. Amén.</p>
+                    <p class="oracion-base">Dios te salve, María, llena eres de gracia; el Señor es contigo. Bendita Tú eres entre todas las mujeres, y bendito es el fruto de Tu vientre, Jesús. Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén.</p>
+                    <p class="oracion-base">Gloria al Padre y al Hijo y al Espíritu Santo, como era en el principio, ahora y siempre, por los siglos de los siglos. Amén.</p>
+                    <p class="jaculatoria-cierre"><em>${oracion.jaculatoria}</em></p>
+                </div>
+            </div>
+        </div>`;
+    }
+
+    return `
+    <div class="novena-card" id="novena-${novena.id}" style="border-top-color:${est.color}; background:${est.fondo};">
+        <div class="novena-card-header">
+            <div class="novena-info">
+                <h3 style="color:${est.color};">${novena.nombre}</h3>
+                <span class="novena-fecha">Iniciada: ${novena.fechaCreacion}</span>
+            </div>
+            <button class="btn-eliminar" onclick="eliminarNovena('${novena.id}')" title="Eliminar novena">✕</button>
+        </div>
+        <div class="progreso-novena">
+            <div class="progreso-barra">
+                <div class="progreso-fill" style="width:${progreso}%; background-color:${est.color};"></div>
+            </div>
+            <span class="progreso-texto">${diasComp} de 9 días completados</span>
+        </div>
+        ${novena.completada ? `
+        <div class="novena-completada-banner" style="background:white; border-color:${est.color}; color:${est.color};">
+            <span>✦ ¡Novena completada! ¡Gloria a Dios!</span>
+            <button class="btn-archivar" onclick="eliminarNovena('${novena.id}')">Archivar y cerrar</button>
+        </div>` : ''}
+        <div class="dias-lista">${diasHtml}</div>
+    </div>`;
+}
+
+function renderizarNovenas() {
+    const novenas = cargarNovenas();
+    const container = document.getElementById('lista-novenas');
+    const sinNovenas = document.getElementById('sin-novenas');
+    if (novenas.length === 0) {
+        container.innerHTML = '';
+        sinNovenas.style.display = 'block';
+    } else {
+        sinNovenas.style.display = 'none';
+        container.innerHTML = novenas.map(renderizarTarjeta).join('');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', renderizarNovenas);
+</script>
+<!--#jsonld-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://parroquiasantalucia.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Oración",
+      "item": "https://parroquiasantalucia.org/oracion.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Novena Perpetua",
+      "item": "https://parroquiasantalucia.org/novena-perpetua.html"
+    }
+  ]
+}
+</script>
+<!--/#jsonld-->
+</body>
+</html>

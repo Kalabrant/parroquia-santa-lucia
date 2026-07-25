@@ -1,0 +1,28 @@
+# Dependencias
+node_modules/
+
+# Copia obsoleta del sitio completo (48 MB). Se puede borrar sin riesgo.
+parroquia-santa-lucia/
+
+# Build antiguo duplicado del mapa de zonas
+mapa-zonas-pastorales/mapa-zonas-pastorales/
+
+# Material de trabajo que no se publica
+imagenes_originales/
+imagenes_webp/
+Ostiariado/
+*.docx
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Libro con derechos de autor: la web enlaza la guía propia
+# (tiempo-para-dios.html), no el PDF del libro.
+Jacques Philippe*.pdf
+
+# Utilidades locales con rutas absolutas de este equipo
+alquimista2.py
+edit_zonas.py
+update_nav.py

@@ -1,0 +1,117 @@
+{
+  "_comentario": "Fuente única de verdad del sitio. Cambia un dato aquí y ejecuta 'py tools/sincronizar.py' para propagarlo a todas las páginas.",
+  "_comentarioVersion": "Sube este número cada vez que cambies style.css o js/*.js. Se añade como ?v=N a esos archivos para que los visitantes que ya tenían la web en caché reciban la versión nueva y no una mezcla rota.",
+  "version": 16,
+  "sitio": {
+    "nombre": "Parroquia Santa Lucía",
+    "nombreLargo": "Parroquia de Santa Lucía",
+    "dominio": "https://parroquiasantalucia.org",
+    "arquidiocesis": "Arquidiócesis de Maracaibo",
+    "anioCopyright": "2026"
+  },
+  "contacto": {
+    "direccionCalle": "Calle 90, Sector El Empedrado",
+    "direccionCiudad": "Santa Lucía, Maracaibo, Zulia",
+    "pais": "Venezuela",
+    "whatsapp": "584143676212",
+    "whatsappVisible": "+58 414-367-6212",
+    "instagram": "parroquia.santaluciamcbo",
+    "instagramUrl": "https://instagram.com/parroquia.santaluciamcbo",
+    "mapsUrl": "https://maps.google.com/maps?q=Iglesia%20de%20Santa%20Luc%C3%ADa%20Maracaibo",
+    "geo": {
+      "lat": "10.6395",
+      "lon": "-71.6089"
+    }
+  },
+  "horarios": {
+    "misas": [
+      {
+        "dias": "Martes a Sábado",
+        "horas": [
+          "6:00 PM"
+        ],
+        "schema": "Tu,We,Th,Fr,Sa 18:00"
+      },
+      {
+        "dias": "Domingos",
+        "horas": [
+          "9:00 AM",
+          "11:00 AM",
+          "6:00 PM"
+        ],
+        "schema": "Su 09:00,11:00,18:00"
+      }
+    ],
+    "confesiones": [
+      {
+        "dias": "Martes a Domingo",
+        "detalle": "Media hora antes de cada Misa"
+      }
+    ],
+    "despacho": [
+      {
+        "dias": "Martes a Viernes",
+        "detalle": "2:00 PM – 5:00 PM"
+      }
+    ],
+    "nota": "Los horarios pueden variar en Semana Santa, fiestas patronales y solemnidades. Consulta la Agenda Pastoral."
+  },
+  "_comentarioWhatsapp": "Plantillas de mensaje preelaborado a secretaría. En Venezuela no hay pago en línea, así que el trámite se inicia por WhatsApp y se completa presencialmente en el despacho.",
+  "whatsappPlantillas": {
+    "partida-bautismo": {
+      "etiqueta": "Solicitar partida de bautismo",
+      "icono": "📄",
+      "mensaje": "¡Buenos días! Escribo para *solicitar una partida de bautismo*.\n\n• Nombre completo del bautizado: \n• Fecha aproximada del bautismo: \n• Nombre de los padres: \n• Mi nombre y parentesco: \n\nQuedo atento(a) para saber los pasos y el horario de despacho. ¡Gracias!"
+    },
+    "partida-matrimonio": {
+      "etiqueta": "Solicitar partida de matrimonio",
+      "icono": "📄",
+      "mensaje": "¡Buenos días! Escribo para *solicitar una partida de matrimonio*.\n\n• Nombres completos de los esposos: \n• Fecha aproximada del matrimonio: \n• Mi nombre y parentesco: \n\nQuedo atento(a) para saber los pasos y el horario de despacho. ¡Gracias!"
+    },
+    "partida-confirmacion": {
+      "etiqueta": "Solicitar partida de confirmación",
+      "icono": "📄",
+      "mensaje": "¡Buenos días! Escribo para *solicitar una partida de confirmación*.\n\n• Nombre completo del confirmado: \n• Fecha aproximada de la confirmación: \n• Mi nombre y parentesco: \n\nQuedo atento(a) para saber los pasos y el horario de despacho. ¡Gracias!"
+    },
+    "intencion-misa": {
+      "etiqueta": "Pedir una intención de Misa",
+      "icono": "🕯️",
+      "mensaje": "¡Buenos días! Quisiera *pedir una intención de Misa*.\n\n• Intención (por quién se ofrece): \n• ¿Difunto o acción de gracias?: \n• Fecha deseada: \n• Mi nombre: \n\nQuedo atento(a) para confirmar la fecha y pasar por el despacho. ¡Gracias!"
+    },
+    "bautizo": {
+      "etiqueta": "Inscribir un bautizo",
+      "icono": "💧",
+      "mensaje": "¡Buenos días! Deseo *inscribir un bautizo*.\n\n• Nombre completo del niño(a): \n• Fecha de nacimiento: \n• Nombres de los padres: \n• Nombres de los padrinos: \n• Mi teléfono: \n\nQuedo atento(a) a los requisitos y la fecha disponible. ¡Gracias!"
+    },
+    "matrimonio": {
+      "etiqueta": "Iniciar trámite de matrimonio",
+      "icono": "💍",
+      "mensaje": "¡Buenos días! Deseamos *iniciar el trámite de nuestro matrimonio*.\n\n• Nombres completos de los novios: \n• Fecha aproximada deseada: \n• Teléfono de contacto: \n\nQuedamos atentos a los requisitos y al curso prematrimonial. ¡Gracias!"
+    },
+    "catequesis": {
+      "etiqueta": "Inscribir en catequesis",
+      "icono": "📚",
+      "mensaje": "¡Buenos días! Quisiera *inscribir en la catequesis*.\n\n• Nombre completo: \n• Edad: \n• ¿Para Primera Comunión o Confirmación?: \n• Teléfono de contacto: \n\nQuedo atento(a) a las fechas de inscripción. ¡Gracias!"
+    },
+    "enfermo": {
+      "etiqueta": "Pedir visita a un enfermo",
+      "icono": "🙏",
+      "mensaje": "¡Buenos días! Quisiera *pedir la visita a un enfermo* (comunión y/o unción).\n\n• Nombre del enfermo: \n• Dirección: \n• ¿Es urgente?: \n• Mi nombre y teléfono: \n\n¡Gracias por su servicio!"
+    },
+    "columbario": {
+      "etiqueta": "Consultar el columbario",
+      "icono": "🕊️",
+      "mensaje": "¡Buenos días! Quisiera *información sobre el servicio de columbario*.\n\n• Mi nombre: \n• Teléfono de contacto: \n\nQuedo atento(a) a los requisitos y disponibilidad. ¡Gracias!"
+    },
+    "grupo": {
+      "etiqueta": "Quiero unirme a un grupo",
+      "icono": "✨",
+      "mensaje": "¡Buenos días! Me gustaría *integrarme a un grupo de la parroquia*.\n\n• Mi nombre: \n• Edad: \n• Grupo que me interesa: \n\n¿Cuándo se reúnen y cómo puedo acercarme? ¡Gracias!"
+    },
+    "general": {
+      "etiqueta": "Escribir a secretaría",
+      "icono": "💬",
+      "mensaje": "¡Buenos días! Escribo desde la página web de la parroquia. Quisiera consultar sobre:\n\n"
+    }
+  }
+}

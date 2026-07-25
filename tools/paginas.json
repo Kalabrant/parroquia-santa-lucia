@@ -1,0 +1,251 @@
+{
+  "_comentario": "Metadatos por página: título, descripción para Google y WhatsApp, imagen para compartir, y sección padre para las migas de pan. Ejecuta 'py tools/sincronizar.py' tras editar.",
+  "index.html": {
+    "titulo": "Parroquia Santa Lucía | Maracaibo",
+    "desc": "La Casita Azul de El Empedrao. Horarios de Misas y confesiones, sacramentos, grupos parroquiales y agenda de la Parroquia Santa Lucía de Maracaibo.",
+    "imagen": "foto-templo.webp",
+    "seccion": null,
+    "datos": [
+      "js/agenda-datos.js"
+    ],
+    "scripts": [
+      "js/portada.js"
+    ]
+  },
+  "horarios.html": {
+    "titulo": "Horarios de Misas y Confesiones | Parroquia Santa Lucía",
+    "desc": "Horarios de Misas, confesiones y despacho parroquial de la Parroquia Santa Lucía de Maracaibo. Martes a sábado 6:00 PM; domingos 9:00 AM, 11:00 AM y 6:00 PM.",
+    "imagen": "foto-templo.webp",
+    "seccion": null,
+    "scripts": [
+      "js/ics.js"
+    ]
+  },
+  "nosotros.html": {
+    "titulo": "Nosotros | Parroquia Santa Lucía",
+    "desc": "Conoce la identidad y la historia de la Casita Azul: Santa Lucía, patrona de El Empedrao, el templo neogótico de 1867 y los pastores que guían nuestra comunidad.",
+    "imagen": "santa-lucia.webp",
+    "seccion": null
+  },
+  "sacramentos.html": {
+    "titulo": "Sacramentos | Parroquia Santa Lucía",
+    "desc": "Bautismo, Eucaristía, Confirmación, Reconciliación, Unción, Matrimonio y Orden. Requisitos, horarios y cómo iniciar cada trámite en la Parroquia Santa Lucía.",
+    "imagen": "foto-sacramentos.webp",
+    "seccion": null
+  },
+  "evangelizacion.html": {
+    "titulo": "Evangelización | Parroquia Santa Lucía",
+    "desc": "Ministerios y caminos de formación de la Parroquia Santa Lucía: catequesis, lectores, música, servidores del altar y todo el trabajo de Iglesia en salida.",
+    "imagen": "foto-evangelizacion.webp",
+    "seccion": null
+  },
+  "comunidad.html": {
+    "titulo": "Comunidad | Parroquia Santa Lucía",
+    "desc": "Los grupos, carismas y obras de caridad de la Parroquia Santa Lucía: Emaús, Camino Neocatecumenal, Legión de María, Cursillos, cofradías y Cáritas parroquial.",
+    "imagen": "foto-comunidad.webp",
+    "seccion": null
+  },
+  "eventos.html": {
+    "titulo": "Agenda Pastoral 2026 | Parroquia Santa Lucía",
+    "desc": "Calendario completo 2026 de la Parroquia Santa Lucía: solemnidades, Semana Santa, retiros, vía crucis, misiones y fiestas patronales, con filtros por grupo.",
+    "imagen": "foto-agenda-hero.webp",
+    "seccion": null,
+    "datos": [
+      "js/agenda-datos.js"
+    ],
+    "scripts": [
+      "js/ics.js",
+      "js/calendario.js"
+    ]
+  },
+  "contacto.html": {
+    "titulo": "Contáctanos | Parroquia Santa Lucía",
+    "desc": "Ubicación, horario de despacho y WhatsApp de la Parroquia Santa Lucía de Maracaibo. Solicita partidas, intenciones de Misa e inscripciones desde aquí.",
+    "imagen": "foto-contacto.webp",
+    "seccion": null,
+    "tramites": true
+  },
+  "150-anos.html": {
+    "titulo": "150 Años | Parroquia Santa Lucía",
+    "desc": "Celebramos 150 años de la Parroquia Santa Lucía de Maracaibo: el decreto de 1877, la historia del templo neogótico y el jubileo de nuestra comunidad.",
+    "imagen": "decreto-1877-caratula.webp",
+    "seccion": null
+  },
+  "ambientes-seguros.html": {
+    "titulo": "Ambientes Seguros | Parroquia Santa Lucía",
+    "desc": "Política de protección de menores y adultos vulnerables de la Parroquia Santa Lucía, en comunión con los lineamientos de la Arquidiócesis de Maracaibo.",
+    "imagen": "ambientes-seguros.webp",
+    "seccion": "nosotros.html"
+  },
+  "oracion.html": {
+    "titulo": "Oración | Parroquia Santa Lucía",
+    "desc": "Guías para rezar: el Santo Rosario, la Coronilla a la Divina Misericordia, la Novena Perpetua, la Lectio Divina, el examen de conciencia y el combate espiritual.",
+    "imagen": "maria.webp",
+    "seccion": null,
+    "scripts": [
+      "js/evangelio.js"
+    ]
+  },
+  "rezar-rosario-coronilla.html": {
+    "titulo": "Cómo Rezar el Rosario y la Coronilla | Parroquia Santa Lucía",
+    "desc": "Guía paso a paso para rezar el Santo Rosario y la Coronilla a la Divina Misericordia: misterios de cada día, oraciones completas y cómo meditarlas.",
+    "imagen": "maria.webp",
+    "seccion": "oracion.html",
+    "scripts": [
+      "js/oracion.js"
+    ]
+  },
+  "novena-perpetua.html": {
+    "titulo": "Novena Perpetua | Parroquia Santa Lucía",
+    "desc": "Arma tu novena a cualquier devoción o santo: la Santísima Trinidad, Cristo, el Espíritu Santo, advocaciones marianas, ángeles y santos. Nueve días de oración guardando por dónde vas.",
+    "imagen": "novena-vela.webp",
+    "seccion": "oracion.html",
+    "scripts": [
+      "js/oracion.js"
+    ]
+  },
+  "meditacion-palabra.html": {
+    "titulo": "Meditar con la Palabra de Dios — Lectio Divina | Parroquia Santa Lucía",
+    "desc": "El método de la Lectio Divina explicado paso a paso: leer, meditar, orar y contemplar la Palabra de Dios, con lecturas guiadas para empezar hoy mismo.",
+    "imagen": "jesus.webp",
+    "seccion": "oracion.html",
+    "scripts": [
+      "js/oracion.js"
+    ]
+  },
+  "tiempo-para-dios.html": {
+    "titulo": "Tiempo para Dios — Guía práctica de oración | Parroquia Santa Lucía",
+    "desc": "Guía práctica para empezar a orar y perseverar: cómo hacer oración mental, qué hacer con las distracciones y cómo sostener el trato diario con el Señor.",
+    "imagen": "hero-tiempo-dios.webp",
+    "seccion": "oracion.html",
+    "scripts": [
+      "js/oracion.js"
+    ]
+  },
+  "examen-conciencia.html": {
+    "titulo": "Examen de Conciencia | Parroquia Santa Lucía",
+    "desc": "Guía para preparar bien la confesión: examen de conciencia por los mandamientos y según el estado de vida, antes de acercarse a la Reconciliación.",
+    "imagen": "reconciliacion.webp",
+    "seccion": "oracion.html",
+    "scripts": [
+      "js/oracion.js"
+    ]
+  },
+  "lucha-contra-el-maligno.html": {
+    "titulo": "Lucha contra el Maligno | Parroquia Santa Lucía",
+    "desc": "Oraciones de súplica privada e invocaciones a la Trinidad, a Cristo, a la Virgen y a san Miguel, y sacramentales para el combate espiritual del cristiano.",
+    "imagen": "hero-lucha-maligno.webp",
+    "seccion": "oracion.html",
+    "scripts": [
+      "js/oracion.js"
+    ]
+  },
+  "catequesis.html": {
+    "titulo": "Catequesis Parroquial | Parroquia Santa Lucía",
+    "desc": "Catequesis para niños, jóvenes y adultos en la Parroquia Santa Lucía: preparación a la Primera Comunión y a la Confirmación, e inscripciones.",
+    "imagen": "intro-catequesis.webp",
+    "seccion": "evangelizacion.html"
+  },
+  "lectores.html": {
+    "titulo": "Ministerio de Lectores | Parroquia Santa Lucía",
+    "desc": "El ministerio de lectores de la Parroquia Santa Lucía: proclamar la Palabra de Dios en la liturgia, con su formación y espiritualidad propias.",
+    "imagen": "intro-lectores.webp",
+    "seccion": "evangelizacion.html"
+  },
+  "musica.html": {
+    "titulo": "Ministerio de Música | Parroquia Santa Lucía",
+    "desc": "Los coros y el ministerio de música de la Parroquia Santa Lucía, que sirven al canto litúrgico y a la belleza de la celebración.",
+    "imagen": "intro-musica.webp",
+    "seccion": "evangelizacion.html"
+  },
+  "servidores.html": {
+    "titulo": "Servidores del Altar | Parroquia Santa Lucía",
+    "desc": "Los servidores del altar de la Parroquia Santa Lucía: acólitos y monaguillos al servicio de la Eucaristía y de la belleza de la liturgia.",
+    "imagen": "intro-servidores.webp",
+    "seccion": "evangelizacion.html"
+  },
+  "flores.html": {
+    "titulo": "Flores de Misericordia | Parroquia Santa Lucía",
+    "desc": "El ministerio de ornato litúrgico de la Parroquia Santa Lucía, que viste el templo de flores en solemnidades y tiempos litúrgicos.",
+    "imagen": "intro-flores.webp",
+    "seccion": "evangelizacion.html"
+  },
+  "ostiariado.html": {
+    "titulo": "Ministerio del Ostiariado | Parroquia Santa Lucía",
+    "desc": "El ministerio del ostiariado de la Parroquia Santa Lucía: acoger, guardar y abrir las puertas del templo, sirviendo a quien llega a la casa de Dios.",
+    "imagen": "ostiariado-puerta.webp",
+    "seccion": "evangelizacion.html"
+  },
+  "enfermos.html": {
+    "titulo": "Visita a Enfermos | Parroquia Santa Lucía",
+    "desc": "Pastoral de la salud de la Parroquia Santa Lucía: llevamos la comunión y el consuelo de la Iglesia a los enfermos y a quienes no pueden salir de casa.",
+    "imagen": "intro-enfermos.webp",
+    "seccion": "evangelizacion.html"
+  },
+  "juvenil.html": {
+    "titulo": "Pastoral Juvenil | Parroquia Santa Lucía",
+    "desc": "La pastoral juvenil de la Parroquia Santa Lucía: formación, fraternidad y misión para los jóvenes de El Empedrao y de toda la comunidad.",
+    "imagen": "intro-juvenil.webp",
+    "seccion": "evangelizacion.html"
+  },
+  "emaus.html": {
+    "titulo": "Camino de Emaús | Parroquia Santa Lucía",
+    "desc": "La Hermandad de Emaús en la Parroquia Santa Lucía: retiros de hombres y mujeres, Serafines y el llamado de Samuel, para un encuentro personal con Cristo.",
+    "imagen": "intro-emaus.webp",
+    "seccion": "comunidad.html"
+  },
+  "neocatecumenal.html": {
+    "titulo": "Camino Neocatecumenal | Parroquia Santa Lucía",
+    "desc": "Las comunidades del Camino Neocatecumenal en la Parroquia Santa Lucía: catequesis, celebración de la Palabra y Eucaristía en pequeña comunidad.",
+    "imagen": "intro-neocatecumenal.webp",
+    "seccion": "comunidad.html"
+  },
+  "legion.html": {
+    "titulo": "Legión de María | Parroquia Santa Lucía",
+    "desc": "La Legión de María en la Parroquia Santa Lucía: tres praesidia de oración y apostolado bajo el estandarte de la Virgen, con sus horarios de reunión.",
+    "imagen": "intro-legion.webp",
+    "seccion": "comunidad.html"
+  },
+  "cursillos.html": {
+    "titulo": "Cursillos de Cristiandad | Parroquia Santa Lucía",
+    "desc": "Los Cursillos de Cristiandad en la Parroquia Santa Lucía: precursillo, cursillo y poscursillo para vivir y compartir lo fundamental del cristianismo.",
+    "imagen": "intro-cursillos.webp",
+    "seccion": "comunidad.html"
+  },
+  "cofradias.html": {
+    "titulo": "Cofradías y Sociedades | Parroquia Santa Lucía",
+    "desc": "Las cofradías y sociedades de la Parroquia Santa Lucía: San José, Sagrado Corazón, Santa Rita y las devociones que sostienen la piedad popular marabina.",
+    "imagen": "intro-cofradias.webp",
+    "seccion": "comunidad.html"
+  },
+  "divina-misericordia.html": {
+    "titulo": "Sociedad de la Divina Misericordia | Parroquia Santa Lucía",
+    "desc": "La Sociedad de la Divina Misericordia de la Parroquia Santa Lucía: la Coronilla, la Hora de la Misericordia y la fiesta del segundo domingo de Pascua.",
+    "imagen": "intro-misericordia.webp",
+    "seccion": "comunidad.html"
+  },
+  "perpetuo-socorro.html": {
+    "titulo": "Sociedad de Ntra. Sra. del Perpetuo Socorro | Parroquia Santa Lucía",
+    "desc": "La Sociedad del Perpetuo Socorro de la Parroquia Santa Lucía: la novena perpetua, la devoción al icono y las obras de caridad que la acompañan.",
+    "imagen": "intro-perpetuo.webp",
+    "seccion": "comunidad.html"
+  },
+  "sociedad-santa-lucia.html": {
+    "titulo": "Sociedad de Santa Lucía | Parroquia Santa Lucía",
+    "desc": "La Sociedad de Santa Lucía, que custodia la devoción a la Reina de El Empedrao y organiza las fiestas patronales de diciembre en Maracaibo.",
+    "imagen": "intro-santalucia.webp",
+    "seccion": "comunidad.html"
+  },
+  "servidores-lucia.html": {
+    "titulo": "Servidores de Santa Lucía | Parroquia Santa Lucía",
+    "desc": "La Sociedad Religiosa Servidores de Santa Lucía: portadores de la imagen de la patrona, fraternidad y cultura en torno a la Reina de El Empedrao.",
+    "imagen": "intro-srsl.webp",
+    "seccion": "comunidad.html"
+  },
+  "virgen-luz.html": {
+    "titulo": "Virgen de la Luz | Parroquia Santa Lucía",
+    "desc": "El grupo Virgen de la Luz de la Parroquia Santa Lucía: mujeres al servicio de la caridad, las ollas solidarias y la devoción mariana en El Empedrao.",
+    "imagen": "intro-luz.webp",
+    "seccion": "comunidad.html"
+  }
+}
