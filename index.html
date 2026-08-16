@@ -25,14 +25,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=24">
-    <script>window.__vSitio=24;</script>
-    <script src="js/sitio.js?v=24" defer></script>
-    <script src="js/buscador.js?v=24" defer></script>
-    <script src="js/agenda-datos.js?v=24"></script>
-    <script src="js/descubre-datos.js?v=24"></script>
-    <script src="js/portada.js?v=24" defer></script>
-    <script src="js/descubre.js?v=24" defer></script>
+    <link rel="stylesheet" href="style.css?v=25">
+    <script>window.__vSitio=25;</script>
+    <script src="js/sitio.js?v=25" defer></script>
+    <script src="js/buscador.js?v=25" defer></script>
+    <script src="js/agenda-datos.js?v=25"></script>
+    <script src="js/descubre-datos.js?v=25"></script>
+    <script src="js/portada.js?v=25" defer></script>
+    <script src="js/descubre.js?v=25" defer></script>
 <!--/#meta-->
 </head>
 <body>
@@ -340,5 +340,281 @@
 }
 </script>
 <!--/#jsonld-->
+
+<!-- ══════════════════════════════════════════════════════════════════
+     AVISO EMERGENTE: Comunidades de la Palabra (solo en la portada)
+     Todo va aquí dentro (estilos + HTML + script) para no tocar
+     style.css ni js/, y así no hace falta subir la versión de caché.
+     Para quitarlo, basta con borrar este bloque completo.
+══════════════════════════════════════════════════════════════════ -->
+<style>
+#aviso-comunidades{
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(20, 30, 38, 0.62);
+    opacity: 0;
+    transition: opacity .35s ease;
+    overflow-y: auto;
+}
+#aviso-comunidades.abierto{ display: flex; }
+#aviso-comunidades.visible{ opacity: 1; }
+
+.aviso-cp-caja{
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    margin: auto;
+    background: var(--blanco, #ffffff);
+    border-radius: 22px;
+    box-shadow: 0 24px 60px rgba(0, 47, 73, .35);
+    border-top: 6px solid #2f9a48;
+    padding: 34px 30px 30px;
+    text-align: center;
+    transform: translateY(24px) scale(.97);
+    transition: transform .4s cubic-bezier(.2, .8, .3, 1);
+}
+#aviso-comunidades.visible .aviso-cp-caja{ transform: translateY(0) scale(1); }
+
+.aviso-cp-cerrar{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: #7a8891;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+}
+.aviso-cp-cerrar:hover, .aviso-cp-cerrar:focus-visible{
+    background: var(--color-crema, #f4f1ee);
+    color: var(--color-texto, #333);
+}
+
+.aviso-cp-logo{
+    width: 84px;
+    height: 84px;
+    border-radius: 18px;
+    object-fit: cover;
+    box-shadow: 0 8px 22px rgba(0, 73, 110, .22);
+    margin: 0 auto 16px;
+    display: block;
+}
+
+.aviso-cp-kicker{
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: #2f9a48;
+    margin-bottom: 8px;
+}
+
+.aviso-cp-caja h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    font-weight: 800;
+    color: var(--color-azul-esencial, #0077b6);
+    margin: 0 0 14px;
+    text-align: center;
+}
+
+.aviso-cp-caja p{
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-texto, #333);
+    margin: 0 0 12px;
+}
+.aviso-cp-caja p:last-of-type{ margin-bottom: 22px; }
+.aviso-cp-caja .aviso-cp-lema{
+    font-style: italic;
+    color: var(--color-marron-madera, #7f5539);
+    font-size: .95rem;
+}
+
+.aviso-cp-botones{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+}
+.aviso-cp-btn{
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: .98rem;
+    text-decoration: none;
+    padding: 14px 26px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s, background .2s;
+}
+.aviso-cp-btn-principal{
+    background: var(--color-azul-esencial, #0077b6);
+    color: #fff;
+    box-shadow: 0 8px 22px rgba(0, 119, 182, .32);
+}
+.aviso-cp-btn-principal:hover, .aviso-cp-btn-principal:focus-visible{
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 119, 182, .42);
+}
+.aviso-cp-btn-suave{
+    background: transparent;
+    color: #6b7a84;
+    font-weight: 600;
+    padding: 8px 20px;
+    font-size: .9rem;
+}
+.aviso-cp-btn-suave:hover, .aviso-cp-btn-suave:focus-visible{ color: var(--color-texto, #333); }
+
+@media (max-width: 480px){
+    #aviso-comunidades{ padding: 16px; }
+    .aviso-cp-caja{ padding: 30px 22px 24px; border-radius: 18px; }
+    .aviso-cp-caja h2{ font-size: 1.3rem; }
+    .aviso-cp-caja p{ font-size: .95rem; }
+}
+
+@media (prefers-reduced-motion: reduce){
+    #aviso-comunidades, .aviso-cp-caja{ transition: none; }
+    .aviso-cp-caja{ transform: none; }
+    .aviso-cp-btn:hover, .aviso-cp-btn:focus-visible{ transform: none; }
+}
+</style>
+
+<div id="aviso-comunidades" role="dialog" aria-modal="true" aria-labelledby="aviso-cp-titulo" tabindex="-1" hidden>
+    <div class="aviso-cp-caja">
+        <button type="button" class="aviso-cp-cerrar" data-cerrar-aviso aria-label="Cerrar el aviso">&times;</button>
+
+        <img class="aviso-cp-logo" src="comunidades-palabra/logo-proyecto.jpg"
+             alt="Logo de las Comunidades de la Palabra" width="84" height="84"
+             loading="lazy" decoding="async">
+
+        <span class="aviso-cp-kicker">La gran novedad de la parroquia</span>
+        <h2 id="aviso-cp-titulo">Comunidades de la Palabra</h2>
+
+        <p>En cada uno de nuestros nueve sectores están naciendo pequeñas comunidades de vecinos que se reúnen en una casa para leer, rezar y compartir juntos el Evangelio del domingo.</p>
+        <p>De esa mesa sencilla salen luego a visitar, acompañar y servir a su propia cuadra. Hay una cerca de ti, y tu sector te está esperando.</p>
+        <p class="aviso-cp-lema">«Que ningún rincón de nuestro territorio quede sin el anuncio del Evangelio»</p>
+
+        <div class="aviso-cp-botones">
+            <a class="aviso-cp-btn aviso-cp-btn-principal" href="comunidades-palabra/index.html" data-cerrar-aviso>Conócelas</a>
+            <button type="button" class="aviso-cp-btn aviso-cp-btn-suave" data-cerrar-aviso>Ahora no, gracias</button>
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    'use strict';
+
+    /* ─────────── Ajustes fáciles para la parroquia ───────────
+       FECHA_LIMITE: a partir de este día (incluido) el aviso NO vuelve a
+       mostrarse nunca. Formato AAAA-MM-DD, en hora local del visitante.
+       Para alargar la campaña, cambia solo esta línea.                  */
+    var FECHA_LIMITE = '2026-11-01';   // 1 de noviembre de 2026
+    var DIAS_DE_DESCANSO = 7;          // días sin volver a mostrarlo tras cerrarlo
+    var RETARDO_MS = 1500;             // aparece 1,5 s después de cargar
+    var CLAVE = 'popupComunidadesVisto';
+
+    var aviso = document.getElementById('aviso-comunidades');
+    if (!aviso) { return; }
+
+    /* ── ¿Ya pasó la fecha límite? ── */
+    var partes = FECHA_LIMITE.split('-');
+    var limite = new Date(+partes[0], +partes[1] - 1, +partes[2]);
+    if (isNaN(limite.getTime()) || Date.now() >= limite.getTime()) { return; }
+
+    /* ── ¿Lo cerró hace menos de 7 días? (localStorage puede estar bloqueado) ── */
+    var MS_DESCANSO = DIAS_DE_DESCANSO * 24 * 60 * 60 * 1000;
+    try {
+        var marca = parseInt(window.localStorage.getItem(CLAVE), 10);
+        if (marca && (Date.now() - marca) < MS_DESCANSO) { return; }
+    } catch (e) { /* sin localStorage: simplemente se mostrará */ }
+
+    function recordar() {
+        try { window.localStorage.setItem(CLAVE, String(Date.now())); } catch (e) {}
+    }
+
+    var focoPrevio = null;
+    var abierto = false;
+
+    function abrir() {
+        focoPrevio = document.activeElement;
+        aviso.hidden = false;
+        aviso.classList.add('abierto');
+        // Un cuadro para que el navegador aplique el estado inicial y anime.
+        window.requestAnimationFrame(function () {
+            window.requestAnimationFrame(function () { aviso.classList.add('visible'); });
+        });
+        document.body.style.overflow = 'hidden';
+        abierto = true;
+        aviso.focus();
+    }
+
+    function cerrar() {
+        if (!abierto) { return; }
+        abierto = false;
+        recordar();
+        aviso.classList.remove('visible');
+        document.body.style.overflow = '';
+        window.setTimeout(function () {
+            aviso.classList.remove('abierto');
+            aviso.hidden = true;
+        }, 350);
+        if (focoPrevio && typeof focoPrevio.focus === 'function') { focoPrevio.focus(); }
+    }
+
+    /* ── Cierre por aspa, por los botones y por el enlace principal ── */
+    Array.prototype.forEach.call(aviso.querySelectorAll('[data-cerrar-aviso]'), function (el) {
+        el.addEventListener('click', function () { cerrar(); });
+    });
+
+    /* ── Cierre al pulsar el fondo oscurecido ── */
+    aviso.addEventListener('click', function (ev) {
+        if (ev.target === aviso) { cerrar(); }
+    });
+
+    /* ── Escape para cerrar; Tab se queda dentro del diálogo ── */
+    aviso.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Escape' || ev.key === 'Esc') {
+            ev.preventDefault();
+            cerrar();
+            return;
+        }
+        if (ev.key !== 'Tab') { return; }
+        var focos = aviso.querySelectorAll('a[href], button:not([disabled])');
+        if (!focos.length) { return; }
+        var primero = focos[0];
+        var ultimo = focos[focos.length - 1];
+        if (ev.shiftKey && (document.activeElement === primero || document.activeElement === aviso)) {
+            ev.preventDefault();
+            ultimo.focus();
+        } else if (!ev.shiftKey && document.activeElement === ultimo) {
+            ev.preventDefault();
+            primero.focus();
+        }
+    });
+
+    window.setTimeout(abrir, RETARDO_MS);
+})();
+</script>
+
 </body>
 </html>
