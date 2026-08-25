@@ -215,6 +215,72 @@ nav .logo .logo-txt small{
     .semana-head, .semana-body{ padding-left:22px; padding-right:22px; }
     .sec-tit h2{ font-size:1.6rem; }
 }
+
+/* =====================================================
+   CARRUSEL DE FOTOS
+===================================================== */
+.carrusel-cp{ max-width:1000px; margin:6px auto 0; padding:0 20px; }
+.car-marco{ position:relative; border-radius:22px; overflow:hidden;
+    background:var(--pal-azul-osc); box-shadow:0 22px 60px rgba(0,73,110,.18); }
+.car-pista{ display:flex; transition:transform .55s cubic-bezier(.4,0,.2,1); }
+.car-slide{ position:relative; flex:0 0 100%; margin:0; aspect-ratio:16/10; overflow:hidden; }
+@media(max-width:600px){ .car-slide{ aspect-ratio:4/3; } }
+/* Fondo difuminado: así conviven las fotos verticales y las horizontales sin recortes feos */
+.car-slide::before{ content:""; position:absolute; inset:-6%;
+    background-image:var(--bg); background-size:cover; background-position:center;
+    filter:blur(26px) brightness(.55) saturate(1.15); }
+.car-slide img{ position:relative; z-index:1; width:100%; height:100%; object-fit:contain; display:block; }
+.car-slide figcaption{
+    position:absolute; left:0; right:0; bottom:0; z-index:2;
+    padding:38px 22px 16px; color:#fff; font-size:.98rem; line-height:1.5; text-align:center;
+    font-family:'Crimson Text',serif; font-style:italic;
+    background:linear-gradient(180deg, rgba(0,29,45,0) 0%, rgba(0,29,45,.55) 45%, rgba(0,29,45,.85) 100%);
+}
+@media(max-width:600px){ .car-slide figcaption{ font-size:.88rem; padding:30px 16px 12px; } }
+
+.car-nav{ position:absolute; top:50%; transform:translateY(-50%); z-index:3;
+    width:46px; height:46px; padding:0; border:none; border-radius:50%; cursor:pointer;
+    background:rgba(255,255,255,.9); color:var(--pal-azul);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 6px 18px rgba(0,0,0,.28); transition:background .2s, transform .2s; }
+.car-nav:hover{ background:#fff; transform:translateY(-50%) scale(1.08); }
+.car-nav:focus-visible{ outline:3px solid var(--pal-verde); outline-offset:3px; }
+.car-nav svg{ width:20px; height:20px; fill:currentColor; display:block; }
+.car-nav.prev{ left:14px; }
+.car-nav.next{ right:14px; }
+@media(max-width:600px){ .car-nav{ width:38px; height:38px; } .car-nav.prev{ left:8px; } .car-nav.next{ right:8px; } }
+
+.car-puntos{ display:flex; justify-content:center; flex-wrap:wrap; gap:9px; margin:18px auto 0; padding:0; }
+.car-punto{ width:10px; height:10px; padding:0; border:none; border-radius:50%; cursor:pointer;
+    background:rgba(0,96,144,.25); transition:background .25s, transform .25s; }
+.car-punto:hover{ background:rgba(0,96,144,.5); }
+.car-punto[aria-selected="true"]{ background:var(--pal-verde); transform:scale(1.4); }
+.car-punto:focus-visible{ outline:2px solid var(--pal-azul); outline-offset:3px; }
+.car-pie{ text-align:center; font-size:.8rem; color:var(--pal-tinta-suave); margin:12px auto 0; font-style:italic; }
+@media(prefers-reduced-motion:reduce){ .car-pista{ transition:none; } }
+
+/* =====================================================
+   DÓNDE Y CUÁNDO SE REÚNEN
+===================================================== */
+.horarios-cp{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; max-width:920px; margin:8px auto 0; }
+@media(max-width:760px){ .horarios-cp{ grid-template-columns:1fr; } }
+.hor-card{ display:flex; gap:18px; align-items:flex-start;
+    background:#fff; border-radius:18px; padding:22px 24px;
+    box-shadow:0 12px 34px rgba(0,73,110,.09); border-left:5px solid var(--pal-verde);
+    transition:transform .25s, box-shadow .25s; }
+.hor-card:hover{ transform:translateY(-4px); box-shadow:0 18px 44px rgba(0,73,110,.16); }
+.hor-card .cuando{ flex:0 0 auto; width:96px; text-align:center; border-radius:14px; padding:11px 6px; white-space:nowrap;
+    background:linear-gradient(135deg, var(--pal-azul) 0%, var(--pal-azul-osc) 100%); color:#fff; }
+.hor-card .cuando .d{ display:block; font-size:.68rem; font-weight:800; letter-spacing:1.6px; text-transform:uppercase; color:#bfe6c8; }
+.hor-card .cuando .h{ display:block; font-size:1.05rem; font-weight:800; margin-top:3px; }
+.hor-card .donde{ margin:0; }
+.hor-card .donde strong{ display:block; color:var(--pal-azul); font-size:1.04rem; margin-bottom:4px; line-height:1.35; }
+.hor-card .donde span{ display:block; color:var(--pal-tinta-suave); font-size:.92rem; line-height:1.6; }
+.btn-wa-cp{ display:flex; width:fit-content; margin:26px auto 0; align-items:center; justify-content:center; gap:10px;
+    background:linear-gradient(135deg, var(--pal-verde) 0%, var(--pal-verde-osc) 100%); color:#fff;
+    padding:15px 32px; border-radius:50px; text-decoration:none; font-weight:800; font-size:.96rem; line-height:1;
+    box-shadow:0 8px 24px rgba(31,122,54,.35); transition:transform .2s, box-shadow .2s; }
+.btn-wa-cp:hover{ transform:translateY(-3px); box-shadow:0 12px 32px rgba(31,122,54,.45); }
 </style>
 </head>
 <body>
@@ -230,6 +296,7 @@ nav .logo .logo-txt small{
     <ul>
         <li><a href="../index.html">Parroquia</a></li>
         <li><a href="../evangelizacion.html">Evangelización</a></li>
+        <li><a href="#donde">Dónde y cuándo</a></li>
         <li><a href="#esta-semana">Esta semana</a></li>
         <li><a href="#siete-pasos">Los 7 pasos</a></li>
         <li><a href="../150-anos.html" class="btn-nav-dorado">150 Años</a></li> <li><a href="../contacto.html" class="btn-nav">Contáctanos</a></li>
@@ -285,6 +352,120 @@ nav .logo .logo-txt small{
         <strong>Una aclaración importante:</strong> estas comunidades no sustituyen la Santa Misa ni crean una
         «liturgia paralela». Todo lo que hacemos orienta hacia la Eucaristía dominical y la vida sacramental de la parroquia.
     </div>
+</div>
+
+<!-- ════════ GALERÍA ════════ -->
+<div class="cp-wrap" id="galeria">
+    <div class="sec-tit" style="margin-top:74px;">
+        <span class="kicker">✦ Así lo vivimos ✦</span>
+        <h2>Las comunidades, por dentro</h2>
+        <div class="linea"></div>
+        <p>Ni templo ni salón parroquial: una casa del sector, unas sillas en círculo y la Biblia abierta.
+        Así se reúnen cada semana las Comunidades de la Palabra.</p>
+    </div>
+</div>
+
+<section class="carrusel-cp" id="carrusel" aria-roledescription="carrusel" aria-label="Fotos de las Comunidades de la Palabra">
+    <div class="car-marco">
+        <div class="car-pista">
+            <figure class="car-slide" style="--bg:url('cp-01.webp')" role="group" aria-roledescription="diapositiva" aria-label="Foto 1 de 12">
+                <img src="cp-01.webp" width="1080" height="810" loading="eager" decoding="async" alt="El animador y los miembros de una Comunidad de la Palabra reunidos en el porche de una casa del sector">
+                <figcaption>El encuentro semanal, en el porche de una casa del sector.</figcaption>
+            </figure>
+            <figure class="car-slide" style="--bg:url('cp-02.webp')" role="group" aria-roledescription="diapositiva" aria-label="Foto 2 de 12">
+                <img src="cp-02.webp" width="1280" height="963" loading="lazy" decoding="async" alt="Vecinos sentados con la Biblia en las manos durante la lectura orante">
+                <figcaption>La Palabra se lee despacio y se comparte en voz alta.</figcaption>
+            </figure>
+            <figure class="car-slide" style="--bg:url('cp-03.webp')" role="group" aria-roledescription="diapositiva" aria-label="Foto 3 de 12">
+                <img src="cp-03.webp" width="810" height="1080" loading="lazy" decoding="async" alt="Comunidad reunida en semicírculo en el zaguán de una casa">
+                <figcaption>Sillas en círculo: nadie sobra y todos hablan.</figcaption>
+            </figure>
+            <figure class="car-slide" style="--bg:url('cp-04.webp')" role="group" aria-roledescription="diapositiva" aria-label="Foto 4 de 12">
+                <img src="cp-04.webp" width="1280" height="963" loading="lazy" decoding="async" alt="Dos animadores laicos de pie guiando el encuentro ante el grupo sentado">
+                <figcaption>Los animadores laicos guían los Siete Pasos.</figcaption>
+            </figure>
+            <figure class="car-slide" style="--bg:url('cp-05.webp')" role="group" aria-roledescription="diapositiva" aria-label="Foto 5 de 12">
+                <img src="cp-05.webp" width="1024" height="576" loading="lazy" decoding="async" alt="Miembros de una comunidad posando juntos al final del encuentro">
+                <figcaption>La comunidad, al terminar el encuentro.</figcaption>
+            </figure>
+            <figure class="car-slide" style="--bg:url('cp-06.webp')" role="group" aria-roledescription="diapositiva" aria-label="Foto 6 de 12">
+                <img src="cp-06.webp" width="1080" height="810" loading="lazy" decoding="async" alt="El grupo reunido en el patio de una casa, visto desde el fondo">
+                <figcaption>Cada semana, en casa de un vecino del mismo sector.</figcaption>
+            </figure>
+            <figure class="car-slide" style="--bg:url('cp-07.webp')" role="group" aria-roledescription="diapositiva" aria-label="Foto 7 de 12">
+                <img src="cp-07.webp" width="810" height="1080" loading="lazy" decoding="async" alt="Una animadora de pie reparte las hojas con las lecturas del domingo">
+                <figcaption>Se reparte la hoja con el Evangelio del domingo.</figcaption>
+            </figure>
+            <figure class="car-slide" style="--bg:url('cp-08.webp')" role="group" aria-roledescription="diapositiva" aria-label="Foto 8 de 12">
+                <img src="cp-08.webp" width="1280" height="963" loading="lazy" decoding="async" alt="Miembros de la comunidad compartiendo lo que la Palabra les dice">
+                <figcaption>«A mí este Evangelio me dice…»: cada uno comparte en primera persona.</figcaption>
+            </figure>
+            <figure class="car-slide" style="--bg:url('cp-09.webp')" role="group" aria-roledescription="diapositiva" aria-label="Foto 9 de 12">
+                <img src="cp-09.webp" width="1280" height="576" loading="lazy" decoding="async" alt="Otra comunidad reunida en la sala de una casa del sector">
+                <figcaption>Otra comunidad, en la sala de una casa.</figcaption>
+            </figure>
+            <figure class="car-slide" style="--bg:url('cp-10.webp')" role="group" aria-roledescription="diapositiva" aria-label="Foto 10 de 12">
+                <img src="cp-10.webp" width="1280" height="963" loading="lazy" decoding="async" alt="Familias, jóvenes y personas mayores del mismo sector escuchando la Palabra">
+                <figcaption>Familias, jóvenes y abuelos de la misma cuadra.</figcaption>
+            </figure>
+            <figure class="car-slide" style="--bg:url('cp-11.webp')" role="group" aria-roledescription="diapositiva" aria-label="Foto 11 de 12">
+                <img src="cp-11.webp" width="810" height="1080" loading="lazy" decoding="async" alt="Encuentro de una Comunidad de la Palabra en el garaje de una casa">
+                <figcaption>El sector se va haciendo comunidad, casa por casa.</figcaption>
+            </figure>
+            <figure class="car-slide" style="--bg:url('cp-12.webp')" role="group" aria-roledescription="diapositiva" aria-label="Foto 12 de 12">
+                <img src="cp-12.webp" width="1280" height="576" loading="lazy" decoding="async" alt="Foto de grupo de los participantes de un encuentro dentro de una casa">
+                <figcaption>Al final, la foto de familia.</figcaption>
+            </figure>
+        </div>
+        <button class="car-nav prev" type="button" aria-label="Foto anterior">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4-4.6-4.6z"/></svg>
+        </button>
+        <button class="car-nav next" type="button" aria-label="Foto siguiente">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.6 16.6 10 18l6-6-6-6-1.4 1.4 4.6 4.6z"/></svg>
+        </button>
+    </div>
+    <div class="car-puntos" role="tablist" aria-label="Ir a una foto"></div>
+    <p class="car-pie">Encuentros de las Comunidades de la Palabra en los sectores de la parroquia.</p>
+</section>
+
+<!-- ════════ DÓNDE Y CUÁNDO ════════ -->
+<div class="cp-wrap" id="donde">
+    <div class="sec-tit" style="margin-top:74px;">
+        <span class="kicker">✦ Dónde y cuándo ✦</span>
+        <h2>Las comunidades que ya se reúnen</h2>
+        <div class="linea"></div>
+        <p>Estos son los grupos que están funcionando ahora mismo. Busca el que te quede más cerca de tu casa
+        y acércate: no hace falta inscribirse ni llevar nada, solo tu Biblia si la tienes.</p>
+    </div>
+
+    <div class="horarios-cp">
+        <div class="hor-card">
+            <div class="cuando"><span class="d">Lunes</span><span class="h">7:00 PM</span></div>
+            <p class="donde"><strong>Frente a la banda Rafael Urdaneta</strong><span>En la casa que queda justo frente a la banda Rafael Urdaneta.</span></p>
+        </div>
+        <div class="hor-card">
+            <div class="cuando"><span class="d">Lunes</span><span class="h">7:00 PM</span></div>
+            <p class="donde"><strong>Casa de la familia Barrios González</strong><span>A una cuadra del Boulevard.</span></p>
+        </div>
+        <div class="hor-card">
+            <div class="cuando"><span class="d">Martes</span><span class="h">7:00 PM</span></div>
+            <p class="donde"><strong>Casa de la señora Élida</strong><span>Pregunta en el sector: la comunidad se reúne en su casa.</span></p>
+        </div>
+        <div class="hor-card">
+            <div class="cuando"><span class="d">Viernes</span><span class="h">7:00 PM</span></div>
+            <p class="donde"><strong>Frente a la casa de Lucía Urdaneta</strong><span>Calle Nueva Venecia, esquina con calle Dos Rosas, cerca del antiguo Cine América.</span></p>
+        </div>
+    </div>
+
+    <div class="cp-nota" style="margin-top:26px;">
+        <strong>Faltan zonas por abrir:</strong> la parroquia tiene 9 sectores y las comunidades van naciendo poco a poco.
+        Publicaremos aquí cada grupo nuevo a medida que se vaya implementando. Si en tu zona todavía no hay ninguno,
+        escríbenos: puede empezar en tu casa.
+    </div>
+
+    <a class="btn-wa-cp" href="https://wa.me/584143676212?text=%C2%A1Buenos%20d%C3%ADas%21%20Escribo%20desde%20la%20p%C3%A1gina%20web%20de%20la%20parroquia.%20Me%20gustar%C3%ADa%20%2Asumarme%20a%20una%20Comunidad%20de%20la%20Palabra%2A.%0A%0A%E2%80%A2%20Mi%20nombre%3A%20%0A%E2%80%A2%20Calle%20o%20sector%20donde%20vivo%3A%20%0A%E2%80%A2%20D%C3%ADa%20que%20me%20queda%20mejor%3A%20%0A%0A%C2%A1Gracias%21" target="_blank" rel="noopener noreferrer">
+        <span aria-hidden="true">💬</span> Quiero sumarme a una comunidad
+    </a>
 </div>
 
 <!-- ════════ ESTA SEMANA ════════ -->
@@ -361,6 +542,83 @@ nav .logo .logo-txt small{
 if (new Date() >= new Date(2026, 9, 1)) {
     document.querySelectorAll('.badge-implementacion').forEach(b => b.remove());
 }
+
+
+/* ===== Carrusel de fotos ===== */
+(function(){
+    const carrusel = document.getElementById('carrusel');
+    if (!carrusel) return;
+    const pista  = carrusel.querySelector('.car-pista');
+    const slides = Array.from(carrusel.querySelectorAll('.car-slide'));
+    const puntos = carrusel.querySelector('.car-puntos');
+    const total  = slides.length;
+    if (!total) return;
+
+    const quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let actual = 0, reloj = null;
+
+    // Puntos de navegación
+    const botones = slides.map((_, i) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'car-punto';
+        b.setAttribute('role', 'tab');
+        b.setAttribute('aria-label', 'Foto ' + (i + 1) + ' de ' + total);
+        b.addEventListener('click', () => { ir(i); reiniciar(); });
+        puntos.appendChild(b);
+        return b;
+    });
+
+    function ir(i){
+        actual = (i + total) % total;
+        pista.style.transform = 'translateX(' + (-actual * 100) + '%)';
+        botones.forEach((b, n) => b.setAttribute('aria-selected', n === actual ? 'true' : 'false'));
+        slides.forEach((s, n) => s.setAttribute('aria-hidden', n === actual ? 'false' : 'true'));
+    }
+
+    function arrancar(){ if (!quieto && !reloj) reloj = setInterval(() => ir(actual + 1), 6000); }
+    function parar(){ clearInterval(reloj); reloj = null; }
+    function reiniciar(){ parar(); arrancar(); }
+
+    carrusel.querySelector('.car-nav.prev').addEventListener('click', () => { ir(actual - 1); reiniciar(); });
+    carrusel.querySelector('.car-nav.next').addEventListener('click', () => { ir(actual + 1); reiniciar(); });
+
+    // Flechas del teclado
+    carrusel.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft')  { ir(actual - 1); reiniciar(); }
+        if (e.key === 'ArrowRight') { ir(actual + 1); reiniciar(); }
+    });
+
+    // Se detiene al pasar el ratón, al enfocar o si la pestaña queda oculta
+    carrusel.addEventListener('mouseenter', parar);
+    carrusel.addEventListener('mouseleave', arrancar);
+    carrusel.addEventListener('focusin', parar);
+    carrusel.addEventListener('focusout', arrancar);
+    document.addEventListener('visibilitychange', () => document.hidden ? parar() : arrancar());
+
+    // Deslizar con el dedo
+    let x0 = null, y0 = null;
+    pista.addEventListener('touchstart', e => {
+        x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; parar();
+    }, { passive:true });
+    pista.addEventListener('touchend', e => {
+        if (x0 === null) return;
+        const dx = e.changedTouches[0].clientX - x0;
+        const dy = e.changedTouches[0].clientY - y0;
+        if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) ir(actual + (dx < 0 ? 1 : -1));
+        x0 = y0 = null; arrancar();
+    }, { passive:true });
+
+    ir(0);
+    // Solo se mueve solo mientras se ve en pantalla
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(es => {
+            es.forEach(e => e.isIntersecting ? arrancar() : parar());
+        }, { threshold:.25 }).observe(carrusel);
+    } else {
+        arrancar();
+    }
+})();
 
 /* ===== Animación de los pasos al hacer scroll ===== */
 const obs = new IntersectionObserver((es)=>{
