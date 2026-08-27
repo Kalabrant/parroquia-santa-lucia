@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { History, Crown, Info, Map as MapIcon, MapPin, X } from 'lucide-react';
+import { History, Crown, Info, Map as MapIcon, MapPin, X, BookOpen, CalendarClock } from 'lucide-react';
 import { cn } from '../lib/utils';
 import zonas from '../data/zonas.json';
 import { getTheme } from '../lib/theme';
@@ -80,6 +80,45 @@ export default function ZoneDetails({ activeZoneId, onClose }) {
                   <p className="text-gray-600 leading-relaxed text-sm italic font-serif">
                     {zona.patrono.hagiografia}
                   </p>
+                </motion.section>
+              )}
+
+              {/* Sección: Comunidad de la Palabra del sector */}
+              {zona.comunidadPalabra && (
+                <motion.section
+                  initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }}
+                  className="bg-white/70 p-5 rounded-2xl border border-crema"
+                >
+                  <div className={cn("flex items-center gap-2 mb-3", theme.text)}>
+                    <BookOpen className="w-5 h-5" />
+                    <h3 className="text-xl font-serif font-bold m-0 border-none">
+                      Comunidad de la Palabra
+                    </h3>
+                  </div>
+
+                  <p className="flex items-center gap-2 text-sm font-bold text-marron-madera mb-3">
+                    <CalendarClock className="w-4 h-4 shrink-0" />
+                    {zona.comunidadPalabra.dia} · {zona.comunidadPalabra.hora}
+                  </p>
+
+                  <div className="flex items-start gap-2 mb-1">
+                    <MapPin className={cn("w-4 h-4 shrink-0 mt-1", theme.text)} />
+                    <div>
+                      <h4 className="font-bold text-base leading-tight">{zona.comunidadPalabra.lugar}</h4>
+                      {zona.comunidadPalabra.referencia && (
+                        <p className="text-gray-600 leading-relaxed text-sm mt-1">
+                          {zona.comunidadPalabra.referencia}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+
+                  <a
+                    href="../comunidades-palabra/"
+                    className={cn("inline-block mt-4 text-sm font-bold hover:underline", theme.text)}
+                  >
+                    Conoce el Proyecto Palabra →
+                  </a>
                 </motion.section>
               )}
 

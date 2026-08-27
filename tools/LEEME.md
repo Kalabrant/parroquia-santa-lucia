@@ -35,6 +35,7 @@ py tools/sincronizar.py --revisar
 | `sincronizar.py` | El script que lo reparte todo. |
 | `optimizar_imagenes.py` | Reduce el peso de las fotos nuevas. |
 | `actualizar_evangelio.py` | Descarga el Evangelio del día (lo ejecuta GitHub solo). |
+| `planificacion_pdf.py` | Genera el PDF de la Planificación Pastoral que se descarga desde la agenda. |
 
 ---
 
@@ -46,6 +47,17 @@ Se actualiza el pie de todas las páginas.
 
 > El horario también aparece escrito a mano en `horarios.html` (la rejilla de
 > la semana) y en `index.html` (la franja azul). Revísalos también.
+
+### Corregir una actividad de la agenda
+Los eventos viven en `js/agenda-datos.js` (los ve la web) y en la tabla
+`CALENDARIO` de `tools/planificacion_pdf.py` (los ve el PDF). Cambia los dos y
+vuelve a generar el PDF:
+
+```bash
+py tools/planificacion_pdf.py
+```
+
+El PDF deja fuera lo que ya se celebró. Para verlo completo, `--todo`.
 
 ### Cambiar el teléfono o la dirección
 En `config.json`, dentro de `contacto`. Después sincroniza.

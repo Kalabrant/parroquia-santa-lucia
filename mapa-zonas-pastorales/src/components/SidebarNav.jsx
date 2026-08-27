@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../lib/utils';
-import { Map, MapPin } from 'lucide-react';
+import { Map, MapPin, BookOpen } from 'lucide-react';
 import zonas from '../data/zonas.json';
 import { getTheme } from '../lib/theme';
 
@@ -75,6 +75,17 @@ export default function SidebarNav({ activeZoneId, onZoneSelect }) {
                       "block text-[0.75rem] leading-snug transition-colors",
                       isActive ? "text-white/80" : `text-gray-500`
                     )}>{zona.eslogan}</span>
+                  )}
+                  {zona.comunidadPalabra && (
+                    <span
+                      title="Aquí ya se reúne una Comunidad de la Palabra"
+                      className={cn(
+                        "inline-flex items-center gap-1 mt-1.5 text-[0.65rem] font-bold uppercase tracking-wide transition-colors",
+                        isActive ? "text-white/80" : "text-gray-500"
+                      )}
+                    >
+                      <BookOpen className="w-3 h-3 shrink-0" /> Comunidad de la Palabra
+                    </span>
                   )}
                 </div>
               </div>

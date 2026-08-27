@@ -12,6 +12,12 @@
       "hagiografia": "Virgen y mártir, protectora de la vista. Famosa por llevar alimento a los cristianos escondidos en las catacumbas. Su devoción nos invita a mantener la luz de la fe encendida en medio de las oscuridades del mundo moderno, siendo faros de esperanza.",
       "fiesta": "13 de Diciembre",
       "genero": "F"
+    },
+    "comunidadPalabra": {
+      "dia": "Martes",
+      "hora": "7:00 PM",
+      "lugar": "Casa de la señora Elida Gómez de Acosta",
+      "referencia": "La comunidad se reúne en su casa."
     }
   },
   {
@@ -27,6 +33,12 @@
       "hagiografia": "Conmemoración del nacimiento de la Virgen María, aurora de nuestra salvación. Este acontecimiento marca el preludio del plan divino, trayendo consigo la pureza y la anticipación de la encarnación del Salvador.",
       "fiesta": "8 de Septiembre",
       "genero": "F"
+    },
+    "comunidadPalabra": {
+      "dia": "Viernes",
+      "hora": "7:00 PM",
+      "lugar": "Frente a la casa de Lucía Urdaneta",
+      "referencia": "Calle Nueva Venecia, esquina con calle Dos Rosas, cerca del antiguo Cine América."
     }
   },
   {
@@ -57,6 +69,12 @@
       "hagiografia": "Patrona de las causas imposibles, símbolo de paz y reconciliación familiar. Su vida es un extraordinario testimonio de paciencia, perdón y sufrimiento entregado por amor, demostrando que mediante la gracia, todo obstáculo puede superarse.",
       "fiesta": "22 de Mayo",
       "genero": "F"
+    },
+    "comunidadPalabra": {
+      "dia": "Lunes",
+      "hora": "7:00 PM",
+      "lugar": "Casa de la familia Barrios González",
+      "referencia": "A una cuadra del Boulevard."
     }
   },
   {
@@ -102,6 +120,12 @@
       "hagiografia": "Doctor de la Iglesia, patrón de los estudiantes y de las escuelas católicas. Su brillante intelecto logró armonizar la fe y la razón, dejándonos una vasta obra teológica que sigue siendo la brújula y pilar angular de la doctrina católica universal.",
       "fiesta": "28 de Enero",
       "genero": "M"
+    },
+    "comunidadPalabra": {
+      "dia": "Lunes",
+      "hora": "7:00 PM",
+      "lugar": "Frente a la sede de la Banda Rafael Urdaneta",
+      "referencia": "En la casa que queda justo frente a la sede de la banda."
     }
   },
   {
