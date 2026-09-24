@@ -25,11 +25,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=27">
-    <script>window.__vSitio=27;</script>
-    <script src="js/sitio.js?v=27" defer></script>
-    <script src="js/buscador.js?v=27" defer></script>
-    <script src="js/oracion.js?v=27" defer></script>
+    <link rel="stylesheet" href="style.css?v=28">
+    <script>window.__vSitio=28;</script>
+    <script src="js/sitio.js?v=28" defer></script>
+    <script src="js/buscador.js?v=28" defer></script>
+    <script src="js/oracion.js?v=28" defer></script>
 <!--/#meta-->
 <style>
 /* =====================================================
@@ -896,11 +896,11 @@
         <div class="lecturas-body" id="lecturas-body">
             <div class="lecturas-status" id="estado-carga">
                 <div class="spinner"></div>
-                <div>Cargando las lecturas de hoy desde Ciudad Redonda…</div>
+                <div>Cargando las lecturas de hoy…</div>
             </div>
         </div>
         <p class="fuente-nota" id="fuente-nota" style="display:none;">
-            Fuente: <a href="https://www.ciudadredonda.org/calendario-lecturas" target="_blank" rel="noopener" style="color:var(--azul-medio); text-decoration:underline;">Ciudad Redonda</a> — Misioneros Combonianos
+            
         </p>
     </article>
 
@@ -1440,6 +1440,7 @@
         <p>&copy; 2026 Parroquia Santa Lucía · Arquidiócesis de Maracaibo</p>
         <p class="pie-legal-enlaces">
             <a href="ambientes-seguros.html">Ambientes Seguros</a> ·
+            <a href="privacidad.html">Privacidad</a> ·
             <a href="contacto.html">Contacto</a> ·
             <a href="horarios.html">Horarios</a>
         </p>
@@ -1477,11 +1478,13 @@ document.querySelectorAll('.paso').forEach(p => observer.observe(p));
 
 /* =====================================================
    LECTURAS DEL DÍA
-   Estrategia primaria: API JSON pública (cpbjr.github.io/catholic-readings-api)
-     — Sin CORS, sin proxies, JSON limpio, GitHub Pages.
-     — Las citas son universales (mismo leccionario católico mundial);
-       solo traducimos abreviaturas inglés → español.
-   Estrategia secundaria (si la API falla): scraping de fuentes con proxy.
+   1) evangelio.json, en nuestro propio servidor: GitHub Actions lo
+      descarga cada madrugada de evangelizo.org con las citas de todas
+      las lecturas (tools/actualizar_evangelio.py).
+   2) Si faltara el día, la API JSON pública cpbjr.github.io/catholic-
+      readings-api (citas en inglés que traducimos).
+   3) Si todo falla, enlaces a fuentes católicas de confianza.
+   Solo mostramos las referencias, nunca el texto de otros sitios.
 ===================================================== */
 
 /* ===== Mapa de traducción inglés → español católico ===== */
@@ -1596,7 +1599,25 @@ function traducirCita(citaIngles){
     window.__hoyDD = parseInt(dd, 10);
     window.__hoyMes = hoy.getMonth();
 
-    /* ========== INTENTO 1: API JSON pública de GitHub Pages ========== */
+    /* ========== INTENTO 1: evangelio.json de la propia web ========== */
+    try{
+        const res = await fetch('evangelio.json', { cache: 'no-cache', signal: AbortSignal.timeout(5000) });
+        if (res.ok){
+            const datos = await res.json();
+            const dia = (datos.dias || []).find(d => d.fecha === `${yyyy}-${mm}-${dd}`);
+            if (dia && Array.isArray(dia.lecturas) && dia.lecturas.length){
+                const clases = { 'Salmo responsorial': 'salmo', 'Evangelio': 'evangelio' };
+                renderizarCitas(dia.lecturas.map(l => ({
+                    tipo: l.tipo, clase: clases[l.tipo] || '', cita: l.cita
+                })), { nombre: 'evangelizo.org', enlace: 'https://evangelizo.org/' });
+                return;
+            }
+        }
+    }catch(e){
+        console.log(`[lecturas] evangelio.json: ${e.message}`);
+    }
+
+    /* ========== INTENTO 2: API JSON pública de GitHub Pages ========== */
     const apiUrls = [
         `https://cpbjr.github.io/catholic-readings-api/readings/${yyyy}/${mm}-${dd}.json`,
         `https://cpbjr.github.io/catholic-readings-api/api/readings/${yyyy}/${mm}-${dd}.json`,
@@ -1605,13 +1626,8 @@ function traducirCita(citaIngles){
     for (const apiUrl of apiUrls){
         try{
             const res = await fetch(apiUrl, { signal: AbortSignal.timeout(5000) });
-            if (!res.ok){
-                console.log(`[lecturas] API ${apiUrl.slice(-30)} → HTTP ${res.status}`);
-                continue;
-            }
-            const data = await res.json();
-            console.log('[lecturas] API JSON recibida:', data);
-            const citas = parsearAPI(data);
+            if (!res.ok) continue;
+            const citas = parsearAPI(await res.json());
             if (citas && citas.length >= 1){
                 renderizarCitas(citas, {
                     nombre: 'Catholic Readings API',
@@ -1624,272 +1640,9 @@ function traducirCita(citaIngles){
         }
     }
 
-    /* ========== INTENTO 2: scraping con proxies ========== */
-
-    /* Fuentes en orden de preferencia. URLs específicas por fecha cuando es posible. */
-    const fuentes = [
-        {
-            nombre: 'Ciudad Redonda',
-            url:    `https://www.ciudadredonda.org/calendario-lecturas/${yyyy}-${mm}-${dd}`,
-            enlace: `https://www.ciudadredonda.org/calendario-lecturas/${yyyy}-${mm}-${dd}`
-        },
-        {
-            nombre: 'Aleteia',
-            url:    `https://es.aleteia.org/daily-prayer/${yyyy}/${mm}/${dd}/`,
-            enlace: `https://es.aleteia.org/daily-prayer/${yyyy}/${mm}/${dd}/`
-        },
-        {
-            nombre: 'Ciudad Redonda',
-            url:    'https://www.ciudadredonda.org/calendario-lecturas',
-            enlace: 'https://www.ciudadredonda.org/calendario-lecturas'
-        },
-        {
-            nombre: 'Aleteia',
-            url:    'https://es.aleteia.org/daily-prayer/today/',
-            enlace: 'https://es.aleteia.org/daily-prayer/today/'
-        },
-        {
-            nombre: 'Dominicos.org',
-            url:    'https://www.dominicos.org/predicacion/hoy/',
-            enlace: 'https://www.dominicos.org/predicacion/hoy/'
-        }
-    ];
-
-    const proxies = [
-        url => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
-        url => `https://corsproxy.io/?${encodeURIComponent(url)}`,
-        url => `https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(url)}`,
-        url => `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`
-    ];
-
-    /* Lanzamos TODAS las peticiones en paralelo para reducir la espera */
-    async function intentarFuente(fuente){
-        for (const buildUrl of proxies){
-            const fullUrl = buildUrl(fuente.url);
-            try{
-                const res = await fetch(fullUrl, { signal: AbortSignal.timeout(6000) });
-                if (!res.ok){
-                    console.log(`[lecturas] ${fuente.nombre} ${fullUrl.slice(0,40)}… HTTP ${res.status}`);
-                    continue;
-                }
-                let t = await res.text();
-                if (t.startsWith('{')){
-                    try{ t = JSON.parse(t).contents || t; }catch(e){}
-                }
-                if (t && t.length > 2000){
-                    console.log(`[lecturas] ${fuente.nombre} OK (${t.length} chars)`);
-                    return t;
-                }
-            }catch(e){
-                console.log(`[lecturas] ${fuente.nombre} error: ${e.message}`);
-            }
-        }
-        return null;
-    }
-
-    const promesas = fuentes.map(f => intentarFuente(f).then(html => ({ fuente: f, html })));
-    const resultados = await Promise.all(promesas);
-
-    let mejor = null;
-    for (const { fuente, html } of resultados){
-        if (!html) continue;
-        const citas = extraerEstructurado(html);
-        console.log(`[lecturas] ${fuente.nombre} → ${citas.length} citas:`, citas.map(c => c.cita));
-        if (citas && citas.length >= 1){
-            if (!mejor || citas.length > mejor.citas.length){
-                mejor = { citas, fuente };
-            }
-        }
-    }
-
-    if (mejor){
-        renderizarCitas(mejor.citas, mejor.fuente);
-    } else {
-        mostrarFallback();
-    }
+    mostrarFallback();
 })();
 
-/* ========== Lista de libros bíblicos católicos ==========
-   Cada entrada incluye nombre completo y abreviaturas usuales en español. */
-const LIBROS = [
-    'Génesis','Genesis','Gn','Gén',
-    'Éxodo','Exodo','Ex','Éx',
-    'Levítico','Levitico','Lv','Lev',
-    'Números','Numeros','Nm','Núm','Nm',
-    'Deuteronomio','Dt','Deut',
-    'Josué','Josue','Jos',
-    'Jueces','Jue','Jc',
-    'Rut','Rt',
-    'Samuel','Sm','Sam','S',
-    'Reyes','Re','R',
-    'Crónicas','Cronicas','Cr','Cro','Crón',
-    'Esdras','Esd',
-    'Nehemías','Nehemias','Ne','Neh',
-    'Tobías','Tobias','Tb','Tob',
-    'Judit','Jdt',
-    'Ester','Est',
-    'Macabeos','Mac','M','Mac',
-    'Job','Jb',
-    'Salmo','Salmos','Sal','Sl',
-    'Proverbios','Pr','Prov',
-    'Eclesiastés','Eclesiastes','Qo','Ecl','Qoh',
-    'Cantar','Ct','Cant',
-    'Sabiduría','Sabiduria','Sb','Sab',
-    'Eclesiástico','Eclesiastico','Sirácide','Siracide','Si','Sir','Eclo',
-    'Isaías','Isaias','Is',
-    'Jeremías','Jeremias','Jr','Jer',
-    'Lamentaciones','Lm','Lam',
-    'Baruc','Ba','Bar',
-    'Ezequiel','Ez',
-    'Daniel','Dn','Dan',
-    'Oseas','Os',
-    'Joel','Jl',
-    'Amós','Amos','Am',
-    'Abdías','Abdias','Ab','Abd',
-    'Jonás','Jonas','Jon',
-    'Miqueas','Mi','Miq',
-    'Nahún','Nahum','Na','Nah',
-    'Habacuc','Ha','Hab',
-    'Sofonías','Sofonias','So','Sof',
-    'Ageo','Ag',
-    'Zacarías','Zacarias','Za','Zac',
-    'Malaquías','Malaquias','Mal','Ml',
-    'Mateo','Mt',
-    'Marcos','Mc',
-    'Lucas','Lc',
-    'Juan','Jn',
-    'Hechos','Hch','Hech',
-    'Romanos','Rm','Ro','Rom',
-    'Corintios','Co','Cor',
-    'Gálatas','Galatas','Ga','Gal',
-    'Efesios','Ef',
-    'Filipenses','Flp','Fil','Filp',
-    'Colosenses','Col',
-    'Tesalonicenses','Ts','Tes',
-    'Timoteo','Tm','Tim',
-    'Tito','Tt',
-    'Filemón','Filemon','Flm','Filem',
-    'Hebreos','Hb','Heb',
-    'Santiago','St','Sant',
-    'Pedro','P','Pe','Ped',
-    'Judas','Jds','Jud',
-    'Apocalipsis','Ap','Apoc'
-];
-
-const ESCAPADOS = LIBROS
-    .sort((a,b) => b.length - a.length)
-    .map(l => l.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'));
-
-const REGEX_CITAS = new RegExp(
-    '\\b(?:[1-3]\\s*[ªº]?\\s+)?(?:' + ESCAPADOS.join('|') + ')' +
-    '\\.?\\s+\\d{1,3}\\s*,\\s*\\d{1,3}[a-c]?' +
-    '(?:\\s*[-\\u2013\\.;,]\\s*\\d{1,3}[a-c]?)*',
-    'gi'
-);
-
-/* ========== Extractor ESTRUCTURADO con avance de cursor ==========
-   Busca los encabezados litúrgicos en orden: "Primera lectura",
-   "Salmo", "Segunda lectura", "Evangelio". Para cada uno extrae la
-   PRIMERA cita bíblica que aparezca después del encabezado. El cursor
-   avanza, así que nunca tomamos citas de días posteriores en la página. */
-function extraerEstructurado(html){
-    const texto = limpiarHTML(html);
-
-    /* ESTRATEGIA "ANCLAJE EN EL EVANGELIO":
-       1) Encontrar la cita del Evangelio del día (ancla fiable).
-       2) Mirar hacia atrás en una ventana de 4000 chars.
-       3) Tomar las últimas 3 citas únicas no-Evangelio antes del Evangelio.
-       Esto da las lecturas inmediatamente anteriores al Evangelio = las del día. */
-
-    /* PASO 1: encontrar TODAS las citas (por regex estricta + por look-back) */
-    const todasCitas = encontrarTodasLasCitas(texto);
-
-    if (todasCitas.length === 0) return [];
-
-    const esEvangelio = c => /^(?:[1-3]\s*[ªº]?\s+)?(?:Mt|Mc|Lc|Jn|Mateo|Marcos|Lucas|Juan)\b/i.test(c);
-    const esSalmo     = c => /^(?:Sal|Salmo|Sl)\b/i.test(c);
-    const esCarta1P   = c => /^(?:1\s*[ªº]?\s+)?(?:P|Pe|Pedro)\b/i.test(c) && !esEvangelio(c);
-
-    /* PASO 2: localizar la PRIMERA cita evangélica precedida de un encabezado
-       de "Evangelio". Si no hay, tomar la primera cita evangélica a secas. */
-    let evangelioCita = null;
-    let evangelioPos  = -1;
-    const idxEvanHeader = texto.search(/\b(?:santo\s+evangelio|evangelio\s+según|evangelio\s+de\s+nuestro)/i);
-    if (idxEvanHeader !== -1){
-        const candidatos = todasCitas.filter(c => c.pos >= idxEvanHeader && c.pos < idxEvanHeader + 1500 && esEvangelio(c.cita));
-        if (candidatos.length){
-            evangelioCita = candidatos[0].cita;
-            evangelioPos  = candidatos[0].pos;
-        }
-    }
-    if (!evangelioCita){
-        const primer = todasCitas.find(c => esEvangelio(c.cita));
-        if (primer){
-            evangelioCita = primer.cita;
-            evangelioPos  = primer.pos;
-        }
-    }
-
-    if (!evangelioCita){
-        /* No hay evangelio identificable. Devolver las primeras 4 citas únicas */
-        return tomarPrimerasUnicas(todasCitas, 4);
-    }
-
-    /* PASO 3: ventana hacia atrás (8000 chars antes del evangelio) */
-    const inicioVentana = Math.max(0, evangelioPos - 8000);
-    const previas = todasCitas.filter(c =>
-        c.pos >= inicioVentana &&
-        c.pos < evangelioPos &&
-        !esEvangelio(c.cita)
-    );
-
-    /* PASO 4: dedupar y tomar las 3 últimas (más cercanas al evangelio = lecturas previas del día) */
-    const vistas = new Set();
-    const previasUnicas = [];
-    /* iteramos al revés para tomar las más cercanas al evangelio */
-    for (let i = previas.length - 1; i >= 0; i--){
-        const c = previas[i];
-        const norm = c.cita.toLowerCase().replace(/\s+/g,'').replace(/\.$/,'');
-        if (vistas.has(norm)) continue;
-        if (norm.length < 4 || norm.length > 70) continue;
-        vistas.add(norm);
-        previasUnicas.unshift(c.cita);
-        if (previasUnicas.length >= 3) break;
-    }
-
-    /* PASO 5: clasificar las previas */
-    const resultados = [];
-    if (previasUnicas.length === 3){
-        resultados.push({ tipo: 'Primera lectura', clase: '', cita: previasUnicas[0] });
-        const c2 = previasUnicas[1];
-        resultados.push({
-            tipo: esSalmo(c2) ? 'Salmo responsorial' : 'Lectura',
-            clase: esSalmo(c2) ? 'salmo' : '',
-            cita: c2
-        });
-        resultados.push({ tipo: 'Segunda lectura', clase: '', cita: previasUnicas[2] });
-    } else if (previasUnicas.length === 2){
-        resultados.push({ tipo: 'Primera lectura', clase: '', cita: previasUnicas[0] });
-        const c2 = previasUnicas[1];
-        resultados.push({
-            tipo: esSalmo(c2) ? 'Salmo responsorial' : 'Lectura',
-            clase: esSalmo(c2) ? 'salmo' : '',
-            cita: c2
-        });
-    } else if (previasUnicas.length === 1){
-        const c1 = previasUnicas[0];
-        resultados.push({
-            tipo: esSalmo(c1) ? 'Salmo responsorial' : 'Primera lectura',
-            clase: esSalmo(c1) ? 'salmo' : '',
-            cita: c1
-        });
-    }
-
-    resultados.push({ tipo: 'Evangelio', clase: 'evangelio', cita: evangelioCita });
-    return resultados;
-}
-
-/* Parsea respuesta JSON de cpbjr/catholic-readings-api y la traduce al español */
 function parsearAPI(data){
     if (!data || typeof data !== 'object') return [];
     const lecturas = data.readings || data;
@@ -1913,111 +1666,6 @@ function parsearAPI(data){
 
     /* Filtrar entradas vacías o inválidas */
     return out.filter(c => c.cita && c.cita.length >= 4);
-}
-
-/* Combinador de extractores: regex directa + look-back desde "X, Y" */
-function encontrarTodasLasCitas(texto){
-    const resultado = [];
-
-    /* Estrategia A: regex directa (formato compacto: "Hch 2, 14a.36-41") */
-    for (const m of texto.matchAll(REGEX_CITAS)){
-        resultado.push({
-            cita: m[0].trim().replace(/\s+/g,' '),
-            pos:  m.index
-        });
-    }
-
-    /* Estrategia B: look-back desde patrones "chapter, verse" hasta encontrar
-       un nombre de libro válido en los 90 chars previos. Captura formatos largos:
-       "Lectura del libro de los Hechos de los Apóstoles 2, 14a.36-41" → "Hechos 2, 14a.36-41" */
-    const refPattern = /\b(\d{1,3})\s*,\s*\d{1,3}[a-c]?(?:\s*[\-–\.;,]\s*\d{1,3}[a-c]?)*/g;
-    let m;
-    while ((m = refPattern.exec(texto)) !== null){
-        const refStr = m[0];
-        const chapter = parseInt(m[1], 10);
-        if (chapter < 1 || chapter > 200) continue;
-
-        const start = Math.max(0, m.index - 90);
-        const before = texto.slice(start, m.index);
-
-        /* buscar el nombre de libro más cercano (al final del 'before') */
-        let bookFound = null;
-        let bookEndPos = -1;
-        for (const book of LIBROS){
-            const re = new RegExp('\\b' + book.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + '\\b', 'gi');
-            let lastMatch = null;
-            let bm;
-            while ((bm = re.exec(before)) !== null){ lastMatch = bm; }
-            if (lastMatch){
-                const endPos = lastMatch.index + book.length;
-                if (endPos > bookEndPos){
-                    bookFound = book;
-                    bookEndPos = endPos;
-                }
-            }
-        }
-        if (!bookFound) continue;
-
-        /* validar: no debe haber más dígitos entre el libro y el chapter */
-        const between = before.slice(bookEndPos);
-        if (/\d/.test(between)) continue;
-        if (between.length > 60) continue;
-
-        /* prefijo numérico/ordinal (1ª, primera, etc.) */
-        const beforeBook = before.slice(0, bookEndPos - bookFound.length).trim();
-        let prefix = '';
-        const prefixOrdMatch = beforeBook.match(/(primera|segunda|tercera|1[ªa]|2[ªa]|3[ªa]|[1-3])\s*[ªº]?\s*(?:de(?:\s+\w+)?|carta(?:\s+\w+)?(?:\s+\w+)?)?\s*$/i);
-        if (prefixOrdMatch){
-            const p = prefixOrdMatch[1].toLowerCase();
-            if (p.startsWith('1') || p === 'primera') prefix = '1';
-            else if (p.startsWith('2') || p === 'segunda') prefix = '2';
-            else if (p.startsWith('3') || p === 'tercera') prefix = '3';
-        }
-
-        const cita = (prefix ? prefix + ' ' : '') + bookFound + ' ' + refStr;
-        resultado.push({
-            cita: cita.replace(/\s+/g,' ').trim(),
-            pos:  m.index
-        });
-    }
-
-    /* ordenar por posición y deduplicar */
-    resultado.sort((a,b) => a.pos - b.pos);
-    const vistos = new Set();
-    return resultado.filter(r => {
-        const norm = r.cita.toLowerCase().replace(/\s+/g,'').replace(/\.$/,'');
-        if (vistos.has(norm)) return false;
-        vistos.add(norm);
-        return true;
-    });
-}
-
-function tomarPrimerasUnicas(citas, n){
-    const vistas = new Set();
-    const out = [];
-    for (const c of citas){
-        const norm = c.cita.toLowerCase().replace(/\s+/g,'').replace(/\.$/,'');
-        if (vistas.has(norm)) continue;
-        if (norm.length < 4 || norm.length > 70) continue;
-        vistas.add(norm);
-        out.push({ tipo: 'Lectura', clase: '', cita: c.cita });
-        if (out.length >= n) break;
-    }
-    return out;
-}
-
-function limpiarHTML(html){
-    return html
-        .replace(/<script[\s\S]*?<\/script>/gi,'')
-        .replace(/<style[\s\S]*?<\/style>/gi,'')
-        .replace(/<\/(p|div|h\d|li|br|tr|td)>/gi,' \n ')
-        .replace(/<br\s*\/?>/gi,' \n ')
-        .replace(/<[^>]+>/g,' ')
-        .replace(/&nbsp;/g,' ')
-        .replace(/&amp;/g,'&')
-        .replace(/&[a-z]+;/g,' ')
-        .replace(/[ \t]+/g,' ')
-        .replace(/\n{2,}/g,'\n');
 }
 
 /* ========== Renderizado ========== */
@@ -2070,7 +1718,7 @@ function mostrarFallback(){
             <div class="fuentes-grid">
                 <a href="https://www.ciudadredonda.org/calendario-lecturas" target="_blank" rel="noopener" class="btn-fuente-multi">
                     <strong>Ciudad Redonda</strong>
-                    <span>Misioneros Combonianos</span>
+                    <span>Misioneros Claretianos</span>
                 </a>
                 <a href="https://es.aleteia.org/daily-prayer/today/" target="_blank" rel="noopener" class="btn-fuente-multi">
                     <strong>Aleteia</strong>

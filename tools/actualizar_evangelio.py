@@ -88,7 +88,29 @@ def obtener_dia(dia):
         "diaLiturgico": titulo if not parece_error(titulo) else "",
         "cita": cita,
         "texto": texto,
+        "lecturas": obtener_citas(dia, cita),
     }
+
+
+def obtener_citas(dia, cita_evangelio):
+    """Solo la referencia de cada lectura del día (no el texto), para la guía
+    de Lectio Divina. La segunda lectura solo existe domingos y solemnidades:
+    si no viene, se omite."""
+    tipos = [("Primera lectura", "FR"), ("Salmo responsorial", "PS"),
+             ("Segunda lectura", "SR")]
+    lecturas = []
+    for nombre, codigo in tipos:
+        try:
+            ref = limpiar(pedir(dia, "reading_lt", codigo))
+        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError):
+            continue
+        # Una cita es corta («Salmo 23(22),1-6.»): parece_error() la descartaría
+        # por tamaño, así que aquí basta con que tenga un número y no sea la
+        # página de ayuda del servicio.
+        if ref and len(ref) < 150 and re.search(r"\d", ref) and "<" not in ref:
+            lecturas.append({"tipo": nombre, "cita": ref.rstrip(".")})
+    lecturas.append({"tipo": "Evangelio", "cita": cita_evangelio.rstrip(".")})
+    return lecturas
 
 
 def main():

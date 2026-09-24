@@ -79,6 +79,12 @@
     "imagen": "ambientes-seguros.webp",
     "seccion": "nosotros.html"
   },
+  "privacidad.html": {
+    "titulo": "Privacidad y uso de imágenes | Parroquia Santa Lucía",
+    "desc": "Cómo cuida la Parroquia Santa Lucía los datos que recibe por WhatsApp, las fotos de sus fieles y de los menores, y qué servicios externos usa la página web.",
+    "imagen": "foto-templo.webp",
+    "seccion": "nosotros.html"
+  },
   "oracion.html": {
     "titulo": "Oración | Parroquia Santa Lucía",
     "desc": "Guías para rezar: el Santo Rosario, la Coronilla a la Divina Misericordia, la Novena Perpetua, la Lectio Divina, el examen de conciencia y el combate espiritual.",
