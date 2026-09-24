@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-09-23",
+ "actualizado": "2026-09-24",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-09-23",
-   "diaLiturgico": "Miércoles de la 25a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 9,1-6.",
-   "texto": "Jesús convocó a los Doce y les dio poder y autoridad para expulsar a toda clase de demonios y para curar las enfermedades.\nY los envió a proclamar el Reino de Dios y a sanar a los enfermos,\ndiciéndoles: \"No lleven nada para el camino, ni bastón, ni alforja, ni pan, ni dinero, ni tampoco dos túnicas cada uno.\nPermanezcan en la casa donde se alojen, hasta el momento de partir.\nSi no los reciben, al salir de esa ciudad sacudan hasta el polvo de sus pies, en testimonio contra ellos\".\nFueron entonces de pueblo en pueblo, anunciando la Buena Noticia y curando enfermos en todas partes.\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Libro de los Proverbios 30,5-9"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 119(118),29.72.89.101.104.163"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 9,1-6"
-    }
-   ]
-  },
   {
    "fecha": "2026-09-24",
    "diaLiturgico": "Jueves de la 25a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Juan 1,47-51"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-09-30",
+   "diaLiturgico": "Miércoles de la 26a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 9,57-62.",
+   "texto": "Mientras Jesús y sus discípulos iban caminando, alguien le dijo a Jesús: \"¡Te seguiré adonde vayas!\".\nJesús le respondió: \"Los zorros tienen sus cuevas y las aves del cielo sus nidos, pero el Hijo del hombre no tiene dónde reclinar la cabeza\".\nY dijo a otro: \"Sígueme\". El respondió: \"Permíteme que vaya primero a enterrar a mi padre\".\nPero Jesús le respondió: \"Deja que los muertos entierren a sus muertos; tú ve a anunciar el Reino de Dios\".\nOtro le dijo: \"Te seguiré, Señor, pero permíteme antes despedirme de los míos\".\nJesús le respondió: \"El que ha puesto la mano en el arado y mira hacia atrás, no sirve para el Reino de Dios\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Libro de Job 9,1-12.14-16"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 88(87),10bc-11.12-13.14-15"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 9,57-62"
     }
    ]
   }
