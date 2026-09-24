@@ -96,7 +96,7 @@
         var items = dest.items.map(function (i) { return '<li>' + escapa(i) + '</li>'; }).join('');
         var btn = dest.btn
             ? '<a href="' + escapa(dest.btn.href) + '" target="_blank" rel="noopener noreferrer" class="btn-principal">' +
-              '<i class="fas fa-file-pdf" style="margin-right:8px;"></i>' + escapa(dest.btn.texto) + '</a>'
+              '<i class="fas ' + escapa(dest.btn.icono || 'fa-file-pdf') + '" style="margin-right:8px;"></i>' + escapa(dest.btn.texto) + '</a>'
             : '';
 
         zona.innerHTML =

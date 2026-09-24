@@ -154,8 +154,13 @@ CALENDARIO = [
              "El Llamado de Samuel"),
             ("2026-09-24", None, "Jueves 24",
              "«Jueves de Palabra» 3",
-             "Formación bíblica (7:00 p. m.)",
+             "Formación bíblica (7:00 p. m.): el Evangelio",
              "Párroco"),
+            ("2026-09-26", None, "Sábado 26",
+             "Llegada de los seminaristas",
+             "Los seminaristas del Seminario Mayor Santo Tomás de Aquino acompañan el "
+             "encuentro de la Palabra y el curso de liturgia (9:00 a. m.)",
+             "Seminaristas y Proyecto Palabra"),
             ("2026-09-29", None, "Martes 29",
              "Santos Arcángeles",
              "Santa Misa (6:00 p. m.) y bendición de los rosarios de San Miguel",
@@ -166,29 +171,39 @@ CALENDARIO = [
         "mes": "OCTUBRE",
         "subtitulo": "Mes de las Misiones y del Santo Rosario",
         "filas": [
-            ("2026-10-01", None, "Jueves 1", "Santa Teresa del Niño Jesús",
-             "Misa solemne (6:00 p. m.)\nCharla sobre su espiritualidad (7:00 p. m.)",
-             "Párroco"),
-            ("2026-10-02", None, "Viernes 2", "Santos Ángeles Custodios",
-             "Misa con devoción especial a los Ángeles Custodios",
-             "Servidores del Altar"),
+            ("2026-10-01", None, "Jueves 1", "Santa Teresita del Niño Jesús\n«Jueves de Palabra»",
+             "Santa Misa (6:00 p. m.), con su imagen en lugar destacado y flores\n"
+             "Charla sobre su espiritualidad (7:00 p. m.)",
+             "Párroco o sacerdote invitado"),
+            ("2026-10-02", None, "Viernes 2", "Santos Ángeles Custodios\nProyecto Palabra",
+             "Misa con devoción especial a los Ángeles Custodios\nEl Párroco celebra la "
+             "Palabra en la comunidad de la Zona de la Natividad (7:00 p. m.)",
+             "Servidores del Altar\nLegión de María"),
+            ("2026-10-03", None, "Sábado 3", "Venta de almuerzo\nHora Santa de los sábados",
+             "Venta de almuerzo pro «María Móvil» para los traslados de la réplica\n"
+             "Comienza la Hora Santa de los sábados (7:00 p. m.)\nLos seminaristas "
+             "comienzan el visiteo en los sectores",
+             "Sociedades de damas y Servidores de Santa Lucía\nCoros parroquiales"),
             ("2026-10-04", None, "Domingo 4", "San Francisco de Asís",
-             "Eucaristías dominicales", "—"),
+             "Eucaristías dominicales\nVIII centenario de su muerte", "—"),
             ("2026-10-07", None, "Miércoles 7", "Nuestra Señora del Rosario",
              "Rosario (5:30 p. m.)\nSanta Misa (6:00 p. m.)", "Legión de María"),
+            ("2026-10-08", None, "Jueves 8", "«Jueves de Palabra» 4",
+             "Lectio divina (7:00 p. m.), cierre del ciclo", "Párroco"),
             ("2026-10-10", None, "Sábado 10", "Reparto de alimentos",
-             "Jornada de reparto para los más necesitados", "Cáritas Parroquial"),
+             "Jornada de reparto para los más necesitados",
+             "Cáritas Parroquial, con el apoyo de la Hermandad de Samuel"),
             ("2026-10-15", None, "Jueves 15", "Santa Teresa de Jesús\nAniversario de Cursillos",
              "Rosario (5:30 p. m.)\nSanta Misa (6:00 p. m.)", "Cursillos de Cristiandad"),
             ("2026-10-17", None, "Sábado 17", "Aniversario de la Sociedad de la Divina Misericordia",
              "Rosario (5:30 p. m.)\nSanta Misa (6:00 p. m.)",
              "Sociedad de la Divina Misericordia"),
             ("2026-10-24", None, "Sábado 24", "Gran Misión Parroquial",
-             "Salida de todos los grupos a los sectores desde la mañana, para "
-             "evangelizar en todo el territorio parroquial", "Todos los grupos"),
+             "Visiteo por los sectores para invitar a las comunidades de la Palabra; "
+             "se organizará más adelante", "Todos los grupos"),
             ("2026-10-31", None, "Sábado 31", "Fiesta de Holywins",
              "Santa Misa (6:00 p. m.) y fiesta para los niños",
-             "Ministerio de Catequesis y Legión de María"),
+             "Ministerio de Catequesis"),
         ],
     },
     {
@@ -199,42 +214,69 @@ CALENDARIO = [
              "Eucaristías dominicales", "Servidores del Altar"),
             ("2026-11-02", None, "Lunes 2", "Conmemoración de los Fieles Difuntos",
              "Una sola misa, por los difuntos", "Servidores del Altar"),
+            ("2026-11-12", None, "Jueves 12", "Anuncio de las Fiestas Patronales",
+             "Entrega de pasquines", "Todos los grupos de apostolado"),
             ("2026-11-13", None, "Viernes 13",
-             "Aniversario y juramentación de los Servidores y de la Sociedad de Santa Lucía",
-             "Rosario (5:30 p. m.)\nSanta Misa (6:00 p. m.)",
+             "Juramentación de los Servidores y de la Sociedad de Santa Lucía",
+             "Rosario (5:30 p. m.)\nSanta Misa (6:00 p. m.)\nLa bendición, en la "
+             "Eucaristía que presida el Obispo",
              "Servidores y Sociedad de Santa Lucía"),
+            ("2026-11-14", None, "Sábado 14", "BAJADA DE SANTA LUCÍA",
+             "Eucaristía por la mañana\nBajada por la tarde, con homenaje gaitero\n"
+             "Recorrido: Natividad, Federación, Dos Rosas, Nueva Venecia, Belén, "
+             "Santa Lucía, Nueva Belloso, Casanova, Natividad y templo",
+             "Servidores de Santa Lucía"),
             ("2026-11-18", None, "Miércoles 18", "Solemnidad de Nuestra Señora de Chiquinquirá",
-             "Misa parroquial (8:00 a. m.)", "Servidores del Altar"),
-            ("2026-11-21", None, "Sábado 21", "Presentación de la Santísima Virgen María",
-             "Misa de la Legión de María", "Legión de María"),
+             "Misa parroquial (9:00 a. m.) y traslado a la Basílica", "Servidores del Altar"),
+            ("2026-11-20", "2026-11-22", "Viernes 20 al\ndomingo 22",
+             "Cuarenta Horas\nSolemnidad de Cristo Rey",
+             "Adoración al Santísimo en la jornada del apostolado seglar",
+             "Sra. Verónica Rosales, Sr. Gustavo Velazco y Sra. Gisela Aranguren"),
             ("2026-11-22", None, "Domingo 22", "Cristo Rey del Universo\nSanta Cecilia",
              "Eucaristías dominicales\nEncuentro con los coros parroquiales tras la "
-             "misa de 6:00 p. m.", "Coros Parroquiales"),
+             "misa de 6:00 p. m.\nLa réplica en Guarero (9:00 a. m.) y Paraguaipoa "
+             "(5:00 p. m.)", "Coros Parroquiales\nServidores de Santa Lucía"),
+            ("2026-11-27", None, "Viernes 27", "Peregrinación de la réplica",
+             "Parroquia Cristo Rey, Curva de Molina (6:00 p. m.)",
+             "Servidores de Santa Lucía"),
             ("2026-11-28", None, "Sábado 28", "Encuentro de Santa Lucía y La Chinita",
-             "Recorrido desde los lados de Santa Teresita, pasando frente a Papalvillo, "
-             "hasta el cruce y la calle lateral detrás de Jesús Ríos",
+             "La réplica en Potrerito (mañana) y El Carmelo (Eucaristía, tarde)\n"
+             "Encuentro con la procesión patronal de La Chinita (8:00 p. m.)",
              "Servidores de Santa Lucía y Flores de Misericordia"),
             ("2026-11-29", None, "Domingo 29", "I Domingo de Adviento",
-             "Eucaristías dominicales y bendición de las coronas", "Servidores del Altar"),
+             "Eucaristías dominicales y bendición de las coronas\nLa réplica en San "
+             "Benito del Bajo y Santísimo Cristo de San Francisco (por confirmar)",
+             "Servidores del Altar\nServidores de Santa Lucía"),
         ],
     },
     {
         "mes": "DICIEMBRE",
-        "subtitulo": "Adviento, Fiestas Patronales y Navidad — propuesta sujeta a acuerdo del Consejo",
+        "subtitulo": "Adviento, Fiestas Patronales y Navidad",
         "filas": [
             ("2026-12-04", "2026-12-12", "Viernes 4 al\nsábado 12", "Novena a Santa Lucía",
              "Rezo de la novena (5:30 p. m.) y Eucaristía (6:00 p. m.), con un grupo "
              "responsable cada día", "Todos los grupos, por días"),
+            ("2026-12-05", "2026-12-06", "Sábado 5 y\ndomingo 6", "Peregrinación de la réplica",
+             "El Moján: salida el sábado por la mañana; Eucaristía el domingo (6:00 p. m.)",
+             "Servidores de Santa Lucía"),
             ("2026-12-08", None, "Martes 8",
              "Solemnidad de la Inmaculada Concepción\nCumpleaños del Párroco",
-             "Novena (5:30 p. m.) y Eucaristía (6:00 p. m.)",
+             "Novena (5:30 p. m.) y Eucaristía (6:00 p. m.)\nTortazo comunitario",
              "Sociedades y Servidores del Altar"),
+            ("2026-12-11", None, "Viernes 11", "Peregrinación de la réplica",
+             "Iglesia Nuestra Señora de Guadalupe (5:00 p. m.)",
+             "Servidores de Santa Lucía"),
             ("2026-12-12", None, "Sábado 12", "Novena — último día\nMañanitas a Santa Lucía",
              "Novena, Eucaristía y mañanitas (11:00 p. m.)",
              "Servidores y Sociedad de Santa Lucía"),
             ("2026-12-13", None, "Domingo 13", "SOLEMNIDAD DE SANTA LUCÍA",
-             "Eucaristías solemnes y procesión\nEncuentro tradicional con La Chinita",
+             "Eucaristías solemnes y procesión\nRecorrido: Múcura, Candelaria, Plaza de "
+             "la Muñeca, San Ramón, Nueva Belloso, San Luis, Belén, San Pablo, El Rosal, "
+             "El Valle, Santa Lucía, Triana, San Antonio, Santa Genoveva, Nueva Belloso "
+             "y Santa Lucía hasta el templo",
              "Todos los grupos parroquiales"),
+            ("2026-12-14", None, "Lunes 14", "Ofrenda de los chimbángueles",
+             "Ofrenda a Santa Lucía", "—"),
             ("2026-12-15", "2026-12-23", "Martes 15 al\nmiércoles 23", "Misas de aguinaldo",
              "Eucaristía (6:00 a. m.), con una intención y un grupo responsable cada día",
              "Por grupos"),
@@ -256,26 +298,37 @@ CRITERIOS = [
     "durante los nueve días y el día de la fiesta.",
 
     "Mes de la Biblia: todo septiembre, con misa de apertura y entronización de la Palabra el "
-    "martes 1 y el ciclo «Jueves de Palabra» los jueves 3, 10 y 24, a las 7:00 p. m. El jueves "
-    "17 se sustituye por la celebración del aniversario sacerdotal.",
+    "martes 1 y el ciclo «Jueves de Palabra», que por haberse corrido termina en octubre: el "
+    "Evangelio el jueves 24 de septiembre, Santa Teresita el jueves 1 de octubre y la lectio "
+    "divina el jueves 8 de octubre. El jueves 17 se sustituyó por la celebración del "
+    "aniversario sacerdotal.",
 
-    "Fiestas patronales: quedan en suspenso hasta la próxima junta del Consejo. Se descartó el "
-    "último sábado de octubre y se evaluaron los sábados 7 y 14 de noviembre.",
+    "Horas Santas: la de los jueves la asumen por turno los grupos de apostolado y "
+    "hermandades, con su coro; coordina la Sra. Ana Lucía Nava. Desde el sábado 3 de "
+    "octubre hay una segunda Hora Santa los sábados a las 7:00 p. m.",
+
+    "Fiestas patronales: lema «150 años fieles a la tradición, abiertos a la misión». La "
+    "réplica de la imagen peregrina por parroquias lejanas entre el 22 de noviembre y el 11 "
+    "de diciembre; la imagen original no sale del templo.",
+
+    "Cuarenta Horas: se trasladan a la solemnidad de Cristo Rey, fuera de la novena de Santa "
+    "Lucía. Los turnos de madrugada los cubren solo adultos; si no pueden cubrirse, el "
+    "Santísimo se reserva y la adoración sigue de día.",
 
     "Ciento cincuenta años de la parroquia: la celebración central será el sábado 20 de marzo "
-    "de 2027 y los festejos mayores, del lunes 5 al sábado 10 de abril de 2027, II Semana de "
-    "Pascua. Coordinador general: Sr. Manuel Badell.",
+    "de 2027, con misa solemne presidida por el Obispo, y los festejos mayores, del lunes 5 "
+    "al sábado 10 de abril de 2027, II Semana de Pascua. Coordinador general: Sr. Manuel Badell.",
 ]
 
 PENDIENTES = [
-    "Fechas de las fiestas patronales, a la espera de la confirmación del Sr. Alejandro.",
-    "Fecha de la «Bajada» de Santa Lucía, que no fue tratada en la junta.",
+    "Organización de la Gran Misión del sábado 24 de octubre.",
+    "Fecha de la bendición de los Servidores y de la Sociedad de Santa Lucía por el Obispo.",
+    "Confirmación de San Benito del Bajo y del Santísimo Cristo de San Francisco para el "
+    "domingo 29 de noviembre.",
     "Distribución por grupos de los nueve días de la novena a Santa Lucía y de las nueve "
     "misas de aguinaldo.",
-    "Aclarar si el encuentro con La Chinita del domingo 13 de diciembre es distinto del "
-    "acordado para el sábado 28 de noviembre.",
-    "Actividades de Navidad y propuesta de rally de la Pastoral Juvenil, que quedaron para "
-    "la próxima junta.",
+    "Vehículo para los traslados de la réplica, que indicarán los Servidores de Santa Lucía.",
+    "Propuesta de rally de la Pastoral Juvenil para Navidad.",
     "Reactivación del grupo de mensajería parroquial y designación de quien lo administre.",
 ]
 
@@ -435,12 +488,13 @@ def construir(corte, todo=False):
         f"{desde_txt} hasta el 31 de diciembre. Las actividades ya celebradas quedan omitidas.",
         est['parrafo']))
     hist.append(Paragraph(
-        "Las actividades de agosto a noviembre reproducen lo acordado en la Junta del Consejo "
-        "Pastoral Parroquial del 14 de agosto de 2026, asentado en la minuta N° M-002/2026, con "
-        "las correcciones posteriores del programa de la novena a la Natividad. Las memorias "
-        "litúrgicas no tratadas expresamente en aquella junta, y la totalidad del mes de "
-        "diciembre, se proponen por continuidad con la Propuesta de Planificación Pastoral del "
-        "año 2027 y quedan sujetas a la aprobación del Consejo.", est['parrafo']))
+        "Las actividades reproducen lo acordado en la Junta del Consejo Pastoral Parroquial del "
+        "14 de agosto de 2026, asentado en la minuta N° M-002/2026, con las correcciones "
+        "posteriores del programa de la novena a la Natividad, y lo acordado en la Junta del 23 "
+        "de septiembre de 2026, asentado en la minuta N° M-030/2026, que fijó el calendario de "
+        "octubre y noviembre, las fiestas patronales y las Cuarenta Horas. Las memorias "
+        "litúrgicas no tratadas expresamente en esas juntas se proponen por continuidad con la "
+        "Propuesta de Planificación Pastoral del año 2027.", est['parrafo']))
 
     hist.append(Paragraph("2. Criterios", est['apartado']))
     for c in CRITERIOS:
