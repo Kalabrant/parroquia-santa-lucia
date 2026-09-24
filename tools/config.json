@@ -108,6 +108,11 @@
       "icono": "✨",
       "mensaje": "¡Buenos días! Me gustaría *integrarme a un grupo de la parroquia*.\n\n• Mi nombre: \n• Edad: \n• Grupo que me interesa: \n\n¿Cuándo se reúnen y cómo puedo acercarme? ¡Gracias!"
     },
+    "rcc": {
+      "etiqueta": "Grupo de oración de la Renovación",
+      "icono": "🔥",
+      "mensaje": "¡Buenos días! Me gustaría *información sobre el grupo de oración de la Renovación Carismática*.\n\n• Mi nombre: \n• Teléfono de contacto: \n\n¿Cómo puedo sumarme? ¡Gracias!"
+    },
     "general": {
       "etiqueta": "Escribir a secretaría",
       "icono": "💬",

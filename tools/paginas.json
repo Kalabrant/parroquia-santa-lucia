@@ -202,6 +202,12 @@
     "imagen": "intro-neocatecumenal.webp",
     "seccion": "comunidad.html"
   },
+  "renovacion-carismatica.html": {
+    "titulo": "Renovación Carismática Católica | Parroquia Santa Lucía",
+    "desc": "El grupo de oración de la Renovación Carismática Católica en la Parroquia Santa Lucía: todos los miércoles a las 7:00 PM en el Salón San José. Historia, itinerario y cómo sumarte.",
+    "imagen": "rcc-templo.webp",
+    "seccion": "comunidad.html"
+  },
   "legion.html": {
     "titulo": "Legión de María | Parroquia Santa Lucía",
     "desc": "La Legión de María en la Parroquia Santa Lucía: tres praesidia de oración y apostolado bajo el estandarte de la Virgen, con sus horarios de reunión.",
