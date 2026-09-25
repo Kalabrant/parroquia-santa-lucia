@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-09-24",
+ "actualizado": "2026-09-25",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-09-24",
-   "diaLiturgico": "Jueves de la 25a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 9,7-9.",
-   "texto": "El tetrarca Herodes se enteró de todo lo que pasaba, y estaba muy desconcertado porque algunos decían: \"Es Juan, que ha resucitado\".\nOtros decían: \"Es Elías, que se ha aparecido\", y otros: \"Es uno de los antiguos profetas que ha resucitado\".\nPero Herodes decía: \"A Juan lo hice decapitar. Entonces, ¿quién es este del que oigo decir semejantes cosas?\". Y trataba de verlo.\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Libro de Eclesiastés 1,2-11"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 90(89),3-4.5-6.12-13.14.17"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 9,7-9"
-    }
-   ]
-  },
   {
    "fecha": "2026-09-25",
    "diaLiturgico": "Viernes de la 25a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 9,57-62"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-10-01",
+   "diaLiturgico": "Jueves de la 26a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 10,1-12.",
+   "texto": "El Señor designó a otros setenta y dos, y los envió de dos en dos para que lo precedieran en todas las ciudades y sitios adonde él debía ir.\nY les dijo: \"La cosecha es abundante, pero los trabajadores son pocos. Rueguen al dueño de los sembrados que envíe trabajadores para la cosecha.\n¡Vayan! Yo los envío como a ovejas en medio de lobos.\nNo lleven dinero, ni alforja, ni calzado, y no se detengan a saludar a nadie por el camino.\nAl entrar en una casa, digan primero: '¡Que descienda la paz sobre esta casa!'.\nY si hay allí alguien digno de recibirla, esa paz reposará sobre él; de lo contrario, volverá a ustedes.\nPermanezcan en esa misma casa, comiendo y bebiendo de lo que haya, porque el que trabaja merece su salario. No vayan de casa en casa.\nEn las ciudades donde entren y sean recibidos, coman lo que les sirvan;\ncuren a sus enfermos y digan a la gente: 'El Reino de Dios está cerca de ustedes'.\"\nPero en todas las ciudades donde entren y no los reciban, salgan a las plazas y digan:\n'¡Hasta el polvo de esta ciudad que se ha adherido a nuestros pies, lo sacudimos sobre ustedes! Sepan, sin embargo, que el Reino de Dios está cerca'.\nLes aseguro que en aquel Día, Sodoma será tratada menos rigurosamente que esa ciudad.\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Libro de Job 19,21-27"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 27(26),7-8a.8b-9abc.13-14"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 10,1-12"
     }
    ]
   }
