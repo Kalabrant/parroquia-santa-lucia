@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-09-25",
+ "actualizado": "2026-09-26",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-09-25",
-   "diaLiturgico": "Viernes de la 25a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 9,18-22.",
-   "texto": "Un día en que Jesús oraba a solas y sus discípulos estaban con él, les preguntó: \"¿Quién dice la gente que soy yo?\".\nEllos le respondieron: \"Unos dicen que eres Juan el Bautista; otros, Elías; y otros, alguno de los antiguos profetas que ha resucitado\".\n\"Pero ustedes, les preguntó, ¿quién dicen que soy yo?\". Pedro, tomando la palabra, respondió: \"Tú eres el Mesías de Dios\".\nY él les ordenó terminantemente que no lo dijeran a nadie.\n\"El Hijo del hombre, les dijo, debe sufrir mucho, ser rechazado por los ancianos, los sumos sacerdotes y los escribas, ser condenado a muerte y resucitar al tercer día\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Libro de Eclesiastés 3,1-11"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 144(143),1a.2abc.3-4"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 9,18-22"
-    }
-   ]
-  },
   {
    "fecha": "2026-09-26",
    "diaLiturgico": "Sábado de la 25a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 10,1-12"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-10-02",
+   "diaLiturgico": "Santos Ángeles Custodios",
+   "cita": "Evangelio según San Mateo 18,1-5.10.",
+   "texto": "En aquel momento los discípulos se acercaron a Jesús para preguntarle: \"¿Quién es el más grande en el Reino de los Cielos?\".\nJesús llamó a un niño, lo puso en medio de ellos\ny dijo: \"Les aseguro que si ustedes no cambian o no se hacen como niños, no entrarán en el Reino de los Cielos.\nPor lo tanto, el que se haga pequeño como este niño, será el más grande en el Reino de los Cielos.\nEl que recibe a uno de estos pequeños en mi Nombre, me recibe a mí mismo.\nCuídense de despreciar a cualquiera de estos pequeños, porque les aseguro que sus ángeles en el cielo están constantemente en presencia de mi Padre celestial.\"\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Libro del Exodo 23,20-23a"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 91(90),1-2.3-4.5-6.10-11"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Mateo 18,1-5.10"
     }
    ]
   }
