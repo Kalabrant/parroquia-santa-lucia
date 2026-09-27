@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-09-26",
+ "actualizado": "2026-09-27",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-09-26",
-   "diaLiturgico": "Sábado de la 25a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 9,43b-45.",
-   "texto": "Mientras todos se admiraban por las cosas que hacía, Jesús dijo a sus discípulos:\n\"Escuchen bien esto que les digo: El Hijo del hombre va a ser entregado en manos de los hombres\".\nPero ellos no entendían estas palabras: su sentido les estaba velado de manera que no podían comprenderlas, y temían interrogar a Jesús acerca de esto.\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Libro de Eclesiastés 11,9-10.12,1-8"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 90(89),3-4.5-6.12-13.14.17"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 9,43b-45"
-    }
-   ]
-  },
   {
    "fecha": "2026-09-27",
    "diaLiturgico": "26o domingo del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Mateo 18,1-5.10"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-10-03",
+   "diaLiturgico": "Sábado de la 26a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 10,17-24.",
+   "texto": "En aquel tiempo, los setenta y dos volvieron llenos de gozo y dijeron a Jesús: \"Señor, hasta los demonios se nos someten en tu Nombre\".\nEl les dijo: \"Yo veía a Satanás caer del cielo como un rayo.\nLes he dado poder para caminar sobre serpientes y escorpiones y para vencer todas las fuerzas del enemigo; y nada podrá dañarlos.\nNo se alegren, sin embargo, de que los espíritus se les sometan; alégrense más bien de que sus nombres estén escritos en el cielo\".\nEn aquel momento Jesús se estremeció de gozo, movido por el Espíritu Santo, y dijo: \"Te alabo, Padre, Señor del cielo y de la tierra, por haber ocultado estas cosas a los sabios y a los prudentes y haberlas revelado a los pequeños. Sí, Padre, porque así lo has querido.\nTodo me ha sido dado por mi Padre, y nadie sabe quién es el Hijo, sino el Padre, como nadie sabe quién es el Padre, sino el Hijo y aquel a quien el Hijo se lo quiera revelar\".\nDespués, volviéndose hacia sus discípulos, Jesús les dijo a ellos solos: \"¡Felices los ojos que ven lo que ustedes ven!\n¡Les aseguro que muchos profetas y reyes quisieron ver lo que ustedes ven y no lo vieron, oír lo que ustedes oyen y no lo oyeron!\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Libro de Job 42,1-3.5-6.12-16"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 119(118),66.71.75.91.125.130"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 10,17-24"
     }
    ]
   }
