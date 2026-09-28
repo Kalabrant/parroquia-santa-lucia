@@ -43,6 +43,11 @@ body{font-family:var(--f-txt);color:#fff;-webkit-font-smoothing:antialiased}
    que se mueve encima (etiquetas, textos) no obligue a repintarla en cada cuadro */
 .lite .ph{will-change:transform}
 .lite .gcard{backface-visibility:visible;box-shadow:0 6px 16px rgba(2,20,60,.28)}
+/* teléfono, cierre: sin la foto desenfocada de fondo (blur de pantalla completa) */
+.lite #s13 .ph{display:none}
+/* teléfono vertical, contacto: la foto se funde con un degradado encima en vez de una máscara */
+.v.lite [data-k=s12-img]{-webkit-mask-image:none!important;mask-image:none!important}
+.v.lite [data-k=s12-ph]::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,59,134,0) 55%,#033b86 100%)}
 .sep{opacity:.75}
 
 /* tipos */
@@ -875,7 +880,7 @@ function applyTrack(tr,lt){
       case 'drop': tf=`translate3d(0,${(-q*tr.dist).toFixed(2)}px,0)`; break;
       case 'left': tf=`translate3d(${(-q*tr.dist).toFixed(2)}px,0,0)`; break;
       case 'right':tf=`translate3d(${(q*tr.dist).toFixed(2)}px,0,0)`; break;
-      case 'scale':tf=`scale(${(1-q*(1-tr.s0)).toFixed(4)})`; break;
+      case 'scale':if(!(LITE && tr.el.classList.contains('bg'))) tf=`scale(${(1-q*(1-tr.s0)).toFixed(4)})`; break;
       case 'pop':  tf=`scale(${(0.88+0.12*pi).toFixed(4)})`; break;
       case 'tilt': tf=`rotate(${(-2*q).toFixed(3)}deg) scale(${(1+0.03*q).toFixed(4)})`; break;
       case 'sx':   tf=`scaleX(${pi.toFixed(4)})`; op=(pi>0?1:0)*(1-po); break;
@@ -1024,7 +1029,7 @@ const CUSTOM={
     const v=win(lt,2.0,0.8), t=$('s13temple');
     t.style.opacity=(1-0.35*v).toFixed(3);
     if(!RM) t.style.transform=`translateY(${(30*v).toFixed(1)}px)`;
-    $('s13halo').style.opacity=(0.7+0.1*Math.sin(lt*0.8)).toFixed(3);
+    if(!LITE) $('s13halo').style.opacity=(0.7+0.1*Math.sin(lt*0.8)).toFixed(3);
   }
 };
 
