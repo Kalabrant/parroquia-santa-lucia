@@ -1,0 +1,1095 @@
+<!doctype html>
+<html lang="es-VE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Parroquia Santa Lucía · Video</title>
+<meta name="description" content="Video animado (sin audio) que resume la vida de la Parroquia Santa Lucía, la Casita Azul de El Empedrao, en Maracaibo.">
+<link rel="icon" href="img/logo-parroquia.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ===== Paleta y tipografías: «Dirección de arte» del guion T3 ===== */
+:root{
+  --azul:#0077b6; --azul-osc:#023e8a; --marron:#7f5539; --crema:#f4f1ee; --texto:#333333; --blanco:#ffffff;
+  --azul-tenue:#e8f3fa; --azul-borde:#cfe6f4; --texto-suave:#5a6672; --celeste:#8ecdf0;
+  --noche:#0f1720; --texto-noche:#dfe6ee; --luz:#f2d99b; --oro:#d4af37; --oro-osc:#b8860b;
+  --oro-claro:#e9d38a; --oro-claro2:#f5e39a; --rojo:#8B1A1A; --marfil:#fdf9f0; --tinta:#3a2a1a; --wa:#25D366;
+  --f-tit:'Lora',Georgia,'Times New Roman',serif;
+  --f-txt:'Montserrat',system-ui,-apple-system,sans-serif;
+  --radio-m:14px; --radio-pastilla:999px; --sombra-m:0 6px 20px rgba(16,42,67,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#000;overflow:hidden}
+body{font-family:var(--f-txt);color:#fff;-webkit-font-smoothing:antialiased}
+
+/* ===== Reproductor con letterbox ===== */
+#root{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#000}
+#root.nocursor{cursor:none}
+#player{position:relative;overflow:hidden;background:var(--noche)}
+/* Escenario: 1920×1080 «px de escenario»; todo (tipografía incluida) se mide en esta unidad y se escala con él */
+#stage{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;overflow:hidden;background:var(--noche)}
+#scenes{position:absolute;inset:0;z-index:1}
+.scene{position:absolute;inset:0;overflow:hidden;display:none}
+.bg{position:absolute;inset:0}
+.abs{position:absolute}
+.ph{position:absolute;inset:0;overflow:hidden}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;will-change:transform}
+.panel{position:absolute;overflow:hidden;border-radius:var(--radio-m);box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;will-change:transform}
+[data-a]{will-change:opacity,transform}
+.sep{opacity:.75}
+
+/* tipos */
+.t-hero{font-family:var(--f-tit);font-weight:700;font-size:112px;line-height:1.05;letter-spacing:-.01em}
+.t-h2{font-family:var(--f-tit);font-weight:700;font-size:92px;line-height:1.08}
+.t-lema{font-family:var(--f-tit);font-style:italic;font-weight:400;font-size:60px;line-height:1.2}
+.t-light{font-family:var(--f-txt);font-weight:300;font-size:44px;line-height:1.3}
+.t-label{font-family:var(--f-txt);font-weight:600;font-size:28px;letter-spacing:.13em;text-transform:uppercase;color:var(--celeste)}
+.t-body{font-family:var(--f-txt);font-weight:400;font-size:44px;line-height:1.35}
+.shadow-txt{text-shadow:0 2px 18px rgba(15,23,32,.55)}
+
+/* halos de luz */
+.halo{position:absolute;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(242,217,155,.95) 0%,rgba(242,217,155,.45) 28%,rgba(242,217,155,.12) 55%,rgba(242,217,155,0) 70%)}
+
+/* ===== Escena 1 ===== */
+#s1 .dawn{background:radial-gradient(ellipse 75% 85% at 32% 52%,#0077b6 0%,#023e8a 62%,#0f1720 100%)}
+#s1 .txt{position:absolute;left:140px;top:320px;width:1000px}
+#s1 .t-hero{font-size:90px;white-space:nowrap}
+#s1 .txt>*{margin-bottom:22px}
+
+/* ===== Escena 2 ===== */
+#s2 .vig{background:linear-gradient(90deg,rgba(15,23,32,.92) 0%,rgba(15,23,32,.80) 34%,rgba(15,23,32,.55) 52%,rgba(15,23,32,.12) 72%,rgba(15,23,32,0) 85%),linear-gradient(0deg,rgba(15,23,32,.45),rgba(15,23,32,0) 30%)}
+#s2 .txt{position:absolute;left:130px;top:0;bottom:0;width:860px;display:flex;flex-direction:column;justify-content:center}
+#s2 .tanda{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%)}
+.luz{display:inline-block;background-image:linear-gradient(90deg,#d4af37 0%,#f2d99b 40%,#dfe6ee 60%,#dfe6ee 100%);background-size:260% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600}
+.t-reina{font-family:var(--f-tit);font-style:italic;font-size:104px;line-height:1.1;color:#fff;margin-bottom:30px}
+
+/* ===== Escena 3 ===== */
+#s3 .paper{background:radial-gradient(ellipse at 30% 20%,rgba(127,85,57,.06),transparent 55%),radial-gradient(ellipse at 80% 90%,rgba(127,85,57,.07),transparent 50%),linear-gradient(160deg,#f4f1ee 0%,#fdf9f0 100%)}
+.slot{position:absolute;left:110px;top:130px;width:640px;height:820px}
+.slot .panel{box-shadow:0 22px 50px rgba(58,42,26,.28)}
+.tl{position:absolute;left:830px;top:190px;width:980px;height:30px}
+.tl-base{position:absolute;left:0;right:0;top:13px;height:3px;background:rgba(184,134,11,.18);border-radius:2px}
+.tl-line{position:absolute;left:0;right:0;top:13px;height:3px;background:linear-gradient(90deg,#b8860b,#d4af37);transform-origin:0 50%;border-radius:2px}
+.hito{position:absolute;top:4px;width:22px;height:22px;margin-left:-11px;border-radius:50%;border:3px solid #b8860b;background:#fdf9f0}
+.h-entry{position:absolute;left:830px;width:980px;color:var(--tinta)}
+.h-date{display:block;font-family:var(--f-tit);font-weight:700;font-size:72px;color:var(--marron);line-height:1.1}
+.h-body{display:block;font-family:var(--f-txt);font-size:44px;line-height:1.3;margin-top:6px}
+.h-body .sep{color:#b8860b;font-weight:700;margin-right:10px}
+.big-date{font-family:var(--f-tit);font-weight:700;font-size:104px;color:var(--marron);line-height:1.1}
+
+/* ===== Escena 4 ===== */
+.ribbon{position:absolute;left:0;right:0;height:44px;background:linear-gradient(180deg,#8B1A1A 0 38%,#d4af37 38% 50%,#8B1A1A 50% 62%,#d4af37 62% 72%,#8B1A1A 72%);box-shadow:0 4px 14px rgba(139,26,26,.25)}
+.n150{font-family:var(--f-tit);font-weight:700;line-height:1;white-space:nowrap}
+.gold-txt{background-image:linear-gradient(105deg,rgba(255,255,255,0) 40%,rgba(255,255,255,.95) 50%,rgba(255,255,255,0) 60%),linear-gradient(180deg,#f5e39a 0%,#d4af37 52%,#b8860b 100%);background-size:250% 100%,100% 100%;background-repeat:no-repeat;background-position:160% 0,0 0;-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 6px 10px rgba(127,85,57,.25))}
+.plaque{display:inline-flex;align-items:center;gap:16px;padding:20px 34px;background:#fff;border:2px solid #d4af37;border-radius:var(--radio-m);box-shadow:var(--sombra-m);font-size:38px;color:var(--tinta)}
+.plaque b{color:#8B1A1A;font-weight:700}
+.plaque .sep{color:#b8860b}
+.frame-gold{position:absolute;padding:12px;background:#fdf9f0;border:3px solid #d4af37;border-radius:var(--radio-m);box-shadow:0 22px 50px rgba(58,42,26,.25)}
+.frame-gold .inner{position:relative;width:100%;height:100%;overflow:hidden;border-radius:6px}
+.frame-gold img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* ===== Escena 5 ===== */
+.ray{position:absolute;top:-300px;width:260px;height:1700px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.06) 50%,rgba(255,255,255,0));transform-origin:50% 0;transform:rotate(-28deg)}
+.misa-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 14px;font-size:38px;font-weight:600;margin-bottom:34px}
+.misa-row .sep{color:var(--celeste)}
+.pill{display:inline-block;padding:10px 26px;border-radius:var(--radio-pastilla);background:#e8f3fa;color:#023e8a;font-weight:700;font-size:38px;box-shadow:0 0 0 rgba(242,217,155,0)}
+
+/* ===== Escena 6 ===== */
+.sac-grid{position:absolute;left:90px;top:290px;width:1160px;height:430px;perspective:1400px}
+.card{position:absolute;width:272px;height:200px;background:#fff;border:2px solid #cfe6f4;border-radius:var(--radio-m);box-shadow:var(--sombra-m);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:10px 12px;color:#333;font-weight:600;font-size:30px;line-height:1.15}
+.card svg{width:58px;height:58px;color:#0077b6;flex:none}
+.agenda-row{position:absolute;left:90px;width:1150px;padding:26px 36px;background:#fff;border-radius:var(--radio-m);border-left:10px solid #0077b6;box-shadow:var(--sombra-m);font-size:40px;color:#333;line-height:1.25}
+.agenda-row b{color:#0077b6;font-weight:700}
+.agenda-row .sep{color:#0077b6;margin:0 8px}
+
+/* ===== Escena 7 ===== */
+.step{display:flex;align-items:baseline;gap:18px;font-size:42px;line-height:1.3;margin-bottom:34px;font-weight:400}
+.step-n{font-family:var(--f-tit);font-weight:700;font-size:64px;color:var(--wa);min-width:40px}
+.step .sep{color:var(--celeste)}
+.phone-wrap{position:absolute;width:420px;height:860px}
+.phone{position:absolute;inset:0;border-radius:60px;border:8px solid rgba(255,255,255,.92);background:#0f1720;box-shadow:0 30px 80px rgba(0,0,0,.35);will-change:transform,filter,opacity}
+.phone-screen{position:absolute;inset:14px;border-radius:44px;overflow:hidden;background:#fff}
+.notch{position:absolute;left:50%;top:10px;width:120px;height:26px;margin-left:-60px;border-radius:14px;background:#0f1720;z-index:5}
+.scr-web{position:absolute;inset:0;background:#f4f1ee}
+.web-top{height:110px;background:#0077b6}
+.gl{display:block;height:16px;border-radius:8px;background:#cfd6dd;margin:22px 30px 0}
+.web-btn{position:absolute;left:50%;top:470px;width:230px;height:64px;margin-left:-115px;border-radius:999px;background:#0077b6}
+.tap{position:absolute;left:50%;top:502px;width:74px;height:74px;margin:-37px 0 0 -37px;border-radius:50%;border:5px solid #fff;background:rgba(255,255,255,.35);box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.ripple{position:absolute;left:50%;top:502px;width:74px;height:74px;margin:-37px 0 0 -37px;border-radius:50%;border:4px solid rgba(255,255,255,.9)}
+.scr-chat{position:absolute;inset:0;background:#e8f3fa}
+.chat-top{height:118px;background:#25D366;display:flex;align-items:flex-end;gap:16px;padding:0 24px 18px}
+.chat-top img{width:54px;height:54px;border-radius:50%;background:#fff}
+.chat-name{width:150px;height:16px;border-radius:8px;background:rgba(255,255,255,.85);margin-bottom:18px}
+.bub{position:absolute;padding:20px 22px 16px;border-radius:22px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.bub i{display:block;height:14px;border-radius:7px;margin-bottom:12px;transform-origin:0 50%}
+.bub.out{right:22px;top:170px;width:270px;background:#25D366;border-bottom-right-radius:6px}
+.bub.out i{background:rgba(255,255,255,.85)}
+.bub.in{left:22px;top:370px;width:250px;background:#fff;border-bottom-left-radius:6px}
+.bub.in i{background:#cfd6dd}
+.chk{position:absolute;right:14px;bottom:8px;width:34px;height:20px;color:#0077b6}
+.chip{display:flex;align-items:center;justify-content:center;height:96px;padding:0 12px;white-space:nowrap;border-radius:var(--radio-pastilla);background:#fff;color:#023e8a;font-weight:600;font-size:32px;box-shadow:0 8px 24px rgba(2,62,138,.25);text-align:center}
+.chips{position:absolute;left:150px;top:430px;width:1620px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+
+/* ===== Escena 8 ===== */
+.g-title{position:absolute;left:0;right:0;top:110px;text-align:center;font-family:var(--f-tit);font-weight:700;font-size:88px;color:#fff}
+.g-line{position:absolute;left:50%;top:238px;width:260px;height:4px;margin-left:-130px;background:#d4af37;border-radius:2px;transform-origin:50% 50%}
+.g-grid{position:absolute;left:156px;top:320px;width:1608px;display:flex;flex-wrap:wrap;justify-content:center;gap:26px 24px;perspective:1600px}
+.gcard{width:520px;min-height:124px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px 20px;background:#fff;border-radius:var(--radio-m);color:#023e8a;font-weight:600;font-size:36px;line-height:1.15;text-align:center;box-shadow:0 10px 30px rgba(2,20,60,.28);backface-visibility:hidden}
+.gcard.soon{background:#023e8a;color:#fff;border:2px solid #8ecdf0}
+.gcard .soon-t{font-weight:400;font-size:30px;color:#8ecdf0;margin-top:4px}
+
+/* ===== Escena 9 ===== */
+.logo-circ{position:absolute;left:170px;top:300px;width:470px;height:470px;border-radius:50%;background:#fff;box-shadow:0 20px 60px rgba(2,62,138,.18),0 0 0 10px #e8f3fa;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.logo-circ img{width:88%;height:88%;object-fit:contain}
+.nuevo{display:inline-block;padding:10px 28px;border-radius:999px;background:#b8860b;color:#fff;font-weight:700;font-size:34px;margin-bottom:16px;box-shadow:0 0 0 rgba(212,175,55,0)}
+.map{position:absolute;left:760px;top:640px;width:700px;height:360px}
+.cell{position:absolute;border-radius:30px;background:#e8f3fa;border:3px solid #cfe6f4}
+
+/* ===== Escena 10 ===== */
+.res-list{position:absolute;left:200px;top:420px;width:900px}
+.res-list li{list-style:none;display:flex;align-items:center;gap:22px;font-size:40px;color:#dfe6ee;margin-bottom:26px}
+.res-list li::before{content:"";width:12px;height:12px;border-radius:50%;background:#f2d99b;box-shadow:0 0 12px rgba(242,217,155,.8);flex:none}
+
+/* ===== Escena 11 ===== */
+.cal{position:absolute;top:300px;width:460px;height:560px;background:#fff;border-radius:var(--radio-m);box-shadow:0 14px 40px rgba(2,62,138,.16);overflow:hidden;transform-origin:50% 0;text-align:center;color:#023e8a;backface-visibility:hidden}
+.cal-band{height:74px;background:#0077b6;position:relative}
+.cal-band::before,.cal-band::after{content:"";position:absolute;top:22px;width:22px;height:22px;border-radius:50%;background:#e8f3fa}
+.cal-band::before{left:110px}.cal-band::after{right:110px}
+.cal-day{font-family:var(--f-tit);font-weight:700;font-size:170px;line-height:1;margin-top:26px}
+.cal-mon{font-weight:600;font-size:36px;letter-spacing:.13em;color:#0077b6;margin-top:2px}
+.cal-sep{font-size:34px;color:#b8860b;line-height:1}
+.cal-name{font-weight:600;font-size:36px;line-height:1.2;padding:4px 30px 0;display:inline-block;position:relative}
+.u-gold{position:absolute;left:30px;right:30px;bottom:-12px;height:5px;background:#d4af37;border-radius:3px;transform-origin:0 50%}
+.dic-row{position:absolute;left:230px;font-size:40px;color:#fff;line-height:1.2}
+.dic-row b{color:#8ecdf0;font-weight:700}
+.dic-row .sep{color:#8ecdf0;margin:0 6px}
+.dic-row.gold b{color:#d4af37;font-size:48px}
+.dic-hito{position:absolute;left:158px;width:26px;height:26px;border-radius:50%;border:3px solid #8ecdf0;background:#023e8a}
+
+/* ===== Escena 12 ===== */
+.c-row{position:absolute;left:130px;display:flex;align-items:center;gap:26px;font-size:36px;line-height:1.25;color:#fff;width:860px}
+.c-row svg{width:52px;height:52px;flex:none;color:#8ecdf0}
+.c-row.big{font-weight:700;font-size:46px}
+.c-row.wa svg{color:#25D366}
+
+/* ===== Escena 13 ===== */
+.w{display:inline-block}
+
+/* ===== Global: logo, partículas, barrido, barra fina ===== */
+#logo{position:absolute;left:0;top:0;width:220px;height:220px;transform-origin:0 0;z-index:50;filter:drop-shadow(0 6px 16px rgba(0,0,0,.25));pointer-events:none}
+#fx{position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:40;pointer-events:none}
+#sweep{position:absolute;top:-200px;left:0;width:700px;height:1480px;z-index:45;pointer-events:none;background:linear-gradient(90deg,rgba(255,246,222,0),rgba(255,246,222,.28) 45%,rgba(255,255,255,.36) 50%,rgba(255,246,222,.28) 55%,rgba(255,246,222,0));opacity:0}
+#thin{position:absolute;left:0;bottom:0;height:2px;width:1920px;background:#8ecdf0;transform-origin:0 50%;transform:scaleX(0);z-index:60;opacity:.9}
+
+/* ===== Controles ===== */
+#ui{position:absolute;left:0;top:0;width:100%;height:100%;z-index:100;transition:opacity .35s ease;font-family:var(--f-txt)}
+#ui.hidden{opacity:0}
+#ui.hidden #bar,#ui.hidden #bar *,#ui.hidden #big{pointer-events:none}
+#hit{position:absolute;inset:0}
+#bar{position:absolute;left:0;right:0;bottom:0;padding:26px 16px 10px;background:linear-gradient(0deg,rgba(0,0,0,.72),rgba(0,0,0,0))}
+#prog{position:relative;height:18px;cursor:pointer;touch-action:none;outline:none}
+#track{position:absolute;left:0;right:0;top:7px;height:4px;border-radius:2px;background:rgba(255,255,255,.28);transition:height .15s,top .15s}
+#prog:hover #track,#prog:focus-visible #track{top:5px;height:8px}
+#fill{position:absolute;left:0;top:0;bottom:0;border-radius:2px;background:#8ecdf0;width:0}
+.mark{position:absolute;top:-2px;bottom:-2px;width:2px;margin-left:-1px;background:rgba(255,255,255,.85);border-radius:1px}
+#knob{position:absolute;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px rgba(142,205,240,.5);left:0}
+#tip{position:absolute;bottom:24px;transform:translateX(-50%);white-space:nowrap;background:rgba(15,23,32,.92);color:#fff;font-size:12px;padding:5px 9px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity .15s}
+#prog:hover #tip{opacity:1}
+#btns{display:flex;align-items:center;gap:4px;margin-top:4px}
+#btns button{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:0;border-radius:8px;background:transparent;color:#fff;cursor:pointer}
+#btns button:hover,#btns button:focus-visible{background:rgba(255,255,255,.14);outline:none}
+#btns svg{width:22px;height:22px;fill:currentColor}
+#time{font-size:13px;font-variant-numeric:tabular-nums;margin-left:8px;color:#e8f3fa;white-space:nowrap}
+#scname{flex:1;text-align:right;font-size:12px;color:rgba(255,255,255,.7);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 8px}
+#big{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:none;flex-direction:column;align-items:center;gap:10px;border:0;background:transparent;color:#fff;cursor:pointer;font-family:var(--f-txt);font-weight:600;font-size:15px;text-shadow:0 1px 6px rgba(0,0,0,.8)}
+#big .circle{width:76px;height:76px;border-radius:50%;background:rgba(0,119,182,.92);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px rgba(142,205,240,.25),0 10px 30px rgba(0,0,0,.4)}
+#big svg{width:32px;height:32px;fill:#fff}
+#big.show{display:flex}
+@media (max-width:520px){#btns button{width:34px;height:34px}#scname{display:none}#bar{padding:18px 8px 4px}#big .circle{width:56px;height:56px}}
+</style>
+</head>
+<body>
+<div id="root">
+<div id="player">
+<div id="stage" aria-hidden="true">
+<div id="scenes">
+
+<!-- ============ ESCENA 1 · Apertura: identidad (0–9 s) ============ -->
+<section class="scene" id="s1">
+  <div class="bg" style="background:#0f1720"></div>
+  <div class="bg dawn" data-a="fade" data-t="0.9" data-d="3"></div>
+  <div class="halo" id="s1halo" style="left:0;top:0;width:900px;height:900px"></div>
+  <div class="panel" style="left:1160px;top:100px;width:660px;height:880px" data-a="maskup" data-t="1.6" data-d="1.3">
+    <img src="img/templo-fachada.webp" alt="" data-kb="1 1.06" data-kbt="1.6 9" style="transform-origin:50% 60%">
+  </div>
+  <div class="txt">
+    <h1 class="t-hero shadow-txt" data-a="rise" data-t="2.2">Parroquia Santa Lucía</h1>
+    <p class="t-lema shadow-txt" data-a="rise" data-t="2.6">La Casita Azul de El Empedrao</p>
+    <p class="t-light shadow-txt" data-a="rise" data-t="3.0">Luz y fe en el corazón de Maracaibo</p>
+    <p class="t-label" data-a="rise" data-t="3.4">Arquidiócesis de Maracaibo</p>
+  </div>
+</section>
+
+<!-- ============ ESCENA 2 · Santa Lucía, portadora de luz (9–22 s) ============ -->
+<section class="scene" id="s2">
+  <div class="bg" style="background:#0f1720"></div>
+  <div class="ph"><img src="img/santa-lucia-altar-rosas.webp" alt="" data-kb="1.12 1.22 5 6 2 4" data-kbt="-0.8 6.8" style="object-position:50% 28%"></div>
+  <div class="ph" data-a="fade" data-t="5.5" data-d="1"><img src="img/santa-lucia-imagen-flores.webp" alt="" data-kb="1.10 1.18 5 6 3 5" data-kbt="5.5 13" style="object-position:50% 22%"></div>
+  <div class="halo" id="s2halo" style="left:760px;top:-110px;width:640px;height:640px;opacity:.25"></div>
+  <div class="bg vig"></div>
+  <div class="txt">
+    <div class="tanda">
+      <h2 class="t-h2 shadow-txt" data-a="rise" data-t="0.6" data-e="5.5" style="margin-bottom:28px">Santa Lucía, Virgen y Mártir</h2>
+      <p class="t-body shadow-txt" data-a="rise" data-t="1.1" data-e="5.5" style="color:#dfe6ee">Su nombre significa «portadora de <span class="luz" id="luz">luz</span>»</p>
+    </div>
+    <div class="tanda">
+      <p class="t-reina shadow-txt" data-a="fade" data-t="6.0" data-d="0.01" data-split="l" data-st="6.0" data-step="0.03">La Reina de El Empedrao</p>
+      <p class="t-body shadow-txt" data-a="up" data-dist="12" data-t="7.0" style="font-size:42px;color:#dfe6ee">En Maracaibo, la devoción más arraigada después de Nuestra Señora de Chiquinquirá</p>
+    </div>
+  </div>
+  <div class="bg" style="background:#fdf9f0" data-a="none" data-e="0.9" data-od="1.1" data-max="0.85"></div>
+  <div class="bg" style="background:#0f1720" data-a="fade" data-t="11.9" data-d="0.9"></div>
+</section>
+
+<!-- ============ ESCENA 3 · Historia: del sueño al decreto (22–41 s) ============ -->
+<section class="scene" id="s3">
+  <div class="bg paper"></div>
+  <div class="slot">
+    <div class="panel" style="left:0;top:0;width:640px;height:820px" data-a="up" data-dist="30" data-t="0.17" data-d="1" data-e="5.56" data-od="0.6">
+      <img src="img/templo-foto-historica.webp" alt="" data-kb="1 1.05" data-kbt="0 5.56" style="filter:sepia(.35) contrast(1.02)">
+    </div>
+    <div class="panel" style="left:47px;top:0;width:546px;height:820px" data-a="tilt" data-t="5.56" data-d="1" data-e="11.45" data-od="0.6">
+      <img src="img/decreto-1877-folio-1.webp" alt="" data-kb="1 1.04" data-kbt="5.56 11.45">
+    </div>
+    <div class="panel" style="left:0;top:0;width:640px;height:820px" data-a="fade" data-t="11.45" data-d="0.7">
+      <img src="img/templo-foto-historica.webp" alt="" data-kb="1 1.05" data-kbt="11.45 16" style="filter:sepia(.35) contrast(1.02)">
+      <img src="img/templo-fachada.webp" alt="" data-a="fade" data-t="12.63" data-d="2" data-kb="1 1.05" data-kbt="11.45 16">
+    </div>
+  </div>
+  <div class="tl" data-a="none" data-o="left" data-e="16" data-od="0.8" data-odist="600">
+    <div class="tl-base"></div>
+    <div class="tl-line" id="tlLine"></div>
+    <div class="hito" id="h1" style="left:40px"></div>
+    <div class="hito" id="h2" style="left:330px"></div>
+    <div class="hito" id="h3" style="left:620px"></div>
+    <div class="hito" id="h4" style="left:935px"></div>
+  </div>
+  <!-- Tanda A -->
+  <p class="h-entry" style="top:300px"><span class="h-date" data-a="drop" data-dist="20" data-t="0.84" data-e="5.47">1834</span> <span class="h-body" data-a="rise" data-t="1.09" data-e="5.47"><span class="sep">·</span> Los vecinos sueñan con su propio templo</span></p>
+  <p class="h-entry" style="top:560px"><span class="h-date" data-a="drop" data-dist="20" data-t="1.6" data-e="5.47">1867–1876</span> <span class="h-body" data-a="rise" data-t="1.85" data-e="5.47"><span class="sep">·</span> Se construye el templo neogótico</span></p>
+  <!-- Tanda B -->
+  <p class="h-entry big-date" style="top:320px" data-a="fade" data-t="6.06" data-d="0.01" data-e="11.37" data-split="l" data-st="6.06" data-step="0.05">20 de marzo de 1877</p>
+  <p class="h-entry" style="top:500px" ><span class="h-body" data-a="rise" data-t="7.07" data-e="11.37" style="font-size:48px">La Diócesis de Mérida erige la parroquia de Santa Lucía</span></p>
+  <!-- Tanda C -->
+  <p class="h-entry" style="top:340px"><span class="h-date" data-a="drop" data-dist="20" data-t="11.87" style="font-size:84px">Siglo XX</span> <span class="h-body" data-a="rise" data-t="12.13" style="font-size:48px"><span class="sep">·</span> El templo se reconstruye con el esfuerzo de la feligresía</span></p>
+</section>
+
+<!-- ============ ESCENA 4 · 150 años (38–46 s) ============ -->
+<section class="scene" id="s4">
+  <div class="bg" style="background:#fdf9f0"></div>
+  <div class="bg" style="background:radial-gradient(ellipse 50% 55% at 33% 42%,rgba(245,227,154,.35),rgba(245,227,154,0) 70%)"></div>
+  <div class="ribbon" style="top:0" data-a="drop" data-dist="44" data-t="0.1" data-d="0.8" data-o="up" data-odist="60" data-e="7.4" data-od="0.5"></div>
+  <div class="ribbon" style="bottom:0" data-a="up" data-dist="44" data-t="0.1" data-d="0.8" data-o="down" data-odist="60" data-e="7.4" data-od="0.5"></div>
+  <div class="halo" id="s4dot" style="left:470px;top:110px;width:400px;height:400px"></div>
+  <div class="frame-gold" style="left:1250px;top:100px;width:580px;height:880px" data-a="right" data-dist="60" data-t="0.4" data-d="1">
+    <div class="inner"><img src="img/decreto-1877-caratula.webp" alt="" data-kb="1 1.05" data-kbt="0 8"></div>
+  </div>
+  <div class="abs" style="left:120px;top:120px;width:1100px;text-align:center">
+    <div class="n150" data-a="scale" data-s0="0.6" data-t="0.4" data-d="1"><span class="gold-txt" id="num150" style="font-size:300px">150</span> <span class="gold-txt" id="anos150" style="font-size:130px">años</span></div>
+    <p class="t-lema" style="color:#8B1A1A;font-size:58px;margin-top:10px" data-a="rise" data-t="2.4">Fieles a la tradición. Abiertos a la misión.</p>
+    <div style="margin-top:46px;display:flex;flex-direction:column;align-items:center;gap:26px">
+      <div class="plaque" data-a="up" data-dist="40" data-t="3.3"><b>1877</b> <span class="sep">·</span> <b>2027</b></div>
+    </div>
+  </div>
+  <div class="bg" style="background:#023e8a" data-a="fade" data-t="7.3" data-d="0.7"></div>
+</section>
+
+<!-- ============ ESCENA 5 · Horarios de Misa (52–62,5 s) ============ -->
+<section class="scene" id="s5">
+  <div class="bg" style="background:linear-gradient(120deg,#023e8a 0%,#0077b6 100%)"></div>
+  <div class="ray" id="ray1" style="left:640px"></div>
+  <div class="ray" id="ray2" style="left:900px;width:180px"></div>
+  <div class="ray" id="ray3" style="left:1140px;width:320px"></div>
+  <div class="panel" style="left:120px;top:100px;width:660px;height:880px" data-a="door" data-t="0.1" data-d="0.9" data-o="door" data-e="10.1" data-od="0.6">
+    <img src="img/templo-interior-naves.webp" alt="" data-kb="1 1.06" data-kbt="0 10.5" style="transform-origin:45% 45%">
+  </div>
+  <div class="abs" style="left:880px;top:250px;width:980px">
+    <h2 class="t-h2" style="font-size:110px;margin-bottom:46px" data-a="rise" data-t="0.6">Santa Misa</h2>
+    <div class="misa-row" data-a="rise" data-t="1.2"><span>Martes a sábado</span> <span class="sep">·</span> <span class="pill" data-a="pop" data-t="1.7" data-d="0.5" data-e="9.55" data-od="0.35">6:00 PM</span></div>
+    <div class="misa-row" data-a="rise" data-t="1.5"><span>Domingos</span> <span class="sep">·</span> <span class="pill" data-a="pop" data-t="1.95" data-d="0.5" data-e="9.4" data-od="0.35">9:00 AM</span> <span class="sep">·</span> <span class="pill" data-a="pop" data-t="2.2" data-d="0.5" data-e="9.25" data-od="0.35">11:00 AM</span> <span class="sep">·</span> <span class="pill" data-a="pop" data-t="2.45" data-d="0.5" data-e="9.1" data-od="0.35">6:00 PM</span></div>
+    <p style="font-size:38px;font-style:italic;color:#8ecdf0;margin:6px 0 40px" data-a="rise" data-t="3.1">Los lunes no hay Misa</p>
+    <p style="display:flex;align-items:center;gap:20px;font-size:38px;font-weight:600" data-a="rise" data-t="3.7">
+      <svg viewBox="0 0 48 48" style="width:52px;height:52px;flex:none" fill="none" stroke="#f2d99b" stroke-width="3" stroke-linecap="round"><path d="M24 5v38M13 16h22"/></svg>
+      <span>Confesiones: media hora antes de cada Misa</span></p>
+  </div>
+</section>
+
+<!-- ============ ESCENA 6 · Sacramentos y catequesis (62,5–76 s) ============ -->
+<section class="scene" id="s6">
+  <div class="bg" style="background:#f4f1ee"></div>
+  <div class="bg" style="background:radial-gradient(circle 620px at 34% 50%,#e8f3fa 0%,rgba(232,243,250,.6) 55%,rgba(232,243,250,0) 100%)"></div>
+  <div class="abs" id="s6wrap" style="inset:0" data-a="none" data-o="up" data-e="13.5" data-od="0.9" data-odist="90">
+    <div class="panel" style="left:1310px;top:150px;width:540px;height:720px;box-shadow:0 22px 50px rgba(16,42,67,.22)" data-a="right" data-dist="50" data-t="0.3" data-d="1">
+      <img src="img/sagrado-corazon-jesus.webp" alt="" data-kb="1 1.06" data-kbt="0 7">
+      <img src="img/san-jose-nino-jesus.webp" alt="" data-a="fade" data-t="6" data-d="1" data-kb="1 1.05" data-kbt="6 13.5">
+    </div>
+    <!-- Tanda A -->
+    <h2 class="abs t-h2" style="left:90px;top:120px;font-size:100px;color:#0077b6" data-a="rise" data-t="0.4" data-e="6">Sacramentos</h2>
+    <div class="sac-grid" id="sacGrid">
+      <div class="card" style="left:0;top:0" data-a="fan" data-t="1.0" data-o="fold" data-e="6" data-od="0.6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M5 30C9 13 39 13 43 30L24 41Z"/><path d="M24 41 13 18M24 41V13M24 41 35 18"/></svg><span>Bautismo</span></div>
+      <div class="card" style="left:296px;top:0" data-a="fan" data-t="1.12" data-o="fold" data-e="6" data-od="0.6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><circle cx="24" cy="8" r="4.5"/><path d="M13 15h22c0 10-4 15-11 15s-11-5-11-15Z"/><path d="M24 30v9M16 42h16"/></svg><span>Primera Comunión</span></div>
+      <div class="card" style="left:592px;top:0" data-a="fan" data-t="1.24" data-o="fold" data-e="6" data-od="0.6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M24 43c-9 0-13-7-11-15 2-6 7-8 7-17 7 4 12 11 10 19 3-2 4-5 4-7 5 6 4 20-10 20Z"/></svg><span>Confirmación</span></div>
+      <div class="card" style="left:888px;top:0" data-a="fan" data-t="1.36" data-o="fold" data-e="6" data-od="0.6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M22 40 10 28c-2-2-2-5 0-7l9-10c1.5-1.5 4-1 4 1.5V40"/><path d="M26 40 38 28c2-2 2-5 0-7l-9-10c-1.5-1.5-4-1-4 1.5V40"/></svg><span>Reconciliación</span></div>
+      <div class="card" style="left:148px;top:228px" data-a="fan" data-t="1.48" data-o="fold" data-e="6" data-od="0.6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M24 5c-6 10-9 15-9 21a9 9 0 0 0 18 0c0-6-3-11-9-21Z"/><path d="M19 27a5 5 0 0 0 5 5"/><path d="M14 43h20"/></svg><span>Unción de los enfermos</span></div>
+      <div class="card" style="left:444px;top:228px" data-a="fan" data-t="1.60" data-o="fold" data-e="6" data-od="0.6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><circle cx="18" cy="29" r="10"/><circle cx="30" cy="29" r="10"/><path d="M15 12l3-4h6l3 4-6 6Z"/></svg><span>Matrimonio</span></div>
+      <div class="card" style="left:740px;top:228px" data-a="fan" data-t="1.72" data-o="fold" data-e="6" data-od="0.6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M16 5c0 14-4 24-4 38h8c0-12 2-24 4-30 2 6 4 18 4 30h8c0-14-4-24-4-38"/><path d="M16 35h4M16 32v6M32 35h-4M32 32v6"/></svg><span>Orden sacerdotal</span></div>
+    </div>
+    <!-- Tanda B -->
+    <div class="agenda-row" style="top:250px" data-a="left" data-dist="80" data-t="6.5"><b>Catequesis de niños</b> <span class="sep">·</span> domingos, 9:00 a 11:00 AM</div>
+    <div class="agenda-row" style="top:430px" data-a="left" data-dist="80" data-t="6.8"><b>Catequesis de jóvenes</b> <span class="sep">·</span> domingos, 4:00 a 6:00 PM</div>
+    <div class="agenda-row" style="top:610px" data-a="left" data-dist="80" data-t="7.1"><b>Adultos:</b> RICA</div>
+  </div>
+  <div class="bg" style="background:linear-gradient(135deg,rgba(37,211,102,.55),#0077b6 70%)" data-a="fade" data-t="12.6" data-d="0.9"></div>
+</section>
+
+<!-- ============ ESCENA 7 · Tus trámites empiezan por WhatsApp (76–96,5 s) ============ -->
+<section class="scene" id="s7">
+  <div class="bg" style="background:linear-gradient(135deg,#0077b6 0%,#023e8a 100%)"></div>
+  <div class="bg" style="background:radial-gradient(circle 520px at 1540px 540px,rgba(37,211,102,.16),rgba(37,211,102,0))"></div>
+  <div class="phone-wrap" style="left:1340px;top:110px" data-a="right" data-t="0.5" data-d="1" data-dist="90">
+    <div class="phone" id="phone">
+      <div class="phone-screen">
+        <div class="notch"></div>
+        <div class="scr-web">
+          <div class="web-top"></div>
+          <span class="gl" style="width:70%;margin-top:40px"></span><span class="gl" style="width:85%"></span><span class="gl" style="width:55%"></span>
+          <span class="gl" style="width:80%;margin-top:40px"></span><span class="gl" style="width:65%"></span>
+          <div class="web-btn" id="webBtn"></div>
+          <span class="gl" style="position:absolute;left:0;right:0;top:590px;width:auto"></span>
+          <span class="gl" style="position:absolute;left:0;top:626px;width:60%"></span>
+          <div class="ripple" id="ripple"></div>
+          <div class="tap" id="tap"></div>
+        </div>
+        <div class="scr-chat" id="scrChat">
+          <div class="chat-top"><img src="img/logo-parroquia.svg" alt=""><div class="chat-name"></div></div>
+          <div class="bub out" id="bubOut"><i id="l1" style="width:100%"></i><i id="l2" style="width:82%"></i><i id="l3" style="width:55%;margin-bottom:4px"></i></div>
+          <div class="bub in" id="bubIn"><i style="width:100%"></i><i style="width:70%;margin-bottom:24px"></i>
+            <svg class="chk" id="chk" viewBox="0 0 34 20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 11l5 5L18 4"/><path d="M14 14l2 2L27 4"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Tanda A -->
+  <div class="abs" style="left:130px;top:150px;width:1120px">
+    <h2 class="t-h2" style="font-size:86px;margin-bottom:60px" data-a="rise" data-t="0.3" data-e="11.4">Tus trámites empiezan por WhatsApp</h2>
+    <p class="step" data-a="rise" data-t="1.2" data-e="11.4"><span class="step-n">1</span> <span class="sep">·</span> <span>Eliges el trámite en la web</span></p>
+    <p class="step" data-a="rise" data-t="2.1" data-e="11.4"><span class="step-n">2</span> <span class="sep">·</span> <span>WhatsApp se abre con el mensaje ya escrito</span></p>
+    <p class="step" data-a="rise" data-t="3.0" data-e="11.4"><span class="step-n">3</span> <span class="sep">·</span> <span>La secretaría te responde con los pasos</span></p>
+  </div>
+  <!-- Tanda B -->
+  <div class="abs" style="left:0;right:0;top:170px;text-align:center" data-a="rise" data-t="12.0" data-e="20.3" data-od="0.6">
+    <h2 class="t-h2" style="font-size:84px;display:inline-block;position:relative">Sin formularios: solo un mensaje<span class="abs" id="waLine" style="left:0;right:0;bottom:-14px;height:6px;border-radius:3px;background:#25D366;transform-origin:0 50%;transform:scaleX(0)"></span></h2>
+  </div>
+  <div class="chips">
+    <div class="chip" data-a="drop" data-dist="30" data-t="13.2" data-e="20.0" data-od="0.5">Partidas</div>
+    <div class="chip" data-a="drop" data-dist="30" data-t="13.3" data-e="20.05" data-od="0.5">Intención de Misa</div>
+    <div class="chip" data-a="drop" data-dist="30" data-t="13.4" data-e="20.1" data-od="0.5">Bautizo</div>
+    <div class="chip" data-a="drop" data-dist="30" data-t="13.5" data-e="20.15" data-od="0.5">Matrimonio</div>
+    <div class="chip" data-a="drop" data-dist="30" data-t="13.6" data-e="20.2" data-od="0.5">Catequesis</div>
+    <div class="chip" data-a="drop" data-dist="30" data-t="13.7" data-e="20.25" data-od="0.5">Visita a un enfermo</div>
+    <div class="chip" data-a="drop" data-dist="30" data-t="13.8" data-e="20.3" data-od="0.5">Columbario</div>
+    <div class="chip" data-a="drop" data-dist="30" data-t="13.9" data-e="20.35" data-od="0.5">Unirse a un grupo</div>
+  </div>
+  <div class="bg" style="background:linear-gradient(135deg,#0077b6,#8ecdf0)" data-a="fade" data-t="19.9" data-d="0.7" data-max="0.6"></div>
+</section>
+
+<!-- ============ ESCENA 8 · Una comunidad de comunidades (96,5–123 s) ============ -->
+<section class="scene" id="s8">
+  <div class="ph"><img src="img/templo-ilustracion-espiritu-santo.webp" alt="" data-kb="1 1.06" data-kbt="-0.69 8.68"></div>
+  <div class="ph" data-a="fade" data-t="7.81" data-d="1"><img src="img/virgen-maria.webp" alt="" data-kb="1 1.06" data-kbt="7.81 16.49" style="object-position:50% 30%"></div>
+  <div class="bg" style="background:rgba(2,62,138,.7)"></div>
+  <div class="bg" style="background:linear-gradient(135deg,#0077b6,#023e8a)" data-a="fade" data-t="15.62" data-d="1"></div>
+  <!-- Tanda A -->
+  <h2 class="g-title" data-a="rise" data-t="0.26" data-e="7.81">Una comunidad de comunidades</h2>
+  <div class="g-line" data-a="sx" data-t="0.69" data-d="0.9" data-e="7.81" style="transform-origin:50% 50%"></div>
+  <div class="g-grid" style="top:340px">
+    <div class="gcard" data-a="flipY" data-t="0.87" data-e="7.42" data-od="0.45">Camino de Emaús</div>
+    <div class="gcard" data-a="flipY" data-t="0.95" data-e="7.49" data-od="0.45">Cursillos de Cristiandad</div>
+    <div class="gcard" data-a="flipY" data-t="1.04" data-e="7.56" data-od="0.45">Legión de María</div>
+    <div class="gcard" data-a="flipY" data-t="1.13" data-e="7.63" data-od="0.45">Renovación Carismática</div>
+    <div class="gcard" data-a="flipY" data-t="1.22" data-e="7.7" data-od="0.45">Virgen de la Luz</div>
+    <div class="gcard soon" data-a="flipY" data-t="1.3" data-e="7.77" data-od="0.45"><span>Camino Neocatecumenal</span> <span class="soon-t">(próximamente)</span></div>
+  </div>
+  <!-- Tanda B -->
+  <h2 class="g-title" data-a="rise" data-t="8.07" data-e="15.62">Sociedades y cofradías</h2>
+  <div class="g-line" data-a="sx" data-t="8.51" data-d="0.9" data-e="15.62"></div>
+  <div class="g-grid" style="top:320px">
+    <div class="gcard" data-a="flipY" data-t="8.68" data-e="15.16" data-od="0.45">Corazón de Jesús</div>
+    <div class="gcard" data-a="flipY" data-t="8.77" data-e="15.23" data-od="0.45">San José</div>
+    <div class="gcard" data-a="flipY" data-t="8.85" data-e="15.3" data-od="0.45">Santa Rita</div>
+    <div class="gcard" data-a="flipY" data-t="8.94" data-e="15.37" data-od="0.45">Divina Misericordia</div>
+    <div class="gcard" data-a="flipY" data-t="9.03" data-e="15.44" data-od="0.45">Perpetuo Socorro</div>
+    <div class="gcard" data-a="flipY" data-t="9.11" data-e="15.51" data-od="0.45">Sociedad de Santa Lucía</div>
+    <div class="gcard" data-a="flipY" data-t="9.2" data-e="15.58" data-od="0.45">Servidores de Santa Lucía</div>
+  </div>
+  <!-- Tanda C -->
+  <h2 class="g-title" data-a="rise" data-t="15.97" data-e="22.22">Ministerios y caridad</h2>
+  <div class="g-line" data-a="sx" data-t="16.4" data-d="0.9" data-e="22.22"></div>
+  <div class="g-grid" id="gridC" style="top:320px">
+    <div class="gcard" data-a="flipY" data-t="16.49" data-o="gather" data-e="22.57" data-od="0.8">Catequesis</div>
+    <div class="gcard" data-a="flipY" data-t="16.58" data-o="gather" data-e="22.57" data-od="0.8">Lectores</div>
+    <div class="gcard" data-a="flipY" data-t="16.66" data-o="gather" data-e="22.57" data-od="0.8">Música</div>
+    <div class="gcard" data-a="flipY" data-t="16.75" data-o="gather" data-e="22.57" data-od="0.8">Ostiariado</div>
+    <div class="gcard" data-a="flipY" data-t="16.84" data-o="gather" data-e="22.57" data-od="0.8">Pastoral Juvenil</div>
+    <div class="gcard" data-a="flipY" data-t="16.92" data-o="gather" data-e="22.57" data-od="0.8">Servidores del Altar</div>
+    <div class="gcard" data-a="flipY" data-t="17.01" data-o="gather" data-e="22.57" data-od="0.8">Flores de Misericordia</div>
+    <div class="gcard" data-a="flipY" data-t="17.1" data-o="gather" data-e="22.57" data-od="0.8">Visita a Enfermos</div>
+    <div class="gcard" data-a="flipY" data-t="17.18" data-o="gather" data-e="22.57" data-od="0.8">Cáritas Parroquial</div>
+  </div>
+  <div class="halo" id="s8dot" style="left:660px;top:340px;width:600px;height:600px;opacity:0"></div>
+</section>
+
+<!-- ============ ESCENA 9 · Comunidades de la Palabra (123–133 s) ============ -->
+<section class="scene" id="s9">
+  <div class="bg" style="background:#fdf9f0"></div>
+  <div class="halo" style="left:105px;top:235px;width:600px;height:600px;opacity:.55" data-a="scale" data-s0="0.5" data-t="0.2" data-d="1.4"></div>
+  <div class="logo-circ" data-a="scale" data-s0="0.9" data-t="0.2" data-d="1"><img src="img/logo-proyecto-palabra.jpg" alt=""></div>
+  <div class="abs" style="left:740px;top:130px;width:1100px;color:#333">
+    <div data-a="rise" data-t="0.6"><span class="nuevo" id="nuevo">¡Nuevo!</span> <h2 class="t-h2" style="font-size:84px;color:#023e8a">Comunidades de la Palabra</h2></div>
+    <p class="t-body" style="font-size:42px;margin-top:26px;color:#333" data-a="rise" data-t="1.6">Vecinos que leen el Evangelio del domingo y sirven a su cuadra</p>
+    <p style="font-size:46px;font-weight:600;color:#0077b6;margin-top:34px" data-a="rise" data-t="3.0">Ya están creciendo en nuestros sectores</p>
+  </div>
+  <div class="map" id="map">
+    <div class="cell" style="left:0;top:0;width:190px;height:96px" data-a="pop" data-t="3.1" data-d="0.5"></div>
+    <div class="cell" style="left:210px;top:10px;width:150px;height:96px" data-a="pop" data-t="3.16" data-d="0.5"></div>
+    <div class="cell" style="left:380px;top:0;width:200px;height:96px" data-a="pop" data-t="3.22" data-d="0.5"></div>
+    <div class="cell" style="left:20px;top:120px;width:170px;height:100px" data-a="pop" data-t="3.28" data-d="0.5"></div>
+    <div class="cell" style="left:210px;top:125px;width:210px;height:100px" data-a="pop" data-t="3.34" data-d="0.5"></div>
+    <div class="cell" style="left:440px;top:115px;width:160px;height:100px" data-a="pop" data-t="3.40" data-d="0.5"></div>
+    <div class="cell" style="left:0;top:245px;width:200px;height:96px" data-a="pop" data-t="3.46" data-d="0.5"></div>
+    <div class="cell" style="left:220px;top:250px;width:160px;height:96px" data-a="pop" data-t="3.52" data-d="0.5"></div>
+    <div class="cell" style="left:400px;top:240px;width:190px;height:96px" data-a="pop" data-t="3.58" data-d="0.5"></div>
+  </div>
+</section>
+
+<!-- ============ ESCENA 10 · Recursos de oración (133–142 s) ============ -->
+<section class="scene" id="s10">
+  <div class="bg" style="background:#0f1720"></div>
+  <div class="halo" style="left:1020px;top:170px;width:960px;height:760px;opacity:.28"></div>
+  <div class="panel" style="left:1200px;top:330px;width:640px;height:480px;box-shadow:0 0 80px rgba(242,217,155,.25),0 24px 60px rgba(0,0,0,.5)" data-a="scale" data-s0="0.94" data-t="0.3" data-d="1.2">
+    <img src="img/divina-misericordia-pintura.webp" alt="" data-kb="1 1.06" data-kbt="0 9" style="transform-origin:50% 60%">
+  </div>
+  <svg class="abs" id="rosary" viewBox="0 0 1920 1080" style="left:0;top:0;width:1920px;height:1080px;overflow:visible" data-a="fade" data-t="0.3" data-d="0.8"></svg>
+  <svg class="abs" id="candle" viewBox="0 0 80 150" style="left:170px;top:120px;width:80px;height:150px;overflow:visible" data-a="fade" data-t="0.1" data-d="0.8">
+    <defs><radialGradient id="fg" cx="50%" cy="60%" r="50%"><stop offset="0" stop-color="#fff6de"/><stop offset=".55" stop-color="#f2d99b"/><stop offset="1" stop-color="#d4af37"/></radialGradient></defs>
+    <circle cx="40" cy="40" r="38" fill="rgba(242,217,155,.18)"/>
+    <g id="flame" style="transform-origin:40px 62px"><path d="M40 12C48 26 54 36 54 46a14 14 0 0 1-28 0c0-10 6-20 14-34Z" fill="url(#fg)"/></g>
+    <rect x="30" y="64" width="20" height="80" rx="4" fill="#dfe6ee"/>
+  </svg>
+  <h2 class="abs t-h2" style="left:270px;top:160px;font-size:84px;color:#f2d99b" data-a="rise" data-t="0.4">Recursos de oración</h2>
+  <ul class="res-list">
+    <li data-a="up" data-dist="12" data-t="1.2">Rosario y Coronilla interactivos</li>
+    <li data-a="up" data-dist="12" data-t="1.55">Novena Perpetua</li>
+    <li data-a="up" data-dist="12" data-t="1.9">Lectio Divina</li>
+    <li data-a="up" data-dist="12" data-t="2.25">Tiempo para Dios</li>
+    <li data-a="up" data-dist="12" data-t="2.6">Examen de conciencia</li>
+  </ul>
+  <p class="abs t-label" style="left:200px;top:880px;font-size:32px" data-a="rise" data-t="3.3">Funcionan sin conexión</p>
+  <div class="bg" style="background:linear-gradient(180deg,#8ecdf0,#e8f3fa)" data-a="fade" data-t="8.2" data-d="0.8" data-max="0.7"></div>
+</section>
+
+<!-- ============ ESCENA 11 · Fiesta patronal (132,5–140,5 s) ============ -->
+<section class="scene" id="s11">
+  <div class="bg" style="background:radial-gradient(ellipse at 75% 40%,#0a4fa0 0%,#023e8a 55%,#012a5e 100%)"></div>
+  <div class="halo" id="crown" style="left:1285px;top:120px;width:560px;height:560px;opacity:0"></div>
+  <div class="panel" style="left:1090px;top:290px;width:760px;height:500px;box-shadow:0 0 70px rgba(212,175,55,.25),0 24px 60px rgba(0,0,0,.45)" data-a="fade" data-t="0.3" data-d="1.2">
+    <img src="img/santa-lucia-urna.webp" alt="" data-kb="1 1.07" data-kbt="0 8" style="transform-origin:62% 30%">
+  </div>
+  <div class="abs" style="left:140px;top:170px;width:900px">
+    <div data-a="scale" data-s0="0.8" data-t="0.7" data-d="1.1" style="transform-origin:0 60%"><span class="gold-txt" id="d13" style="font-family:var(--f-tit);font-weight:700;font-size:320px;line-height:1">13</span></div>
+    <p style="font-family:var(--f-tit);font-weight:700;font-size:96px;line-height:1.1;color:#f2d99b;margin-top:-6px" data-a="rise" data-t="1.4">de diciembre</p>
+    <div style="width:260px;height:5px;border-radius:3px;background:linear-gradient(90deg,#d4af37,rgba(212,175,55,0));margin:40px 0 36px;transform-origin:0 50%" data-a="sx" data-t="2.0" data-d="0.9"></div>
+    <p class="t-lema" style="font-size:64px;color:#fff;width:720px" data-a="rise" data-t="2.4">Gran fiesta patronal de Santa Lucía</p>
+  </div>
+</section>
+
+<!-- ============ ESCENA 12 · Contacto (158,5–168,5 s) ============ -->
+<section class="scene" id="s12">
+  <div class="bg" style="background:linear-gradient(90deg,#0f1720 0%,#023e8a 55%,#0f1720 100%)"></div>
+  <div class="ph" style="left:820px" data-a="fade" data-t="0" data-d="1.2">
+    <img src="img/santa-lucia-rostro.webp" alt="" data-kb="1 1.06" data-kbt="-0.8 10" style="object-position:40% 40%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 38%);mask-image:linear-gradient(90deg,transparent 0,#000 38%)">
+  </div>
+  <div class="halo" style="left:1140px;top:40px;width:640px;height:640px;opacity:.22"></div>
+  <h2 class="abs t-h2" style="left:130px;top:110px;font-size:96px" data-a="rise" data-t="0.3" data-e="9" data-od="0.6">Contacto</h2>
+  <div class="c-row" style="top:280px" data-a="left" data-dist="16" data-t="0.9" data-e="9" data-od="0.6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"><path d="M24 44S10 28 10 19a14 14 0 0 1 28 0c0 9-14 25-14 25Z"/><circle cx="24" cy="19" r="5"/></svg><span>Calle 90, Sector El Empedrado, Maracaibo, Zulia</span></div>
+  <div class="c-row big wa" style="top:430px" data-a="left" data-dist="16" data-t="1.2" data-e="9" data-od="0.6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M7 41l3-9a17 17 0 1 1 6 6Z"/><path d="M18 16c0 8 6 14 14 15l2-4-4-2-2 2c-3-1-5-3-6-6l2-2-2-4Z"/></svg><span>WhatsApp: +58 414 367 6212</span></div>
+  <div class="c-row" style="top:545px" data-a="left" data-dist="16" data-t="1.5" data-e="9" data-od="0.6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6"><rect x="8" y="8" width="32" height="32" rx="9"/><circle cx="24" cy="24" r="7.5"/><circle cx="33" cy="15" r="1.8" fill="currentColor" stroke="none"/></svg><span>Instagram: @parroquia.santaluciamcbo</span></div>
+  <div class="c-row" style="top:650px" data-a="left" data-dist="16" data-t="1.8" data-e="9" data-od="0.6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="24" cy="24" r="17"/><path d="M24 14v10l7 5"/></svg><span>Despacho: martes a viernes, 2:00 a 5:00 PM</span></div>
+  <div class="c-row big" style="top:790px;font-size:52px" data-a="left" data-dist="16" data-t="2.1"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6"><circle cx="24" cy="24" r="17"/><path d="M7 24h34M24 7c-7 7-7 27 0 34M24 7c7 7 7 27 0 34"/></svg><span>parroquiasantalucia.org</span></div>
+</section>
+
+<!-- ============ ESCENA 13 · Cierre e invitación (168,5–176,5 s) ============ -->
+<section class="scene" id="s13">
+  <div class="bg" style="background:linear-gradient(180deg,#0077b6 0%,#3a9fd6 55%,#8ecdf0 100%)"></div>
+  <div class="ph" style="opacity:.35"><img src="img/templo-fachada.webp" alt="" style="filter:blur(30px);transform:scale(1.2)"></div>
+  <div class="halo" id="s13halo" style="left:460px;top:40px;width:1000px;height:1000px;opacity:.7"></div>
+  <div class="panel" id="s13temple" style="left:690px;top:230px;width:540px;height:720px;box-shadow:0 30px 70px rgba(2,62,138,.4)">
+    <img src="img/templo-fachada.webp" alt="" data-kb="1.08 1.0" data-kbt="-0.8 8">
+  </div>
+  <div class="bg" style="background:radial-gradient(ellipse 60% 55% at 50% 52%,rgba(2,62,138,.74),rgba(2,62,138,.45) 70%,rgba(2,62,138,.22))" data-a="fade" data-t="2.0" data-d="0.8"></div>
+  <p class="abs t-lema" style="left:0;right:0;top:70px;text-align:center;font-size:84px;text-shadow:0 2px 20px rgba(2,62,138,.6)" data-split="w" data-st="0.3" data-step="0.15">Hay un lugar reservado para ti</p>
+  <h2 class="abs t-hero" style="left:0;right:0;top:450px;text-align:center;font-size:110px;text-shadow:0 2px 20px rgba(2,62,138,.5)" data-a="rise" data-t="2.8">Parroquia Santa Lucía</h2>
+  <p class="abs t-lema" style="left:0;right:0;top:600px;text-align:center;font-size:62px;color:#e8f3fa;text-shadow:0 2px 20px rgba(2,62,138,.5)" data-a="rise" data-t="3.2">La Casita Azul de El Empedrao</p>
+  <div class="bg" style="background:radial-gradient(circle at 50% 45%,#fffaf0 0%,#f2d99b 60%,#f2d99b 100%)" data-a="scale" data-s0="0.3" data-t="6.4" data-d="1.0" id="whiteout"></div>
+  <div class="bg" style="background:#0f1720" data-a="fade" data-t="7.3" data-d="0.7"></div>
+</section>
+
+</div><!-- /scenes -->
+<canvas id="fx" width="960" height="540"></canvas>
+<div id="sweep"></div>
+<img id="logo" src="img/logo-parroquia.svg" alt="">
+<div id="thin"></div>
+</div><!-- /stage -->
+
+</div><!-- /player -->
+<div id="ui">
+  <div id="hit"></div>
+  <button id="big" type="button" aria-label="Reproducir"><span class="circle"><svg viewBox="0 0 24 24" id="bigIcon"><path d="M8 5v14l11-7z"/></svg></span><span id="bigLabel">Reproducir</span></button>
+  <div id="bar">
+    <div id="prog" role="slider" tabindex="0" aria-label="Progreso del video" aria-valuemin="0" aria-valuemax="158.5" aria-valuenow="0">
+      <div id="track"><div id="fill"></div><div id="marks"></div><div id="knob"></div></div>
+      <div id="tip"></div>
+    </div>
+    <div id="btns">
+      <button id="bPrev" type="button" aria-label="Escena anterior" title="Escena anterior (←)"><svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zM9.5 12 18 6v12z"/></svg></button>
+      <button id="bPlay" type="button" aria-label="Pausa" title="Reproducir / pausa (espacio)"><svg viewBox="0 0 24 24" id="playIcon"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg></button>
+      <button id="bNext" type="button" aria-label="Escena siguiente" title="Escena siguiente (→)"><svg viewBox="0 0 24 24"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg></button>
+      <span id="time">0:00 / 2:38</span>
+      <span id="scname"></span>
+      <button id="bMute" type="button" aria-label="Silenciar música" title="Música (M)"><svg viewBox="0 0 24 24" id="muteIcon"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg></button>
+      <button id="bFs" type="button" aria-label="Pantalla completa" title="Pantalla completa (F)"><svg viewBox="0 0 24 24" id="fsIcon"><path d="M4 4h6v2H6v4H4zM14 4h6v6h-2V6h-4zM4 14h2v4h4v2H4zM18 14h2v6h-6v-2h4z"/></svg></button>
+    </div>
+  </div>
+</div>
+
+</div><!-- /root -->
+
+<script>
+(function(){
+'use strict';
+/* ================= Escenas (13 escenas, 158,5 s: igual que la música) ================= */
+const SCENES = [
+  {id:'s1',  title:'Apertura: identidad',                 dur:9},
+  {id:'s2',  title:'Santa Lucía, portadora de luz',       dur:13},
+  {id:'s3',  title:'Historia: del sueño al decreto',      dur:16},
+  {id:'s4',  title:'150 años',                            dur:8},
+  {id:'s5',  title:'Horarios de Misa',                    dur:10.5},
+  {id:'s6',  title:'Sacramentos y catequesis',            dur:13.5},
+  {id:'s7',  title:'Tus trámites empiezan por WhatsApp',  dur:20.5},
+  {id:'s8',  title:'Una comunidad de comunidades',        dur:23},
+  {id:'s9',  title:'Comunidades de la Palabra',           dur:10},
+  {id:'s10', title:'Recursos de oración',                 dur:9},
+  {id:'s11', title:'Fiesta patronal',                     dur:8},
+  {id:'s12', title:'Contacto',                            dur:10},
+  {id:'s13', title:'Cierre e invitación',                 dur:8}
+];
+let acc=0; SCENES.forEach(s=>{s.start=acc; acc=Math.round((acc+s.dur)*1000)/1000; s.end=acc;});
+const TOTAL = acc; // 158.5
+const XF = 0.8;     // fundido entre escenas (dentro de la duración de la escena saliente)
+
+/* ================= Utilidades de tiempo y easing ================= */
+const clamp01=x=>x<0?0:x>1?1:x;
+const lerp=(a,b,p)=>a+(b-a)*p;
+function bezier(x1,y1,x2,y2){
+  const cx=3*x1,bx=3*(x2-x1)-cx,ax=1-cx-bx,cy=3*y1,by=3*(y2-y1)-cy,ay=1-cy-by;
+  const sx=t=>((ax*t+bx)*t+cx)*t, sy=t=>((ay*t+by)*t+cy)*t;
+  return x=>{ if(x<=0)return 0; if(x>=1)return 1;
+    let lo=0,hi=1,t=x; for(let i=0;i<24;i++){const v=sx(t); if(Math.abs(v-x)<1e-5)break; if(v<x)lo=t;else hi=t; t=(lo+hi)/2;}
+    return sy(t); };
+}
+const EIN  = bezier(.22,1,.36,1);  // entradas: desaceleración larga, sin rebote
+const EOUT = bezier(.4,0,1,1);     // salidas: más cortas
+const EIO  = bezier(.45,0,.55,1);
+const win=(lt,a,d)=>EIN(clamp01((lt-a)/d));
+const wout=(lt,a,d)=>EOUT(clamp01((lt-a)/d));
+
+let RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+try{ matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',e=>{RM=e.matches; resetCaches(); dirty=true;}); }catch(e){}
+
+/* ================= Preparación del DOM ================= */
+const $=id=>document.getElementById(id);
+const stage=$('stage'), player=$('player'), root=$('root');
+
+// Separar letras / palabras (el texto sigue siendo literal: solo se envuelve en <span>)
+document.querySelectorAll('[data-split]').forEach(el=>{
+  const mode=el.dataset.split, t0=parseFloat(el.dataset.st||'0'), step=parseFloat(el.dataset.step||'0.03');
+  let i=0;
+  const walk=node=>{
+    Array.from(node.childNodes).forEach(n=>{
+      if(n.nodeType===3){
+        const frag=document.createDocumentFragment();
+        const parts = mode==='w' ? n.textContent.split(/(\s+)/) : Array.from(n.textContent);
+        parts.forEach(p=>{
+          if(p==='' ) return;
+          if(/^\s+$/.test(p)){ frag.appendChild(document.createTextNode(p)); return; }
+          const s=document.createElement('span');
+          s.textContent=p;
+          if(mode==='w'){ s.className='w'; s.dataset.a='rise'; s.dataset.d='0.7'; }
+          else { s.dataset.a='fade'; s.dataset.d='0.35'; }
+          s.dataset.t=(t0+i*step).toFixed(3);
+          if(el.dataset.e){ s.dataset.e=el.dataset.e; }
+          i++; frag.appendChild(s);
+        });
+        n.replaceWith(frag);
+      } else if(n.nodeType===1){ walk(n); }
+    });
+  };
+  walk(el);
+});
+
+// Recoger pistas de animación y Ken Burns por escena
+SCENES.forEach((s,idx)=>{
+  s.el=$(s.id); s.idx=idx; s.el.style.zIndex=String(100-idx);
+  s.tracks=[]; s.kbs=[];
+  s.el.querySelectorAll('[data-a]').forEach(el=>{
+    const d=el.dataset;
+    s.tracks.push({el, a:d.a, t:parseFloat(d.t||'0'), d:parseFloat(d.d||'0.8'),
+      e: d.e!=null?parseFloat(d.e):null, od:parseFloat(d.od||'0.5'), o:d.o||'', dist:parseFloat(d.dist||'16'),
+      odist:parseFloat(d.odist||'40'), s0:parseFloat(d.s0||'0.9'), max:parseFloat(d.max||'1'), fx:0, fy:0, c:{}});
+  });
+  s.el.querySelectorAll('[data-kb]').forEach(el=>{
+    const v=el.dataset.kb.split(/\s+/).map(Number); const w=(el.dataset.kbt||'').split(/\s+/).filter(Boolean).map(Number);
+    s.kbs.push({el, s0:v[0], s1:v[1], x0:v[2]||0, x1:v[3]||0, y0:v[4]||0, y1:v[5]||0, a:w.length?w[0]:-XF, b:w.length?w[1]:s.dur, c:''});
+  });
+});
+
+// Desplazamientos hacia el centro para «abanico» y «reunir» (medidos sin transformaciones)
+function measureOffsets(){
+  SCENES.forEach(s=>{
+    const prev=s.el.style.display; s.el.style.display='block'; s.el.style.visibility='hidden';
+    s.tracks.forEach(tr=>{
+      if(tr.a==='fan'||tr.o==='fold'||tr.o==='gather'){
+        const p=tr.el.offsetParent; if(!p) return;
+        const cx=p.offsetWidth/2, cy=p.offsetHeight/2;
+        tr.fx=cx-(tr.el.offsetLeft+tr.el.offsetWidth/2);
+        tr.fy=cy-(tr.el.offsetTop+tr.el.offsetHeight/2);
+      }
+    });
+    s.el.style.display=prev; s.el.style.visibility='';
+  });
+}
+
+/* ================= Motor: estado puro en función del tiempo ================= */
+function setS(c,el,k,v){ if(c[k]!==v){ c[k]=v; el.style[k]=v; } }
+function resetCaches(){ SCENES.forEach(s=>{ s.tracks.forEach(t=>t.c={}); s.kbs.forEach(k=>k.c=''); }); }
+
+function applyTrack(tr,lt){
+  const pi = tr.a==='none' ? 1 : (lt<=tr.t ? 0 : EIN(clamp01((lt-tr.t)/tr.d)));
+  const po = tr.e==null ? 0 : EOUT(clamp01((lt-(tr.e-tr.od))/tr.od));
+  const q=1-pi;
+  let op=pi*(1-po), tf='', fl='', cp='';
+  if(!RM){
+    switch(tr.a){
+      case 'rise': tf=`translate3d(0,${(q*tr.dist).toFixed(2)}px,0)`; if(q>0.003) fl=`blur(${(q*6).toFixed(2)}px)`; break;
+      case 'up':   tf=`translate3d(0,${(q*tr.dist).toFixed(2)}px,0)`; break;
+      case 'drop': tf=`translate3d(0,${(-q*tr.dist).toFixed(2)}px,0)`; break;
+      case 'left': tf=`translate3d(${(-q*tr.dist).toFixed(2)}px,0,0)`; break;
+      case 'right':tf=`translate3d(${(q*tr.dist).toFixed(2)}px,0,0)`; break;
+      case 'scale':tf=`scale(${(1-q*(1-tr.s0)).toFixed(4)})`; break;
+      case 'pop':  tf=`scale(${(0.88+0.12*pi).toFixed(4)})`; break;
+      case 'tilt': tf=`rotate(${(-2*q).toFixed(3)}deg) scale(${(1+0.03*q).toFixed(4)})`; break;
+      case 'sx':   tf=`scaleX(${pi.toFixed(4)})`; op=(pi>0?1:0)*(1-po); break;
+      case 'sx2':  tf=`scaleY(${pi.toFixed(4)})`; op=(pi>0?1:0)*(1-po); break;
+      case 'flipY':tf=`rotateY(${(90*q+90*po).toFixed(2)}deg)`; op=clamp01(pi*4)*(1-clamp01((po-0.75)*4)); break;
+      case 'flipX':tf=`rotateX(${(-90*q).toFixed(2)}deg)`; op=clamp01(pi*3)*(1-po); break;
+      case 'fan':  tf=`translate(${(tr.fx*q).toFixed(1)}px,${(tr.fy*q).toFixed(1)}px) scale(${(0.4+0.6*pi).toFixed(4)})`; op=clamp01(pi*2.5)*(1-po); break;
+      case 'door': { const c=Math.max(q,tr.o==='door'?po:0); cp=`inset(0 ${(50*c).toFixed(2)}% 0 ${(50*c).toFixed(2)}%)`; op=c<1?1:0; if(tr.o!=='door') op*=(1-po); break; }
+      case 'maskup': cp=`inset(${(100*q).toFixed(2)}% 0 0 0)`; op=(pi>0?1:0)*(1-po); break;
+    }
+    if(po>0){
+      switch(tr.o){
+        case 'left': tf+=` translate3d(${(-po*tr.odist).toFixed(1)}px,0,0)`; break;
+        case 'up':   tf+=` translate3d(0,${(-po*tr.odist).toFixed(1)}px,0)`; break;
+        case 'down': tf+=` translate3d(0,${(po*tr.odist).toFixed(1)}px,0)`; break;
+        case 'fold': tf=`translate(${(tr.fx*po).toFixed(1)}px,${(tr.fy*po).toFixed(1)}px) scale(${(1-0.6*po).toFixed(4)})`; break;
+        case 'gather': tf=`translate(${(tr.fx*po).toFixed(1)}px,${(tr.fy*po).toFixed(1)}px) scale(${(1-0.92*po).toFixed(4)})`; op=(pi>0?1:0)*(1-po*po); break;
+        case '': if(tr.a==='rise'||tr.a==='up'||tr.a==='left'||tr.a==='drop') tf+=` translate3d(0,${(-po*8).toFixed(2)}px,0)`; break;
+      }
+    }
+  } else {
+    if(tr.a==='door') op = tr.o==='door' ? pi*(1-po) : pi*(1-po);
+  }
+  op*=tr.max;
+  const c=tr.c, el=tr.el;
+  setS(c,el,'opacity',op<0.001?'0':op.toFixed(3));
+  setS(c,el,'transform',tf);
+  setS(c,el,'filter',fl);
+  setS(c,el,'clipPath',cp);
+  setS(c,el,'visibility',op<0.001?'hidden':'');
+}
+function applyKB(k,lt){
+  let p = RM ? 0 : clamp01((lt-k.a)/(k.b-k.a));
+  const sc=lerp(k.s0,k.s1,p), x=lerp(k.x0,k.x1,p), y=lerp(k.y0,k.y1,p);
+  const v=`translate3d(${x.toFixed(3)}%,${y.toFixed(3)}%,0) scale(${sc.toFixed(4)})`;
+  if(k.c!==v){k.c=v; k.el.style.transform=v;}
+}
+
+/* ================= Animaciones propias de cada escena ================= */
+const css=(el,o)=>{ for(const k in o) el.style[k]=o[k]; };
+const CUSTOM={
+  s1(lt){ // punto de luz que nace y se vuelve halo
+    const h=$('s1halo');
+    const g=win(lt,0,1.5), mv=EIO(clamp01((lt-1.5)/2));
+    const x=lerp(960,560,mv), y=lerp(540,560,mv), sc=RM?1:lerp(0.08,1,g)*lerp(1,1.15,mv);
+    const op=lerp(1,0.4,mv)*clamp01(g*1.4);
+    css(h,{transform:`translate(${x-450}px,${y-450}px) scale(${sc.toFixed(4)})`,opacity:op.toFixed(3)});
+  },
+  s2(lt){ // la palabra «luz» se ilumina
+    const p=win(lt,2.2,1.3);
+    const l=$('luz'); l.style.backgroundPosition=`${(100-100*p).toFixed(2)}% 0`;
+    l.style.filter=p>0?`drop-shadow(0 0 ${(14*p).toFixed(1)}px rgba(242,217,155,${(0.75*p).toFixed(2)}))`:'';
+    const h=$('s2halo'); h.style.opacity=(0.25+0.08*Math.sin(lt*0.6)).toFixed(3);
+    h.style.left=(lt<5.8?760:720)+'px';
+  },
+  s3(lt){ // línea de tiempo por tramos e hitos que se encienden
+    lt/=16/19; // escena acortada de 19 s a 16 s
+    let f=0;
+    f = lerp(0,0.345,win(lt,0,1.2));
+    if(lt>6.5) f=lerp(0.345,0.64,win(lt,6.5,0.9));
+    if(lt>13.5) f=lerp(0.64,1,win(lt,13.5,0.9));
+    $('tlLine').style.transform=`scaleX(${f.toFixed(4)})`;
+    [['h1',0.9,0],['h2',1.8,0],['h3',7.0,1],['h4',14.2,0]].forEach(([id,t0,big],k)=>{
+      const p=win(lt,t0,0.6), el=$(id);
+      el.style.opacity=win(lt,[0.3,0.7,6.9,14.0][k],0.4).toFixed(3);
+      const sc=1+(big?0.7:0.25)*p;
+      el.style.background= p>0.5?'#d4af37':'#fdf9f0';
+      el.style.transform=`scale(${sc.toFixed(3)})`;
+      el.style.boxShadow=p>0?`0 0 ${(big?28:14)*p}px ${(big?8:3)*p}px rgba(212,175,55,${(0.55*p).toFixed(2)})`:'none';
+    });
+  },
+  s4(lt){ // «150» cuenta de 0 a 150 y un destello lo cruza una vez
+    const n=Math.round(150*win(lt,0.6,1.2)); const el=$('num150'); const txt=String(n);
+    if(el.textContent!==txt) el.textContent=txt;
+    const sh=clamp01((lt-2.2)/1.0), pos=lerp(160,-60,EIO(sh));
+    const bp=`${pos.toFixed(1)}% 0, 0 0`; el.style.backgroundPosition=bp; $('anos150').style.backgroundPosition=bp;
+    const d=$('s4dot'), g=clamp01(lt/0.8);
+    d.style.opacity=(lt<0?0:(1-g)*0.9).toFixed(3); d.style.transform=`scale(${(RM?1:0.2+1.6*EIN(g)).toFixed(3)})`;
+  },
+  s5(lt){ // rayos de luz tenues que respiran
+    ['ray1','ray2','ray3'].forEach((id,i)=>{ const el=$(id);
+      el.style.opacity=(0.55+0.45*Math.sin(lt*0.5+i*1.7)).toFixed(3)*win(lt,0.5,1.5);
+      if(!RM) el.style.transform=`rotate(-28deg) translateX(${(Math.sin(lt*0.2+i)*20).toFixed(1)}px)`; });
+  },
+  s7(lt){ // teléfono: toque, chat que se escribe, respuesta con doble check; luego pasa al fondo
+    const tap=$('tap'), rip=$('ripple'), btn=$('webBtn');
+    const ta=win(lt,1.25,0.3)*(1-wout(lt,2.1,0.3)); const press=clamp01(1-Math.abs(lt-1.75)/0.15);
+    css(tap,{opacity:ta.toFixed(3),transform:`scale(${(1-0.18*press).toFixed(3)})`});
+    const r=clamp01((lt-1.75)/0.6); css(rip,{opacity:(r>0&&r<1?(1-r)*0.9:0).toFixed(3),transform:`scale(${(0.6+1.6*r).toFixed(3)})`});
+    btn.style.background = press>0.3||lt>1.8 && lt<2.4 ? '#023e8a':'#0077b6';
+    const ch=win(lt,2.25,0.6); $('scrChat').style.transform=`translateX(${(100-100*ch).toFixed(2)}%)`;
+    const bo=win(lt,2.55,0.45); css($('bubOut'),{opacity:bo.toFixed(3),transform:`translateY(${(14*(1-bo)).toFixed(1)}px)`});
+    ['l1','l2','l3'].forEach((id,i)=>{ $(id).style.transform=`scaleX(${win(lt,2.7+i*0.22,0.3).toFixed(3)})`; });
+    const bi=win(lt,3.4,0.5); css($('bubIn'),{opacity:bi.toFixed(3),transform:`translateY(${(18*(1-bi)).toFixed(1)}px)`});
+    $('chk').style.opacity=win(lt,3.75,0.3).toFixed(3);
+    const b=win(lt,11.3,1.0), ph=$('phone');
+    ph.style.transform = RM?'':`translate(${(-470*b).toFixed(1)}px,${(40*b).toFixed(1)}px) scale(${(1-0.1*b).toFixed(4)})`;
+    ph.style.filter = b>0?`blur(${(8*b).toFixed(2)}px)`:'';
+    ph.style.opacity = (1-0.72*b).toFixed(3);
+    $('waLine').style.transform=`scaleX(${win(lt,12.7,0.8).toFixed(4)})`;
+  },
+  s8(lt){ // al final, las tarjetas se juntan en un punto de luz
+    lt/=23/26.5; // escena acortada de 26,5 s a 23 s
+    const p=clamp01((lt-25.3)/0.7), d=$('s8dot');
+    d.style.opacity=(p*(1-clamp01((lt-26.0)/0.5))).toFixed(3);
+    d.style.transform=`scale(${(RM?1:0.3+0.7*EIN(p)).toFixed(3)})`;
+  },
+  s9(lt){ // 4 de 9 celdas encienden la luz; al salir queda una que se vuelve llama
+    const cells=$('map').children; const lit=[0,4,5,7];
+    const glow=win(lt,0.9,0.8)*(1-clamp01((lt-3)/1));
+    $('nuevo').style.boxShadow=`0 0 ${(26*glow).toFixed(1)}px ${(6*glow).toFixed(1)}px rgba(212,175,55,${(0.55*glow).toFixed(2)})`;
+    for(let i=0;i<9;i++){
+      const c=cells[i], k=lit.indexOf(i);
+      let on = k>=0 ? win(lt,4.3+k*0.2,0.45) : 0;
+      if(i!==4) on*=1-wout(lt,8.8,0.6);
+      const dim = i!==4 ? 1-wout(lt,8.8,0.6)*0.85 : 1;
+      c.style.background = on>0 ? `rgba(0,119,182,${(on*dim).toFixed(3)})` : `rgba(232,243,250,${dim.toFixed(3)})`;
+      c.style.borderColor = on>0.5 ? '#0077b6' : `rgba(207,230,244,${dim.toFixed(3)})`;
+      c.style.boxShadow = on>0 ? `0 0 ${(24*on).toFixed(1)}px rgba(242,217,155,${(0.7*on).toFixed(2)}), inset 0 0 18px rgba(242,217,155,${(0.45*on).toFixed(2)})` : 'none';
+      if(i===4){ const g=win(lt,9.0,0.8); if(g>0){ c.style.boxShadow=`0 0 ${(24+60*g).toFixed(1)}px ${(20*g).toFixed(1)}px rgba(242,217,155,${(0.7+0.3*g).toFixed(2)})`; c.style.background=`rgb(${Math.round(lerp(0,242,g))},${Math.round(lerp(119,217,g))},${Math.round(lerp(182,155,g))})`; } }
+    }
+  },
+  s10(lt){ // cuentas del rosario que se iluminan una a una; llama que respira
+    const beads=ROSARY; const n=beads.length;
+    const lit = (lt-0.8)/7.2*n; const off=wout(lt,8.0,0.6);
+    for(let i=0;i<n;i++){
+      const p=clamp01(lit-i)*(1-off);
+      const b=beads[i]; const f=p>0.01?`rgb(${Math.round(lerp(58,242,p))},${Math.round(lerp(72,217,p))},${Math.round(lerp(90,155,p))})`:'#3a4858';
+      if(b._f!==f){ b._f=f; b.setAttribute('fill',f); b.setAttribute('filter',p>0.5?'url(#bglow)':''); }
+    }
+    if(!RM) $('flame').style.transform=`scale(${(1+0.035*Math.sin(lt*2.1)).toFixed(4)},${(1+0.05*Math.sin(lt*1.6+1)).toFixed(4)}) rotate(${(1.5*Math.sin(lt*1.3)).toFixed(2)}deg)`;
+  },
+  s11(lt){ // destello que cruza el «13» y brillo de la corona
+    const pos=lerp(160,-60,EIO(clamp01((lt-2.6)/1.2)));
+    $('d13').style.backgroundPosition=`${pos.toFixed(1)}% 0, 0 0`;
+    const a=win(lt,3.6,1.2)*(0.85+0.15*Math.sin(lt*1.4));
+    $('crown').style.opacity=(0.75*a).toFixed(3);
+  },
+  s13(lt){ // la fachada queda detrás de un velo; el halo respira
+    const v=win(lt,2.0,0.8), t=$('s13temple');
+    t.style.opacity=(1-0.35*v).toFixed(3);
+    if(!RM) t.style.transform=`translateY(${(30*v).toFixed(1)}px)`;
+    $('s13halo').style.opacity=(0.7+0.1*Math.sin(lt*0.8)).toFixed(3);
+  }
+};
+
+// Rosario: 40 cuentas en elipse alrededor del título + cruz
+const ROSARY=[];
+(function buildRosary(){
+  const svg=$('rosary'), NS='http://www.w3.org/2000/svg';
+  svg.innerHTML='<defs><filter id="bglow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>';
+  const cx=720, cy=215, rx=590, ry=128, N=40;
+  const path=document.createElementNS(NS,'ellipse');
+  path.setAttribute('cx',cx);path.setAttribute('cy',cy);path.setAttribute('rx',rx);path.setAttribute('ry',ry);
+  path.setAttribute('fill','none');path.setAttribute('stroke','rgba(142,205,240,.25)');path.setAttribute('stroke-width','2');
+  svg.appendChild(path);
+  for(let i=0;i<N;i++){
+    const a=Math.PI/2+ (i+0.5)/N*Math.PI*2;
+    const c=document.createElementNS(NS,'circle');
+    c.setAttribute('cx',(cx+rx*Math.cos(a)).toFixed(1)); c.setAttribute('cy',(cy+ry*Math.sin(a)).toFixed(1));
+    c.setAttribute('r', i%10===9?9:6); c.setAttribute('fill','#3a4858');
+    svg.appendChild(c); ROSARY.push(c);
+  }
+  const g=document.createElementNS(NS,'path');
+  g.setAttribute('d',`M${cx} ${cy+ry+6}v46M${cx-14} ${cy+ry+20}h28`);
+  g.setAttribute('stroke','#d4af37');g.setAttribute('stroke-width','4');g.setAttribute('stroke-linecap','round');g.setAttribute('fill','none');
+  svg.appendChild(g);
+})();
+
+/* ================= Elementos globales ================= */
+const logo=$('logo'), sweep=$('sweep'), thin=$('thin');
+function renderLogo(t){
+  // centro (en el halo) → esquina (marca de agua) → centro en la escena 13
+  const C={x:960,y:540,s:220}, K={x:68,y:64,s:56}, F={x:960,y:330,s:170};
+  let x,y,s,op;
+  const t13=SCENES[12].start;
+  if(t<1.5){ const g=win(t,0.2,1.2); x=C.x;y=C.y; s=C.s*(0.85+0.15*g); op=g; }
+  else if(t<3){ const m=EIO(clamp01((t-1.5)/1.5)); x=lerp(C.x,K.x,m); y=lerp(C.y,K.y,m); s=lerp(C.s,K.s,m); op=lerp(1,0.85,m); }
+  else if(t<t13+2.0){ x=K.x;y=K.y;s=K.s;op=0.85; }
+  else { const m=EIO(clamp01((t-t13-2.0)/0.8)); x=lerp(K.x,F.x,m); y=lerp(K.y,F.y,m); s=lerp(K.s,F.s,m); op=lerp(0.85,1,m)*(1-wout(t,t13+6.4,0.8)); }
+  if(RM){ // sin desplazamientos: fundido en su sitio
+    if(t<t13+2.0){ x=K.x;y=K.y;s=K.s; op=0.85*clamp01((t-1.5)/1); }
+    else { const m=clamp01((t-t13-2.0)/0.8); x=F.x;y=F.y;s=F.s; op=m*(1-clamp01((t-t13-6.4)/0.8)); }
+  }
+  logo.style.transform=`translate(${(x-s/2).toFixed(2)}px,${(y-s/2).toFixed(2)}px) scale(${(s/220).toFixed(4)})`;
+  logo.style.opacity=op.toFixed(3);
+}
+function renderSweep(t){
+  const a=8.1, d=1.3, p=(t-a)/d;
+  if(p<=0||p>=1){ sweep.style.opacity='0'; return; }
+  const e=EIO(p); sweep.style.opacity=(Math.sin(p*Math.PI)).toFixed(3);
+  sweep.style.transform=`translateX(${lerp(-800,1920,e).toFixed(1)}px) skewX(-18deg)`;
+}
+
+/* Partículas de luz (deterministas: su posición depende solo de t, así pausar/saltar es exacto) */
+const fx=$('fx'), ctx=fx.getContext('2d');
+const P=[]; (function(){ let seed=7; const rnd=()=>{ seed=(seed*16807)%2147483647; return seed/2147483647; };
+  for(let i=0;i<80;i++) P.push({x:rnd()*960,y:rnd()*560,v:6+rnd()*14,r:1.2+rnd()*2.6,ph:rnd()*6.28,w:0.15+rnd()*0.35,a:0.35+rnd()*0.65}); })();
+const sprite=document.createElement('canvas'); sprite.width=sprite.height=64;
+(function(){ const g=sprite.getContext('2d'); const gr=g.createRadialGradient(32,32,0,32,32,32);
+  gr.addColorStop(0,'rgba(255,248,226,1)'); gr.addColorStop(0.25,'rgba(242,217,155,.85)'); gr.addColorStop(1,'rgba(242,217,155,0)');
+  g.fillStyle=gr; g.fillRect(0,0,64,64); })();
+const INT=[[0,0],[0.6,.55],[8,.6],[9.2,.45],[20.5,.45],[21.4,1],[22.3,0],[38,0],[38.8,.3],[45,.3],[46.3,.22],[56,.22],[56.5,0],[90.5,0],[91.4,.35],[112.6,.35],[113.5,0],[123.5,0],[124.3,.5],[131.8,.5],[132.5,0],[133.3,1],[140,1],[140.7,.4],[150,.4],[150.8,.8],[156.6,.9],[157.6,0],[158.5,0]];
+function intensity(t){ for(let i=1;i<INT.length;i++){ if(t<=INT[i][0]){ const [a,va]=INT[i-1],[b,vb]=INT[i]; return lerp(va,vb,clamp01((t-a)/(b-a))); } } return 0; }
+let lastFx=-1;
+function renderFx(t){
+  const k=intensity(t); const key=RM?Math.round(k*100):t;
+  if(key===lastFx) return; lastFx=key;
+  ctx.clearRect(0,0,960,540); if(k<=0.001) return;
+  const tt=RM?0:t;
+  for(const p of P){
+    const y=540+10-((p.y+tt*p.v)%(560));
+    const x=p.x+Math.sin(tt*p.w+p.ph)*14;
+    const tw=0.55+0.45*Math.sin(tt*0.35+p.ph); // variación muy lenta: nada parpadea
+    ctx.globalAlpha=Math.max(0,k*p.a*tw);
+    const s=p.r*4; ctx.drawImage(sprite,x-s/2,y-s/2,s,s);
+  }
+  ctx.globalAlpha=1;
+}
+
+/* ================= Música («Joyful Liturgy»): el audio marca el reloj mientras suena ================= */
+const audio=new Audio('audio/joyful-liturgy.mp3'); audio.preload='auto';
+const aDur=()=>isFinite(audio.duration)?audio.duration:Infinity;
+function audioPlay(){
+  if(T>=aDur()-0.05) return Promise.resolve();
+  try{ if(Math.abs(audio.currentTime-T)>0.05) audio.currentTime=T; }catch(e){}
+  const p=audio.play(); return (p&&p.then)?p:Promise.resolve();
+}
+const VOL_ON='M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z';
+const VOL_OFF='M16.5 12A4.5 4.5 0 0 0 14 8v2.2l2.45 2.45c.03-.2.05-.41.05-.65zM19 12c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.8 8.8 0 0 0 21 12a9 9 0 0 0-7-8.77v2.06A7 7 0 0 1 19 12zM4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06a9 9 0 0 0 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4 9.91 6.09 12 8.18V4z';
+function toggleMute(){
+  audio.muted=!audio.muted;
+  $('muteIcon').innerHTML=`<path d="${audio.muted?VOL_OFF:VOL_ON}"/>`;
+  $('bMute').setAttribute('aria-label',audio.muted?'Activar música':'Silenciar música');
+}
+
+/* ================= Render central ================= */
+let T=0, playing=false, dirty=true, ended=false;
+function sceneAt(t){ for(let i=SCENES.length-1;i>=0;i--) if(t>=SCENES[i].start) return i; return 0; }
+function render(t){
+  for(const s of SCENES){
+    const last=s.idx===SCENES.length-1;
+    const vis = t>=s.start-XF && (t<s.end || (last && t<=s.end));
+    if(vis!==s.vis){ s.vis=vis; s.el.style.display=vis?'block':'none'; }
+    if(!vis) continue;
+    const lt=t-s.start;
+    const op = last?1:1-EIO(clamp01((t-(s.end-XF))/XF));
+    s.el.style.opacity=op.toFixed(3);
+    for(const tr of s.tracks) applyTrack(tr,lt);
+    for(const k of s.kbs) applyKB(k,lt);
+    if(CUSTOM[s.id]) CUSTOM[s.id](lt);
+  }
+  renderLogo(t); renderSweep(t); renderFx(t);
+  thin.style.transform=`scaleX(${(t/TOTAL).toFixed(5)})`;
+  updateUI(t);
+}
+
+/* ================= Reloj (requestAnimationFrame) ================= */
+let lastNow=null, lastResync=0;
+function frame(now){
+  if(lastNow==null) lastNow=now;
+  let dt=(now-lastNow)/1000; lastNow=now; if(dt>0.1) dt=0.1; if(dt<0) dt=0;
+  if(playing){
+    // si la música suena a la par, manda ella; si se desfasa (carga lenta, servidor sin saltos), el video sigue solo y reintenta alinearla
+    const on=!audio.paused && !audio.ended, d=audio.currentTime-T;
+    if(on && d>-0.5) T=Math.max(T,audio.currentTime); // también al volver de otra pestaña (la música siguió sonando)
+    else { T+=dt; if(on && now-lastResync>1500){ lastResync=now; try{audio.currentTime=T;}catch(e){} } }
+    if(T>=TOTAL){ T=TOTAL; playing=false; ended=true; onPlayState(); } dirty=true; }
+  if(dirty){ dirty=false; render(T); }
+  requestAnimationFrame(frame);
+}
+document.addEventListener('visibilitychange',()=>{ lastNow=null; });
+
+/* ================= Letterbox 16:9 ================= */
+function fit(){
+  const W=root.clientWidth, H=root.clientHeight; const s=Math.min(W/1920,H/1080);
+  const pw=1920*s, ph=1080*s; player.style.width=pw+'px'; player.style.height=ph+'px';
+  stage.style.transform=`scale(${s})`;
+  // controles: sobre el video; en pantallas altas (móvil vertical) van debajo, en la franja negra
+  const below=(H-ph)/2>=72?64:0, ui=document.getElementById('ui');
+  ui.style.left=((W-pw)/2)+'px'; ui.style.top=((H-ph)/2)+'px'; ui.style.width=pw+'px'; ui.style.height=(ph+below)+'px';
+  document.getElementById('big').style.top=(ph/2)+'px';
+  document.getElementById('bar').style.background=below?'transparent':'';
+}
+window.addEventListener('resize',fit);
+
+/* ================= Controles ================= */
+const ui=$('ui'), prog=$('prog'), fill=$('fill'), knob=$('knob'), tip=$('tip'), timeEl=$('time'), scname=$('scname');
+const big=$('big'), bigLabel=$('bigLabel'), bigIcon=$('bigIcon'), playIcon=$('playIcon'), bPlay=$('bPlay');
+const fmt=s=>{ s=Math.floor(s+1e-6); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); };
+const marks=$('marks');
+SCENES.forEach((s,i)=>{ if(i===0) return; const m=document.createElement('div'); m.className='mark'; m.style.left=(s.start/TOTAL*100)+'%'; marks.appendChild(m); });
+let lastUI='';
+function updateUI(t){
+  const pct=(t/TOTAL*100).toFixed(3)+'%';
+  fill.style.width=pct; knob.style.left=pct;
+  const tx=fmt(t)+' / '+fmt(TOTAL); if(tx!==lastUI){ lastUI=tx; timeEl.textContent=tx; prog.setAttribute('aria-valuenow',t.toFixed(1)); prog.setAttribute('aria-valuetext',tx); }
+  const i=sceneAt(Math.min(t,TOTAL-0.001)); const n=(i+1)+'/13 · '+SCENES[i].title; if(scname.textContent!==n) scname.textContent=n;
+}
+const PLAY='M8 5v14l11-7z', PAUSE='M6 5h4v14H6zM14 5h4v14h-4z', REPLAY='M12 5V2L7 6l5 4V7a6 6 0 1 1-6 6H4a8 8 0 1 0 8-8z';
+function onPlayState(){
+  playIcon.innerHTML=`<path d="${playing?PAUSE:(ended?REPLAY:PLAY)}"/>`;
+  bPlay.setAttribute('aria-label',playing?'Pausa':(ended?'Ver de nuevo':'Reproducir'));
+  big.classList.toggle('show',!playing);
+  bigIcon.innerHTML=`<path d="${ended?REPLAY:PLAY}"/>`; bigLabel.textContent=ended?'Ver de nuevo':'Reproducir';
+  big.setAttribute('aria-label',ended?'Ver de nuevo':'Reproducir');
+  poke();
+}
+function play(){ if(ended||T>=TOTAL){ T=0; ended=false; } playing=true; lastNow=null; dirty=true; audioPlay().catch(()=>{}); onPlayState(); }
+function pause(){ playing=false; audio.pause(); onPlayState(); }
+function toggle(){ playing?pause():play(); }
+function seek(t){ T=Math.max(0,Math.min(TOTAL,t)); ended = T>=TOTAL; if(ended) playing=false;
+  if(T<aDur()){ try{audio.currentTime=T;}catch(e){} if(playing && audio.paused) audioPlay().catch(()=>{}); } else audio.pause();
+  if(!playing) audio.pause();
+  dirty=true; onPlayState(); }
+function nextScene(){ const i=sceneAt(T); if(i<SCENES.length-1) seek(SCENES[i+1].start); else seek(TOTAL); }
+function prevScene(){ const i=sceneAt(Math.min(T,TOTAL-0.001)); if(T-SCENES[i].start>1.5 && !ended) seek(SCENES[i].start); else seek(SCENES[Math.max(0,i-1)].start); if(ended){ended=false;onPlayState();} }
+
+// auto-ocultar
+let hideTimer=null, dragging=false, overBar=false;
+function poke(){
+  ui.classList.remove('hidden'); root.classList.remove('nocursor');
+  clearTimeout(hideTimer);
+  hideTimer=setTimeout(()=>{ if(playing && !dragging && !overBar){ ui.classList.add('hidden'); root.classList.add('nocursor'); } },2500);
+}
+root.addEventListener('mousemove',poke);
+let touchWasHidden=false;
+root.addEventListener('touchstart',()=>{ touchWasHidden=ui.classList.contains('hidden'); poke(); },{passive:true});
+$('bar').addEventListener('mouseenter',()=>{overBar=true;poke();});
+$('bar').addEventListener('mouseleave',()=>{overBar=false;poke();});
+
+$('hit').addEventListener('click',()=>{ if(touchWasHidden){ touchWasHidden=false; return; } toggle(); });
+big.addEventListener('click',e=>{ e.stopPropagation(); play(); });
+bPlay.addEventListener('click',toggle);
+$('bNext').addEventListener('click',nextScene);
+$('bPrev').addEventListener('click',prevScene);
+
+function isFs(){ return !!(document.fullscreenElement||document.webkitFullscreenElement); }
+function toggleFs(){
+  try{
+    if(isFs()) (document.exitFullscreen||document.webkitExitFullscreen).call(document);
+    else { const r=root.requestFullscreen||root.webkitRequestFullscreen; if(r){ const p=r.call(root); if(p&&p.catch) p.catch(()=>{}); } }
+  }catch(e){}
+}
+$('bFs').addEventListener('click',toggleFs);
+$('bMute').addEventListener('click',toggleMute);
+['fullscreenchange','webkitfullscreenchange'].forEach(ev=>document.addEventListener(ev,()=>{ fit();
+  $('fsIcon').innerHTML = isFs() ? '<path d="M8 4h2v6H4V8h4zM14 4h2v4h4v2h-6zM4 14h6v6H8v-4H4zM14 14h6v2h-4v4h-2z"/>' : '<path d="M4 4h6v2H6v4H4zM14 4h6v6h-2V6h-4zM4 14h2v4h4v2H4zM18 14h2v6h-6v-2h4z"/>';
+}));
+
+// barra de progreso clicable / arrastrable
+function tFromEvent(e){ const r=prog.getBoundingClientRect(); return clamp01((e.clientX-r.left)/r.width)*TOTAL; }
+prog.addEventListener('pointerdown',e=>{ dragging=true; try{prog.setPointerCapture(e.pointerId);}catch(_){} seek(tFromEvent(e)); });
+prog.addEventListener('pointermove',e=>{
+  const t=tFromEvent(e); const r=prog.getBoundingClientRect();
+  tip.style.left=(clamp01((e.clientX-r.left)/r.width)*100)+'%';
+  tip.textContent=fmt(t)+' · '+SCENES[sceneAt(Math.min(t,TOTAL-0.001))].title;
+  if(dragging) seek(t);
+});
+const endDrag=()=>{ dragging=false; poke(); };
+prog.addEventListener('pointerup',endDrag); prog.addEventListener('pointercancel',endDrag);
+prog.addEventListener('keydown',e=>{ if(e.key==='Home'){seek(0);e.preventDefault();} if(e.key==='End'){seek(TOTAL);e.preventDefault();} });
+
+// teclado: espacio, ←/→, F
+document.addEventListener('keydown',e=>{
+  if(e.altKey||e.ctrlKey||e.metaKey) return;
+  if(e.code==='Space'||e.key===' '){ e.preventDefault(); toggle(); }
+  else if(e.key==='ArrowRight'){ e.preventDefault(); nextScene(); }
+  else if(e.key==='ArrowLeft'){ e.preventDefault(); prevScene(); }
+  else if(e.key==='f'||e.key==='F'){ e.preventDefault(); toggleFs(); }
+  else if(e.key==='m'||e.key==='M'){ e.preventDefault(); toggleMute(); }
+  else return;
+  poke();
+});
+
+/* ================= Arranque: esperar fuentes e imágenes y reproducir solo ================= */
+fit(); measureOffsets(); render(0); requestAnimationFrame(frame);
+const imgs=Array.from(document.images);
+const ready=Promise.all([
+  (document.fonts&&document.fonts.ready)?document.fonts.ready:Promise.resolve(),
+  ...imgs.map(im=>im.complete?Promise.resolve():new Promise(r=>{im.addEventListener('load',r,{once:true});im.addEventListener('error',r,{once:true});}))
+]);
+// «#t=segundos» abre el video en pausa en ese instante (útil para enlazar una escena)
+const H=/[#&]t=([\d.]+)/.exec(location.hash);
+Promise.race([ready,new Promise(r=>setTimeout(r,3500))]).then(()=>{ measureOffsets(); resetCaches();
+  if(H){ seek(parseFloat(H[1])); if(/[#&]ui=0/.test(location.hash)) ui.style.display='none'; }
+  else audioPlay().then(play).catch(()=>{ onPlayState(); bigLabel.textContent='Reproducir con música'; }); });
+
+// Ganchos de depuración (inofensivos)
+window.__video={seek:t=>{seek(t);},play,pause,get t(){return T;},TOTAL,SCENES,audio};
+})();
+</script>
+</body>
+</html>

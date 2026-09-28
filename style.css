@@ -2770,3 +2770,51 @@ nav:not(.nav-principal):not(.migas) .logo a { display: flex; align-items: center
     .hv-cuerpo { padding: var(--e5); }
     .hv-cuerpo h3 { font-size: 1.25rem; }
 }
+
+/* ── Video de presentación en la portada ("Nuestra Identidad") ──
+   Se muestra una imagen fija con ▶; el video (y su música) solo se
+   carga al tocarla, para no hacer lenta la portada. */
+.video-presentacion { max-width: 960px; margin: 0 auto var(--e8); }
+.video-presentacion-marco {
+    position: relative; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden;
+    background: #0f1720; box-shadow: 0 14px 40px rgba(2, 62, 138, .18);
+}
+.video-presentacion-marco iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-presentacion-portada {
+    position: absolute; inset: 0; display: block; width: 100%; padding: 0; border: 0;
+    background: none; cursor: pointer; font: inherit; color: #fff; text-align: left;
+}
+.video-presentacion-portada img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+.video-presentacion-portada::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(0deg, rgba(2, 30, 70, .8) 0%, rgba(2, 30, 70, 0) 45%);
+}
+.video-presentacion-play {
+    position: absolute; left: var(--e5); bottom: var(--e5); z-index: 1; width: 72px; height: 72px;
+    display: flex; align-items: center; justify-content: center; border-radius: 50%;
+    background: rgba(0, 119, 182, .92);
+    box-shadow: 0 0 0 8px rgba(142, 205, 240, .3), 0 10px 30px rgba(0, 0, 0, .35);
+    transition: transform .2s ease;
+}
+.video-presentacion-play svg { width: 30px; height: 30px; margin-left: 4px; fill: #fff; }
+.video-presentacion-texto {
+    position: absolute; left: calc(var(--e5) + 72px + var(--e5)); right: var(--e5); bottom: calc(var(--e5) + 8px); z-index: 1;
+    font-size: 1.3rem; font-weight: 700; line-height: 1.25;
+}
+.video-presentacion-texto small { display: block; font-size: .9rem; font-weight: 400; opacity: .85; }
+.video-presentacion-portada:hover img { transform: scale(1.03); }
+.video-presentacion-portada:hover .video-presentacion-play,
+.video-presentacion-portada:focus-visible .video-presentacion-play { transform: scale(1.08); }
+.video-presentacion-portada:focus-visible { outline: 3px solid #f2d99b; outline-offset: -3px; }
+.video-presentacion-enlace { margin-top: var(--e3); text-align: center; font-size: .95rem; }
+.video-presentacion-enlace a { color: var(--color-azul-esencial); font-weight: 600; }
+.video-presentacion-enlace a:hover { color: var(--color-azul-oscuro); }
+@media (max-width: 600px) {
+    .video-presentacion-play { width: 48px; height: 48px; left: var(--e3); bottom: var(--e3); box-shadow: 0 0 0 5px rgba(142, 205, 240, .3); }
+    .video-presentacion-play svg { width: 22px; height: 22px; margin-left: 3px; }
+    .video-presentacion-texto { font-size: .95rem; left: calc(var(--e3) + 48px + var(--e3)); right: var(--e3); bottom: var(--e3); }
+    .video-presentacion-texto small { font-size: .8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .video-presentacion-portada img, .video-presentacion-play { transition: none; }
+}

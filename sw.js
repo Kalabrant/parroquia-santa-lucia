@@ -11,7 +11,7 @@
    antigua y se descarga todo de nuevo.
    ============================================================ */
 
-const VERSION = 'v28';
+const VERSION = 'v29';
 const CACHE = 'santa-lucia-' + VERSION;
 
 /* Lo imprescindible para que la web arranque sin conexión */
@@ -68,6 +68,7 @@ self.addEventListener('fetch', event => {
 
     const url = new URL(req.url);
     if (url.origin !== self.location.origin) return;   // fuentes, CDN: al navegador
+    if (req.headers.has('range')) return;              // audio/video por tramos: directo a la red
 
     /* Las páginas: primero la red, para que se vean los cambios enseguida.
        Si no hay conexión, servimos la copia guardada. */

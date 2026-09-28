@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Parroquia Santa Lucía">
+  <rect width="64" height="64" rx="13" fill="#0077b6"/>
+  <g fill="#ffffff">
+    <!-- Torre izquierda -->
+    <path d="M16.5 11 L21.5 25 H11.5 Z"/>
+    <rect x="12.5" y="25" width="8" height="28"/>
+    <!-- Torre derecha -->
+    <path d="M47.5 11 L52.5 25 H42.5 Z"/>
+    <rect x="43.5" y="25" width="8" height="28"/>
+    <!-- Cuerpo central con frontón -->
+    <path d="M32 16 L43 30 H21 Z"/>
+    <rect x="21" y="30" width="22" height="23"/>
+    <!-- Cruz superior -->
+    <rect x="31" y="6" width="2" height="9"/>
+    <rect x="28.5" y="8.5" width="7" height="2"/>
+  </g>
+  <g fill="#0077b6">
+    <!-- Rosetón -->
+    <circle cx="32" cy="36" r="3.6"/>
+    <!-- Portal ojival -->
+    <path d="M27.5 53 V44.5 a4.5 4.5 0 0 1 9 0 V53 Z"/>
+    <!-- Ventanas de las torres -->
+    <path d="M14.5 34 V30.5 a2 2 0 0 1 4 0 V34 Z"/>
+    <path d="M45.5 34 V30.5 a2 2 0 0 1 4 0 V34 Z"/>
+  </g>
+</svg>
