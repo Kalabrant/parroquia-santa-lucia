@@ -39,6 +39,10 @@ body{font-family:var(--f-txt);color:#fff;-webkit-font-smoothing:antialiased}
 .panel{position:absolute;overflow:hidden;border-radius:var(--radio-m);box-shadow:0 24px 60px rgba(0,0,0,.35)}
 .panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;will-change:transform}
 .lite .ph img,.lite .panel img{will-change:auto}
+/* teléfono: la foto de fondo va en su propia capa, quieta y dibujada una sola vez, para que lo
+   que se mueve encima (etiquetas, textos) no obligue a repintarla en cada cuadro */
+.lite .ph{will-change:transform}
+.lite .gcard{backface-visibility:visible;box-shadow:0 6px 16px rgba(2,20,60,.28)}
 .sep{opacity:.75}
 
 /* tipos */
