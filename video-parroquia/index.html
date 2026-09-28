@@ -209,6 +209,169 @@ body{font-family:var(--f-txt);color:#fff;-webkit-font-smoothing:antialiased}
 #big svg{width:32px;height:32px;fill:#fff}
 #big.show{display:flex}
 @media (max-width:520px){#btns button{width:34px;height:34px}#scname{display:none}#bar{padding:18px 8px 4px}#big .circle{width:56px;height:56px}}
+/* =====================================================================
+   VERSIÓN VERTICAL 1080×1920 (diseño T5). Solo aplica con #root.v:
+   en horizontal ninguna de estas reglas está activa.
+   ===================================================================== */
+.vbr{display:none} .v .vbr{display:inline}
+.vbrk{display:none} .v .vbrk{display:block;flex-basis:100%;height:0}
+#root.v{align-items:flex-start}
+.v #stage{width:1080px;height:1920px}
+.v #fx{width:1080px;height:1920px}
+.v #sweep{height:2320px}
+.v #thin{width:1080px}
+/* s1 */
+.v #s1 .dawn{background:radial-gradient(ellipse 90% 60% at 50% 42%,#0077b6 0%,#023e8a 62%,#0f1720 100%)}
+.v [data-k=s1-panel]{left:195px!important;top:190px!important;width:690px!important;height:920px!important}
+.v #s1 .txt{left:80px;top:1180px;width:920px;text-align:center}
+.v #s1 .t-hero{font-size:112px;line-height:1.05;white-space:normal}
+.v #s1 .t-lema{font-size:60px;line-height:1.2}
+.v #s1 .t-light{font-size:48px}
+.v #s1 .t-label{font-size:46px;letter-spacing:.06em}
+/* s2 */
+.v [data-k=s2-img1]{object-position:53% 50%!important}
+.v [data-k=s2-img2]{object-position:47% 50%!important}
+.v #s2halo{top:80px!important}
+.v #s2 .vig{background:linear-gradient(0deg,rgba(15,23,32,.94) 0%,rgba(15,23,32,.86) 28%,rgba(15,23,32,.55) 42%,rgba(15,23,32,.12) 58%,rgba(15,23,32,0) 70%),linear-gradient(180deg,rgba(15,23,32,.45),rgba(15,23,32,0) 12%)}
+.v #s2 .txt{top:1100px;bottom:180px;left:80px;width:920px}
+.v #s2 .tanda:first-child .t-h2{font-size:92px;line-height:1.08}
+.v #s2 .tanda:first-child .t-body{font-size:50px;line-height:1.35}
+.v #s2 .t-reina{font-size:104px;line-height:1.1}
+.v #s2 .tanda:last-child .t-body{font-size:48px!important;line-height:1.35}
+/* s3 */
+.v #s3 .slot{left:220px;top:190px}
+.v #s3 .tl{left:80px;top:1080px;width:920px}
+.v #h1{left:38px!important} .v #h2{left:310px!important} .v #h3{left:582px!important} .v #h4{left:878px!important}
+.v #s3 .h-entry{left:80px;width:920px}
+.v #s3 .h-date{font-size:84px}
+.v #s3 .h-body{font-size:48px}
+.v [data-k=s3-a1]{top:1150px!important}
+.v [data-k=s3-a2]{top:1420px!important}
+.v [data-k=s3-b1]{top:1150px!important}
+.v [data-k=s3-b2]{top:1420px!important}
+.v [data-k=s3-b2] .h-body{font-size:52px!important}
+.v [data-k=s3-c1]{top:1150px!important}
+.v [data-k=s3-c1] .h-date{font-size:96px!important}
+.v [data-k=s3-c1] .h-body{font-size:52px!important}
+/* s4 */
+.v [data-k=s4-glow]{background:radial-gradient(ellipse 70% 40% at 50% 28%,rgba(245,227,154,.35),rgba(245,227,154,0) 70%)!important}
+.v #s4dot{left:340px!important;top:140px!important}
+.v [data-k=s4-txt]{left:80px!important;top:190px!important;width:920px!important}
+.v [data-k=s4-txt] .t-lema{font-size:60px!important;line-height:1.2}
+.v .plaque{font-size:48px}
+.v [data-k=s4-frame]{left:250px!important;top:860px!important;width:580px!important;height:880px!important}
+/* s5 */
+.v .ray{height:2600px!important}
+.v #ray1{left:-120px!important} .v #ray2{left:50px!important} .v #ray3{left:150px!important}
+.v [data-k=s5-panel]{left:240px!important;top:190px!important;width:600px!important;height:790px!important}
+.v [data-k=s5-panel] img{object-position:50% 50%}
+.v [data-k=s5-txt]{left:80px!important;top:1040px!important;width:920px!important;text-align:center}
+.v [data-k=s5-txt] .misa-row,.v [data-k=s5-txt] p{justify-content:center}
+.v .misa-row{font-size:48px;margin-bottom:30px}
+.v .pill{font-size:48px;padding:10px 22px}
+.v [data-k=s5-lunes]{font-size:48px!important;margin:6px 0 36px!important}
+.v [data-k=s5-conf]{font-size:48px!important;line-height:1.25}
+/* s6 */
+.v [data-k=s6-glow]{background:radial-gradient(circle 620px at 50% 45%,#e8f3fa 0%,rgba(232,243,250,.6) 55%,rgba(232,243,250,0) 100%)!important}
+.v [data-k=s6-panel]{left:330px!important;top:1180px!important;width:420px!important;height:560px!important}
+.v [data-k=s6-h]{left:80px!important;top:180px!important;width:920px;text-align:center}
+.v #sacGrid{left:80px;top:320px;width:920px;height:820px}
+.v .card{width:450px;height:190px;font-size:46px;gap:8px;padding:10px 12px}
+.v .card svg{width:56px;height:56px}
+.v #sacGrid .card:nth-child(1){left:0!important;top:0!important}
+.v #sacGrid .card:nth-child(2){left:470px!important;top:0!important}
+.v #sacGrid .card:nth-child(3){left:0!important;top:210px!important}
+.v #sacGrid .card:nth-child(4){left:470px!important;top:210px!important}
+.v #sacGrid .card:nth-child(5){left:0!important;top:420px!important}
+.v #sacGrid .card:nth-child(6){left:470px!important;top:420px!important}
+.v #sacGrid .card:nth-child(7){left:235px!important;top:630px!important}
+.v [data-k^=s6-r]{left:80px!important;width:920px!important;font-size:48px;line-height:1.25}
+.v [data-k=s6-r1]{top:330px!important} .v [data-k=s6-r2]{top:540px!important} .v [data-k=s6-r3]{top:750px!important}
+/* s7 */
+.v [data-k=s7-glow]{background:radial-gradient(circle 520px at 540px 1420px,rgba(37,211,102,.16),rgba(37,211,102,0))!important}
+.v [data-k=s7-phone]{left:330px!important;top:990px!important}
+.v [data-k=s7-a]{left:80px!important;top:180px!important;width:920px!important}
+.v [data-k=s7-a] .t-h2{font-size:92px!important;line-height:1.08;margin-bottom:50px!important}
+.v .step{font-size:48px;line-height:1.3;margin-bottom:34px}
+.v [data-k=s7-b]{top:190px!important}
+.v [data-k=s7-b] .t-h2{font-size:88px!important;line-height:1.08}
+.v .chips{left:160px;top:470px;width:760px;grid-template-columns:1fr;gap:22px}
+.v .chip{height:104px;font-size:48px}
+/* s8 */
+.v [data-k=s8-img1]{object-position:50% 50%!important}
+.v [data-k=s8-img2]{object-position:47% 50%!important}
+.v .g-title{top:190px;font-size:88px;line-height:1.1}
+.v .g-line{top:404px}
+.v .g-grid{left:130px;top:450px!important;width:820px;flex-direction:column;flex-wrap:nowrap;align-items:center;gap:18px}
+.v .gcard{width:820px;min-height:122px;font-size:48px}
+.v .gcard .soon-t{font-size:46px}
+.v #s8dot{left:240px!important;top:771px!important}
+/* s9 */
+.v [data-k=s9-halo]{left:240px!important;top:100px!important}
+.v .logo-circ{left:330px;top:190px;width:420px;height:420px}
+.v [data-k=s9-txt]{left:80px!important;top:660px!important;width:920px!important;text-align:center}
+.v #nuevo{font-size:46px;margin-bottom:16px}
+.v [data-k=s9-txt] .t-h2{font-size:96px!important;line-height:1.08}
+.v [data-k=s9-txt] .t-body{font-size:48px!important;line-height:1.35;margin-top:26px!important}
+.v [data-k=s9-txt] p:last-child{font-size:50px!important;line-height:1.2;margin-top:34px!important}
+.v #map{left:190px;top:1330px}
+/* s10 */
+.v [data-k=s10-halo]{left:60px!important;top:1090px!important}
+.v [data-k=s10-panel]{left:220px!important;top:1230px!important}
+.v #rosary{width:1080px!important;height:1920px!important}
+.v #candle{left:180px!important;top:280px!important}
+.v [data-k=s10-h]{left:80px!important;top:250px!important;width:920px;text-align:center;font-size:100px!important;line-height:1.08}
+.v .res-list{left:150px;top:660px;width:800px}
+.v .res-list li{font-size:48px}
+.v [data-k=s10-label]{left:80px!important;top:1120px!important;width:920px;text-align:center;font-size:46px!important}
+/* s11 */
+.v [data-k=s11-bg]{background:radial-gradient(ellipse at 50% 70%,#0a4fa0 0%,#023e8a 55%,#012a5e 100%)!important}
+.v #crown{left:460px!important;top:776px!important;width:480px!important;height:480px!important}
+.v [data-k=s11-panel]{left:140px!important;top:920px!important;width:800px!important;height:800px!important}
+.v [data-k=s11-panel] img{object-position:68% 50%}
+.v [data-k=s11-txt]{left:80px!important;top:190px!important;width:920px!important;text-align:center}
+.v [data-k=s11-13]{transform-origin:50% 60%!important}
+.v [data-k=s11-line]{margin:40px auto 36px!important;transform-origin:50% 50%!important;background:linear-gradient(90deg,rgba(212,175,55,0),#d4af37 50%,rgba(212,175,55,0))!important}
+.v [data-k=s11-txt] .t-lema{width:auto!important;font-size:64px;line-height:1.2}
+/* s12 */
+.v [data-k=s12-bg]{background:linear-gradient(180deg,#0f1720 0%,#023e8a 55%,#0f1720 100%)!important}
+.v [data-k=s12-ph]{left:0!important;right:0;top:0;bottom:auto;height:1020px}
+.v [data-k=s12-img]{object-position:23% 50%!important;-webkit-mask-image:linear-gradient(180deg,#000 0,#000 60%,transparent 100%)!important;mask-image:linear-gradient(180deg,#000 0,#000 60%,transparent 100%)!important}
+.v [data-k=s12-halo]{left:220px!important;top:120px!important}
+.v [data-k=s12-h]{left:80px!important;top:880px!important}
+.v #s12 .c-row{left:80px;width:920px}
+.v #s12 [data-k=s12-r1]{top:1030px!important;font-size:48px}
+.v #s12 [data-k=s12-r2]{top:1180px!important;font-size:52px}
+.v #s12 [data-k=s12-r3]{top:1280px!important;font-size:48px}
+.v #s12 [data-k=s12-r4]{top:1430px!important;font-size:48px}
+.v #s12 [data-k=s12-r5]{top:1590px!important;font-size:56px!important}
+/* s13 */
+.v #s13halo{left:40px!important;top:460px!important}
+.v #s13temple{left:240px!important;top:540px!important;width:600px!important;height:800px!important}
+.v [data-k=s13-veil]{background:radial-gradient(ellipse 75% 42% at 50% 50%,rgba(2,62,138,.74),rgba(2,62,138,.45) 70%,rgba(2,62,138,.22))!important}
+.v [data-k=s13-a]{top:210px!important;font-size:96px!important;line-height:1.2}
+.v [data-k=s13-h]{top:900px!important;font-size:112px!important;line-height:1.05}
+.v [data-k=s13-l]{top:1165px!important}
+/* controles en vertical: barra en la franja negra (objetivos ≥ 44 px) */
+.v #bar{padding:6px 10px 8px}
+.v #prog{height:44px}
+.v #track{top:20px}
+.v #prog:hover #track,.v #prog:focus-visible #track{top:18px;height:8px}
+.v #knob{width:20px;height:20px;margin:-10px 0 0 -10px}
+.v #tip{bottom:46px}
+.v #btns{margin-top:2px;gap:6px}
+.v #btns button{width:44px;height:44px;flex:none}
+.v #time{min-width:0;overflow:hidden}
+.v #btns svg{width:24px;height:24px}
+.v #time{font-size:13px}
+.v #big .circle{width:72px;height:72px}
+/* barra superpuesta (clase vo: vertical sin franja libre, p. ej. tableta 768×1024) */
+.v.vo #bar{padding:6px 10px 6px}
+.v.vo #prog{height:40px}
+.v.vo #track{top:18px}
+.v.vo #prog:hover #track,.v.vo #prog:focus-visible #track{top:16px;height:8px}
+.v.vo #tip{bottom:42px}
+.v.vo #btns button{width:40px;height:40px}
 </style>
 </head>
 <body>
@@ -222,11 +385,11 @@ body{font-family:var(--f-txt);color:#fff;-webkit-font-smoothing:antialiased}
   <div class="bg" style="background:#0f1720"></div>
   <div class="bg dawn" data-a="fade" data-t="0.9" data-d="3"></div>
   <div class="halo" id="s1halo" style="left:0;top:0;width:900px;height:900px"></div>
-  <div class="panel" style="left:1160px;top:100px;width:660px;height:880px" data-a="maskup" data-t="1.6" data-d="1.3">
+  <div data-k="s1-panel" class="panel" style="left:1160px;top:100px;width:660px;height:880px" data-a="maskup" data-t="1.6" data-d="1.3">
     <img src="img/templo-fachada.webp" alt="" data-kb="1 1.06" data-kbt="1.6 9" style="transform-origin:50% 60%">
   </div>
   <div class="txt">
-    <h1 class="t-hero shadow-txt" data-a="rise" data-t="2.2">Parroquia Santa Lucía</h1>
+    <h1 class="t-hero shadow-txt" data-a="rise" data-t="2.2">Parroquia <br class="vbr">Santa Lucía</h1>
     <p class="t-lema shadow-txt" data-a="rise" data-t="2.6">La Casita Azul de El Empedrao</p>
     <p class="t-light shadow-txt" data-a="rise" data-t="3.0">Luz y fe en el corazón de Maracaibo</p>
     <p class="t-label" data-a="rise" data-t="3.4">Arquidiócesis de Maracaibo</p>
@@ -236,18 +399,18 @@ body{font-family:var(--f-txt);color:#fff;-webkit-font-smoothing:antialiased}
 <!-- ============ ESCENA 2 · Santa Lucía, portadora de luz (9–22 s) ============ -->
 <section class="scene" id="s2">
   <div class="bg" style="background:#0f1720"></div>
-  <div class="ph"><img src="img/santa-lucia-altar-rosas.webp" alt="" data-kb="1.12 1.22 5 6 2 4" data-kbt="-0.8 6.8" style="object-position:50% 28%"></div>
-  <div class="ph" data-a="fade" data-t="5.5" data-d="1"><img src="img/santa-lucia-imagen-flores.webp" alt="" data-kb="1.10 1.18 5 6 3 5" data-kbt="5.5 13" style="object-position:50% 22%"></div>
+  <div class="ph"><img src="img/santa-lucia-altar-rosas.webp" alt="" data-k="s2-img1" data-kbv="1.08 1.16 0 0 2 3" data-kb="1.12 1.22 5 6 2 4" data-kbt="-0.8 6.8" style="object-position:50% 28%"></div>
+  <div class="ph" data-a="fade" data-t="5.5" data-d="1"><img src="img/santa-lucia-imagen-flores.webp" alt="" data-k="s2-img2" data-kbv="1.06 1.12 0 0 2 4" data-kb="1.10 1.18 5 6 3 5" data-kbt="5.5 13" style="object-position:50% 22%"></div>
   <div class="halo" id="s2halo" style="left:760px;top:-110px;width:640px;height:640px;opacity:.25"></div>
   <div class="bg vig"></div>
   <div class="txt">
     <div class="tanda">
-      <h2 class="t-h2 shadow-txt" data-a="rise" data-t="0.6" data-e="5.5" style="margin-bottom:28px">Santa Lucía, Virgen y Mártir</h2>
-      <p class="t-body shadow-txt" data-a="rise" data-t="1.1" data-e="5.5" style="color:#dfe6ee">Su nombre significa «portadora de <span class="luz" id="luz">luz</span>»</p>
+      <h2 class="t-h2 shadow-txt" data-a="rise" data-t="0.6" data-e="5.5" style="margin-bottom:28px">Santa Lucía, <br class="vbr">Virgen y Mártir</h2>
+      <p class="t-body shadow-txt" data-a="rise" data-t="1.1" data-e="5.5" style="color:#dfe6ee">Su nombre significa <br class="vbr">«portadora de <span class="luz" id="luz">luz</span>»</p>
     </div>
     <div class="tanda">
-      <p class="t-reina shadow-txt" data-a="fade" data-t="6.0" data-d="0.01" data-split="l" data-st="6.0" data-step="0.03">La Reina de El Empedrao</p>
-      <p class="t-body shadow-txt" data-a="up" data-dist="12" data-t="7.0" style="font-size:42px;color:#dfe6ee">En Maracaibo, la devoción más arraigada después de Nuestra Señora de Chiquinquirá</p>
+      <p class="t-reina shadow-txt" data-a="fade" data-t="6.0" data-d="0.01" data-split="l" data-st="6.0" data-step="0.03">La Reina de <br class="vbr">El Empedrao</p>
+      <p class="t-body shadow-txt" data-a="up" data-dist="12" data-t="7.0" style="font-size:42px;color:#dfe6ee">En Maracaibo, la devoción más <br class="vbr">arraigada después de Nuestra <br class="vbr">Señora de Chiquinquirá</p>
     </div>
   </div>
   <div class="bg" style="background:#fdf9f0" data-a="none" data-e="0.9" data-od="1.1" data-max="0.85"></div>
@@ -278,28 +441,28 @@ body{font-family:var(--f-txt);color:#fff;-webkit-font-smoothing:antialiased}
     <div class="hito" id="h4" style="left:935px"></div>
   </div>
   <!-- Tanda A -->
-  <p class="h-entry" style="top:300px"><span class="h-date" data-a="drop" data-dist="20" data-t="0.84" data-e="5.47">1834</span> <span class="h-body" data-a="rise" data-t="1.09" data-e="5.47"><span class="sep">·</span> Los vecinos sueñan con su propio templo</span></p>
-  <p class="h-entry" style="top:560px"><span class="h-date" data-a="drop" data-dist="20" data-t="1.6" data-e="5.47">1867–1876</span> <span class="h-body" data-a="rise" data-t="1.85" data-e="5.47"><span class="sep">·</span> Se construye el templo neogótico</span></p>
+  <p data-k="s3-a1" class="h-entry" style="top:300px"><span class="h-date" data-a="drop" data-dist="20" data-t="0.84" data-e="5.47">1834</span> <span class="h-body" data-a="rise" data-t="1.09" data-e="5.47"><span class="sep">·</span> Los vecinos sueñan <br class="vbr">con su propio templo</span></p>
+  <p data-k="s3-a2" class="h-entry" style="top:560px"><span class="h-date" data-a="drop" data-dist="20" data-t="1.6" data-e="5.47">1867–1876</span> <span class="h-body" data-a="rise" data-t="1.85" data-e="5.47"><span class="sep">·</span> Se construye el templo neogótico</span></p>
   <!-- Tanda B -->
-  <p class="h-entry big-date" style="top:320px" data-a="fade" data-t="6.06" data-d="0.01" data-e="11.37" data-split="l" data-st="6.06" data-step="0.05">20 de marzo de 1877</p>
-  <p class="h-entry" style="top:500px" ><span class="h-body" data-a="rise" data-t="7.07" data-e="11.37" style="font-size:48px">La Diócesis de Mérida erige la parroquia de Santa Lucía</span></p>
+  <p data-k="s3-b1" class="h-entry big-date" style="top:320px" data-a="fade" data-t="6.06" data-d="0.01" data-e="11.37" data-split="l" data-st="6.06" data-step="0.05">20 de marzo <br class="vbr">de 1877</p>
+  <p data-k="s3-b2" class="h-entry" style="top:500px" ><span class="h-body" data-a="rise" data-t="7.07" data-e="11.37" style="font-size:48px">La Diócesis de Mérida erige <br class="vbr">la parroquia de Santa Lucía</span></p>
   <!-- Tanda C -->
-  <p class="h-entry" style="top:340px"><span class="h-date" data-a="drop" data-dist="20" data-t="11.87" style="font-size:84px">Siglo XX</span> <span class="h-body" data-a="rise" data-t="12.13" style="font-size:48px"><span class="sep">·</span> El templo se reconstruye con el esfuerzo de la feligresía</span></p>
+  <p data-k="s3-c1" class="h-entry" style="top:340px"><span class="h-date" data-a="drop" data-dist="20" data-t="11.87" style="font-size:84px">Siglo XX</span> <span class="h-body" data-a="rise" data-t="12.13" style="font-size:48px"><span class="sep">·</span> El templo se reconstruye <br class="vbr">con el esfuerzo de la feligresía</span></p>
 </section>
 
 <!-- ============ ESCENA 4 · 150 años (38–46 s) ============ -->
 <section class="scene" id="s4">
   <div class="bg" style="background:#fdf9f0"></div>
-  <div class="bg" style="background:radial-gradient(ellipse 50% 55% at 33% 42%,rgba(245,227,154,.35),rgba(245,227,154,0) 70%)"></div>
+  <div data-k="s4-glow" class="bg" style="background:radial-gradient(ellipse 50% 55% at 33% 42%,rgba(245,227,154,.35),rgba(245,227,154,0) 70%)"></div>
   <div class="ribbon" style="top:0" data-a="drop" data-dist="44" data-t="0.1" data-d="0.8" data-o="up" data-odist="60" data-e="7.4" data-od="0.5"></div>
   <div class="ribbon" style="bottom:0" data-a="up" data-dist="44" data-t="0.1" data-d="0.8" data-o="down" data-odist="60" data-e="7.4" data-od="0.5"></div>
   <div class="halo" id="s4dot" style="left:470px;top:110px;width:400px;height:400px"></div>
-  <div class="frame-gold" style="left:1250px;top:100px;width:580px;height:880px" data-a="right" data-dist="60" data-t="0.4" data-d="1">
+  <div data-k="s4-frame" class="frame-gold" style="left:1250px;top:100px;width:580px;height:880px" data-a="right" data-dist="60" data-t="0.4" data-d="1">
     <div class="inner"><img src="img/decreto-1877-caratula.webp" alt="" data-kb="1 1.05" data-kbt="0 8"></div>
   </div>
-  <div class="abs" style="left:120px;top:120px;width:1100px;text-align:center">
+  <div data-k="s4-txt" class="abs" style="left:120px;top:120px;width:1100px;text-align:center">
     <div class="n150" data-a="scale" data-s0="0.6" data-t="0.4" data-d="1"><span class="gold-txt" id="num150" style="font-size:300px">150</span> <span class="gold-txt" id="anos150" style="font-size:130px">años</span></div>
-    <p class="t-lema" style="color:#8B1A1A;font-size:58px;margin-top:10px" data-a="rise" data-t="2.4">Fieles a la tradición. Abiertos a la misión.</p>
+    <p class="t-lema" style="color:#8B1A1A;font-size:58px;margin-top:10px" data-a="rise" data-t="2.4">Fieles a la tradición. <br class="vbr">Abiertos a la misión.</p>
     <div style="margin-top:46px;display:flex;flex-direction:column;align-items:center;gap:26px">
       <div class="plaque" data-a="up" data-dist="40" data-t="3.3"><b>1877</b> <span class="sep">·</span> <b>2027</b></div>
     </div>
@@ -313,31 +476,31 @@ body{font-family:var(--f-txt);color:#fff;-webkit-font-smoothing:antialiased}
   <div class="ray" id="ray1" style="left:640px"></div>
   <div class="ray" id="ray2" style="left:900px;width:180px"></div>
   <div class="ray" id="ray3" style="left:1140px;width:320px"></div>
-  <div class="panel" style="left:120px;top:100px;width:660px;height:880px" data-a="door" data-t="0.1" data-d="0.9" data-o="door" data-e="10.1" data-od="0.6">
+  <div data-k="s5-panel" class="panel" style="left:120px;top:100px;width:660px;height:880px" data-a="door" data-t="0.1" data-d="0.9" data-o="door" data-e="10.1" data-od="0.6">
     <img src="img/templo-interior-naves.webp" alt="" data-kb="1 1.06" data-kbt="0 10.5" style="transform-origin:45% 45%">
   </div>
-  <div class="abs" style="left:880px;top:250px;width:980px">
+  <div data-k="s5-txt" class="abs" style="left:880px;top:250px;width:980px">
     <h2 class="t-h2" style="font-size:110px;margin-bottom:46px" data-a="rise" data-t="0.6">Santa Misa</h2>
     <div class="misa-row" data-a="rise" data-t="1.2"><span>Martes a sábado</span> <span class="sep">·</span> <span class="pill" data-a="pop" data-t="1.7" data-d="0.5" data-e="9.55" data-od="0.35">6:00 PM</span></div>
-    <div class="misa-row" data-a="rise" data-t="1.5"><span>Domingos</span> <span class="sep">·</span> <span class="pill" data-a="pop" data-t="1.95" data-d="0.5" data-e="9.4" data-od="0.35">9:00 AM</span> <span class="sep">·</span> <span class="pill" data-a="pop" data-t="2.2" data-d="0.5" data-e="9.25" data-od="0.35">11:00 AM</span> <span class="sep">·</span> <span class="pill" data-a="pop" data-t="2.45" data-d="0.5" data-e="9.1" data-od="0.35">6:00 PM</span></div>
-    <p style="font-size:38px;font-style:italic;color:#8ecdf0;margin:6px 0 40px" data-a="rise" data-t="3.1">Los lunes no hay Misa</p>
-    <p style="display:flex;align-items:center;gap:20px;font-size:38px;font-weight:600" data-a="rise" data-t="3.7">
+    <div class="misa-row" data-a="rise" data-t="1.5"><span>Domingos</span> <span class="sep">·</span> <span class="vbrk"></span><span class="pill" data-a="pop" data-t="1.95" data-d="0.5" data-e="9.4" data-od="0.35">9:00 AM</span> <span class="sep">·</span> <span class="pill" data-a="pop" data-t="2.2" data-d="0.5" data-e="9.25" data-od="0.35">11:00 AM</span> <span class="sep">·</span> <span class="pill" data-a="pop" data-t="2.45" data-d="0.5" data-e="9.1" data-od="0.35">6:00 PM</span></div>
+    <p data-k="s5-lunes" style="font-size:38px;font-style:italic;color:#8ecdf0;margin:6px 0 40px" data-a="rise" data-t="3.1">Los lunes no hay Misa</p>
+    <p data-k="s5-conf" style="display:flex;align-items:center;gap:20px;font-size:38px;font-weight:600" data-a="rise" data-t="3.7">
       <svg viewBox="0 0 48 48" style="width:52px;height:52px;flex:none" fill="none" stroke="#f2d99b" stroke-width="3" stroke-linecap="round"><path d="M24 5v38M13 16h22"/></svg>
-      <span>Confesiones: media hora antes de cada Misa</span></p>
+      <span>Confesiones: media hora <br class="vbr">antes de cada Misa</span></p>
   </div>
 </section>
 
 <!-- ============ ESCENA 6 · Sacramentos y catequesis (62,5–76 s) ============ -->
 <section class="scene" id="s6">
   <div class="bg" style="background:#f4f1ee"></div>
-  <div class="bg" style="background:radial-gradient(circle 620px at 34% 50%,#e8f3fa 0%,rgba(232,243,250,.6) 55%,rgba(232,243,250,0) 100%)"></div>
+  <div data-k="s6-glow" class="bg" style="background:radial-gradient(circle 620px at 34% 50%,#e8f3fa 0%,rgba(232,243,250,.6) 55%,rgba(232,243,250,0) 100%)"></div>
   <div class="abs" id="s6wrap" style="inset:0" data-a="none" data-o="up" data-e="13.5" data-od="0.9" data-odist="90">
-    <div class="panel" style="left:1310px;top:150px;width:540px;height:720px;box-shadow:0 22px 50px rgba(16,42,67,.22)" data-a="right" data-dist="50" data-t="0.3" data-d="1">
+    <div data-k="s6-panel" class="panel" style="left:1310px;top:150px;width:540px;height:720px;box-shadow:0 22px 50px rgba(16,42,67,.22)" data-a="right" data-dist="50" data-t="0.3" data-d="1">
       <img src="img/sagrado-corazon-jesus.webp" alt="" data-kb="1 1.06" data-kbt="0 7">
       <img src="img/san-jose-nino-jesus.webp" alt="" data-a="fade" data-t="6" data-d="1" data-kb="1 1.05" data-kbt="6 13.5">
     </div>
     <!-- Tanda A -->
-    <h2 class="abs t-h2" style="left:90px;top:120px;font-size:100px;color:#0077b6" data-a="rise" data-t="0.4" data-e="6">Sacramentos</h2>
+    <h2 data-k="s6-h" class="abs t-h2" style="left:90px;top:120px;font-size:100px;color:#0077b6" data-a="rise" data-t="0.4" data-e="6">Sacramentos</h2>
     <div class="sac-grid" id="sacGrid">
       <div class="card" style="left:0;top:0" data-a="fan" data-t="1.0" data-o="fold" data-e="6" data-od="0.6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M5 30C9 13 39 13 43 30L24 41Z"/><path d="M24 41 13 18M24 41V13M24 41 35 18"/></svg><span>Bautismo</span></div>
       <div class="card" style="left:296px;top:0" data-a="fan" data-t="1.12" data-o="fold" data-e="6" data-od="0.6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><circle cx="24" cy="8" r="4.5"/><path d="M13 15h22c0 10-4 15-11 15s-11-5-11-15Z"/><path d="M24 30v9M16 42h16"/></svg><span>Primera Comunión</span></div>
@@ -348,9 +511,9 @@ body{font-family:var(--f-txt);color:#fff;-webkit-font-smoothing:antialiased}
       <div class="card" style="left:740px;top:228px" data-a="fan" data-t="1.72" data-o="fold" data-e="6" data-od="0.6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M16 5c0 14-4 24-4 38h8c0-12 2-24 4-30 2 6 4 18 4 30h8c0-14-4-24-4-38"/><path d="M16 35h4M16 32v6M32 35h-4M32 32v6"/></svg><span>Orden sacerdotal</span></div>
     </div>
     <!-- Tanda B -->
-    <div class="agenda-row" style="top:250px" data-a="left" data-dist="80" data-t="6.5"><b>Catequesis de niños</b> <span class="sep">·</span> domingos, 9:00 a 11:00 AM</div>
-    <div class="agenda-row" style="top:430px" data-a="left" data-dist="80" data-t="6.8"><b>Catequesis de jóvenes</b> <span class="sep">·</span> domingos, 4:00 a 6:00 PM</div>
-    <div class="agenda-row" style="top:610px" data-a="left" data-dist="80" data-t="7.1"><b>Adultos:</b> RICA</div>
+    <div data-k="s6-r1" class="agenda-row" style="top:250px" data-a="left" data-dist="80" data-t="6.5"><b>Catequesis de niños</b> <span class="sep">·</span> <br class="vbr">domingos, 9:00 a 11:00 AM</div>
+    <div data-k="s6-r2" class="agenda-row" style="top:430px" data-a="left" data-dist="80" data-t="6.8"><b>Catequesis de jóvenes</b> <span class="sep">·</span> <br class="vbr">domingos, 4:00 a 6:00 PM</div>
+    <div data-k="s6-r3" class="agenda-row" style="top:610px" data-a="left" data-dist="80" data-t="7.1"><b>Adultos:</b> RICA</div>
   </div>
   <div class="bg" style="background:linear-gradient(135deg,rgba(37,211,102,.55),#0077b6 70%)" data-a="fade" data-t="12.6" data-d="0.9"></div>
 </section>
@@ -358,8 +521,8 @@ body{font-family:var(--f-txt);color:#fff;-webkit-font-smoothing:antialiased}
 <!-- ============ ESCENA 7 · Tus trámites empiezan por WhatsApp (76–96,5 s) ============ -->
 <section class="scene" id="s7">
   <div class="bg" style="background:linear-gradient(135deg,#0077b6 0%,#023e8a 100%)"></div>
-  <div class="bg" style="background:radial-gradient(circle 520px at 1540px 540px,rgba(37,211,102,.16),rgba(37,211,102,0))"></div>
-  <div class="phone-wrap" style="left:1340px;top:110px" data-a="right" data-t="0.5" data-d="1" data-dist="90">
+  <div data-k="s7-glow" class="bg" style="background:radial-gradient(circle 520px at 1540px 540px,rgba(37,211,102,.16),rgba(37,211,102,0))"></div>
+  <div data-k="s7-phone" class="phone-wrap" style="left:1340px;top:110px" data-a="right" data-t="0.5" data-d="1" data-dist="90">
     <div class="phone" id="phone">
       <div class="phone-screen">
         <div class="notch"></div>
@@ -383,15 +546,15 @@ body{font-family:var(--f-txt);color:#fff;-webkit-font-smoothing:antialiased}
     </div>
   </div>
   <!-- Tanda A -->
-  <div class="abs" style="left:130px;top:150px;width:1120px">
-    <h2 class="t-h2" style="font-size:86px;margin-bottom:60px" data-a="rise" data-t="0.3" data-e="11.4">Tus trámites empiezan por WhatsApp</h2>
+  <div data-k="s7-a" class="abs" style="left:130px;top:150px;width:1120px">
+    <h2 class="t-h2" style="font-size:86px;margin-bottom:60px" data-a="rise" data-t="0.3" data-e="11.4">Tus trámites <br class="vbr">empiezan por <br class="vbr">WhatsApp</h2>
     <p class="step" data-a="rise" data-t="1.2" data-e="11.4"><span class="step-n">1</span> <span class="sep">·</span> <span>Eliges el trámite en la web</span></p>
-    <p class="step" data-a="rise" data-t="2.1" data-e="11.4"><span class="step-n">2</span> <span class="sep">·</span> <span>WhatsApp se abre con el mensaje ya escrito</span></p>
-    <p class="step" data-a="rise" data-t="3.0" data-e="11.4"><span class="step-n">3</span> <span class="sep">·</span> <span>La secretaría te responde con los pasos</span></p>
+    <p class="step" data-a="rise" data-t="2.1" data-e="11.4"><span class="step-n">2</span> <span class="sep">·</span> <span>WhatsApp se abre con el <br class="vbr">mensaje ya escrito</span></p>
+    <p class="step" data-a="rise" data-t="3.0" data-e="11.4"><span class="step-n">3</span> <span class="sep">·</span> <span>La secretaría te responde <br class="vbr">con los pasos</span></p>
   </div>
   <!-- Tanda B -->
-  <div class="abs" style="left:0;right:0;top:170px;text-align:center" data-a="rise" data-t="12.0" data-e="20.3" data-od="0.6">
-    <h2 class="t-h2" style="font-size:84px;display:inline-block;position:relative">Sin formularios: solo un mensaje<span class="abs" id="waLine" style="left:0;right:0;bottom:-14px;height:6px;border-radius:3px;background:#25D366;transform-origin:0 50%;transform:scaleX(0)"></span></h2>
+  <div data-k="s7-b" class="abs" style="left:0;right:0;top:170px;text-align:center" data-a="rise" data-t="12.0" data-e="20.3" data-od="0.6">
+    <h2 class="t-h2" style="font-size:84px;display:inline-block;position:relative">Sin formularios: <br class="vbr">solo un mensaje<span class="abs" id="waLine" style="left:0;right:0;bottom:-14px;height:6px;border-radius:3px;background:#25D366;transform-origin:0 50%;transform:scaleX(0)"></span></h2>
   </div>
   <div class="chips">
     <div class="chip" data-a="drop" data-dist="30" data-t="13.2" data-e="20.0" data-od="0.5">Partidas</div>
@@ -408,12 +571,12 @@ body{font-family:var(--f-txt);color:#fff;-webkit-font-smoothing:antialiased}
 
 <!-- ============ ESCENA 8 · Una comunidad de comunidades (96,5–123 s) ============ -->
 <section class="scene" id="s8">
-  <div class="ph"><img src="img/templo-ilustracion-espiritu-santo.webp" alt="" data-kb="1 1.06" data-kbt="-0.69 8.68"></div>
-  <div class="ph" data-a="fade" data-t="7.81" data-d="1"><img src="img/virgen-maria.webp" alt="" data-kb="1 1.06" data-kbt="7.81 16.49" style="object-position:50% 30%"></div>
+  <div class="ph"><img src="img/templo-ilustracion-espiritu-santo.webp" alt="" data-k="s8-img1" data-kb="1 1.06" data-kbt="-0.69 8.68"></div>
+  <div class="ph" data-a="fade" data-t="7.81" data-d="1"><img src="img/virgen-maria.webp" alt="" data-k="s8-img2" data-kb="1 1.06" data-kbt="7.81 16.49" style="object-position:50% 30%"></div>
   <div class="bg" style="background:rgba(2,62,138,.7)"></div>
   <div class="bg" style="background:linear-gradient(135deg,#0077b6,#023e8a)" data-a="fade" data-t="15.62" data-d="1"></div>
   <!-- Tanda A -->
-  <h2 class="g-title" data-a="rise" data-t="0.26" data-e="7.81">Una comunidad de comunidades</h2>
+  <h2 class="g-title" data-a="rise" data-t="0.26" data-e="7.81">Una comunidad <br class="vbr">de comunidades</h2>
   <div class="g-line" data-a="sx" data-t="0.69" data-d="0.9" data-e="7.81" style="transform-origin:50% 50%"></div>
   <div class="g-grid" style="top:340px">
     <div class="gcard" data-a="flipY" data-t="0.87" data-e="7.42" data-od="0.45">Camino de Emaús</div>
@@ -424,7 +587,7 @@ body{font-family:var(--f-txt);color:#fff;-webkit-font-smoothing:antialiased}
     <div class="gcard soon" data-a="flipY" data-t="1.3" data-e="7.77" data-od="0.45"><span>Camino Neocatecumenal</span> <span class="soon-t">(próximamente)</span></div>
   </div>
   <!-- Tanda B -->
-  <h2 class="g-title" data-a="rise" data-t="8.07" data-e="15.62">Sociedades y cofradías</h2>
+  <h2 class="g-title" data-a="rise" data-t="8.07" data-e="15.62">Sociedades <br class="vbr">y cofradías</h2>
   <div class="g-line" data-a="sx" data-t="8.51" data-d="0.9" data-e="15.62"></div>
   <div class="g-grid" style="top:320px">
     <div class="gcard" data-a="flipY" data-t="8.68" data-e="15.16" data-od="0.45">Corazón de Jesús</div>
@@ -436,7 +599,7 @@ body{font-family:var(--f-txt);color:#fff;-webkit-font-smoothing:antialiased}
     <div class="gcard" data-a="flipY" data-t="9.2" data-e="15.58" data-od="0.45">Servidores de Santa Lucía</div>
   </div>
   <!-- Tanda C -->
-  <h2 class="g-title" data-a="rise" data-t="15.97" data-e="22.22">Ministerios y caridad</h2>
+  <h2 class="g-title" data-a="rise" data-t="15.97" data-e="22.22">Ministerios <br class="vbr">y caridad</h2>
   <div class="g-line" data-a="sx" data-t="16.4" data-d="0.9" data-e="22.22"></div>
   <div class="g-grid" id="gridC" style="top:320px">
     <div class="gcard" data-a="flipY" data-t="16.49" data-o="gather" data-e="22.57" data-od="0.8">Catequesis</div>
@@ -455,12 +618,12 @@ body{font-family:var(--f-txt);color:#fff;-webkit-font-smoothing:antialiased}
 <!-- ============ ESCENA 9 · Comunidades de la Palabra (123–133 s) ============ -->
 <section class="scene" id="s9">
   <div class="bg" style="background:#fdf9f0"></div>
-  <div class="halo" style="left:105px;top:235px;width:600px;height:600px;opacity:.55" data-a="scale" data-s0="0.5" data-t="0.2" data-d="1.4"></div>
+  <div data-k="s9-halo" class="halo" style="left:105px;top:235px;width:600px;height:600px;opacity:.55" data-a="scale" data-s0="0.5" data-t="0.2" data-d="1.4"></div>
   <div class="logo-circ" data-a="scale" data-s0="0.9" data-t="0.2" data-d="1"><img src="img/logo-proyecto-palabra.jpg" alt=""></div>
-  <div class="abs" style="left:740px;top:130px;width:1100px;color:#333">
-    <div data-a="rise" data-t="0.6"><span class="nuevo" id="nuevo">¡Nuevo!</span> <h2 class="t-h2" style="font-size:84px;color:#023e8a">Comunidades de la Palabra</h2></div>
-    <p class="t-body" style="font-size:42px;margin-top:26px;color:#333" data-a="rise" data-t="1.6">Vecinos que leen el Evangelio del domingo y sirven a su cuadra</p>
-    <p style="font-size:46px;font-weight:600;color:#0077b6;margin-top:34px" data-a="rise" data-t="3.0">Ya están creciendo en nuestros sectores</p>
+  <div data-k="s9-txt" class="abs" style="left:740px;top:130px;width:1100px;color:#333">
+    <div data-a="rise" data-t="0.6"><span class="nuevo" id="nuevo">¡Nuevo!</span> <h2 class="t-h2" style="font-size:84px;color:#023e8a">Comunidades <br class="vbr">de la Palabra</h2></div>
+    <p class="t-body" style="font-size:42px;margin-top:26px;color:#333" data-a="rise" data-t="1.6">Vecinos que leen el Evangelio <br class="vbr">del domingo y sirven a su cuadra</p>
+    <p style="font-size:46px;font-weight:600;color:#0077b6;margin-top:34px" data-a="rise" data-t="3.0">Ya están creciendo <br class="vbr">en nuestros sectores</p>
   </div>
   <div class="map" id="map">
     <div class="cell" style="left:0;top:0;width:190px;height:96px" data-a="pop" data-t="3.1" data-d="0.5"></div>
@@ -478,8 +641,8 @@ body{font-family:var(--f-txt);color:#fff;-webkit-font-smoothing:antialiased}
 <!-- ============ ESCENA 10 · Recursos de oración (133–142 s) ============ -->
 <section class="scene" id="s10">
   <div class="bg" style="background:#0f1720"></div>
-  <div class="halo" style="left:1020px;top:170px;width:960px;height:760px;opacity:.28"></div>
-  <div class="panel" style="left:1200px;top:330px;width:640px;height:480px;box-shadow:0 0 80px rgba(242,217,155,.25),0 24px 60px rgba(0,0,0,.5)" data-a="scale" data-s0="0.94" data-t="0.3" data-d="1.2">
+  <div data-k="s10-halo" class="halo" style="left:1020px;top:170px;width:960px;height:760px;opacity:.28"></div>
+  <div data-k="s10-panel" class="panel" style="left:1200px;top:330px;width:640px;height:480px;box-shadow:0 0 80px rgba(242,217,155,.25),0 24px 60px rgba(0,0,0,.5)" data-a="scale" data-s0="0.94" data-t="0.3" data-d="1.2">
     <img src="img/divina-misericordia-pintura.webp" alt="" data-kb="1 1.06" data-kbt="0 9" style="transform-origin:50% 60%">
   </div>
   <svg class="abs" id="rosary" viewBox="0 0 1920 1080" style="left:0;top:0;width:1920px;height:1080px;overflow:visible" data-a="fade" data-t="0.3" data-d="0.8"></svg>
@@ -489,7 +652,7 @@ body{font-family:var(--f-txt);color:#fff;-webkit-font-smoothing:antialiased}
     <g id="flame" style="transform-origin:40px 62px"><path d="M40 12C48 26 54 36 54 46a14 14 0 0 1-28 0c0-10 6-20 14-34Z" fill="url(#fg)"/></g>
     <rect x="30" y="64" width="20" height="80" rx="4" fill="#dfe6ee"/>
   </svg>
-  <h2 class="abs t-h2" style="left:270px;top:160px;font-size:84px;color:#f2d99b" data-a="rise" data-t="0.4">Recursos de oración</h2>
+  <h2 data-k="s10-h" class="abs t-h2" style="left:270px;top:160px;font-size:84px;color:#f2d99b" data-a="rise" data-t="0.4">Recursos <br class="vbr">de oración</h2>
   <ul class="res-list">
     <li data-a="up" data-dist="12" data-t="1.2">Rosario y Coronilla interactivos</li>
     <li data-a="up" data-dist="12" data-t="1.55">Novena Perpetua</li>
@@ -497,38 +660,38 @@ body{font-family:var(--f-txt);color:#fff;-webkit-font-smoothing:antialiased}
     <li data-a="up" data-dist="12" data-t="2.25">Tiempo para Dios</li>
     <li data-a="up" data-dist="12" data-t="2.6">Examen de conciencia</li>
   </ul>
-  <p class="abs t-label" style="left:200px;top:880px;font-size:32px" data-a="rise" data-t="3.3">Funcionan sin conexión</p>
+  <p data-k="s10-label" class="abs t-label" style="left:200px;top:880px;font-size:32px" data-a="rise" data-t="3.3">Funcionan sin conexión</p>
   <div class="bg" style="background:linear-gradient(180deg,#8ecdf0,#e8f3fa)" data-a="fade" data-t="8.2" data-d="0.8" data-max="0.7"></div>
 </section>
 
 <!-- ============ ESCENA 11 · Fiesta patronal (132,5–140,5 s) ============ -->
 <section class="scene" id="s11">
-  <div class="bg" style="background:radial-gradient(ellipse at 75% 40%,#0a4fa0 0%,#023e8a 55%,#012a5e 100%)"></div>
+  <div data-k="s11-bg" class="bg" style="background:radial-gradient(ellipse at 75% 40%,#0a4fa0 0%,#023e8a 55%,#012a5e 100%)"></div>
   <div class="halo" id="crown" style="left:1285px;top:120px;width:560px;height:560px;opacity:0"></div>
-  <div class="panel" style="left:1090px;top:290px;width:760px;height:500px;box-shadow:0 0 70px rgba(212,175,55,.25),0 24px 60px rgba(0,0,0,.45)" data-a="fade" data-t="0.3" data-d="1.2">
+  <div data-k="s11-panel" class="panel" style="left:1090px;top:290px;width:760px;height:500px;box-shadow:0 0 70px rgba(212,175,55,.25),0 24px 60px rgba(0,0,0,.45)" data-a="fade" data-t="0.3" data-d="1.2">
     <img src="img/santa-lucia-urna.webp" alt="" data-kb="1 1.07" data-kbt="0 8" style="transform-origin:62% 30%">
   </div>
-  <div class="abs" style="left:140px;top:170px;width:900px">
-    <div data-a="scale" data-s0="0.8" data-t="0.7" data-d="1.1" style="transform-origin:0 60%"><span class="gold-txt" id="d13" style="font-family:var(--f-tit);font-weight:700;font-size:320px;line-height:1">13</span></div>
+  <div data-k="s11-txt" class="abs" style="left:140px;top:170px;width:900px">
+    <div data-k="s11-13" data-a="scale" data-s0="0.8" data-t="0.7" data-d="1.1" style="transform-origin:0 60%"><span class="gold-txt" id="d13" style="font-family:var(--f-tit);font-weight:700;font-size:320px;line-height:1">13</span></div>
     <p style="font-family:var(--f-tit);font-weight:700;font-size:96px;line-height:1.1;color:#f2d99b;margin-top:-6px" data-a="rise" data-t="1.4">de diciembre</p>
-    <div style="width:260px;height:5px;border-radius:3px;background:linear-gradient(90deg,#d4af37,rgba(212,175,55,0));margin:40px 0 36px;transform-origin:0 50%" data-a="sx" data-t="2.0" data-d="0.9"></div>
-    <p class="t-lema" style="font-size:64px;color:#fff;width:720px" data-a="rise" data-t="2.4">Gran fiesta patronal de Santa Lucía</p>
+    <div data-k="s11-line" style="width:260px;height:5px;border-radius:3px;background:linear-gradient(90deg,#d4af37,rgba(212,175,55,0));margin:40px 0 36px;transform-origin:0 50%" data-a="sx" data-t="2.0" data-d="0.9"></div>
+    <p class="t-lema" style="font-size:64px;color:#fff;width:720px" data-a="rise" data-t="2.4">Gran fiesta patronal <br class="vbr">de Santa Lucía</p>
   </div>
 </section>
 
 <!-- ============ ESCENA 12 · Contacto (158,5–168,5 s) ============ -->
 <section class="scene" id="s12">
-  <div class="bg" style="background:linear-gradient(90deg,#0f1720 0%,#023e8a 55%,#0f1720 100%)"></div>
-  <div class="ph" style="left:820px" data-a="fade" data-t="0" data-d="1.2">
-    <img src="img/santa-lucia-rostro.webp" alt="" data-kb="1 1.06" data-kbt="-0.8 10" style="object-position:40% 40%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 38%);mask-image:linear-gradient(90deg,transparent 0,#000 38%)">
+  <div data-k="s12-bg" class="bg" style="background:linear-gradient(90deg,#0f1720 0%,#023e8a 55%,#0f1720 100%)"></div>
+  <div data-k="s12-ph" class="ph" style="left:820px" data-a="fade" data-t="0" data-d="1.2">
+    <img src="img/santa-lucia-rostro.webp" alt="" data-k="s12-img" data-kb="1 1.06" data-kbt="-0.8 10" style="object-position:40% 40%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 38%);mask-image:linear-gradient(90deg,transparent 0,#000 38%)">
   </div>
-  <div class="halo" style="left:1140px;top:40px;width:640px;height:640px;opacity:.22"></div>
-  <h2 class="abs t-h2" style="left:130px;top:110px;font-size:96px" data-a="rise" data-t="0.3" data-e="9" data-od="0.6">Contacto</h2>
-  <div class="c-row" style="top:280px" data-a="left" data-dist="16" data-t="0.9" data-e="9" data-od="0.6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"><path d="M24 44S10 28 10 19a14 14 0 0 1 28 0c0 9-14 25-14 25Z"/><circle cx="24" cy="19" r="5"/></svg><span>Calle 90, Sector El Empedrado, Maracaibo, Zulia</span></div>
-  <div class="c-row big wa" style="top:430px" data-a="left" data-dist="16" data-t="1.2" data-e="9" data-od="0.6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M7 41l3-9a17 17 0 1 1 6 6Z"/><path d="M18 16c0 8 6 14 14 15l2-4-4-2-2 2c-3-1-5-3-6-6l2-2-2-4Z"/></svg><span>WhatsApp: +58 414 367 6212</span></div>
-  <div class="c-row" style="top:545px" data-a="left" data-dist="16" data-t="1.5" data-e="9" data-od="0.6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6"><rect x="8" y="8" width="32" height="32" rx="9"/><circle cx="24" cy="24" r="7.5"/><circle cx="33" cy="15" r="1.8" fill="currentColor" stroke="none"/></svg><span>Instagram: @parroquia.santaluciamcbo</span></div>
-  <div class="c-row" style="top:650px" data-a="left" data-dist="16" data-t="1.8" data-e="9" data-od="0.6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="24" cy="24" r="17"/><path d="M24 14v10l7 5"/></svg><span>Despacho: martes a viernes, 2:00 a 5:00 PM</span></div>
-  <div class="c-row big" style="top:790px;font-size:52px" data-a="left" data-dist="16" data-t="2.1"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6"><circle cx="24" cy="24" r="17"/><path d="M7 24h34M24 7c-7 7-7 27 0 34M24 7c7 7 7 27 0 34"/></svg><span>parroquiasantalucia.org</span></div>
+  <div data-k="s12-halo" class="halo" style="left:1140px;top:40px;width:640px;height:640px;opacity:.22"></div>
+  <h2 data-k="s12-h" class="abs t-h2" style="left:130px;top:110px;font-size:96px" data-a="rise" data-t="0.3" data-e="9" data-od="0.6">Contacto</h2>
+  <div data-k="s12-r1" class="c-row" style="top:280px" data-a="left" data-dist="16" data-t="0.9" data-e="9" data-od="0.6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"><path d="M24 44S10 28 10 19a14 14 0 0 1 28 0c0 9-14 25-14 25Z"/><circle cx="24" cy="19" r="5"/></svg><span>Calle 90, Sector El Empedrado, <br class="vbr">Maracaibo, Zulia</span></div>
+  <div data-k="s12-r2" class="c-row big wa" style="top:430px" data-a="left" data-dist="16" data-t="1.2" data-e="9" data-od="0.6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M7 41l3-9a17 17 0 1 1 6 6Z"/><path d="M18 16c0 8 6 14 14 15l2-4-4-2-2 2c-3-1-5-3-6-6l2-2-2-4Z"/></svg><span>WhatsApp: +58 414 367 6212</span></div>
+  <div data-k="s12-r3" class="c-row" style="top:545px" data-a="left" data-dist="16" data-t="1.5" data-e="9" data-od="0.6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6"><rect x="8" y="8" width="32" height="32" rx="9"/><circle cx="24" cy="24" r="7.5"/><circle cx="33" cy="15" r="1.8" fill="currentColor" stroke="none"/></svg><span>Instagram: <br class="vbr">@parroquia.santaluciamcbo</span></div>
+  <div data-k="s12-r4" class="c-row" style="top:650px" data-a="left" data-dist="16" data-t="1.8" data-e="9" data-od="0.6"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="24" cy="24" r="17"/><path d="M24 14v10l7 5"/></svg><span>Despacho: martes a viernes, <br class="vbr">2:00 a 5:00 PM</span></div>
+  <div data-k="s12-r5" class="c-row big" style="top:790px;font-size:52px" data-a="left" data-dist="16" data-t="2.1"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6"><circle cx="24" cy="24" r="17"/><path d="M7 24h34M24 7c-7 7-7 27 0 34M24 7c7 7 7 27 0 34"/></svg><span>parroquiasantalucia.org</span></div>
 </section>
 
 <!-- ============ ESCENA 13 · Cierre e invitación (168,5–176,5 s) ============ -->
@@ -539,10 +702,10 @@ body{font-family:var(--f-txt);color:#fff;-webkit-font-smoothing:antialiased}
   <div class="panel" id="s13temple" style="left:690px;top:230px;width:540px;height:720px;box-shadow:0 30px 70px rgba(2,62,138,.4)">
     <img src="img/templo-fachada.webp" alt="" data-kb="1.08 1.0" data-kbt="-0.8 8">
   </div>
-  <div class="bg" style="background:radial-gradient(ellipse 60% 55% at 50% 52%,rgba(2,62,138,.74),rgba(2,62,138,.45) 70%,rgba(2,62,138,.22))" data-a="fade" data-t="2.0" data-d="0.8"></div>
-  <p class="abs t-lema" style="left:0;right:0;top:70px;text-align:center;font-size:84px;text-shadow:0 2px 20px rgba(2,62,138,.6)" data-split="w" data-st="0.3" data-step="0.15">Hay un lugar reservado para ti</p>
-  <h2 class="abs t-hero" style="left:0;right:0;top:450px;text-align:center;font-size:110px;text-shadow:0 2px 20px rgba(2,62,138,.5)" data-a="rise" data-t="2.8">Parroquia Santa Lucía</h2>
-  <p class="abs t-lema" style="left:0;right:0;top:600px;text-align:center;font-size:62px;color:#e8f3fa;text-shadow:0 2px 20px rgba(2,62,138,.5)" data-a="rise" data-t="3.2">La Casita Azul de El Empedrao</p>
+  <div data-k="s13-veil" class="bg" style="background:radial-gradient(ellipse 60% 55% at 50% 52%,rgba(2,62,138,.74),rgba(2,62,138,.45) 70%,rgba(2,62,138,.22))" data-a="fade" data-t="2.0" data-d="0.8"></div>
+  <p data-k="s13-a" class="abs t-lema" style="left:0;right:0;top:70px;text-align:center;font-size:84px;text-shadow:0 2px 20px rgba(2,62,138,.6)" data-split="w" data-st="0.3" data-step="0.15">Hay un lugar <br class="vbr">reservado para ti</p>
+  <h2 data-k="s13-h" class="abs t-hero" style="left:0;right:0;top:450px;text-align:center;font-size:110px;text-shadow:0 2px 20px rgba(2,62,138,.5)" data-a="rise" data-t="2.8">Parroquia <br class="vbr">Santa Lucía</h2>
+  <p data-k="s13-l" class="abs t-lema" style="left:0;right:0;top:600px;text-align:center;font-size:62px;color:#e8f3fa;text-shadow:0 2px 20px rgba(2,62,138,.5)" data-a="rise" data-t="3.2">La Casita Azul de El Empedrao</p>
   <div class="bg" style="background:radial-gradient(circle at 50% 45%,#fffaf0 0%,#f2d99b 60%,#f2d99b 100%)" data-a="scale" data-s0="0.3" data-t="6.4" data-d="1.0" id="whiteout"></div>
   <div class="bg" style="background:#0f1720" data-a="fade" data-t="7.3" data-d="0.7"></div>
 </section>
@@ -622,6 +785,13 @@ try{ matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',e=
 /* ================= Preparación del DOM ================= */
 const $=id=>document.getElementById(id);
 const stage=$('stage'), player=$('player'), root=$('root');
+
+/* Orientación: horizontal 1920×1080 (GH, los números de siempre) o vertical 1080×1920 (GV, diseño T5).
+   Se elige por la proporción de la ventana (alto ≥ ancho → vertical); «#o=v» / «#o=h» la fuerzan. */
+const GH={SW:1920,SH:1080,s1:[960,540,560,560],logoC:{x:960,y:540,s:220},logoK:{x:68,y:64,s:56},logoF:{x:960,y:330,s:170},ph:[-470,40],rosary:[720,215,590,128],s2halo:[760,720]};
+const GV={SW:1080,SH:1920,s1:[540,960,540,1400],logoC:{x:540,y:960,s:300},logoK:{x:100,y:96,s:84},logoF:{x:540,y:720,s:200},ph:[0,-460],rosary:[540,358,440,190],s2halo:[220,200]};
+let G=GH, V=null;
+const FM=/[#&]o=([vh])/.exec(location.hash), FORCE=FM?FM[1]:'';
 
 // Separar letras / palabras (el texto sigue siendo literal: solo se envuelve en <span>)
 document.querySelectorAll('[data-split]').forEach(el=>{
@@ -743,7 +913,8 @@ const CUSTOM={
   s1(lt){ // punto de luz que nace y se vuelve halo
     const h=$('s1halo');
     const g=win(lt,0,1.5), mv=EIO(clamp01((lt-1.5)/2));
-    const x=lerp(960,560,mv), y=lerp(540,560,mv), sc=RM?1:lerp(0.08,1,g)*lerp(1,1.15,mv);
+    const [x0,y0,x1,y1]=G.s1;
+    const x=lerp(x0,x1,mv), y=lerp(y0,y1,mv), sc=RM?1:lerp(0.08,1,g)*lerp(1,1.15,mv);
     const op=lerp(1,0.4,mv)*clamp01(g*1.4);
     css(h,{transform:`translate(${x-450}px,${y-450}px) scale(${sc.toFixed(4)})`,opacity:op.toFixed(3)});
   },
@@ -752,7 +923,7 @@ const CUSTOM={
     const l=$('luz'); l.style.backgroundPosition=`${(100-100*p).toFixed(2)}% 0`;
     l.style.filter=p>0?`drop-shadow(0 0 ${(14*p).toFixed(1)}px rgba(242,217,155,${(0.75*p).toFixed(2)}))`:'';
     const h=$('s2halo'); h.style.opacity=(0.25+0.08*Math.sin(lt*0.6)).toFixed(3);
-    h.style.left=(lt<5.8?760:720)+'px';
+    h.style.left=(lt<5.8?G.s2halo[0]:G.s2halo[1])+'px';
   },
   s3(lt){ // línea de tiempo por tramos e hitos que se encienden
     lt/=16/19; // escena acortada de 19 s a 16 s
@@ -795,7 +966,7 @@ const CUSTOM={
     const bi=win(lt,3.4,0.5); css($('bubIn'),{opacity:bi.toFixed(3),transform:`translateY(${(18*(1-bi)).toFixed(1)}px)`});
     $('chk').style.opacity=win(lt,3.75,0.3).toFixed(3);
     const b=win(lt,11.3,1.0), ph=$('phone');
-    ph.style.transform = RM?'':`translate(${(-470*b).toFixed(1)}px,${(40*b).toFixed(1)}px) scale(${(1-0.1*b).toFixed(4)})`;
+    ph.style.transform = RM?'':`translate(${(G.ph[0]*b).toFixed(1)}px,${(G.ph[1]*b).toFixed(1)}px) scale(${(1-0.1*b).toFixed(4)})`;
     ph.style.filter = b>0?`blur(${(8*b).toFixed(2)}px)`:'';
     ph.style.opacity = (1-0.72*b).toFixed(3);
     $('waLine').style.transform=`scaleX(${win(lt,12.7,0.8).toFixed(4)})`;
@@ -847,10 +1018,11 @@ const CUSTOM={
 
 // Rosario: 40 cuentas en elipse alrededor del título + cruz
 const ROSARY=[];
-(function buildRosary(){
+function buildRosary(){
   const svg=$('rosary'), NS='http://www.w3.org/2000/svg';
+  svg.setAttribute('viewBox',`0 0 ${G.SW} ${G.SH}`); ROSARY.length=0;
   svg.innerHTML='<defs><filter id="bglow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>';
-  const cx=720, cy=215, rx=590, ry=128, N=40;
+  const [cx,cy,rx,ry]=G.rosary, N=40;
   const path=document.createElementNS(NS,'ellipse');
   path.setAttribute('cx',cx);path.setAttribute('cy',cy);path.setAttribute('rx',rx);path.setAttribute('ry',ry);
   path.setAttribute('fill','none');path.setAttribute('stroke','rgba(142,205,240,.25)');path.setAttribute('stroke-width','2');
@@ -866,13 +1038,13 @@ const ROSARY=[];
   g.setAttribute('d',`M${cx} ${cy+ry+6}v46M${cx-14} ${cy+ry+20}h28`);
   g.setAttribute('stroke','#d4af37');g.setAttribute('stroke-width','4');g.setAttribute('stroke-linecap','round');g.setAttribute('fill','none');
   svg.appendChild(g);
-})();
+}
 
 /* ================= Elementos globales ================= */
 const logo=$('logo'), sweep=$('sweep'), thin=$('thin');
 function renderLogo(t){
   // centro (en el halo) → esquina (marca de agua) → centro en la escena 13
-  const C={x:960,y:540,s:220}, K={x:68,y:64,s:56}, F={x:960,y:330,s:170};
+  const C=G.logoC, K=G.logoK, F=G.logoF;
   let x,y,s,op;
   const t13=SCENES[12].start;
   if(t<1.5){ const g=win(t,0.2,1.2); x=C.x;y=C.y; s=C.s*(0.85+0.15*g); op=g; }
@@ -890,7 +1062,7 @@ function renderSweep(t){
   const a=8.1, d=1.3, p=(t-a)/d;
   if(p<=0||p>=1){ sweep.style.opacity='0'; return; }
   const e=EIO(p); sweep.style.opacity=(Math.sin(p*Math.PI)).toFixed(3);
-  sweep.style.transform=`translateX(${lerp(-800,1920,e).toFixed(1)}px) skewX(-18deg)`;
+  sweep.style.transform=`translateX(${lerp(-800,G.SW,e).toFixed(1)}px) skewX(-18deg)`;
 }
 
 /* Partículas de luz (deterministas: su posición depende solo de t, así pausar/saltar es exacto) */
@@ -907,11 +1079,13 @@ let lastFx=-1;
 function renderFx(t){
   const k=intensity(t); const key=RM?Math.round(k*100):t;
   if(key===lastFx) return; lastFx=key;
-  ctx.clearRect(0,0,960,540); if(k<=0.001) return;
+  const CW=fx.width, CH=fx.height;
+  ctx.clearRect(0,0,CW,CH); if(k<=0.001) return;
   const tt=RM?0:t;
+  const kx=CW/960, span=CH+20, ky=span/560; // horizontal: 1, 560, 1 (idéntico a antes)
   for(const p of P){
-    const y=540+10-((p.y+tt*p.v)%(560));
-    const x=p.x+Math.sin(tt*p.w+p.ph)*14;
+    const y=CH+10-((p.y*ky+tt*p.v)%span);
+    const x=p.x*kx+Math.sin(tt*p.w+p.ph)*14;
     const tw=0.55+0.45*Math.sin(tt*0.35+p.ph); // variación muy lenta: nada parpadea
     ctx.globalAlpha=Math.max(0,k*p.a*tw);
     const s=p.r*4; ctx.drawImage(sprite,x-s/2,y-s/2,s,s);
@@ -972,18 +1146,50 @@ function frame(now){
 }
 document.addEventListener('visibilitychange',()=>{ lastNow=null; });
 
-/* ================= Letterbox 16:9 ================= */
+/* ================= Orientación (se cambia en vivo: no toca T, playing, ended ni el audio) ================= */
+function setOrientation(nv){
+  V=nv; root.classList.toggle('v',V); if(!V) root.classList.remove('vo');
+  G = V ? GV : GH;
+  fx.width = V?540:960; fx.height = V?960:540;            // partículas sin estirar (escala 2 en ambas)
+  SCENES.forEach(s=>s.kbs.forEach(k=>{                     // Ken Burns: data-kbv en vertical si existe
+    const v=((V&&k.el.dataset.kbv)||k.el.dataset.kb).split(/\s+/).map(Number);
+    k.s0=v[0];k.s1=v[1];k.x0=v[2]||0;k.x1=v[3]||0;k.y0=v[4]||0;k.y1=v[5]||0; }));
+  buildRosary();
+  measureOffsets();
+  resetCaches(); lastFx=-1; dirty=true;
+}
+
+/* ================= Letterbox 16:9 (horizontal) o 9:16 (vertical) ================= */
 function fit(){
-  const W=root.clientWidth, H=root.clientHeight; const s=Math.min(W/1920,H/1080);
-  const pw=1920*s, ph=1080*s; player.style.width=pw+'px'; player.style.height=ph+'px';
+  const W=root.clientWidth, H=root.clientHeight;
+  const nv = FORCE ? FORCE==='v' : H/W>=1;
+  if(nv!==V) setOrientation(nv);
+  const s=Math.min(W/G.SW,H/G.SH);
+  const pw=G.SW*s, ph=G.SH*s; player.style.width=pw+'px'; player.style.height=ph+'px';
   stage.style.transform=`scale(${s})`;
-  // controles: sobre el video; en pantallas altas (móvil vertical) van debajo, en la franja negra
-  const below=(H-ph)/2>=72?64:0, ui=document.getElementById('ui');
-  ui.style.left=((W-pw)/2)+'px'; ui.style.top=((H-ph)/2)+'px'; ui.style.width=pw+'px'; ui.style.height=(ph+below)+'px';
-  document.getElementById('big').style.top=(ph/2)+'px';
-  document.getElementById('bar').style.background=below?'transparent':'';
+  const ui=document.getElementById('ui');
+  if(!V){
+    // controles: sobre el video; en pantallas altas van debajo, en la franja negra
+    player.style.marginTop='';
+    const below=(H-ph)/2>=72?64:0;
+    ui.style.left=((W-pw)/2)+'px'; ui.style.top=((H-ph)/2)+'px'; ui.style.width=pw+'px'; ui.style.height=(ph+below)+'px';
+    document.getElementById('big').style.top=(ph/2)+'px';
+    document.getElementById('bar').style.background=below?'transparent':'';
+  } else {
+    const BAR=104;                                  // 6 + 44 (#prog) + 2 + 44 (botones) + 8
+    const below=(H-ph)>=BAR;                        // ¿cabe la barra en la franja negra?
+    const top=below?Math.floor((H-ph-BAR)/2):Math.floor((H-ph)/2);
+    player.style.marginTop=top+'px';                // #root.v usa align-items:flex-start
+    ui.style.left=((W-pw)/2)+'px'; ui.style.top=top+'px'; ui.style.width=pw+'px'; ui.style.height=(ph+(below?BAR:0))+'px';
+    root.classList.toggle('vo',!below);             // sin franja: barra compacta superpuesta
+    document.getElementById('big').style.top=(ph/2)+'px';
+    document.getElementById('bar').style.background=below?'transparent':'';
+  }
 }
 window.addEventListener('resize',fit);
+// algunos móviles avisan tarde del giro: también se escucha el tamaño real del contenedor
+window.addEventListener('orientationchange',()=>setTimeout(fit,250));
+try{ new ResizeObserver(()=>fit()).observe(root); }catch(e){}
 
 /* ================= Controles ================= */
 const ui=$('ui'), prog=$('prog'), fill=$('fill'), knob=$('knob'), tip=$('tip'), timeEl=$('time'), scname=$('scname');

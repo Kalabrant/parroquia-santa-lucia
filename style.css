@@ -2818,3 +2818,25 @@ nav:not(.nav-principal):not(.migas) .logo a { display: flex; align-items: center
 @media (prefers-reduced-motion: reduce) {
     .video-presentacion-portada img, .video-presentacion-play { transition: none; }
 }
+
+/* Capa a pantalla completa para el celular en vertical: la crea el
+   script del video en index.html al tocar ▶; se cierra con ✕, Esc o «atrás». */
+.video-capa {
+    position: fixed; inset: 0; z-index: 10000; box-sizing: border-box;
+    width: 100%; height: 100vh; height: 100dvh; background: #000;
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+}
+.video-capa iframe { display: block; width: 100%; height: 100%; border: 0; }
+.video-capa-cerrar {
+    position: absolute; z-index: 1;
+    top: calc(env(safe-area-inset-top, 0px) + var(--e3));
+    right: calc(env(safe-area-inset-right, 0px) + var(--e3));
+    width: 48px; height: 48px; padding: 0; display: flex; align-items: center; justify-content: center;
+    border: 2px solid rgba(255, 255, 255, .85); border-radius: 50%;
+    background: rgba(0, 0, 0, .65); color: #fff; cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .45);
+}
+.video-capa-cerrar svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; }
+.video-capa-cerrar:hover { background: var(--color-azul-esencial); }
+.video-capa-cerrar:focus-visible { outline: 3px solid #f2d99b; outline-offset: 2px; }
+html.video-capa-abierta, html.video-capa-abierta body { overflow: hidden; }
