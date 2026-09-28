@@ -303,6 +303,7 @@ body{font-family:var(--f-txt);color:#fff;-webkit-font-smoothing:antialiased}
 .v .g-line{top:404px}
 .v .g-grid{left:130px;top:450px!important;width:820px;flex-direction:column;flex-wrap:nowrap;align-items:center;gap:18px}
 .v .sac-grid,.v .g-grid{perspective:none}
+.v .gold-txt{filter:none}
 .v .gcard{width:820px;min-height:122px;font-size:48px}
 .v .gcard .soon-t{font-size:46px}
 .v #s8dot{left:240px!important;top:771px!important}
@@ -874,7 +875,7 @@ function applyTrack(tr,lt){
       case 'tilt': tf=`rotate(${(-2*q).toFixed(3)}deg) scale(${(1+0.03*q).toFixed(4)})`; break;
       case 'sx':   tf=`scaleX(${pi.toFixed(4)})`; op=(pi>0?1:0)*(1-po); break;
       case 'sx2':  tf=`scaleY(${pi.toFixed(4)})`; op=(pi>0?1:0)*(1-po); break;
-      case 'flipY':tf=LITE?`scaleX(${Math.max(0.001,1-q-po).toFixed(4)})`:`rotateY(${(90*q+90*po).toFixed(2)}deg)`; op=clamp01(pi*4)*(1-clamp01((po-0.75)*4)); break;
+      case 'flipY':if(LITE){ tf=`translate(0,${(q*24).toFixed(1)}px)`; op=pi*(1-po); break; } tf=`rotateY(${(90*q+90*po).toFixed(2)}deg)`; op=clamp01(pi*4)*(1-clamp01((po-0.75)*4)); break;
       case 'flipX':tf=`rotateX(${(-90*q).toFixed(2)}deg)`; op=clamp01(pi*3)*(1-po); break;
       case 'fan':  tf=`translate(${(tr.fx*q).toFixed(1)}px,${(tr.fy*q).toFixed(1)}px) scale(${(0.4+0.6*pi).toFixed(4)})`; op=clamp01(pi*2.5)*(1-po); break;
       case 'door': { const c=Math.max(q,tr.o==='door'?po:0); cp=`inset(0 ${(50*c).toFixed(2)}% 0 ${(50*c).toFixed(2)}%)`; op=c<1?1:0; if(tr.o!=='door') op*=(1-po); break; }
@@ -886,13 +887,14 @@ function applyTrack(tr,lt){
         case 'up':   tf+=` translate3d(0,${(-po*tr.odist).toFixed(1)}px,0)`; break;
         case 'down': tf+=` translate3d(0,${(po*tr.odist).toFixed(1)}px,0)`; break;
         case 'fold': tf=`translate(${(tr.fx*po).toFixed(1)}px,${(tr.fy*po).toFixed(1)}px) scale(${(1-0.6*po).toFixed(4)})`; break;
-        case 'gather': tf=`translate(${(tr.fx*po).toFixed(1)}px,${(tr.fy*po).toFixed(1)}px) scale(${(1-0.92*po).toFixed(4)})`; op=(pi>0?1:0)*(1-po*po); break;
+        case 'gather': tf=`translate(${(tr.fx*po).toFixed(1)}px,${(tr.fy*po).toFixed(1)}px) scale(${(1-(LITE?0.5:0.92)*po).toFixed(4)})`; op=(pi>0?1:0)*(1-po*po); break;
         case '': if(tr.a==='rise'||tr.a==='up'||tr.a==='left'||tr.a==='drop') tf+=` translate3d(0,${(-po*8).toFixed(2)}px,0)`; break;
       }
     }
   } else {
     if(tr.a==='door') op = tr.o==='door' ? pi*(1-po) : pi*(1-po);
   }
+  if(LITE && tf) tf=tf.replace(/translate3d\(([^,]+),([^,]+),0\)/g,'translate($1,$2)');
   op*=tr.max;
   const c=tr.c, el=tr.el;
   setS(c,el,'opacity',op<0.001?'0':op.toFixed(3));
@@ -981,7 +983,7 @@ const CUSTOM={
   s9(lt){ // 4 de 9 celdas encienden la luz; al salir queda una que se vuelve llama
     const cells=$('map').children; const lit=[0,4,5,7];
     const glow=win(lt,0.9,0.8)*(1-clamp01((lt-3)/1));
-    $('nuevo').style.boxShadow=`0 0 ${(26*glow).toFixed(1)}px ${(6*glow).toFixed(1)}px rgba(212,175,55,${(0.55*glow).toFixed(2)})`;
+    if(!LITE) $('nuevo').style.boxShadow=`0 0 ${(26*glow).toFixed(1)}px ${(6*glow).toFixed(1)}px rgba(212,175,55,${(0.55*glow).toFixed(2)})`;
     for(let i=0;i<9;i++){
       const c=cells[i], k=lit.indexOf(i);
       let on = k>=0 ? win(lt,4.3+k*0.2,0.45) : 0;
@@ -989,8 +991,9 @@ const CUSTOM={
       const dim = i!==4 ? 1-wout(lt,8.8,0.6)*0.85 : 1;
       c.style.background = on>0 ? `rgba(0,119,182,${(on*dim).toFixed(3)})` : `rgba(232,243,250,${dim.toFixed(3)})`;
       c.style.borderColor = on>0.5 ? '#0077b6' : `rgba(207,230,244,${dim.toFixed(3)})`;
-      c.style.boxShadow = on>0 ? `0 0 ${(24*on).toFixed(1)}px rgba(242,217,155,${(0.7*on).toFixed(2)}), inset 0 0 18px rgba(242,217,155,${(0.45*on).toFixed(2)})` : 'none';
-      if(i===4){ const g=win(lt,9.0,0.8); if(g>0){ c.style.boxShadow=`0 0 ${(24+60*g).toFixed(1)}px ${(20*g).toFixed(1)}px rgba(242,217,155,${(0.7+0.3*g).toFixed(2)})`; c.style.background=`rgb(${Math.round(lerp(0,242,g))},${Math.round(lerp(119,217,g))},${Math.round(lerp(182,155,g))})`; } }
+      if(LITE){ const bs=on>0.5?'0 0 0 4px rgba(242,217,155,.9)':'none'; if(c._bs!==bs){ c._bs=bs; c.style.boxShadow=bs; } }
+      else c.style.boxShadow = on>0 ? `0 0 ${(24*on).toFixed(1)}px rgba(242,217,155,${(0.7*on).toFixed(2)}), inset 0 0 18px rgba(242,217,155,${(0.45*on).toFixed(2)})` : 'none';
+      if(i===4){ const g=win(lt,9.0,0.8); if(g>0){ if(!LITE) c.style.boxShadow=`0 0 ${(24+60*g).toFixed(1)}px ${(20*g).toFixed(1)}px rgba(242,217,155,${(0.7+0.3*g).toFixed(2)})`; c.style.background=`rgb(${Math.round(lerp(0,242,g))},${Math.round(lerp(119,217,g))},${Math.round(lerp(182,155,g))})`; } }
     }
   },
   s10(lt){ // cuentas del rosario que se iluminan una a una; llama que respira
@@ -999,13 +1002,13 @@ const CUSTOM={
     for(let i=0;i<n;i++){
       const p=clamp01(lit-i)*(1-off);
       const b=beads[i]; const f=p>0.01?`rgb(${Math.round(lerp(58,242,p))},${Math.round(lerp(72,217,p))},${Math.round(lerp(90,155,p))})`:'#3a4858';
-      if(b._f!==f){ b._f=f; b.setAttribute('fill',f); b.setAttribute('filter',p>0.5?'url(#bglow)':''); }
+      if(b._f!==f){ b._f=f; b.setAttribute('fill',f); b.setAttribute('filter',(p>0.5&&!LITE)?'url(#bglow)':''); }
     }
     if(!RM) $('flame').style.transform=`scale(${(1+0.035*Math.sin(lt*2.1)).toFixed(4)},${(1+0.05*Math.sin(lt*1.6+1)).toFixed(4)}) rotate(${(1.5*Math.sin(lt*1.3)).toFixed(2)}deg)`;
   },
   s11(lt){ // destello que cruza el «13» y brillo de la corona
     const pos=lerp(160,-60,EIO(clamp01((lt-2.6)/1.2)));
-    $('d13').style.backgroundPosition=`${pos.toFixed(1)}% 0, 0 0`;
+    if(!LITE) $('d13').style.backgroundPosition=`${pos.toFixed(1)}% 0, 0 0`;
     const a=win(lt,3.6,1.2)*(0.85+0.15*Math.sin(lt*1.4));
     $('crown').style.opacity=(0.75*a).toFixed(3);
   },
@@ -1116,7 +1119,7 @@ function sceneAt(t){ for(let i=SCENES.length-1;i>=0;i--) if(t>=SCENES[i].start) 
 function render(t){
   for(const s of SCENES){
     const last=s.idx===SCENES.length-1;
-    const vis = t>=s.start-XF && (t<s.end || (last && t<=s.end));
+    const vis = t>=s.start-(LITE?XF+1.5:XF) && (t<s.end || (last && t<=s.end));
     if(vis!==s.vis){ s.vis=vis; s.el.style.display=vis?'block':'none'; }
     if(!vis) continue;
     const lt=t-s.start;
