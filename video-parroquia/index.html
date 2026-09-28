@@ -38,7 +38,6 @@ body{font-family:var(--f-txt);color:#fff;-webkit-font-smoothing:antialiased}
 .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;will-change:transform}
 .panel{position:absolute;overflow:hidden;border-radius:var(--radio-m);box-shadow:0 24px 60px rgba(0,0,0,.35)}
 .panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;will-change:transform}
-[data-a]{will-change:opacity,transform}
 .sep{opacity:.75}
 
 /* tipos */
@@ -110,7 +109,7 @@ body{font-family:var(--f-txt);color:#fff;-webkit-font-smoothing:antialiased}
 .step-n{font-family:var(--f-tit);font-weight:700;font-size:64px;color:var(--wa);min-width:40px}
 .step .sep{color:var(--celeste)}
 .phone-wrap{position:absolute;width:420px;height:860px}
-.phone{position:absolute;inset:0;border-radius:60px;border:8px solid rgba(255,255,255,.92);background:#0f1720;box-shadow:0 30px 80px rgba(0,0,0,.35);will-change:transform,filter,opacity}
+.phone{position:absolute;inset:0;border-radius:60px;border:8px solid rgba(255,255,255,.92);background:#0f1720;box-shadow:0 30px 80px rgba(0,0,0,.35)}
 .phone-screen{position:absolute;inset:14px;border-radius:44px;overflow:hidden;background:#fff}
 .notch{position:absolute;left:50%;top:10px;width:120px;height:26px;margin-left:-60px;border-radius:14px;background:#0f1720;z-index:5}
 .scr-web{position:absolute;inset:0;background:#f4f1ee}
@@ -303,6 +302,7 @@ body{font-family:var(--f-txt);color:#fff;-webkit-font-smoothing:antialiased}
 .v .g-title{top:190px;font-size:88px;line-height:1.1}
 .v .g-line{top:404px}
 .v .g-grid{left:130px;top:450px!important;width:820px;flex-direction:column;flex-wrap:nowrap;align-items:center;gap:18px}
+.v .sac-grid,.v .g-grid{perspective:none}
 .v .gcard{width:820px;min-height:122px;font-size:48px}
 .v .gcard .soon-t{font-size:46px}
 .v #s8dot{left:240px!important;top:771px!important}
@@ -856,6 +856,7 @@ function measureOffsets(){
 function setS(c,el,k,v){ if(c[k]!==v){ c[k]=v; el.style[k]=v; } }
 function resetCaches(){ SCENES.forEach(s=>{ s.tracks.forEach(t=>t.c={}); s.kbs.forEach(k=>k.c=''); }); }
 
+let LITE=false; // vertical o pantalla táctil: animaciones más livianas para el teléfono
 function applyTrack(tr,lt){
   const pi = tr.a==='none' ? 1 : (lt<=tr.t ? 0 : EIN(clamp01((lt-tr.t)/tr.d)));
   const po = tr.e==null ? 0 : EOUT(clamp01((lt-(tr.e-tr.od))/tr.od));
@@ -863,7 +864,7 @@ function applyTrack(tr,lt){
   let op=pi*(1-po), tf='', fl='', cp='';
   if(!RM){
     switch(tr.a){
-      case 'rise': tf=`translate3d(0,${(q*tr.dist).toFixed(2)}px,0)`; if(q>0.003) fl=`blur(${(q*6).toFixed(2)}px)`; break;
+      case 'rise': tf=`translate3d(0,${(q*tr.dist).toFixed(2)}px,0)`; if(q>0.003 && !LITE) fl=`blur(${(q*6).toFixed(2)}px)`; break;
       case 'up':   tf=`translate3d(0,${(q*tr.dist).toFixed(2)}px,0)`; break;
       case 'drop': tf=`translate3d(0,${(-q*tr.dist).toFixed(2)}px,0)`; break;
       case 'left': tf=`translate3d(${(-q*tr.dist).toFixed(2)}px,0,0)`; break;
@@ -873,7 +874,7 @@ function applyTrack(tr,lt){
       case 'tilt': tf=`rotate(${(-2*q).toFixed(3)}deg) scale(${(1+0.03*q).toFixed(4)})`; break;
       case 'sx':   tf=`scaleX(${pi.toFixed(4)})`; op=(pi>0?1:0)*(1-po); break;
       case 'sx2':  tf=`scaleY(${pi.toFixed(4)})`; op=(pi>0?1:0)*(1-po); break;
-      case 'flipY':tf=`rotateY(${(90*q+90*po).toFixed(2)}deg)`; op=clamp01(pi*4)*(1-clamp01((po-0.75)*4)); break;
+      case 'flipY':tf=LITE?`scaleX(${Math.max(0.001,1-q-po).toFixed(4)})`:`rotateY(${(90*q+90*po).toFixed(2)}deg)`; op=clamp01(pi*4)*(1-clamp01((po-0.75)*4)); break;
       case 'flipX':tf=`rotateX(${(-90*q).toFixed(2)}deg)`; op=clamp01(pi*3)*(1-po); break;
       case 'fan':  tf=`translate(${(tr.fx*q).toFixed(1)}px,${(tr.fy*q).toFixed(1)}px) scale(${(0.4+0.6*pi).toFixed(4)})`; op=clamp01(pi*2.5)*(1-po); break;
       case 'door': { const c=Math.max(q,tr.o==='door'?po:0); cp=`inset(0 ${(50*c).toFixed(2)}% 0 ${(50*c).toFixed(2)}%)`; op=c<1?1:0; if(tr.o!=='door') op*=(1-po); break; }
@@ -1138,8 +1139,13 @@ function frame(now){
   if(playing){
     // si la música suena a la par, manda ella; si se desfasa (carga lenta, servidor sin saltos), el video sigue solo y reintenta alinearla
     const on=!audio.paused && !audio.ended, d=audio.currentTime-T;
-    if(on && d>-0.5) T=Math.max(T,audio.currentTime); // también al volver de otra pestaña (la música siguió sonando)
-    else { T+=dt; if(on && now-lastResync>1500){ lastResync=now; try{audio.currentTime=T;}catch(e){} } }
+    if(!on) T+=dt;                                    // sin música (terminó o falló): reloj propio
+    else if(d>0.4) T=audio.currentTime;               // la música va delante (p. ej. al volver de otra pestaña)
+    else if(d<-0.4){                                  // la música va detrás
+      if(audio.readyState<3) { /* está cargando: el video la espera */ }
+      else { T+=dt; if(now-lastResync>1500){ lastResync=now; try{audio.currentTime=T;}catch(e){} } }
+    }
+    else T+=dt+d*Math.min(1,dt*2);                    // a la par: avance fluido con corrección suave
     if(T>=TOTAL){ T=TOTAL; playing=false; ended=true; onPlayState(); } dirty=true; }
   if(dirty){ dirty=false; render(T); }
   requestAnimationFrame(frame);
@@ -1149,6 +1155,7 @@ document.addEventListener('visibilitychange',()=>{ lastNow=null; });
 /* ================= Orientación (se cambia en vivo: no toca T, playing, ended ni el audio) ================= */
 function setOrientation(nv){
   V=nv; root.classList.toggle('v',V); if(!V) root.classList.remove('vo');
+  LITE = V || !!(window.matchMedia && matchMedia('(pointer: coarse)').matches);
   G = V ? GV : GH;
   fx.width = V?540:960; fx.height = V?960:540;            // partículas sin estirar (escala 2 en ambas)
   SCENES.forEach(s=>s.kbs.forEach(k=>{                     // Ken Burns: data-kbv en vertical si existe
@@ -1285,11 +1292,12 @@ fit(); measureOffsets(); render(0); requestAnimationFrame(frame);
 const imgs=Array.from(document.images);
 const ready=Promise.all([
   (document.fonts&&document.fonts.ready)?document.fonts.ready:Promise.resolve(),
-  ...imgs.map(im=>im.complete?Promise.resolve():new Promise(r=>{im.addEventListener('load',r,{once:true});im.addEventListener('error',r,{once:true});}))
+  ...imgs.map(im=>im.complete?Promise.resolve():new Promise(r=>{im.addEventListener('load',r,{once:true});im.addEventListener('error',r,{once:true});})),
+  new Promise(r=>{ if(audio.readyState>=4) return r(); audio.addEventListener('canplaythrough',r,{once:true}); audio.addEventListener('error',r,{once:true}); })
 ]);
 // «#t=segundos» abre el video en pausa en ese instante (útil para enlazar una escena)
 const H=/[#&]t=([\d.]+)/.exec(location.hash);
-Promise.race([ready,new Promise(r=>setTimeout(r,3500))]).then(()=>{ measureOffsets(); resetCaches();
+Promise.race([ready,new Promise(r=>setTimeout(r,6000))]).then(()=>{ measureOffsets(); resetCaches();
   if(H){ seek(parseFloat(H[1])); if(/[#&]ui=0/.test(location.hash)) ui.style.display='none'; }
   else audioPlay().then(play).catch(()=>{ onPlayState(); bigLabel.textContent='Reproducir con música'; }); });
 
