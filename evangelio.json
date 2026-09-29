@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-09-28",
+ "actualizado": "2026-09-29",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-09-28",
-   "diaLiturgico": "Lunes de la 26a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 9,46-50.",
-   "texto": "Entonces se les ocurrió preguntarse quién sería el más grande.\nPero Jesús, conociendo sus pensamientos, tomó a un niño y acercándolo,\nles dijo: \"El que recibe a este niño en mi Nombre, me recibe a mí, y el que me recibe a mí, recibe a aquel que me envió; porque el más pequeño de ustedes, ese es el más grande\".\nJuan, dirigiéndose a Jesús, le dijo: \"Maestro, hemos visto a uno que expulsaba demonios en tu Nombre y tratamos de impedírselo, porque no es de los nuestros\".\nPero Jesús le dijo: \"No se lo impidan, porque el que no está contra ustedes, está con ustedes\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Libro de Job 1,6-22"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 17(16),1.2-3.6-7"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 9,46-50"
-    }
-   ]
-  },
   {
    "fecha": "2026-09-29",
    "diaLiturgico": "Santos Arcángeles Miguel, Gabriel y Rafael",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Mateo 21,33-43"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-10-05",
+   "diaLiturgico": "Lunes de la 27a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 10,25-37.",
+   "texto": "Un doctor de la Ley se levantó y le preguntó para ponerlo a prueba: \"Maestro, ¿qué tengo que hacer para heredar la Vida eterna?\".\nJesús le preguntó a su vez: \"¿Qué está escrito en la Ley? ¿Qué lees en ella?\".\nEl le respondió: \"Amarás al Señor, tu Dios, con todo tu corazón, con toda tu alma, con todas tus fuerzas y con todo tu espíritu, y a tu prójimo como a ti mismo\".\n\"Has respondido exactamente, le dijo Jesús; obra así y alcanzarás la vida\".\nPero el doctor de la Ley, para justificar su intervención, le hizo esta pregunta: \"¿Y quién es mi prójimo?\".\nJesús volvió a tomar la palabra y le respondió: \"Un hombre bajaba de Jerusalén a Jericó y cayó en manos de unos ladrones, que lo despojaron de todo, lo hirieron y se fueron, dejándolo medio muerto.\nCasualmente bajaba por el mismo camino un sacerdote: lo vio y siguió de largo.\nTambién pasó por allí un levita: lo vio y siguió su camino.\nPero un samaritano que viajaba por allí, al pasar junto a él, lo vio y se conmovió.\nEntonces se acercó y vendó sus heridas, cubriéndolas con aceite y vino; después lo puso sobre su propia montura, lo condujo a un albergue y se encargó de cuidarlo.\nAl día siguiente, sacó dos denarios y se los dio al dueño del albergue, diciéndole: 'Cuídalo, y lo que gastes de más, te lo pagaré al volver'.\n¿Cuál de los tres te parece que se portó como prójimo del hombre asaltado por los ladrones?\".\n\"El que tuvo compasión de él\", le respondió el doctor. Y Jesús le dijo: \"Ve, y procede tú de la misma manera\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Carta de San Pablo a los Gálatas 1,6-12"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 111(110),1-2.7-8.9.10c"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 10,25-37"
     }
    ]
   }
