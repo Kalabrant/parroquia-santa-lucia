@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-09-29",
+ "actualizado": "2026-09-30",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-09-29",
-   "diaLiturgico": "Santos Arcángeles Miguel, Gabriel y Rafael",
-   "cita": "Evangelio según San Juan 1,47-51.",
-   "texto": "Al ver llegar a Natanael, Jesús dijo: \"Este es un verdadero israelita, un hombre sin doblez\".\n\"¿De dónde me conoces?\", le preguntó Natanael. Jesús le respondió: \"Yo te vi antes que Felipe te llamara, cuando estabas debajo de la higuera\".\nNatanael le respondió: \"Maestro, tú eres el Hijo de Dios, tú eres el Rey de Israel\".\nJesús continuó: \"Porque te dije: 'Te vi debajo de la higuera', crees . Verás cosas más grandes todavía\".\nY agregó: \"Les aseguro que verán el cielo abierto, y a los ángeles de Dios subir y bajar sobre el Hijo del hombre.\"\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Libro de Daniel 7,9-10.13-14"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 138(137),1-2a.2bc-3.4-5"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Juan 1,47-51"
-    }
-   ]
-  },
   {
    "fecha": "2026-09-30",
    "diaLiturgico": "Miércoles de la 26a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 10,25-37"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-10-06",
+   "diaLiturgico": "Martes de la 27a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 10,38-42.",
+   "texto": "Jesús entró en un pueblo, y una mujer que se llamaba Marta lo recibió en su casa.\nTenía una hermana llamada María, que sentada a los pies del Señor, escuchaba su Palabra.\nMarta, que estaba muy ocupada con los quehaceres de la casa, dijo a Jesús: \"Señor, ¿no te importa que mi hermana me deje sola con todo el trabajo? Dile que me ayude\".\nPero el Señor le respondió: \"Marta, Marta, te inquietas y te agitas por muchas cosas,\ny sin embargo, pocas cosas, o más bien, una sola es necesaria. María eligió la mejor parte, que no le será quitada\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Carta de San Pablo a los Gálatas 1,13-24"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 139(138),1-3.13-14ab.14c-15"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 10,38-42"
     }
    ]
   }
