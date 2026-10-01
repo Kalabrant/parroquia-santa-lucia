@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-09-30",
+ "actualizado": "2026-10-01",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-09-30",
-   "diaLiturgico": "Miércoles de la 26a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 9,57-62.",
-   "texto": "Mientras Jesús y sus discípulos iban caminando, alguien le dijo a Jesús: \"¡Te seguiré adonde vayas!\".\nJesús le respondió: \"Los zorros tienen sus cuevas y las aves del cielo sus nidos, pero el Hijo del hombre no tiene dónde reclinar la cabeza\".\nY dijo a otro: \"Sígueme\". El respondió: \"Permíteme que vaya primero a enterrar a mi padre\".\nPero Jesús le respondió: \"Deja que los muertos entierren a sus muertos; tú ve a anunciar el Reino de Dios\".\nOtro le dijo: \"Te seguiré, Señor, pero permíteme antes despedirme de los míos\".\nJesús le respondió: \"El que ha puesto la mano en el arado y mira hacia atrás, no sirve para el Reino de Dios\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Libro de Job 9,1-12.14-16"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 88(87),10bc-11.12-13.14-15"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 9,57-62"
-    }
-   ]
-  },
   {
    "fecha": "2026-10-01",
    "diaLiturgico": "Jueves de la 26a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 10,38-42"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-10-07",
+   "diaLiturgico": "Miércoles de la 27a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 11,1-4.",
+   "texto": "Un día, Jesús estaba orando en cierto lugar, y cuando terminó, uno de sus discípulos le dijo: \"Señor, enséñanos a orar, así como Juan enseñó a sus discípulos\".\nEl les dijo entonces: \"Cuando oren, digan: Padre, santificado sea tu Nombre, que venga tu Reino;\ndanos cada día nuestro pan cotidiano;\nperdona nuestros pecados, porque también nosotros perdonamos a aquellos que nos ofenden; y no nos dejes caer en la tentación\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Carta de San Pablo a los Gálatas 2,1-2.7-14"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 117(116),1.2"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 11,1-4"
     }
    ]
   }
