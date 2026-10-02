@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-10-01",
+ "actualizado": "2026-10-02",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-10-01",
-   "diaLiturgico": "Jueves de la 26a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 10,1-12.",
-   "texto": "El Señor designó a otros setenta y dos, y los envió de dos en dos para que lo precedieran en todas las ciudades y sitios adonde él debía ir.\nY les dijo: \"La cosecha es abundante, pero los trabajadores son pocos. Rueguen al dueño de los sembrados que envíe trabajadores para la cosecha.\n¡Vayan! Yo los envío como a ovejas en medio de lobos.\nNo lleven dinero, ni alforja, ni calzado, y no se detengan a saludar a nadie por el camino.\nAl entrar en una casa, digan primero: '¡Que descienda la paz sobre esta casa!'.\nY si hay allí alguien digno de recibirla, esa paz reposará sobre él; de lo contrario, volverá a ustedes.\nPermanezcan en esa misma casa, comiendo y bebiendo de lo que haya, porque el que trabaja merece su salario. No vayan de casa en casa.\nEn las ciudades donde entren y sean recibidos, coman lo que les sirvan;\ncuren a sus enfermos y digan a la gente: 'El Reino de Dios está cerca de ustedes'.\"\nPero en todas las ciudades donde entren y no los reciban, salgan a las plazas y digan:\n'¡Hasta el polvo de esta ciudad que se ha adherido a nuestros pies, lo sacudimos sobre ustedes! Sepan, sin embargo, que el Reino de Dios está cerca'.\nLes aseguro que en aquel Día, Sodoma será tratada menos rigurosamente que esa ciudad.\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Libro de Job 19,21-27"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 27(26),7-8a.8b-9abc.13-14"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 10,1-12"
-    }
-   ]
-  },
   {
    "fecha": "2026-10-02",
    "diaLiturgico": "Santos Ángeles Custodios",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 11,1-4"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-10-08",
+   "diaLiturgico": "Jueves de la 27a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 11,5-13.",
+   "texto": "Jesús dijo a sus discípulos:\n\"Supongamos que alguno de ustedes tiene un amigo y recurre a él a medianoche, para decirle: 'Amigo, préstame tres panes,\nporque uno de mis amigos llegó de viaje y no tengo nada que ofrecerle',\ny desde adentro él le responde: 'No me fastidies; ahora la puerta está cerrada, y mis hijos y yo estamos acostados. No puedo levantarme para dártelos'.\nYo les aseguro que aunque él no se levante para dárselos por ser su amigo, se levantará al menos a causa de su insistencia y le dará todo lo necesario.\nTambién les aseguro: pidan y se les dará, busquen y encontrarán, llamen y se les abrirá.\nPorque el que pide, recibe; el que busca, encuentra; y al que llama, se le abre.\n¿Hay entre ustedes algún padre que da a su hijo una piedra cuando le pide pan? ¿Y si le pide un pescado, le dará en su lugar una serpiente?\n¿Y si le pide un huevo, le dará un escorpión?\nSi ustedes, que son malos, saben dar cosas buenas a sus hijos, ¡cuánto más el Padre del cielo dará el Espíritu Santo a aquellos que se lo pidan!\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Carta de San Pablo a los Gálatas 3,1-5"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Evangelio según San Lucas 1,69-70.71-72.73-75"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 11,5-13"
     }
    ]
   }
