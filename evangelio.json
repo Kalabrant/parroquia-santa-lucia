@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-10-02",
+ "actualizado": "2026-10-03",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-10-02",
-   "diaLiturgico": "Santos Ángeles Custodios",
-   "cita": "Evangelio según San Mateo 18,1-5.10.",
-   "texto": "En aquel momento los discípulos se acercaron a Jesús para preguntarle: \"¿Quién es el más grande en el Reino de los Cielos?\".\nJesús llamó a un niño, lo puso en medio de ellos\ny dijo: \"Les aseguro que si ustedes no cambian o no se hacen como niños, no entrarán en el Reino de los Cielos.\nPor lo tanto, el que se haga pequeño como este niño, será el más grande en el Reino de los Cielos.\nEl que recibe a uno de estos pequeños en mi Nombre, me recibe a mí mismo.\nCuídense de despreciar a cualquiera de estos pequeños, porque les aseguro que sus ángeles en el cielo están constantemente en presencia de mi Padre celestial.\"\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Libro del Exodo 23,20-23a"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 91(90),1-2.3-4.5-6.10-11"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Mateo 18,1-5.10"
-    }
-   ]
-  },
   {
    "fecha": "2026-10-03",
    "diaLiturgico": "Sábado de la 26a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 11,5-13"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-10-09",
+   "diaLiturgico": "Viernes de la 27a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 11,15-26.",
+   "texto": "Habiendo Jesús expulsado un demonio, algunos de entre la muchedumbre decían: \"Este expulsa a los demonios por el poder de Belzebul, el Príncipe de los demonios\".\nOtros, para ponerlo a prueba, exigían de él un signo que viniera del cielo.\nJesús, que conocía sus pensamientos, les dijo: \"Un reino donde hay luchas internas va a la ruina y sus casas caen una sobre otra.\nSi Satanás lucha contra sí mismo, ¿cómo podrá subsistir su reino? Porque -como ustedes dicen- yo expulso a los demonios con el poder de Belzebul.\nSi yo expulso a los demonios con el poder de Belzebul, ¿con qué poder los expulsan los discípulos de ustedes? Por eso, ustedes los tendrán a ellos como jueces.\nPero si yo expulso a los demonios con la fuerza del dedo de Dios, quiere decir que el Reino de Dios ha llegado a ustedes.\nCuando un hombre fuerte y bien armado hace guardia en su palacio, todas sus posesiones están seguras,\npero si viene otro más fuerte que él y lo domina, le quita el arma en la que confiaba y reparte sus bienes.\nEl que no está conmigo, está contra mí; y el que no recoge conmigo, desparrama.\nCuando el espíritu impuro sale de un hombre, vaga por lugares desiertos en busca de reposo, y al no encontrarlo, piensa: 'Volveré a mi casa, de donde salí'.\nCuando llega, la encuentra barrida y ordenada.\nEntonces va a buscar a otros siete espíritus peores que él; entran y se instalan allí. Y al final, ese hombre se encuentra peor que al principio\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Carta de San Pablo a los Gálatas 3,7-14"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 111(110),1-2.3-4.5-6"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 11,15-26"
     }
    ]
   }
