@@ -29,3 +29,6 @@ update_nav.py
 
 # Borradores del video de presentación (guion, datos, copia anterior)
 video-parroquia/trabajo/
+
+# Borradores de La voz del pastor (se publican con tools/voz_del_pastor.py)
+voz-del-pastor/borradores/

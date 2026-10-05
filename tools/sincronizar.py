@@ -31,7 +31,7 @@ PARTIALS = TOOLS / "partials"
 
 # Carpetas que este script NO toca (la app del mapa se compila aparte)
 EXCLUIR_DIRS = {"mapa-zonas-pastorales", "parroquia-santa-lucia", "comunidades-palabra",
-                "node_modules", "imagenes_originales", "imagenes_webp", "Ostiariado", "tools"}
+                "node_modules", "imagenes_originales", "imagenes_webp", "Ostiariado", "tools", "voz-del-pastor"}
 
 MARCA_INI = "<!--#{}-->"
 MARCA_FIN = "<!--/#{}-->"
@@ -690,6 +690,11 @@ def main():
         v_sw = actualizar_version_sw(cfg)
         if v_sw:
             print("service worker en la versión {}".format(v_sw))
+
+        # Las entradas de La voz del pastor llevan el mismo menú y pie
+        import voz_del_pastor
+        total, escritas = voz_del_pastor.generar(cfg, paginas, nav_tpl, pie_tpl)
+        print("La voz del pastor: {} entradas · {} páginas reescritas".format(total, escritas))
 
     if errores:
         sys.exit(1)

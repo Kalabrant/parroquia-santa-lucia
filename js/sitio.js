@@ -87,7 +87,7 @@
             imgs[i].addEventListener('error', function () {
                 if (this.dataset.falloYa) return;
                 this.dataset.falloYa = '1';
-                this.src = 'foto-templo.webp';
+                this.src = (window.__raiz || '') + 'foto-templo.webp';
             });
         }
     }
@@ -153,7 +153,7 @@
         if (!('serviceWorker' in navigator)) return;
         if (location.protocol === 'file:') return;
         window.addEventListener('load', function () {
-            navigator.serviceWorker.register('sw.js').catch(function () { /* sin conexión, sin drama */ });
+            navigator.serviceWorker.register((window.__raiz || '') + 'sw.js').catch(function () { /* sin conexión, sin drama */ });
         });
     }
 

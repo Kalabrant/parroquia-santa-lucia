@@ -14,6 +14,12 @@
       "js/descubre.js"
     ]
   },
+  "la-voz-del-pastor.html": {
+    "titulo": "La voz del pastor | Parroquia Santa Lucía",
+    "desc": "La homilía de cada día, de martes a domingo, convertida en una breve reflexión del Pbro. Rafael Villalobos, párroco de Santa Lucía, para seguir rezándola en casa.",
+    "imagen": "parroco.webp",
+    "seccion": null
+  },
   "horarios.html": {
     "titulo": "Horarios de Misas y Confesiones | Parroquia Santa Lucía",
     "desc": "Horarios de Misas, confesiones y despacho parroquial de la Parroquia Santa Lucía de Maracaibo. Martes a sábado 6:00 PM; domingos 9:00 AM, 11:00 AM y 6:00 PM.",

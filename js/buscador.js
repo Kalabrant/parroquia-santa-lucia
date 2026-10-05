@@ -23,7 +23,7 @@
 
         cargando = new Promise(function (resolver, rechazar) {
             var s = document.createElement('script');
-            s.src = 'js/indice-busqueda.js' + (window.__vSitio ? '?v=' + window.__vSitio : '');
+            s.src = (window.__raiz || '') + 'js/indice-busqueda.js' + (window.__vSitio ? '?v=' + window.__vSitio : '');
             s.onload = function () {
                 indice = (typeof INDICE_BUSQUEDA !== 'undefined') ? INDICE_BUSQUEDA : [];
                 resolver(indice);
@@ -105,7 +105,7 @@
             .slice(0, MAX_RESULTADOS)
             .map(function (r) {
                 return {
-                    url: r.reg.u,
+                    url: (window.__raiz || '') + r.reg.u,
                     titulo: r.reg.t,
                     extracto: extracto(r.reg, palabras),
                     palabras: palabras

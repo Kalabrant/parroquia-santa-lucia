@@ -1,0 +1,25 @@
+{
+  "_comentario": "Entradas de La voz del pastor. Tras editar, ejecuta 'py tools/sincronizar.py'.",
+  "entradas": [
+    {
+      "titulo": "Amar a Dios con todo lo que somos",
+      "resumen": "Corazón, alma, fuerzas y mente: los cuatro lugares donde el Evangelio de hoy nos invita a amar al Señor.",
+      "cita": "Lc 10, 25-37",
+      "parrafos": [
+        "Bendecimos al Señor, que nos regala celebrar su Palabra, una Palabra rica como cada día. Hoy me ha llamado la atención de manera particular el versículo 27 del capítulo 10 del Evangelio según san Lucas:",
+        "> «Amarás al Señor tu Dios con todo tu corazón, con toda tu alma, con todas tus fuerzas y con toda tu mente.»",
+        "Este deseo de amar al Señor está dentro de todos nosotros. Si estamos aquí, si venimos a la iglesia, es porque queremos amarlo. Pero lo que más me llama la atención de esta frase es que nos dice *con qué* tenemos que amar al Señor. Son como cuatro lugares donde estamos llamados a amar a Dios.",
+        "El primero es el corazón, la *kardía*. En la Sagrada Escritura el corazón simboliza el centro de la persona, donde siente y piensa, lo más profundo de uno mismo. Por eso el Señor promete por boca de Ezequiel: «Les daré un corazón nuevo, infundiré en ustedes un espíritu nuevo; quitaré de su carne el corazón de piedra y les daré un corazón de carne» (Ez 36, 26). Es el corazón donde María guardaba todas estas cosas y las meditaba (Lc 2, 19), el mismo que ardía en los discípulos de Emaús (Lc 24, 32). Amar al Señor con todo el corazón es amarlo desde el centro de nuestro ser, allí donde Él ya habita, como nos enseñan san Juan de la Cruz y santa Teresa.",
+        "El segundo lugar es el alma. En la Escritura el alma no es solamente la parte espiritual de la persona: es la persona entera, lo que en griego se dice *psyché*. Cuando el salmista reza «Mi alma tiene sed de Dios» (Sal 42, 3), quiere decir que toda su persona, su cuerpo y su espíritu, tiene sed de Él. Por eso hemos de amar al Señor también con el cuerpo, y glorificarlo con él.",
+        "En tercer lugar, estamos llamados a amarlo con todas nuestras fuerzas, la *ischýs*: con toda nuestra energía, con todo nuestro trabajo. Todo lo que hacemos tiene que ser una oportunidad para amar al Señor.",
+        "Y por último, con la mente, la *diánoia*: con la inteligencia y, de modo especial, con el don de la prudencia que el Señor nos ha dado.",
+        "Bendigamos al Señor, que nos regala esta Palabra y nos invita a amarlo con todo el corazón, con toda el alma, con todas las fuerzas y con toda la mente. Que Dios los bendiga."
+      ],
+      "alt": "Acuarela de una mujer en oración en una iglesia colonial sencilla, con una mano sobre el corazón y la otra sobre una Biblia abierta.",
+      "prompt": "Delicate traditional watercolor painting on textured paper, soft washes, gentle light, warm earth tones with touches of sky blue, sacred and serene atmosphere, loose brushwork, white paper edges. A person seen from behind, kneeling in prayer inside a simple colonial Latin American church, one hand resting on the heart and the other on an open Bible on a wooden kneeler, soft golden light streaming from a high window and gently illuminating the figure, peaceful and intimate mood. Horizontal 16:9 composition. No text, no letters, no logos.",
+      "flow": "Proyecto «oct 05 - 11:54», variante derecha (mano en el corazón y Biblia abierta)",
+      "fecha": "2026-10-05",
+      "imagen": "voz-del-pastor/img/2026-10-05.webp"
+    }
+  ]
+}
