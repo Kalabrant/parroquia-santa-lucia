@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-10-07",
+ "actualizado": "2026-10-08",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-10-07",
-   "diaLiturgico": "Miércoles de la 27a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 11,1-4.",
-   "texto": "Un día, Jesús estaba orando en cierto lugar, y cuando terminó, uno de sus discípulos le dijo: \"Señor, enséñanos a orar, así como Juan enseñó a sus discípulos\".\nEl les dijo entonces: \"Cuando oren, digan: Padre, santificado sea tu Nombre, que venga tu Reino;\ndanos cada día nuestro pan cotidiano;\nperdona nuestros pecados, porque también nosotros perdonamos a aquellos que nos ofenden; y no nos dejes caer en la tentación\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Carta de San Pablo a los Gálatas 2,1-2.7-14"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 117(116),1.2"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 11,1-4"
-    }
-   ]
-  },
   {
    "fecha": "2026-10-08",
    "diaLiturgico": "Jueves de la 27a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 11,37-41"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-10-14",
+   "diaLiturgico": "Miércoles de la 28a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 11,42-46.",
+   "texto": "«¡Ay de ustedes, fariseos, que pagan el impuesto de la menta, de la ruda y de todas las legumbres, y descuidan la justicia y el amor de Dios! Hay que practicar esto, sin descuidar aquello.\n¡Ay de ustedes, fariseos, porque les gusta ocupar el primer asiento en las sinagogas y ser saludados en las plazas!\n¡Ay de ustedes, porque son como esos sepulcros que no se ven y sobre los cuales se camina sin saber!\".\nUn doctor de la Ley tomó entonces la palabra y dijo: «Maestro, cuando hablas así, nos insultas también a nosotros».\nEl le respondió: «¡Ay de ustedes también, porque imponen a los demás cargas insoportables, pero ustedes no las tocan ni siquiera con un dedo!»\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Carta de San Pablo a los Gálatas 5,18-25"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 1,1-2.3.4.6"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 11,42-46"
     }
    ]
   }
