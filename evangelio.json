@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-10-08",
+ "actualizado": "2026-10-09",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-10-08",
-   "diaLiturgico": "Jueves de la 27a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 11,5-13.",
-   "texto": "Jesús dijo a sus discípulos:\n\"Supongamos que alguno de ustedes tiene un amigo y recurre a él a medianoche, para decirle: 'Amigo, préstame tres panes,\nporque uno de mis amigos llegó de viaje y no tengo nada que ofrecerle',\ny desde adentro él le responde: 'No me fastidies; ahora la puerta está cerrada, y mis hijos y yo estamos acostados. No puedo levantarme para dártelos'.\nYo les aseguro que aunque él no se levante para dárselos por ser su amigo, se levantará al menos a causa de su insistencia y le dará todo lo necesario.\nTambién les aseguro: pidan y se les dará, busquen y encontrarán, llamen y se les abrirá.\nPorque el que pide, recibe; el que busca, encuentra; y al que llama, se le abre.\n¿Hay entre ustedes algún padre que da a su hijo una piedra cuando le pide pan? ¿Y si le pide un pescado, le dará en su lugar una serpiente?\n¿Y si le pide un huevo, le dará un escorpión?\nSi ustedes, que son malos, saben dar cosas buenas a sus hijos, ¡cuánto más el Padre del cielo dará el Espíritu Santo a aquellos que se lo pidan!\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Carta de San Pablo a los Gálatas 3,1-5"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Evangelio según San Lucas 1,69-70.71-72.73-75"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 11,5-13"
-    }
-   ]
-  },
   {
    "fecha": "2026-10-09",
    "diaLiturgico": "Viernes de la 27a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 11,42-46"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-10-15",
+   "diaLiturgico": "Jueves de la 28a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 11,47-54.",
+   "texto": "Dijo el Señor:\n«¡Ay de ustedes, que construyen los sepulcros de los profetas, a quienes sus mismos padres han matado!\nAsí se convierten en testigos y aprueban los actos de sus padres: ellos los mataron y ustedes les construyen sepulcros.\nPor eso la Sabiduría de Dios ha dicho: Yo les enviaré profetas y apóstoles: matarán y perseguirán a muchos de ellos.\nAsí se pedirá cuenta a esta generación de la sangre de todos los profetas, que ha sido derramada desde la creación del mundo:\ndesde la sangre de Abel hasta la sangre de Zacarías, que fue asesinado entre el altar y el santuario. Sí, les aseguro que a esta generación se le pedirá cuenta de todo esto.\n¡Ay de ustedes, doctores de la Ley, porque se han apoderado de la llave de la ciencia! No han entrado ustedes, y a los que quieren entrar, se lo impiden.»\nCuando Jesús salió de allí, los escribas y los fariseos comenzaron a acosarlo, exigiéndole respuesta sobre muchas cosas\ny tendiéndole trampas para sorprenderlo en alguna afirmación.\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Carta de San Pablo a los Efesios 1,1-10"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 98(97),1.2-3ab.3cd-4.5-6"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 11,47-54"
     }
    ]
   }
