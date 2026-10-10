@@ -2,6 +2,26 @@
   "_comentario": "Entradas de La voz del pastor. Tras editar, ejecuta 'py tools/sincronizar.py'.",
   "entradas": [
     {
+      "titulo": "Qué bueno estar en la casa de Dios",
+      "resumen": "Mi bautismo en Santa Lucía, el salmo de mi primera comunión y una tarde en el seminario me hablan del deseo de habitar en la casa de Dios.",
+      "cita": "Sal 22, 6",
+      "parrafos": [
+        "Hermanos, les cuento tres anécdotas de mi vida de fe. La primera, que algunos ya saben, es que, aunque nací bastante al sur de la ciudad, mi mamá escogió bautizarme aquí, en Santa Lucía, en esa pila bautismal. Por eso es muy cómico: si saco mi partida de bautismo, dice que el padre Rafael Villalobos certifica que Rafael Villalobos fue bautizado el 9 de diciembre de 1980, y que fue ordenado sacerdote el 16 de septiembre de 2003, y lo certifica el padre Rafael Villalobos. En mi fe de bautismo aparezco como tres veces. Eso para decir que el Señor quiso ligarme a este templo y a esta comunidad.",
+        "El sábado en la tarde ya celebramos la Palabra del domingo, y hoy me llamó mucho la atención el versículo 6 del Salmo 22:",
+        "> Habitaré en la casa de Yahvé por días sin término.",
+        "Es uno de mis salmos favoritos, y aquí viene la segunda anécdota: fue el salmo que me tocó leer el día de mi primera comunión. Me encanta esta frase porque habla de la *casa* de Yahvé. Casa en hebreo se dice *bayit*, y en la Escritura no significa solamente casa: significa templo, familia, dinastía. Es lo que en español llamamos hogar.",
+        "La tercera anécdota es del seminario. Desde mi primera comunión tenía clarísimo que quería ser cura; el Señor me metió esa idea desde muy pequeñito, y a los 16 años, la edad mínima, pude entrar. En el seminario hay que estudiar mucho, trabajar, limpiar, hacer un montón de cosas que yo no hacía en mi casa. Una tarde que habíamos pasado horas haciendo una limpieza general, yo estaba sucio, sudado, cansado, y me senté junto al muro de la capilla. Lo que me salió del corazón fue: «¡Qué bueno estar aquí! ¡Qué alegre estoy de estar en el seminario!». Eso para mí es fundamental, porque mi vocación sacerdotal significa querer vivir en la casa de Dios.",
+        "Este salmo me llevó después al Salmo 27, versículo 4, que es precioso: «Una cosa pido al Señor, eso es lo que ando buscando: morar en la casa del Señor todos los días de mi vida, admirar la belleza del Señor contemplando su templo». Resume mi vocación: me sentí llamado a ser sacerdote porque quería vivir en la casa de Dios, formar parte de la familia de Dios.",
+        "Y en el Salmo 61 el salmista le dice al Señor: «Hospédame siempre en tu tienda, que yo quede bajo el amparo de tus alas». Es natural ese deseo humano de sentirse protegido y querido; todos deseamos tener un hogar. Cuando ha pasado toda la semana y nos la hemos pasado haciendo de todo, ¿no provoca llegar a la casita, cerrar la puerta, prender el aire y quedarse tranquilito con la gente que lo quiere a uno? Ese deseo profundo también lo puso el Señor en el corazón. Por eso el Apocalipsis nos dice que la Nueva Jerusalén es la morada de Dios con los hombres.",
+        "Yo me hice cura porque quería vivir en la casa de Dios, y ahora vivo en ella y estoy muy feliz de ser cura aquí, en Santa Lucía. Pero este deseo no es solo mío: todos los cristianos estamos llamados a ser familia de Dios, porque en este mundo, como dice San Pablo, somos peregrinos y extranjeros. Nuestro hogar no es esta tierra, es el cielo. Mientras peregrinamos, recordemos que nos espera el verdadero hogar, donde estaremos con Dios, participaremos del banquete eterno, veremos a todos los que nos esperan y seremos felices amando a Dios por los siglos de los siglos. Amén."
+      ],
+      "alt": "Acuarela de un joven seminarista cansado, sentado junto al muro de una capilla al atardecer, con una escoba y un cubo a su lado.",
+      "prompt": "A young seminarian in a simple dark cassock sitting on the ground, resting his back against the warm stone wall of a small chapel at golden hour, tired after a day of cleaning, a broom and a bucket beside him, his head tilted up with quiet joy, seen from the side at a distance with no facial detail; soft light falls on the chapel wall and an arched wooden door, a feeling of being at home in the house of God. Delicate traditional watercolor painting on textured paper, soft washes, gentle light, warm earth tones with touches of sky blue, sacred and serene atmosphere, loose brushwork, white paper edges. Horizontal 16:9 composition. No text, no letters, no logos.",
+      "flow": "Proyecto «oct 10 - 18:47» (c49832c1-0be1-4389-b298-978d554f608b), variante 1 de 2, Nano Banana 2.1, 2K reescalado",
+      "fecha": "2026-10-10",
+      "imagen": "voz-del-pastor/img/2026-10-10.webp"
+    },
+    {
       "titulo": "El mejor vigilante para la puerta del corazón",
       "resumen": "Así como el vigilante cuida la puerta y saca a los que hacen daño, Dios, el fuerte, cuida nuestro corazón cuando oramos.",
       "cita": "Lc 11, 15-26",
