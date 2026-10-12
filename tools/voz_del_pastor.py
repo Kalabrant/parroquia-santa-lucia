@@ -6,6 +6,7 @@
     py tools/voz_del_pastor.py                         -> regenera todas las entradas y el índice
     py tools/voz_del_pastor.py publicar 2026-10-06 --imagen C:/ruta/imagen.png
                                                        -> pasa el borrador del día a la web
+    py tools/voz_del_pastor.py redes 2026-10-06        -> tarjeta 4:5 y textos para Instagram/Facebook
 
 Cómo funciona:
   · Cada entrada es una ficha en voz-del-pastor/entradas.json.
@@ -30,7 +31,8 @@ Formato de una ficha:
     "parrafos": ["...", "> cita bíblica destacada", "..."],
     "imagen": "voz-del-pastor/img/2026-10-06.webp",
     "alt": "Descripción de la imagen",
-    "prompt": "El prompt usado en Google Flow"
+    "prompt": "El prompt usado en Google Flow",
+    "instagram": "Versión breve (≤1500 caracteres) para Instagram"
   }
 En los párrafos, *texto* sale en cursiva y un párrafo que empieza por "> "
 se muestra como cita destacada.
@@ -394,6 +396,130 @@ def convertir_imagen(origen, fecha):
     return destino.relative_to(RAIZ).as_posix()
 
 
+# ─────────────────────────────────────────────────────────────
+#  Redes (Instagram y Facebook, vía Metricool)
+# ─────────────────────────────────────────────────────────────
+
+FUENTES = Path("C:/Windows/Fonts")
+AZUL_OSCURO = (2, 62, 138)
+MARRON = (127, 85, 57)
+CREMA = (244, 241, 238)
+CIERRE_IG = "Lee la reflexión completa en La voz del pastor: enlace en la biografía."
+ETIQUETAS_IG = "#LaVozDelPastor #EvangelioDelDía #ParroquiaSantaLucía #Maracaibo"
+
+
+def texto_plano(parrafos):
+    """Los párrafos de la ficha sin marcas: *cursiva* fuera y "> " como «cita»."""
+    salida = []
+    for p in parrafos:
+        p = re.sub(r"\*([^*]+)\*", r"\1", p.strip())
+        if p.startswith("> "):
+            p = "«{}»".format(p[2:].strip().strip("«»\"“”"))
+        salida.append(p)
+    return salida
+
+
+def _partir(draw, texto, fuente, ancho):
+    lineas, actual = [], ""
+    for palabra in texto.split():
+        prueba = (actual + " " + palabra).strip()
+        if draw.textlength(prueba, font=fuente) <= ancho:
+            actual = prueba
+        else:
+            lineas.append(actual)
+            actual = palabra
+    return lineas + [actual]
+
+
+def tarjeta_redes(e):
+    """Imagen 1080x1350 (4:5): la acuarela arriba y el título abajo."""
+    from PIL import Image, ImageDraw, ImageFont, ImageOps
+    W, H, ALTO_FOTO, M = 1080, 1350, 810, 72
+    lienzo = Image.new("RGB", (W, H), CREMA)
+    with Image.open(RAIZ / e.get("imagen", IMAGEN_POR_DEFECTO)) as im:
+        foto = ImageOps.fit(im.convert("RGB"), (W, ALTO_FOTO), Image.LANCZOS)
+    lienzo.paste(foto, (0, 0))
+    d = ImageDraw.Draw(lienzo)
+    d.rectangle((0, ALTO_FOTO, W, ALTO_FOTO + 8), fill=MARRON)
+
+    y = ALTO_FOTO + 56
+    rotulo = ImageFont.truetype(str(FUENTES / "georgiab.ttf"), 30)
+    d.text((M, y), "LA VOZ DEL PASTOR", font=rotulo, fill=MARRON)
+    y += 58
+
+    # El título, lo más grande que quepa en tres líneas
+    for tam in (64, 58, 52, 46, 40):
+        fuente = ImageFont.truetype(str(FUENTES / "georgiab.ttf"), tam)
+        lineas = _partir(d, e["titulo"], fuente, W - 2 * M)
+        if len(lineas) <= 3:
+            break
+    for linea in lineas:
+        d.text((M, y), linea, font=fuente, fill=AZUL_OSCURO)
+        y += int(tam * 1.22)
+
+    # El resumen, en el espacio que quede sobre la firma
+    resumen = ImageFont.truetype(str(FUENTES / "georgiai.ttf"), 34)
+    y += 18
+    caben = max(0, (H - 72 - 30 - 40 - y) // 46)
+    lineas = _partir(d, e.get("resumen", ""), resumen, W - 2 * M)
+    if len(lineas) > caben:
+        lineas = lineas[:caben]
+        if lineas:
+            lineas[-1] = lineas[-1].rstrip(" ,.;:") + "…"
+    for linea in lineas:
+        d.text((M, y), linea, font=resumen, fill=(80, 80, 80))
+        y += 46
+
+    pie =ImageFont.truetype(str(FUENTES / "georgiai.ttf"), 30)
+    datos = FIRMA + " · " + fecha_larga(e["fecha"], con_dia=False)
+    if e.get("cita"):
+        datos += " · " + e["cita"]
+    d.text((M, H - 72 - 30), datos, font=pie, fill=MARRON)
+
+    destino = IMG / "{}-redes.jpg".format(e["fecha"])
+    lienzo.save(destino, "JPEG", quality=88, optimize=True, progressive=True)
+    return destino
+
+
+def redes(fecha):
+    """Prepara lo que la tarea programada envía a Metricool: la tarjeta 4:5
+    (se sube con la entrada) y voz-del-pastor/borradores/AAAA-MM-DD-redes.json
+    con los textos de Facebook (completo) e Instagram (versión breve)."""
+    cfg = sinc.cargar_json(sinc.TOOLS / "config.json")
+    e = next((x for x in cargar_entradas() if x["fecha"] == fecha), None)
+    if not e:
+        sys.exit("No hay entrada publicada del {}".format(fecha))
+    url = url_entrada(cfg, e)
+
+    breve = e.get("instagram", "").strip()
+    if not breve:
+        sys.exit("A la ficha del {} le falta «instagram» (la versión breve)".format(fecha))
+
+    encabezado = "{}\n{}{}".format(e["titulo"], fecha_larga(fecha),
+                                   " · " + e["cita"] if e.get("cita") else "")
+    facebook = "\n\n".join([encabezado] + texto_plano(e["parrafos"]) +
+                           [FIRMA + "\n" + CARGO, "Léela también en la web: " + url])
+    instagram = "\n\n".join([e["titulo"], breve, "— " + FIRMA, CIERRE_IG, ETIQUETAS_IG])
+    if len(instagram) > 2200:
+        sys.exit("El texto de Instagram tiene {} caracteres (máximo 2200)".format(len(instagram)))
+
+    tarjeta = tarjeta_redes(e)
+    datos = {
+        "fecha": fecha,
+        "imagen_local": str(tarjeta),
+        "imagen_url": cfg["sitio"]["dominio"] + "/" + tarjeta.relative_to(RAIZ).as_posix(),
+        "alt": e.get("alt", ""),
+        "facebook": facebook,
+        "instagram": instagram,
+    }
+    BORRADORES.mkdir(parents=True, exist_ok=True)
+    salida = BORRADORES / "{}-redes.json".format(fecha)
+    salida.write_text(json.dumps(datos, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print("Redes del {}: {} · Instagram {} caracteres · Facebook {} caracteres".format(
+        fecha, tarjeta.name, len(instagram), len(facebook)))
+    print(salida)
+
+
 def publicar(fecha, origen_imagen=None):
     borrador = BORRADORES / "{}.json".format(fecha)
     if not borrador.exists():
@@ -426,6 +552,11 @@ def main():
         # sincronizar.py regenera el sitio entero y, al final, estas páginas
         sys.argv = [sys.argv[0]]
         sinc.main()
+        return
+    if args and args[0] == "redes":
+        if len(args) < 2:
+            sys.exit("Uso: py tools/voz_del_pastor.py redes AAAA-MM-DD")
+        redes(args[1])
         return
 
     total, escritas = generar()
