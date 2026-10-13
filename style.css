@@ -2758,6 +2758,15 @@ nav:not(.nav-principal):not(.migas) .logo a { display: flex; align-items: center
 #has-visto { display: flex; flex-direction: column; }
 .seccion-has-visto h2 { margin-bottom: var(--e6); }
 
+/* La voz del pastor: misma tarjeta, con la homilía más reciente */
+.seccion-voz-portada { padding-bottom: 0; }
+.seccion-voz-portada h2 { margin-bottom: var(--e6); }
+.voz-portada-fecha {
+    display: block; margin-bottom: var(--e2);
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em;
+    color: var(--texto-suave);
+}
+
 .hv-entra { animation: hvAparecer 0.35s ease both; }
 @keyframes hvAparecer {
     from { opacity: 0; transform: translateY(6px); }

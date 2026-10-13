@@ -326,6 +326,33 @@ def lista_indice(entradas):
     return "\n".join(partes)
 
 
+def tarjeta_portada(entradas):
+    """Tarjeta de index.html con la homilía más reciente (antes de «¿Has visto…?»)."""
+    if not entradas:
+        return ""
+    e = entradas[0]
+    img = e.get("imagen") or IMAGEN_POR_DEFECTO
+    fl = fecha_larga(e["fecha"])
+    return (
+        '<section class="contenedor seccion-voz-portada" id="voz-portada">\n'
+        '    <h2>La voz del pastor</h2>\n'
+        '    <a class="has-visto-tarjeta" href="voz-del-pastor/{f}.html">\n'
+        '        <div class="hv-img">\n'
+        '            <img src="{img}" alt="" width="1600" height="900" loading="lazy" decoding="async">\n'
+        '        </div>\n'
+        '        <div class="hv-cuerpo">\n'
+        '            <small class="voz-portada-fecha">Homilía del {fl}{cita}</small>\n'
+        '            <h3>{t}</h3>\n'
+        '            <p class="hv-desc">{r}</p>\n'
+        '            <span class="hv-cta">Leer la homilía &rarr;</span>\n'
+        '        </div>\n'
+        '    </a>\n'
+        '</section>'
+    ).format(f=e["fecha"], img=esc(img), fl=fl[0].lower() + fl[1:],
+             cita=(" · " + esc(e["cita"])) if e.get("cita") else "",
+             t=esc(e["titulo"]), r=esc(e["resumen"]))
+
+
 # ─────────────────────────────────────────────────────────────
 #  Generación y publicación
 # ─────────────────────────────────────────────────────────────
@@ -361,6 +388,13 @@ def generar(cfg=None, paginas=None, nav_tpl=None, pie_tpl=None):
         html2, ok = sinc.reemplazar_bloque(html, "voz-entradas", lista_indice(entradas))
         if ok and html2 != html:
             indice.write_text(html2, encoding="utf-8", newline="\n")
+
+    portada = RAIZ / "index.html"
+    if portada.exists():
+        html = portada.read_text(encoding="utf-8")
+        html2, ok = sinc.reemplazar_bloque(html, "voz-portada", tarjeta_portada(entradas))
+        if ok and html2 != html:
+            portada.write_text(html2, encoding="utf-8", newline="\n")
 
     # sitemap: sincronizar.py lo regenera sin las entradas; se añaden aquí
     sitemap = RAIZ / "sitemap.xml"
