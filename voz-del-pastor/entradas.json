@@ -2,6 +2,26 @@
   "_comentario": "Entradas de La voz del pastor. Tras editar, ejecuta 'py tools/sincronizar.py'.",
   "entradas": [
     {
+      "titulo": "El niño de las delicias de Dios",
+      "resumen": "El salmo llama delicia a los mandatos del Señor, y en hebreo delicia es también juego. Esta vida corta es jugar a hacer feliz al Padre.",
+      "cita": "Lc 11, 37-41",
+      "parrafos": [
+        "Hermanos, bendecimos al Señor por esta Palabra tan sabrosa que nos regala en este martes. A mí me llamó la atención un versículo del hermosísimo Salmo 118, el salmo que alaba los mandamientos del Señor. Dice así: «Serán mi delicia tus mandatos, que tanto amo» (Sal 119 [118], 47).",
+        "Delicia es una palabra que me ha gustado. En hebreo se dice *shaashuím*, y significa delicia, deleite, pero también juego. Esto es muy bonito, porque jugar es algo tan propio del ser humano, sobre todo del niño, y me hizo reflexionar.",
+        "Cuentan que santo Domingo Savio, siendo niño, estaba jugando, y alguien le preguntó: «Si supieras que vas a morir en los próximos cinco minutos, ¿qué harías?». Y él respondió con mucha sabiduría: «Seguir jugando». Es decir, seguir haciendo la voluntad de Dios, que en ese momento, para él, era jugar.",
+        "Esa palabra me llevó al libro de los Proverbios, donde la Sabiduría dice delante de Dios: «Yo era su delicia, jugando todo el tiempo en su presencia» (Prov 8, 30). Otra vez aparece el juego.",
+        "Y esto me gusta mucho, porque en este mundo, en esta vida, lo que estamos es jugando, en el sentido de que la vida es muy corta. Yo la comparo con un niño que juega en el parque mientras su padre lo mira y se alegra mirándolo. El niño juega sabiendo que llegará el momento en que su padre lo recoja y vuelvan a casa.",
+        "Eso es básicamente nuestra vida. Yo creo que no hay que tomársela con tanto drama ni tan en serio, porque es muy cortita. Aquí estamos jugando a hacer la voluntad del Padre, o a intentarlo, sobre todo para que Él esté feliz. Y luego vendrá la vida verdadera, que es el paraíso, el cielo. Como me decía hoy un amigo, la vida cristiana no tiene sentido si el cielo no existe, porque el cielo es el que nos recuerda qué es lo verdadero, qué es lo que viene.",
+        "Proverbios me llevó a su vez a una bellísima cita de Jeremías, donde Dios llama a Israel, a Efraín, *yéled shaashuím* (Jer 31, 20), es decir, el niño de mis delicias.",
+        "Este término me encantó, porque al final nosotros somos eso: unos niños que estamos en este mundo para hacer feliz a Dios, para que Él nos mire lleno de ternura y nos diga: «Tú eres mi niño». Así que sigamos haciendo lo que tenemos que hacer, sigamos cumpliendo con fidelidad la voluntad de Dios en lo que nos toca, pero recordando que somos niños de Dios y que estamos jugando en esta vida hasta que llegue la verdadera, que es la eterna. Amén."
+      ],
+      "alt": "Acuarela de un niño jugando en un parque al atardecer mientras su padre lo contempla sonriente desde un banco.",
+      "prompt": "A delicate traditional watercolor painting on textured paper, soft washes, gentle light, warm earth tones with touches of sky blue, sacred and serene atmosphere, loose brushwork, white paper edges. A small child joyfully playing in a sunlit park with a ball among trees and grass, while his father sits on a bench nearby watching him tenderly, figures seen from a distance with no detailed faces, golden late afternoon light, a soft path leading toward a warm glowing home in the distance, horizontal 16:9 composition. No text, no letters, no logos.",
+      "flow": "Proyecto «oct 13 - 12:47» (eacd904c), variante 1 de 2, descargada 2K reescalado",
+      "fecha": "2026-10-13",
+      "imagen": "voz-del-pastor/img/2026-10-13.webp"
+    },
+    {
       "titulo": "El Señor arrancará el velo",
       "resumen": "El velo de la novia, el del luto y el de Moisés me ayudan a entender la promesa de Isaías: Dios quitará el velo que nos cubre.",
       "cita": "Mt 22, 1-14",
