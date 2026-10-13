@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-10-12",
+ "actualizado": "2026-10-13",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-10-12",
-   "diaLiturgico": "Lunes de la 28a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 11,29-32.",
-   "texto": "Al ver Jesús que la multitud se apretujaba, comenzó a decir: \"Esta es una generación malvada. Pide un signo y no le será dado otro que el de Jonás.\nAsí como Jonás fue un signo para los ninivitas, también el Hijo del hombre lo será para esta generación.\nEl día del Juicio, la Reina del Sur se levantará contra los hombres de esta generación y los condenará, porque ella vino de los confines de la tierra para escuchar la sabiduría de Salomón y aquí hay alguien que es más que Salomón.\nEl día del Juicio, los hombres de Nínive se levantarán contra esta generación y la condenarán, porque ellos se convirtieron por la predicación de Jonás y aquí hay alguien que es más que Jonás.\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Carta de San Pablo a los Gálatas 4,22-24.26-27.31.5,1"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 113(112),1-2.3-4.5a.6-7"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 11,29-32"
-    }
-   ]
-  },
   {
    "fecha": "2026-10-13",
    "diaLiturgico": "Martes de la 28a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Mateo 22,15-21"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-10-19",
+   "diaLiturgico": "Lunes de la 29a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 12,13-21.",
+   "texto": "En aquel tiempo:\nUno de la multitud le dijo: \"Maestro, dile a mi hermano que comparta conmigo la herencia\".\nJesús le respondió: \"Amigo, ¿quién me ha constituido juez o árbitro entre ustedes?\".\nDespués les dijo: \"Cuídense de toda avaricia, porque aún en medio de la abundancia, la vida de un hombre no está asegurada por sus riquezas\".\nLes dijo entonces una parábola: \"Había un hombre rico, cuyas tierras habían producido mucho,\ny se preguntaba a sí mismo: '¿Qué voy a hacer? No tengo dónde guardar mi cosecha'.\nDespués pensó: 'Voy a hacer esto: demoleré mis graneros, construiré otros más grandes y amontonaré allí todo mi trigo y mis bienes,\ny diré a mi alma: Alma mía, tienes bienes almacenados para muchos años; descansa, come, bebe y date buena vida'.\nPero Dios le dijo: 'Insensato, esta misma noche vas a morir. ¿Y para quién será lo que has amontonado?'.\nEsto es lo que sucede al que acumula riquezas para sí, y no es rico a los ojos de Dios\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Carta de San Pablo a los Efesios 2,1-10"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 100(99),2.3.4.5"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 12,13-21"
     }
    ]
   }
