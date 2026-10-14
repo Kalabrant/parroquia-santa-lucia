@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-10-13",
+ "actualizado": "2026-10-14",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-10-13",
-   "diaLiturgico": "Martes de la 28a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 11,37-41.",
-   "texto": "Cuando terminó de hablar, un fariseo lo invitó a cenar a su casa. Jesús entró y se sentó a la mesa.\nEl fariseo se extrañó de que no se lavara antes de comer.\nPero el Señor le dijo: \"¡Así son ustedes, los fariseos! Purifican por fuera la copa y el plato, y por dentro están llenos de voracidad y perfidia.\n¡Insensatos! El que hizo lo de afuera, ¿no hizo también lo de adentro?\nDen más bien como limosna lo que tienen y todo será puro.\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Carta de San Pablo a los Gálatas 5,1-6"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 119(118),41.43.44.45.47.48"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 11,37-41"
-    }
-   ]
-  },
   {
    "fecha": "2026-10-14",
    "diaLiturgico": "Miércoles de la 28a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 12,13-21"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-10-20",
+   "diaLiturgico": "Martes de la 29a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 12,35-38.",
+   "texto": "Jesús dijo a sus discípulos: \"Estén preparados, ceñidos y con las lámparas encendidas.\nSean como los hombres que esperan el regreso de su señor, que fue a una boda, para abrirle apenas llegue y llame a la puerta.\n¡Felices los servidores a quienes el señor encuentra velando a su llegada! Les aseguro que él mismo recogerá su túnica, los hará sentar a la mesa y se pondrá a servirlo.\n¡Felices ellos, si el señor llega a medianoche o antes del alba y los encuentra así!\"\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Carta de San Pablo a los Efesios 2,12-22"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 85(84),9ab-10.11-12.13-14"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 12,35-38"
     }
    ]
   }
