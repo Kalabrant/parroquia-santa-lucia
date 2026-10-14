@@ -2,6 +2,27 @@
   "_comentario": "Entradas de La voz del pastor. Tras editar, ejecuta 'py tools/sincronizar.py'.",
   "entradas": [
     {
+      "titulo": "Rumiar la Palabra día y noche",
+      "resumen": "Como la vaca que rumia sin prisa, estamos llamados a repetir la Palabra de Dios en el corazón hasta que suelte todo su jugo.",
+      "cita": "Lc 11, 42-46",
+      "parrafos": [
+        "Hermanos, bendecimos al Señor que nos regala esta palabra, que siempre es sabrosa y bonita, y en la que podemos profundizar. A mí me ha llamado la atención el salmo de hoy, que es el primero del libro de los Salmos. En la traducción que encontré dice que es dichoso quien se recrea en la ley del Señor, susurrando su ley noche y día (Sal 1, 1-2). La palabra *susurrar* en hebreo es *hagá*, que significa susurrar, meditar y también rumiar.",
+        "En la granja de mi papá, hace muchos años, había vacas. No sé si ustedes se han dado cuenta de que las vacas son animales pacíficos, y ya les he dicho otras veces que son rumiantes. ¿Qué es rumiar? La vaca está tranquilita, masticando todo el tiempo, para sacarle todo el jugo al alimento y poder nutrirse. Eso, mis queridos hermanos, es lo que estamos llamados a hacer con la palabra de Dios. San Macario recordaba que, cuando era pequeño, las mujeres de su ciudad masticaban hojas de betel, una especie de planta dulce, y las masticaban y las masticaban para sacarles el jugo. Eso es lo que nosotros estamos llamados a hacer con la Palabra.",
+        "Encontré también en la Sagrada Escritura unos versículos que me gustaron mucho. El Señor le dice a Josué: «Que el libro de esta ley no se aparte de tus labios; medítalo día y noche» (Jos 1, 8). A Ezequiel le dice: «Hijo de hombre, come este rollo», y el profeta cuenta: «Lo comí y me supo dulce como la miel» (Ez 3, 1-3). Y de la Virgen dice el Evangelio:",
+        "> María, por su parte, guardaba todas estas cosas y las meditaba en su corazón (Lc 2, 19).",
+        "Todo cristiano está llamado a meditar la palabra de Dios, como Josué, como Ezequiel, como María. Como les he dicho muchas veces, esta palabra no se nos debe caer de las manos y debe estar siempre en nuestros labios, porque quien medita la palabra del Señor se acerca cada vez más a Dios y a su sabiduría.",
+        "«Padre, pero es que yo no sé cómo meditar la palabra de Dios». Te doy un método muy sencillo. Toma la palabra del día, por ejemplo el Evangelio de la Misa, que puedes encontrar en *El Pan de la Palabra* o en internet. Toma tu Biblia y ve leyendo esa palabra poco a poco, y cuando una palabra o una frase te llame la atención, empieza a repetirla en tu corazón a lo largo del día. Cuando la repites, esa palabra va soltando su jugo.",
+        "Así me pasó a mí con este salmo. Me puse a meditar: «medita su ley día y noche, medita su ley día y noche». Y sentía que el Señor me decía que estoy llamado a repetir continuamente su palabra, porque esa palabra le da a mi alma la presencia del Señor.",
+        "Hermanos, todos estamos llamados a meditar cada día la palabra de Dios, porque bien dicen los santos, como san Jerónimo, que quien desconoce la Escritura desconoce a Cristo. Amén."
+      ],
+      "instagram": "El salmo de hoy dice que es dichoso quien susurra la ley del Señor noche y día (Sal 1, 1-2). En hebreo, esa palabra significa susurrar, meditar y también rumiar.\n\nEn la granja de mi papá había vacas. Las vacas son animales pacíficos y rumiantes: están tranquilitas, masticando todo el tiempo, para sacarle todo el jugo al alimento y nutrirse. Eso es lo que estamos llamados a hacer con la palabra de Dios.\n\nAsí lo hicieron Josué, a quien el Señor le pidió meditar su ley día y noche (Jos 1, 8); Ezequiel, que comió el rollo y le supo dulce como la miel (Ez 3, 1-3); y María, que guardaba todas estas cosas y las meditaba en su corazón (Lc 2, 19).\n\nUn método sencillo: toma el Evangelio del día, léelo poco a poco en tu Biblia, y cuando una frase te llame la atención, repítela en tu corazón a lo largo del día. Esa palabra va soltando su jugo, y nos da la presencia del Señor.",
+      "alt": "Acuarela de una vaca echada en un potrero verde junto a una cerca de madera, con una Biblia abierta sobre un banco rústico en primer plano y palmeras al fondo.",
+      "prompt": "A peaceful brown and white cow lying calmly in a green pasture on a small rural farm, slowly chewing, beside a weathered wooden fence; in the foreground an open Bible resting on a rustic wooden bench, its pages catching the early morning light; distant hills, a few palm trees, soft clouds in a pale sky. Delicate traditional watercolor painting on textured paper, soft washes, gentle light, warm earth tones with touches of sky blue, sacred and serene atmosphere, loose brushwork, white paper edges. Horizontal 16:9 composition. No text, no letters, no words, no logos.",
+      "flow": "Proyecto «oct 14 - 18:42» (5f24dfdb), variante 1 de 2, descargada 2K reescalado",
+      "fecha": "2026-10-14",
+      "imagen": "voz-del-pastor/img/2026-10-14.webp"
+    },
+    {
       "titulo": "El niño de las delicias de Dios",
       "resumen": "El salmo llama delicia a los mandatos del Señor, y en hebreo delicia es también juego. Esta vida corta es jugar a hacer feliz al Padre.",
       "cita": "Lc 11, 37-41",
