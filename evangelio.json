@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-10-14",
+ "actualizado": "2026-10-15",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-10-14",
-   "diaLiturgico": "Miércoles de la 28a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 11,42-46.",
-   "texto": "«¡Ay de ustedes, fariseos, que pagan el impuesto de la menta, de la ruda y de todas las legumbres, y descuidan la justicia y el amor de Dios! Hay que practicar esto, sin descuidar aquello.\n¡Ay de ustedes, fariseos, porque les gusta ocupar el primer asiento en las sinagogas y ser saludados en las plazas!\n¡Ay de ustedes, porque son como esos sepulcros que no se ven y sobre los cuales se camina sin saber!\".\nUn doctor de la Ley tomó entonces la palabra y dijo: «Maestro, cuando hablas así, nos insultas también a nosotros».\nEl le respondió: «¡Ay de ustedes también, porque imponen a los demás cargas insoportables, pero ustedes no las tocan ni siquiera con un dedo!»\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Carta de San Pablo a los Gálatas 5,18-25"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 1,1-2.3.4.6"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 11,42-46"
-    }
-   ]
-  },
   {
    "fecha": "2026-10-15",
    "diaLiturgico": "Jueves de la 28a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 12,35-38"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-10-21",
+   "diaLiturgico": "Miércoles de la 29a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 12,39-48.",
+   "texto": "Jesús dijo a sus discípulos: \"Entiéndanlo bien: si el dueño de casa supiera a qué hora va llegar el ladrón, no dejaría perforar las paredes de su casa.\nUstedes también estén preparados, porque el Hijo del hombre llegará a la hora menos pensada\".\nPedro preguntó entonces: \"Señor, ¿esta parábola la dices para nosotros o para todos?\".\nEl Señor le dijo: \"¿Cuál es el administrador fiel y previsor, a quien el Señor pondrá al frente de su personal para distribuirle la ración de trigo en el momento oportuno?\n¡Feliz aquel a quien su señor, al llegar, encuentre ocupado en este trabajo!\nLes aseguro que lo hará administrador de todos sus bienes.\nPero si este servidor piensa: 'Mi señor tardará en llegar', y se dedica a golpear a los servidores y a las sirvientas, y se pone a comer, a beber y a emborracharse,\nsu señor llegará el día y la hora menos pensada, lo castigará y le hará correr la misma suerte que los infieles.\nEl servidor que, conociendo la voluntad de su señor, no tuvo las cosas preparadas y no obró conforme a lo que él había dispuesto, recibirá un castigo severo.\nPero aquel que sin saberlo, se hizo también culpable, será castigado menos severamente. Al que se le dio mucho, se le pedirá mucho; y al que se le confió mucho, se le reclamará mucho más.\"\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Carta de San Pablo a los Efesios 3,2-12"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Libro de Isaías 12,2-3.4bcd.5-6"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 12,39-48"
     }
    ]
   }
