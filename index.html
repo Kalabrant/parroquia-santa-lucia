@@ -406,8 +406,19 @@
         </p>
     </div>
 
-    <!-- Píxel de seguimiento de Metricool (eager: si fuera lazy no cargaría sin hacer scroll hasta el pie) -->
-    <img src="https://tracker.metricool.com/c3po.jpg?hash=687c019f54e7cb13c1443e8d2d58f416" alt="" width="1" height="1" loading="eager" aria-hidden="true" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none" decoding="async">
+    <!-- Seguimiento de Metricool: el script envía la página exacta y la procedencia; el píxel es solo para navegadores sin JavaScript -->
+    <script>
+    (function () {
+        var s = document.createElement("script");
+        s.src = "https://tracker.metricool.com/resources/be.js";
+        s.async = true;
+        s.onload = function () {
+            if (window.beTracker) { beTracker.t({ hash: "687c019f54e7cb13c1443e8d2d58f416" }); }
+        };
+        document.head.appendChild(s);
+    })();
+    </script>
+    <noscript><img src="https://tracker.metricool.com/c3po.jpg?hash=687c019f54e7cb13c1443e8d2d58f416" alt="" width="1" height="1" loading="eager" aria-hidden="true" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none" decoding="async"></noscript>
 </footer>
 <!--/#footer-->
 
