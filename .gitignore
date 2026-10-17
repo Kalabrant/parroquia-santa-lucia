@@ -32,3 +32,11 @@ video-parroquia/trabajo/
 
 # Borradores de La voz del pastor (se publican con tools/voz_del_pastor.py)
 voz-del-pastor/borradores/
+
+# Caché de Python
+__pycache__/
+
+# Material de trabajo y archivo interno (minutas, fotos en bruto): no se publica
+Aggiornamento/
+RCC/
+Fotos Proyecto Palabra/
