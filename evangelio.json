@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-10-17",
+ "actualizado": "2026-10-18",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-10-17",
-   "diaLiturgico": "Sábado de la 28a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 12,8-12.",
-   "texto": "Les aseguro que aquel que me reconozca abiertamente delante de los hombres, el Hijo del hombre lo reconocerá ante los ángeles de Dios.\nPero el que no me reconozca delante de los hombres, no será reconocido ante los ángeles de Dios.\nAl que diga una palabra contra el Hijo del hombre, se le perdonará; pero al que blasfeme contra el Espíritu Santo, no se le perdonará.\nCuando los lleven ante las sinagogas, ante los magistrados y las autoridades, no se preocupen de cómo se van a defender o qué van a decir,\nporque el Espíritu Santo les enseñará en ese momento lo que deban decir\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Carta de San Pablo a los Efesios 1,15-23"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 8,2-3a.4-5.6-7"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 12,8-12"
-    }
-   ]
-  },
   {
    "fecha": "2026-10-18",
    "diaLiturgico": "29o domingo del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 12,54-59"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-10-24",
+   "diaLiturgico": "Sábado de la 29a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 13,1-9.",
+   "texto": "En ese momento se presentaron unas personas que comentaron a Jesús el caso de aquellos galileos, cuya sangre Pilato mezcló con la de las víctimas de sus sacrificios.\nEl les respondió: \"¿Creen ustedes que esos galileos sufrieron todo esto porque eran más pecadores que los demás?\nLes aseguro que no, y si ustedes no se convierten, todos acabarán de la misma manera.\n¿O creen que las dieciocho personas que murieron cuando se desplomó la torre de Siloé, eran más culpables que los demás habitantes de Jerusalén?\nLes aseguro que no, y si ustedes no se convierten, todos acabarán de la misma manera\".\nLes dijo también esta parábola: \"Un hombre tenía una higuera plantada en su viña. Fue a buscar frutos y no los encontró.\nDijo entonces al viñador: 'Hace tres años que vengo a buscar frutos en esta higuera y no los encuentro. Córtala, ¿para qué malgastar la tierra?'.\nPero él respondió: 'Señor, déjala todavía este año; yo removeré la tierra alrededor de ella y la abonaré.\nPuede ser que así dé frutos en adelante. Si no, la cortarás'\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Carta de San Pablo a los Efesios 4,7-16"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 122(121),1-2.3-4a.4b-5"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 13,1-9"
     }
    ]
   }
