@@ -11,7 +11,7 @@
    antigua y se descarga todo de nuevo.
    ============================================================ */
 
-const VERSION = 'v32';
+const VERSION = 'v33';
 const CACHE = 'santa-lucia-' + VERSION;
 
 /* Lo imprescindible para que la web arranque sin conexión */
@@ -26,6 +26,10 @@ const ESENCIALES = [
     './style.css',
     './js/sitio.js',
     './js/buscador.js',
+    './js/lucia.js',
+    './js/lucia-nucleo.js',
+    './js/lucia-datos.js',
+    './lucia-sprite.png',
     './js/agenda-datos.js',
     './favicon.svg',
     './icon-192.png',
@@ -97,7 +101,9 @@ self.addEventListener('fetch', event => {
                     caches.open(CACHE).then(c => c.put(req, copia));
                 }
                 return resp;
-            }).catch(() => guardada);
+            // Sin conexión: vale la copia precargada aunque no lleve el mismo ?v=N
+            // (así la avatar abre sus datos offline aunque no se hubieran pedido antes).
+            }).catch(() => caches.match(req, { ignoreSearch: true }));
         })
     );
 });

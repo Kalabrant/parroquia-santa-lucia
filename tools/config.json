@@ -1,7 +1,7 @@
 {
   "_comentario": "Fuente única de verdad del sitio. Cambia un dato aquí y ejecuta 'py tools/sincronizar.py' para propagarlo a todas las páginas.",
   "_comentarioVersion": "Sube este número cada vez que cambies style.css o js/*.js. Se añade como ?v=N a esos archivos para que los visitantes que ya tenían la web en caché reciban la versión nueva y no una mezcla rota.",
-  "version": 32,
+  "version": 33,
   "sitio": {
     "nombre": "Parroquia Santa Lucía",
     "nombreLargo": "Parroquia de Santa Lucía",
@@ -45,13 +45,15 @@
     "confesiones": [
       {
         "dias": "Martes a Domingo",
-        "detalle": "Media hora antes de cada Misa"
+        "detalle": "Media hora antes de cada Misa",
+        "minutosAntesDeMisa": 30
       }
     ],
     "despacho": [
       {
         "dias": "Martes a Viernes",
-        "detalle": "2:00 PM – 5:00 PM"
+        "detalle": "2:00 PM – 5:00 PM",
+        "schema": "Tu,We,Th,Fr 14:00-17:00"
       }
     ],
     "nota": "Los horarios pueden variar en Semana Santa, fiestas patronales y solemnidades. Consulta la Agenda Pastoral."

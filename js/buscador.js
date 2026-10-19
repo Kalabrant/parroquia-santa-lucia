@@ -195,13 +195,14 @@
         caja.addEventListener('click', function (e) { if (e.target === caja) cerrar(); });
     }
 
-    function abrir() {
+    /* abrir('texto') abre el panel con la búsqueda ya escrita (lo usa la avatar) */
+    function abrir(consulta) {
         if (!caja) crearPanel();
         ultimoFoco = document.activeElement;
         abierto = true;
         caja.classList.add('visible');
         document.body.classList.add('buscador-abierto');
-        campo.value = '';
+        campo.value = typeof consulta === 'string' ? consulta : '';
         campo.focus();
 
         resumen.textContent = 'Preparando la búsqueda…';
@@ -219,6 +220,10 @@
         document.body.classList.remove('buscador-abierto');
         if (ultimoFoco && ultimoFoco.focus) ultimoFoco.focus();
     }
+
+    /* La avatar de Santa Lucía (js/lucia.js) reutiliza este mismo índice y
+       esta misma puntuación en vez de duplicarlos. */
+    window.BuscadorSitio = { buscar: buscar, abrir: abrir, cargar: cargarIndice };
 
     /* ── Disparadores ───────────────────────────────────── */
     document.addEventListener('click', function (e) {

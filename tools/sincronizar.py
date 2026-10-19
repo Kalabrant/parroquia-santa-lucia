@@ -117,6 +117,7 @@ def construir_head(cfg, pagina, meta, tiene_iconos_fa):
     partes.append('<script>window.__vSitio={};</script>'.format(v))
     partes.append('<script src="js/sitio.js?v={}" defer></script>'.format(v))
     partes.append('<script src="js/buscador.js?v={}" defer></script>'.format(v))
+    partes.append('<script src="js/lucia.js?v={}" defer></script>'.format(v))
     # Datos que el código inline de la página necesita tener ya cargados.
     # Van SIN defer a propósito: con defer se ejecutarían después del
     # <script> del final del body y las variables no existirían aún.
@@ -617,6 +618,128 @@ def generar_descubre(paginas):
     return len(fichas)
 
 
+def generar_lucia(cfg):
+    """Genera js/lucia-datos.js para la avatar de Santa Lucía.
+
+    Junta los textos de tools/lucia.json con los datos reales que necesita
+    (horarios, despacho, dirección, enlaces de WhatsApp ya redactados y las
+    próximas actividades de la agenda). Antes comprueba el archivo: si algo
+    no cuadra, se detiene y dice qué es, para no publicar una avatar rota.
+
+    js/lucia.js lo descarga la primera vez que hace falta, no en cada página.
+    """
+    datos = cargar_json(TOOLS / "lucia.json")
+    plantillas = cfg["whatsappPlantillas"]
+    errores = []
+
+    def unicos(lista, que):
+        vistos = set()
+        for x in lista:
+            if x["id"] in vistos:
+                errores.append("{} repetido: {}".format(que, x["id"]))
+            vistos.add(x["id"])
+        return vistos
+
+    ids_int = unicos(datos["intenciones"], "id de intención")
+    unicos(datos["consejos"], "id de consejo")
+    destinos = ids_int | set(datos["guias"])
+
+    def enlace_ok(url, donde):
+        if url.startswith(("http://", "https://", "{")):
+            return
+        if not (RAIZ / url.split("#")[0]).exists():
+            errores.append("{}: el enlace «{}» no existe".format(donde, url))
+
+    def wa_ok(clave, donde):
+        if clave and clave not in plantillas:
+            errores.append("{}: la clave wa «{}» no está en config.json".format(donde, clave))
+
+    def destino_ok(d, donde):
+        if d not in destinos:
+            errores.append("{}: «{}» no es ninguna guía ni intención".format(donde, d))
+
+    for it in datos["intenciones"]:
+        donde = "intención " + it["id"]
+        if not it.get("claves"):
+            errores.append(donde + ": no tiene claves")
+        if not (it.get("respuesta") or it.get("guia")):
+            errores.append(donde + ": no tiene respuesta ni guía")
+        if it.get("guia") and it["guia"] not in datos["guias"]:
+            errores.append("{}: la guía «{}» no existe".format(donde, it["guia"]))
+        for _, url in it.get("enlaces", []):
+            enlace_ok(url, donde)
+        wa_ok(it.get("wa"), donde)
+
+    for gid, nodo in datos["guias"].items():
+        donde = "guía " + gid
+        if not (nodo.get("opciones") or nodo.get("respuesta")):
+            errores.append(donde + ": no tiene opciones ni respuesta")
+        for _, d in nodo.get("opciones", []):
+            destino_ok(d, donde)
+        for _, url in nodo.get("enlaces", []):
+            enlace_ok(url, donde)
+        wa_ok(nodo.get("wa"), donde)
+
+    for c in datos["consejos"]:
+        donde = "consejo " + c["id"]
+        si = c.get("si", {})
+        for clave in si:
+            if clave not in ("pagina", "dia", "antesDe", "desde", "tiempo", "fecha", "agenda"):
+                errores.append("{}: condición desconocida «{}»".format(donde, clave))
+        paginas_si = si.get("pagina", [])
+        for pag in ([paginas_si] if isinstance(paginas_si, str) else paginas_si):
+            enlace_ok(pag, donde)
+        if c.get("enlace"):
+            enlace_ok(c["enlace"][1], donde)
+        for _, d in c.get("opciones", []):
+            destino_ok(d, donde)
+        wa_ok(c.get("wa"), donde)
+
+    for texto, d, *_ in datos["atajos"]:
+        destino_ok(d, "atajo «{}»".format(texto))
+
+    # Un sinónimo no puede ser a la vez la forma canónica de otro: haría bucle
+    variantes = {v for vs in datos["sinonimos"].values() for v in vs}
+    for canon in datos["sinonimos"]:
+        if canon in variantes:
+            errores.append("sinónimo «{}» es canónico y variante a la vez".format(canon))
+
+    if errores:
+        print("\n!! tools/lucia.json tiene errores; no se genera js/lucia-datos.js:")
+        for e in errores:
+            print("   · " + e)
+        sys.exit(1)
+
+    # Próximas actividades de la agenda (las pasadas se filtran también en el navegador)
+    from datetime import date
+    hoy = date.today().isoformat()
+    agenda_js = (RAIZ / "js" / "agenda-datos.js").read_text(encoding="utf-8")
+    agenda = []
+    for f, t, h in re.findall(r"\{fecha:'([\d-]+)',titulo:'((?:[^'\\]|\\.)*)',hora:'((?:[^'\\]|\\.)*)'", agenda_js):
+        if f >= hoy:
+            agenda.append([f, h.replace("\\'", "'"), t.replace("\\'", "'")])
+
+    h, c = cfg["horarios"], cfg["contacto"]
+    datos.pop("_comentario", None)
+    datos["cfg"] = {
+        "misas": [m["schema"] for m in h["misas"]],
+        "listaMisas": [[m["dias"], m["horas"]] for m in h["misas"]],
+        "nota": h["nota"],
+        "confesionAntes": h["confesiones"][0].get("minutosAntesDeMisa", 30),
+        "despacho": h["despacho"][0]["schema"],
+        "horarioDespacho": "{}, {}".format(h["despacho"][0]["dias"].lower(), h["despacho"][0]["detalle"]),
+        "direccion": "{}, {}".format(c["direccionCalle"], c["direccionCiudad"]),
+        "mapsUrl": c["mapsUrl"],
+    }
+    datos["wa"] = {k: [p["etiqueta"], p["icono"], wa_url(cfg, k)] for k, p in plantillas.items()}
+    datos["agenda"] = agenda
+
+    js = ("/* Generado por tools/sincronizar.py a partir de tools/lucia.json — no editar a mano. */\n"
+          "var LUCIA_DATOS = " + json.dumps(datos, ensure_ascii=False, separators=(",", ":")) + ";\n")
+    (RAIZ / "js" / "lucia-datos.js").write_text(js, encoding="utf-8", newline="\n")
+    return len(datos["intenciones"]), len(datos["consejos"]), len(agenda), len(js)
+
+
 def generar_robots(cfg):
     txt = ("User-agent: *\n"
            "Allow: /\n\n"
@@ -686,6 +809,10 @@ def main():
 
         n_idx, peso = generar_indice_busqueda(paginas)
         print("índice del buscador: {} páginas, {:.0f} KB".format(n_idx, peso / 1024))
+
+        n_int, n_cons, n_ag, peso = generar_lucia(cfg)
+        print("avatar de Santa Lucía: {} intenciones, {} consejos, {} actividades, {:.1f} KB".format(
+            n_int, n_cons, n_ag, peso / 1024))
 
         v_sw = actualizar_version_sw(cfg)
         if v_sw:

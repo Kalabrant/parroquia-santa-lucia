@@ -35,6 +35,8 @@ py tools/sincronizar.py --revisar
 | `sincronizar.py` | El script que lo reparte todo. |
 | `optimizar_imagenes.py` | Reduce el peso de las fotos nuevas. |
 | `actualizar_evangelio.py` | Descarga el Evangelio del día (lo ejecuta GitHub solo). |
+| `lucia.json` | Lo que dice la avatar de Santa Lucía (ver abajo). |
+| `sprite_lucia.py` | Convierte el dibujo de la avatar en `lucia-sprite.png`. |
 | `planificacion_pdf.py` | Genera el PDF de la Planificación Pastoral que se descarga desde la agenda. |
 
 ---
@@ -97,6 +99,37 @@ La portada, la agenda y el buscador se actualizan solos.
 En `config.json`, dentro de `whatsappPlantillas`. Después sincroniza.
 Cualquier enlace con `data-wa="clave"` recibe la URL correcta.
 
+### Cambiar lo que dice la avatar de Santa Lucía
+Todos sus textos están en `lucia.json`: las preguntas que entiende
+(`intenciones`, con sus `claves` y `sinonimos`), las guías paso a paso
+(`guias`), los botones de atajo (`atajos`) y los consejos que da sola
+(`consejos`, con sus condiciones de página, día, hora o tiempo litúrgico).
+Después:
+
+```bash
+py tools/sincronizar.py
+```
+
+El script comprueba el archivo (ids repetidos, enlaces a páginas que no
+existen, claves de WhatsApp que no están en `config.json`) y, si algo falla,
+se detiene y dice qué es. Los horarios, el despacho y la agenda los toma
+solos de `config.json` y `js/agenda-datos.js`: no hace falta copiarlos.
+Para probar que responde igual que antes:
+
+```bash
+node tools/test_lucia.mjs
+```
+
+Habla como guía de la web, nunca como si la santa hablara desde el cielo.
+El párroco debe dar el visto bueno a los textos antes de publicar.
+
+Si cambia el dibujo, se rehace la tira de fotogramas desde la imagen del
+generador (fondo magenta, 2×2 poses):
+
+```bash
+py tools/sprite_lucia.py tools/lucia-dibujo.webp --poses 4
+```
+
 ### Subir fotos nuevas
 Déjalas en la raíz como `.webp` y ejecuta:
 
@@ -124,5 +157,6 @@ versión antigua guardada en su navegador, o una mezcla rota de ambas.
 - `sitemap.xml`
 - `robots.txt`
 - `js/indice-busqueda.js`
+- `js/lucia-datos.js`
 - `evangelio.json`
 - La línea `VERSION` de `sw.js`

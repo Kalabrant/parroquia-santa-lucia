@@ -2957,3 +2957,164 @@ html.video-capa-abierta, html.video-capa-abierta body { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
     .voz-tarjeta, .voz-btn { transition: none; }
 }
+
+/* ==========================================================================
+   AVATAR DE SANTA LUCÍA
+   Figura pixelada que ayuda a encontrar lo que se busca (js/lucia.js).
+   Tres capas para que no se mezclen las transformaciones:
+   .lucia-flip (volteo, sin transición) › .lucia-face (inclinación suave)
+   › .lucia-mood (animaciones por estado). Los saltos van en .lucia-fig.
+
+   Nitidez: la respiración y el salto NO usan transform. Un scale() o un
+   translate() animados hacen que el navegador remuestree la imagen con
+   suavizado y el pixel art se ve borroso. Se animan el tamaño del dibujo
+   (--respira, que salta de 0 a 1 sin pasos intermedios) y la propiedad top,
+   que se repintan respetando image-rendering: pixelated. js/lucia.js ajusta
+   --lado para que cada píxel del dibujo ocupe píxeles de pantalla enteros.
+   ========================================================================== */
+.lucia-dock {
+    --lado: 128px; --n: 4; --f: 0;
+    position: fixed; z-index: 250; right: 16px; bottom: 16px;
+    display: flex; flex-direction: column; align-items: center;
+    font-family: var(--fuente-texto);
+}
+body.buscador-abierto .lucia-dock, body.menu-abierto .lucia-dock { display: none; }
+
+.lucia-fig {
+    position: relative; top: 0; width: var(--lado); height: var(--lado);
+    cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent; border-radius: 12px;
+}
+.lucia-fig:focus-visible { outline: 3px solid var(--color-azul-esencial); outline-offset: 2px; }
+.lucia-arrastra .lucia-fig { cursor: grabbing; }
+.lucia-flip, .lucia-face, .lucia-mood { width: 100%; height: 100%; transform-origin: 50% 100%; }
+.lucia-face { transition: transform 0.35s ease; }
+.lucia-mood { --respira: 0; position: relative; animation: lucia-respira 3.6s step-end infinite; }
+.lucia-orando .lucia-mood { animation-duration: 6.5s; }
+/* Respira: 2 % más alta y 3 % más estrecha, apoyada en los pies */
+.lucia-img {
+    position: absolute; bottom: 0;
+    left: calc(var(--lado) * 0.015 * var(--respira));
+    width: calc(var(--lado) * (1 - 0.03 * var(--respira)));
+    height: calc(var(--lado) * (1 + 0.02 * var(--respira)));
+    background: var(--sprite) no-repeat;
+    background-size: calc(var(--n) * 100%) 100%;
+    background-position: calc(var(--f) * 100% / max(var(--n) - 1, 1)) 0;
+    image-rendering: pixelated;
+}
+/* El brillo cálido de la lámpara, detrás de la figura */
+.lucia-luz {
+    position: absolute; left: 50%; top: 48%; width: 80%; height: 60%;
+    transform: translate(-50%, -50%); border-radius: 50%; pointer-events: none;
+    background: radial-gradient(circle, rgba(255, 210, 110, 0.9), rgba(255, 190, 80, 0) 70%);
+    opacity: 0.25; animation: lucia-brillo 4s steps(8) infinite alternate;
+}
+.lucia-saluda .lucia-luz { animation: none; opacity: 0.55; }
+.lucia-fiesta .lucia-luz { animation-name: lucia-brillo-fiesta; }
+.lucia-salta { animation: lucia-salto 0.45s steps(5); }
+.lucia-chispa {
+    position: absolute; top: 28%; z-index: 1; pointer-events: none;
+    color: #f2c14e; font-size: 14px; text-shadow: 0 0 6px rgba(255, 200, 80, 0.8);
+    animation: lucia-sube 2.2s steps(11) forwards;
+}
+@keyframes lucia-respira { 0%, 100% { --respira: 0; } 50% { --respira: 1; } }
+@keyframes lucia-brillo { from { opacity: 0.25; } to { opacity: 0.4; } }
+@keyframes lucia-brillo-fiesta { from { opacity: 0.45; } to { opacity: 0.7; } }
+@keyframes lucia-salto { 0%, 100% { top: 0; } 40% { top: -6px; } }
+@keyframes lucia-sube {
+    from { transform: translateY(0); opacity: 0; }
+    15% { opacity: 1; }
+    to { transform: translateY(-64px); opacity: 0; }
+}
+
+/* Botonera y versión plegada */
+.lucia-botones {
+    display: flex; gap: 2px; margin-top: 2px; padding: 2px;
+    background: rgba(255, 255, 255, 0.94); border: 1px solid var(--linea);
+    border-radius: var(--radio-pastilla); box-shadow: var(--sombra-s);
+}
+.lucia-botones button {
+    width: 30px; height: 30px; padding: 0; border: 0; border-radius: 50%;
+    background: transparent; font-size: 15px; line-height: 1; cursor: pointer;
+}
+.lucia-botones button:hover { background: var(--azul-tenue); }
+.lucia-botones button:focus-visible, .lucia-mini:focus-visible { outline: 3px solid var(--color-azul-esencial); outline-offset: 1px; }
+.lucia-mini {
+    display: none; place-items: center; width: 50px; height: 50px; padding: 0;
+    background: #fff; border: 2px solid #f2c14e; border-radius: 50%;
+    box-shadow: var(--sombra-m); cursor: pointer;
+}
+.lucia-mini span {
+    display: block; width: 32px; height: 32px;
+    background: var(--sprite) no-repeat 0 0; background-size: calc(var(--n) * 32px) 32px;
+    image-rendering: pixelated;
+}
+.lucia-plegada .lucia-fig, .lucia-plegada .lucia-botones, .lucia-plegada .lucia-bocadillo { display: none; }
+.lucia-plegada .lucia-mini { display: grid; }
+
+/* El bocadillo: flotante, js/lucia.js lo coloca dentro de la pantalla */
+.lucia-bocadillo {
+    position: absolute; width: 320px; overflow: auto; overscroll-behavior: contain;
+    padding: 14px 16px; text-align: left; font-size: 0.9rem; line-height: 1.45;
+    background: #fff; color: var(--color-texto);
+    border: 1px solid var(--linea); border-radius: var(--radio-m); box-shadow: var(--sombra-l);
+}
+.lucia-bocadillo[hidden] { display: none; }
+.lucia-x {
+    position: absolute; top: 6px; right: 6px; width: 32px; height: 32px;
+    border: 0; border-radius: 50%; background: transparent; color: var(--color-texto);
+    font-size: 1.4rem; line-height: 1; cursor: pointer;
+}
+.lucia-x:hover { background: var(--azul-tenue); }
+.lucia-cuerpo p { margin: 0 0 8px; }
+.lucia-cuerpo .lucia-titulo { margin: 0 30px 10px 0; font-family: var(--fuente-titulos); font-size: 1.05rem; font-weight: 700; color: var(--color-azul-oscuro); }
+.lucia-pregunta { font-weight: 700; color: var(--color-azul-oscuro); }
+.lucia-form { display: flex; gap: 6px; margin-bottom: 10px; }
+.lucia-form input {
+    flex: 1; min-width: 0; padding: 8px 12px; font: 16px var(--fuente-texto);
+    border: 1px solid #cfd8e3; border-radius: var(--radio-pastilla);
+}
+.lucia-form input:focus { outline: 2px solid var(--color-azul-esencial); outline-offset: 0; }
+.lucia-form button {
+    flex: none; width: 40px; height: 40px; border: 0; border-radius: 50%;
+    background: var(--color-azul-esencial); color: #fff; font-size: 1.1rem; cursor: pointer;
+}
+.lucia-opciones { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 8px; }
+.lucia-opciones button {
+    min-height: 34px; padding: 6px 12px; cursor: pointer;
+    background: var(--azul-tenue); color: var(--color-azul-oscuro);
+    border: 1px solid #cfe3f1; border-radius: var(--radio-pastilla);
+    font: 600 0.82rem var(--fuente-texto);
+}
+.lucia-opciones button:hover { background: #d6eaf7; }
+.lucia-enlaces { display: flex; flex-direction: column; gap: 4px; margin: 6px 0; }
+.lucia-enlace { color: var(--color-azul-esencial); font-weight: 600; text-decoration: none; }
+.lucia-enlace:hover { text-decoration: underline; }
+.lucia-wa {
+    display: block; margin: 8px 0; padding: 9px 12px; text-align: center; text-decoration: none;
+    background: #1fa855; color: #fff; font-weight: 700; border-radius: var(--radio-pastilla);
+}
+.lucia-wa:hover { filter: brightness(1.08); }
+.lucia-wa-urgente { background: #b3261e; }
+.lucia-resultados { list-style: none; margin: 0 0 6px; padding: 0; }
+.lucia-resultados a { display: block; padding: 6px 8px; border-radius: var(--radio-s); color: inherit; text-decoration: none; }
+.lucia-resultados a:hover { background: var(--azul-tenue); }
+.lucia-resultados strong { display: block; color: var(--color-azul-oscuro); }
+.lucia-resultados span {
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    font-size: 0.8rem; color: #5a6675;
+}
+.lucia-todos, .lucia-nav button {
+    padding: 6px 4px; border: 0; background: none; cursor: pointer;
+    color: var(--color-azul-esencial); font: 600 0.82rem var(--fuente-texto);
+}
+.lucia-nav { display: flex; justify-content: space-between; gap: 8px; margin-top: 8px; padding-top: 6px; border-top: 1px solid var(--linea); }
+
+@media (max-width: 640px) {
+    .lucia-dock { --lado: 96px; }
+    .lucia-botones button { width: 28px; height: 28px; font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .lucia-dock, .lucia-dock * { animation: none !important; transition: none !important; }
+}
+@media print { .lucia-dock { display: none !important; } }
