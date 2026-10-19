@@ -1,31 +1,7 @@
 {
- "actualizado": "2026-10-18",
+ "actualizado": "2026-10-19",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-10-18",
-   "diaLiturgico": "29o domingo del Tiempo Ordinario",
-   "cita": "Evangelio según San Mateo 22,15-21.",
-   "texto": "Los fariseos se reunieron entonces para sorprender a Jesús en alguna de sus afirmaciones.\nY le enviaron a varios discípulos con unos herodianos, para decirle: \"Maestro, sabemos que eres sincero y que enseñas con toda fidelidad el camino de Dios, sin tener en cuenta la condición de las personas, porque tú no te fijas en la categoría de nadie.\nDinos qué te parece: ¿Está permitido pagar el impuesto al César o no?\".\nPero Jesús, conociendo su malicia, les dijo: \"Hipócritas, ¿por qué me tienden una trampa?\nMuéstrenme la moneda con que pagan el impuesto\". Ellos le presentaron un denario.\nY él les preguntó: \"¿De quién es esta figura y esta inscripción?\".\nLe respondieron: \"Del César\". Jesús les dijo: \"Den al César lo que es del César, y a Dios, lo que es de Dios\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Libro de Isaías 45,1.4-6"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 96(95),1.3.4-5.7-8.9-10a.10c"
-    },
-    {
-     "tipo": "Segunda lectura",
-     "cita": "Primera Carta de San Pablo a los Tesalonicenses 1,1-5b"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Mateo 22,15-21"
-    }
-   ]
-  },
   {
    "fecha": "2026-10-19",
    "diaLiturgico": "Lunes de la 29a semana del Tiempo Ordinario",
@@ -143,6 +119,30 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 13,1-9"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-10-25",
+   "diaLiturgico": "30o domingo del Tiempo Ordinario",
+   "cita": "Evangelio según San Mateo 22,34-40.",
+   "texto": "Cuando los fariseos se enteraron de que Jesús había hecho callar a los saduceos, se reunieron con Él,\ny uno de ellos, que era doctor de la Ley, le preguntó para ponerlo a prueba:\n\"Maestro, ¿cuál es el mandamiento más grande de la Ley?\".\nJesús le respondió: \"Amarás al Señor, tu Dios, con todo tu corazón, con toda tu alma y con todo tu espíritu.\nEste es el más grande y el primer mandamiento.\nEl segundo es semejante al primero: Amarás a tu prójimo como a ti mismo.\nDe estos dos mandamientos dependen toda la Ley y los Profetas\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Libro del Exodo 22,20-26"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 18(17),2-3a.3bc-4.47.51a-51b"
+    },
+    {
+     "tipo": "Segunda lectura",
+     "cita": "Primera Carta de San Pablo a los Tesalonicenses 1,5c-10"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Mateo 22,34-40"
     }
    ]
   }
