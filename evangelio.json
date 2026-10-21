@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-10-20",
+ "actualizado": "2026-10-21",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-10-20",
-   "diaLiturgico": "Martes de la 29a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 12,35-38.",
-   "texto": "Jesús dijo a sus discípulos: \"Estén preparados, ceñidos y con las lámparas encendidas.\nSean como los hombres que esperan el regreso de su señor, que fue a una boda, para abrirle apenas llegue y llame a la puerta.\n¡Felices los servidores a quienes el señor encuentra velando a su llegada! Les aseguro que él mismo recogerá su túnica, los hará sentar a la mesa y se pondrá a servirlo.\n¡Felices ellos, si el señor llega a medianoche o antes del alba y los encuentra así!\"\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Carta de San Pablo a los Efesios 2,12-22"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 85(84),9ab-10.11-12.13-14"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 12,35-38"
-    }
-   ]
-  },
   {
    "fecha": "2026-10-21",
    "diaLiturgico": "Miércoles de la 29a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 13,10-17"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-10-27",
+   "diaLiturgico": "Martes de la 30a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 13,18-21.",
+   "texto": "Jesús dijo entonces: \"¿A qué se parece el Reino de Dios? ¿Con qué podré compararlo?\nSe parece a un grano de mostaza que un hombre sembró en su huerta; creció, se convirtió en un arbusto y los pájaros del cielo se cobijaron en sus ramas\".\nDijo también: \"¿Con qué podré comparar el Reino de Dios?\nSe parece a un poco de levadura que una mujer mezcló con gran cantidad de harina, hasta que fermentó toda la masa\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Carta de San Pablo a los Efesios 5,21-33"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 128(127),1-2.3.4-5"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 13,18-21"
     }
    ]
   }
