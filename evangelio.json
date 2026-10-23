@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-10-22",
+ "actualizado": "2026-10-23",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-10-22",
-   "diaLiturgico": "Jueves de la 29a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 12,49-53.",
-   "texto": "Jesús dijo a sus discípulos:\n\"Yo he venido a traer fuego sobre la tierra, ¡y cómo desearía que ya estuviera ardiendo!\nTengo que recibir un bautismo, ¡y qué angustia siento hasta que esto se cumpla plenamente!\n¿Piensan ustedes que he venido a traer la paz a la tierra? No, les digo que he venido a traer la división.\nDe ahora en adelante, cinco miembros de una familia estarán divididos, tres contra dos y dos contra tres:\nel padre contra el hijo y el hijo contra el padre, la madre contra la hija y la hija contra la madre, la suegra contra la nuera y la nuera contra la suegra\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Carta de San Pablo a los Efesios 3,14-21"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 33(32),1-2.4-5.11-12.18-19"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 12,49-53"
-    }
-   ]
-  },
   {
    "fecha": "2026-10-23",
    "diaLiturgico": "Viernes de la 29a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 6,12-19"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-10-29",
+   "diaLiturgico": "Jueves de la 30a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 13,31-35.",
+   "texto": "En ese momento se acercaron algunos fariseos que le dijeron: \"Aléjate de aquí, porque Herodes quiere matarte\".\nEl les respondió: \"Vayan a decir a ese zorro: hoy y mañana expulso a los demonios y realizo curaciones, y al tercer día habré terminado.\nPero debo seguir mi camino hoy, mañana y pasado, porque no puede ser que un profeta muera fuera de Jerusalén.\n¡Jerusalén, Jerusalén, que matas a los profetas y apedreas a los que te son enviados! ¡Cuántas veces quise reunir a tus hijos, como la gallina reúne bajo sus alas a los pollitos, y tú no quisiste!\nPor eso, a ustedes la casa les quedará vacía. Les aseguro que ya no me verán más, hasta que llegue el día en que digan: ¡Bendito el que viene en nombre del Señor!\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Carta de San Pablo a los Efesios 6,10-20"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 144(143),1.2.9-10"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 13,31-35"
     }
    ]
   }
