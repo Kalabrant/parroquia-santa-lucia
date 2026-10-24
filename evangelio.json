@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-10-23",
+ "actualizado": "2026-10-24",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-10-23",
-   "diaLiturgico": "Viernes de la 29a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 12,54-59.",
-   "texto": "Jesús dijo a la multitud:\n\"Cuando ven que una nube se levanta en occidente, ustedes dicen en seguida que va a llover, y así sucede.\nY cuando sopla viento del sur, dicen que hará calor, y así sucede.\n¡Hipócritas! Ustedes saben discernir el aspecto de la tierra y del cielo; ¿cómo entonces no saben discernir el tiempo presente?\n¿Por qué no juzgan ustedes mismos lo que es justo?\nCuando vas con tu adversario a presentarte ante el magistrado, trata de llegar a un acuerdo con él en el camino, no sea que el adversario te lleve ante el juez, y el juez te entregue al guardia, y este te ponga en la cárcel.\nTe aseguro que no saldrás de allí hasta que hayas pagado el último centavo.\"\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Carta de San Pablo a los Efesios 4,1-6"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 24(23),1-2.3-4ab.5-6"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 12,54-59"
-    }
-   ]
-  },
   {
    "fecha": "2026-10-24",
    "diaLiturgico": "Sábado de la 29a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 13,31-35"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-10-30",
+   "diaLiturgico": "Viernes de la 30a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 14,1-6.",
+   "texto": "Un sábado, Jesús entró a comer en casa de uno de los principales fariseos. Ellos lo observaban atentamente.\nDelante de él había un hombre enfermo de hidropesía.\nJesús preguntó a los doctores de la Ley y a los fariseos: \"¿Está permitido curar en sábado o no?\".\nPero ellos guardaron silencio. Entonces Jesús tomó de la mano al enfermo, lo curó y lo despidió.\nY volviéndose hacia ellos, les dijo: \"Si a alguno de ustedes se le cae en un pozo su hijo o su buey, ¿acaso no lo saca en seguida, aunque sea sábado?\".\nA esto no pudieron responder nada.\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Carta de San Pablo a los Filipenses 1,1-11"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 111(110),1-2.3-4.5-6"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 14,1-6"
     }
    ]
   }
