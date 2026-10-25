@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-10-24",
+ "actualizado": "2026-10-25",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-10-24",
-   "diaLiturgico": "Sábado de la 29a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 13,1-9.",
-   "texto": "En ese momento se presentaron unas personas que comentaron a Jesús el caso de aquellos galileos, cuya sangre Pilato mezcló con la de las víctimas de sus sacrificios.\nEl les respondió: \"¿Creen ustedes que esos galileos sufrieron todo esto porque eran más pecadores que los demás?\nLes aseguro que no, y si ustedes no se convierten, todos acabarán de la misma manera.\n¿O creen que las dieciocho personas que murieron cuando se desplomó la torre de Siloé, eran más culpables que los demás habitantes de Jerusalén?\nLes aseguro que no, y si ustedes no se convierten, todos acabarán de la misma manera\".\nLes dijo también esta parábola: \"Un hombre tenía una higuera plantada en su viña. Fue a buscar frutos y no los encontró.\nDijo entonces al viñador: 'Hace tres años que vengo a buscar frutos en esta higuera y no los encuentro. Córtala, ¿para qué malgastar la tierra?'.\nPero él respondió: 'Señor, déjala todavía este año; yo removeré la tierra alrededor de ella y la abonaré.\nPuede ser que así dé frutos en adelante. Si no, la cortarás'\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Carta de San Pablo a los Efesios 4,7-16"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 122(121),1-2.3-4a.4b-5"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 13,1-9"
-    }
-   ]
-  },
   {
    "fecha": "2026-10-25",
    "diaLiturgico": "30o domingo del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 14,1-6"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-10-31",
+   "diaLiturgico": "Sábado de la 30a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 14,1.7-11.",
+   "texto": "Un sábado, Jesús entró a comer en casa de uno de los principales fariseos. Ellos lo observaban atentamente.\nY al notar cómo los invitados buscaban los primeros puestos, les dijo esta parábola:\n\"Si te invitan a un banquete de bodas, no te coloques en el primer lugar, porque puede suceder que haya sido invitada otra persona más importante que tú,\ny cuando llegue el que los invitó a los dos, tenga que decirte: 'Déjale el sitio', y así, lleno de vergüenza, tengas que ponerte en el último lugar.\nAl contrario, cuando te inviten, ve a colocarte en el último sitio, de manera que cuando llegue el que te invitó, te diga: 'Amigo, acércate más', y así quedarás bien delante de todos los invitados.\nPorque todo el que ensalza será humillado, y el que se humilla será ensalzado\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Carta de San Pablo a los Filipenses 1,18b-26"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 42(41),2.3.5bcd"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 14,1.7-11"
     }
    ]
   }
