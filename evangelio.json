@@ -1,31 +1,7 @@
 {
- "actualizado": "2026-10-25",
+ "actualizado": "2026-10-26",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-10-25",
-   "diaLiturgico": "30o domingo del Tiempo Ordinario",
-   "cita": "Evangelio según San Mateo 22,34-40.",
-   "texto": "Cuando los fariseos se enteraron de que Jesús había hecho callar a los saduceos, se reunieron con Él,\ny uno de ellos, que era doctor de la Ley, le preguntó para ponerlo a prueba:\n\"Maestro, ¿cuál es el mandamiento más grande de la Ley?\".\nJesús le respondió: \"Amarás al Señor, tu Dios, con todo tu corazón, con toda tu alma y con todo tu espíritu.\nEste es el más grande y el primer mandamiento.\nEl segundo es semejante al primero: Amarás a tu prójimo como a ti mismo.\nDe estos dos mandamientos dependen toda la Ley y los Profetas\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Libro del Exodo 22,20-26"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 18(17),2-3a.3bc-4.47.51a-51b"
-    },
-    {
-     "tipo": "Segunda lectura",
-     "cita": "Primera Carta de San Pablo a los Tesalonicenses 1,5c-10"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Mateo 22,34-40"
-    }
-   ]
-  },
   {
    "fecha": "2026-10-26",
    "diaLiturgico": "Lunes de la 30a semana del Tiempo Ordinario",
@@ -143,6 +119,30 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 14,1.7-11"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-11-01",
+   "diaLiturgico": "",
+   "cita": "Evangelio según San Mateo 5,1-12a.",
+   "texto": "Al ver a la multitud, Jesús subió a la montaña, se sentó, y sus discípulos se acercaron a él.\nEntonces tomó la palabra y comenzó a enseñarles, diciendo:\n\"Felices los que tienen alma de pobres, porque a ellos les pertenece el Reino de los Cielos.\nFelices los pacientes, porque recibirán la tierra en herencia.\nFelices los afligidos, porque serán consolados.\nFelices los que tienen hambre y sed de justicia, porque serán saciados.\nFelices los misericordiosos, porque obtendrán misericordia.\nFelices los que tienen el corazón puro, porque verán a Dios.\nFelices los que trabajan por la paz, porque serán llamados hijos de Dios.\nFelices los que son perseguidos por practicar la justicia, porque a ellos les pertenece el Reino de los Cielos.\nFelices ustedes, cuando sean insultados y perseguidos, y cuando se los calumnie en toda forma a causa de mí.\nAlégrense y regocíjense entonces, porque ustedes tendrán una gran recompensa en el cielo; de la misma manera persiguieron a los profetas que los precedieron.\"\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Apocalipsis 7,2-4.9-14"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 24(23),1-2.3-4ab.5-6"
+    },
+    {
+     "tipo": "Segunda lectura",
+     "cita": "Epístola I de San Juan 3,1-3"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Mateo 5,1-12a"
     }
    ]
   }
