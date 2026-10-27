@@ -131,9 +131,9 @@ const EVENTOS = [
     {fecha:'2026-10-15',titulo:'Santa Teresa de Jesús — Aniversario de Cursillos',hora:'5:30 PM',desc:'Rosario (5:30 p.m.) y Santa Misa (6:00 p.m.).',resp:'Cursillos de Cristiandad',cat:CAT.NORMAL},
     {fecha:'2026-10-17',titulo:'Aniversario de la Sociedad de la Divina Misericordia',hora:'5:30 PM',desc:'Rosario (5:30 p.m.) y Santa Misa (6:00 p.m.).',resp:'Sociedad de la Divina Misericordia',cat:CAT.NORMAL},
     {fecha:'2026-10-24',titulo:'Gran Misión Parroquial',hora:'Desde la mañana',desc:'Visiteo por los sectores para invitar a las comunidades de la Palabra. Los detalles se darán a conocer más adelante.',resp:'Todos los grupos',cat:CAT.MISION,imagen:'foto-mision.webp'},
-    {fecha:'2026-10-31',titulo:'Fiesta de Holywins',hora:'6:00 PM',desc:'Santa Misa (6:00 p.m.) y fiesta para los niños.',resp:'Ministerio de Catequesis',cat:CAT.NORMAL},
     // NOVIEMBRE
     {fecha:'2026-11-01',titulo:'Solemnidad de Todos los Santos',hora:'',desc:'Eucaristías dominicales.',resp:'Servidores del Altar',cat:CAT.SOLEMNE},
+    {fecha:'2026-11-01',titulo:'Holywins',hora:'',desc:'En las misas de este domingo: se invita a los niños a venir disfrazados de santos.',resp:'Ministerio de Catequesis',cat:CAT.NORMAL},
     {fecha:'2026-11-02',titulo:'Conmemoración de los Fieles Difuntos',hora:'6:00 PM',desc:'Una sola misa, por los difuntos.',resp:'Servidores del Altar',cat:CAT.SOLEMNE},
     {fecha:'2026-11-12',titulo:'Anuncio de las Fiestas Patronales',hora:'',desc:'Entrega de pasquines por las calles de la parroquia. Lema: «150 años fieles a la tradición, abiertos a la misión».',resp:'Todos los grupos',cat:CAT.PATRONAL},
     {fecha:'2026-11-13',titulo:'Juramentación — Servidores y Sociedad de Santa Lucía',hora:'5:30 PM',desc:'Rosario (5:30 p.m.) y Santa Misa (6:00 p.m.). La bendición, dentro de la Eucaristía, será el día en que pueda venir el Obispo.',resp:'Servidores de Santa Lucía + Sociedad de Santa Lucía',cat:CAT.PATRONAL},

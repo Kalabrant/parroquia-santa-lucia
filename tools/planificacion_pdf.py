@@ -201,9 +201,6 @@ CALENDARIO = [
             ("2026-10-24", None, "Sábado 24", "Gran Misión Parroquial",
              "Visiteo por los sectores para invitar a las comunidades de la Palabra; "
              "se organizará más adelante", "Todos los grupos"),
-            ("2026-10-31", None, "Sábado 31", "Fiesta de Holywins",
-             "Santa Misa (6:00 p. m.) y fiesta para los niños",
-             "Ministerio de Catequesis"),
         ],
     },
     {
@@ -212,6 +209,9 @@ CALENDARIO = [
         "filas": [
             ("2026-11-01", None, "Domingo 1", "Solemnidad de Todos los Santos",
              "Eucaristías dominicales", "Servidores del Altar"),
+            ("2026-11-01", None, "Domingo 1", "Holywins",
+             "En las misas del domingo: los niños vienen disfrazados de santos",
+             "Ministerio de Catequesis"),
             ("2026-11-02", None, "Lunes 2", "Conmemoración de los Fieles Difuntos",
              "Una sola misa, por los difuntos", "Servidores del Altar"),
             ("2026-11-12", None, "Jueves 12", "Anuncio de las Fiestas Patronales",
