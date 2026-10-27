@@ -257,7 +257,9 @@ CALENDARIO = [
              "Rezo de la novena (5:30 p. m.) y Eucaristía (6:00 p. m.), con un grupo "
              "responsable cada día", "Todos los grupos, por días"),
             ("2026-12-05", "2026-12-06", "Sábado 5 y\ndomingo 6", "Peregrinación de la réplica",
-             "El Moján: salida el sábado por la mañana; Eucaristía el domingo (6:00 p. m.)",
+             "Sábado: muelle de El Moján y lancha a Isla de Toa, donde pasa el día\n"
+             "Domingo (3:00–4:00 p. m.): de Isla de Toa a la Iglesia San Rafael de "
+             "El Moján; Eucaristía (6:00 p. m.)",
              "Servidores de Santa Lucía"),
             ("2026-12-08", None, "Martes 8",
              "Solemnidad de la Inmaculada Concepción\nCumpleaños del Párroco",
