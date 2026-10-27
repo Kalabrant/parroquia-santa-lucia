@@ -11,7 +11,7 @@
    antigua y se descarga todo de nuevo.
    ============================================================ */
 
-const VERSION = 'v33';
+const VERSION = 'v34';
 const CACHE = 'santa-lucia-' + VERSION;
 
 /* Lo imprescindible para que la web arranque sin conexión */
