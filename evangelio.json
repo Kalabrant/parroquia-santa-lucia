@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-10-28",
+ "actualizado": "2026-10-29",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-10-28",
-   "diaLiturgico": "Santos Simón y Judas, apóstoles",
-   "cita": "Evangelio según San Lucas 6,12-19.",
-   "texto": "Jesús se retiró a una montaña para orar, y pasó toda la noche en oración con Dios.\nCuando se hizo de día, llamó a sus discípulos y eligió a doce de ellos, a los que dio el nombre de Apóstoles:\nSimón, a quien puso el sobrenombre de Pedro, Andrés, su hermano, Santiago, Juan, Felipe, Bartolomé,\nMateo, Tomás, Santiago, hijo de Alfeo, Simón, llamado el Zelote,\nJudas, hijo de Santiago, y Judas Iscariote, que fue el traidor.\nAl bajar con ellos se detuvo en una llanura. Estaban allí muchos de sus discípulos y una gran muchedumbre que había llegado de toda la Judea, de Jerusalén y de la región costera de Tiro y Sidón,\npara escucharlo y hacerse curar de sus enfermedades. Los que estaban atormentados por espíritus impuros quedaban curados;\ny toda la gente quería tocarlo, porque salía de él una fuerza que sanaba a todos.\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Carta de San Pablo a los Efesios 2,19-22"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 19(18),2-3.4-5"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 6,12-19"
-    }
-   ]
-  },
   {
    "fecha": "2026-10-29",
    "diaLiturgico": "Jueves de la 30a semana del Tiempo Ordinario",
@@ -147,6 +127,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 14,15-24"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-11-04",
+   "diaLiturgico": "Miércoles de la 31a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 14,25-33.",
+   "texto": "Junto con Jesús iba un gran gentío, y él, dándose vuelta, les dijo:\n\"Cualquiera que venga a mí y no me ame más que a su padre y a su madre, a su mujer y a sus hijos, a sus hermanos y hermanas, y hasta a su propia vida, no puede ser mi discípulo.\nEl que no carga con su cruz y me sigue, no puede ser mi discípulo.\n¿Quién de ustedes, si quiere edificar una torre, no se sienta primero a calcular los gastos, para ver si tiene con qué terminarla?\nNo sea que una vez puestos los cimientos, no pueda acabar y todos los que lo vean se rían de él, diciendo:\n'Este comenzó a edificar y no pudo terminar'.\n¿Y qué rey, cuando sale en campaña contra otro, no se sienta antes a considerar si con diez mil hombres puede enfrentar al que viene contra él con veinte mil?\nPor el contrario, mientras el otro rey está todavía lejos, envía una embajada para negociar la paz.\nDe la misma manera, cualquiera de ustedes que no renuncie a todo lo que posee, no puede ser mi discípulo.\"\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Carta de San Pablo a los Filipenses 2,12-18"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 27(26),1.4.13-14"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 14,25-33"
     }
    ]
   }
