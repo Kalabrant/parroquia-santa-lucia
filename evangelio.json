@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-10-30",
+ "actualizado": "2026-10-31",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-10-30",
-   "diaLiturgico": "Viernes de la 30a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 14,1-6.",
-   "texto": "Un sábado, Jesús entró a comer en casa de uno de los principales fariseos. Ellos lo observaban atentamente.\nDelante de él había un hombre enfermo de hidropesía.\nJesús preguntó a los doctores de la Ley y a los fariseos: \"¿Está permitido curar en sábado o no?\".\nPero ellos guardaron silencio. Entonces Jesús tomó de la mano al enfermo, lo curó y lo despidió.\nY volviéndose hacia ellos, les dijo: \"Si a alguno de ustedes se le cae en un pozo su hijo o su buey, ¿acaso no lo saca en seguida, aunque sea sábado?\".\nA esto no pudieron responder nada.\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Carta de San Pablo a los Filipenses 1,1-11"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 111(110),1-2.3-4.5-6"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 14,1-6"
-    }
-   ]
-  },
   {
    "fecha": "2026-10-31",
    "diaLiturgico": "Sábado de la 30a semana del Tiempo Ordinario",
@@ -147,6 +127,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 15,1-10"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-11-06",
+   "diaLiturgico": "Viernes de la 31a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 16,1-8.",
+   "texto": "Jesús decía a sus discípulos:\n\"Había un hombre rico que tenía un administrador, al cual acusaron de malgastar sus bienes.\nLo llamó y le dijo: '¿Qué es lo que me han contado de ti? Dame cuenta de tu administración, porque ya no ocuparás más ese puesto'.\nEl administrador pensó entonces: '¿Qué voy a hacer ahora que mi señor me quita el cargo? ¿Cavar? No tengo fuerzas. ¿Pedir limosna? Me da vergüenza.\n¡Ya sé lo que voy a hacer para que, al dejar el puesto, haya quienes me reciban en su casa!'.\nLlamó uno por uno a los deudores de su señor y preguntó al primero: '¿Cuánto debes a mi señor?'.\n'Veinte barriles de aceite', le respondió. El administrador le dijo: 'Toma tu recibo, siéntate en seguida, y anota diez'.\nDespués preguntó a otro: 'Y tú, ¿cuánto debes?'. 'Cuatrocientos quintales de trigo', le respondió. El administrador le dijo: 'Toma tu recibo y anota trescientos'.\nY el señor alabó a este administrador deshonesto, por haber obrado tan hábilmente. Porque los hijos de este mundo son más astutos en su trato con los demás que los hijos de la luz.\"\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Carta de San Pablo a los Filipenses 3,17-21.4,1"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 122(121),1-2.3-4a.4b-5"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 16,1-8"
     }
    ]
   }
