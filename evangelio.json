@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-10-31",
+ "actualizado": "2026-11-01",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-10-31",
-   "diaLiturgico": "Sábado de la 30a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 14,1.7-11.",
-   "texto": "Un sábado, Jesús entró a comer en casa de uno de los principales fariseos. Ellos lo observaban atentamente.\nY al notar cómo los invitados buscaban los primeros puestos, les dijo esta parábola:\n\"Si te invitan a un banquete de bodas, no te coloques en el primer lugar, porque puede suceder que haya sido invitada otra persona más importante que tú,\ny cuando llegue el que los invitó a los dos, tenga que decirte: 'Déjale el sitio', y así, lleno de vergüenza, tengas que ponerte en el último lugar.\nAl contrario, cuando te inviten, ve a colocarte en el último sitio, de manera que cuando llegue el que te invitó, te diga: 'Amigo, acércate más', y así quedarás bien delante de todos los invitados.\nPorque todo el que ensalza será humillado, y el que se humilla será ensalzado\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Carta de San Pablo a los Filipenses 1,18b-26"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 42(41),2.3.5bcd"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 14,1.7-11"
-    }
-   ]
-  },
   {
    "fecha": "2026-11-01",
    "diaLiturgico": "",
@@ -147,6 +127,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 16,1-8"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-11-07",
+   "diaLiturgico": "Sábado de la 31a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 16,9-15.",
+   "texto": "Jesús decía a sus discípulos:\n\"Gánense amigos con el dinero de la injusticia, para que el día en que este les falte, ellos los reciban en las moradas eternas.\nEl que es fiel en lo poco, también es fiel en lo mucho, y el que es deshonesto en lo poco, también es deshonesto en lo mucho.\nSi ustedes no son fieles en el uso del dinero injusto, ¿quién les confiará el verdadero bien?\nY si no son fieles con lo ajeno, ¿quién les confiará lo que les pertenece a ustedes?\nNingún servidor puede servir a dos señores, porque aborrecerá a uno y amará al otro, o bien se interesará por el primero y menospreciará al segundo. No se puede servir a Dios y al Dinero\".\nLos fariseos, que eran amigos del dinero, escuchaban todo esto y se burlaban de Jesús.\nEl les dijo: \"Ustedes aparentan rectitud ante los hombres, pero Dios conoce sus corazones. Porque lo que es estimable a los ojos de los hombres, resulta despreciable para Dios.\"\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Carta de San Pablo a los Filipenses 4,10-19"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 112(111),1-2.5-6.8a.9"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 16,9-15"
     }
    ]
   }
