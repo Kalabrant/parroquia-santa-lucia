@@ -1,31 +1,7 @@
 {
- "actualizado": "2026-11-01",
+ "actualizado": "2026-11-02",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-11-01",
-   "diaLiturgico": "",
-   "cita": "Evangelio según San Mateo 5,1-12a.",
-   "texto": "Al ver a la multitud, Jesús subió a la montaña, se sentó, y sus discípulos se acercaron a él.\nEntonces tomó la palabra y comenzó a enseñarles, diciendo:\n\"Felices los que tienen alma de pobres, porque a ellos les pertenece el Reino de los Cielos.\nFelices los pacientes, porque recibirán la tierra en herencia.\nFelices los afligidos, porque serán consolados.\nFelices los que tienen hambre y sed de justicia, porque serán saciados.\nFelices los misericordiosos, porque obtendrán misericordia.\nFelices los que tienen el corazón puro, porque verán a Dios.\nFelices los que trabajan por la paz, porque serán llamados hijos de Dios.\nFelices los que son perseguidos por practicar la justicia, porque a ellos les pertenece el Reino de los Cielos.\nFelices ustedes, cuando sean insultados y perseguidos, y cuando se los calumnie en toda forma a causa de mí.\nAlégrense y regocíjense entonces, porque ustedes tendrán una gran recompensa en el cielo; de la misma manera persiguieron a los profetas que los precedieron.\"\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Apocalipsis 7,2-4.9-14"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 24(23),1-2.3-4ab.5-6"
-    },
-    {
-     "tipo": "Segunda lectura",
-     "cita": "Epístola I de San Juan 3,1-3"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Mateo 5,1-12a"
-    }
-   ]
-  },
   {
    "fecha": "2026-11-02",
    "diaLiturgico": "",
@@ -147,6 +123,30 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 16,9-15"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-11-08",
+   "diaLiturgico": "32o domingo del Tiempo Ordinario",
+   "cita": "Evangelio según San Mateo 25,1-13.",
+   "texto": "Por eso, el Reino de los Cielos será semejante a diez jóvenes que fueron con sus lámparas al encuentro del esposo.\nCinco de ellas eran necias y cinco, prudentes.\nLas necias tomaron sus lámparas, pero sin proveerse de aceite,\nmientras que las prudentes tomaron sus lámparas y también llenaron de aceite sus frascos.\nComo el esposo se hacía esperar, les entró sueño a todas y se quedaron dormidas.\nPero a medianoche se oyó un grito: 'Ya viene el esposo, salgan a su encuentro'.\nEntonces las jóvenes se despertaron y prepararon sus lámparas.\nLas necias dijeron a las prudentes: '¿Podrían darnos un poco de aceite, porque nuestras lámparas se apagan?'.\nPero estas les respondieron: 'No va a alcanzar para todas. Es mejor que vayan a comprarlo al mercado'.\nMientras tanto, llegó el esposo: las que estaban preparadas entraron con él en la sala nupcial y se cerró la puerta.\nDespués llegaron las otras jóvenes y dijeron: 'Señor, señor, ábrenos',\npero él respondió: 'Les aseguro que no las conozco'.\nEstén prevenidos, porque no saben el día ni la hora.\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Libro de la Sabiduría 6,12-16"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 63(62),2.3-4.5-6.7-8"
+    },
+    {
+     "tipo": "Segunda lectura",
+     "cita": "Primera Carta de San Pablo a los Tesalonicenses 4,13-18"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Mateo 25,1-13"
     }
    ]
   }
