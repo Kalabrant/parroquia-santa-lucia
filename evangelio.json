@@ -1,31 +1,7 @@
 {
- "actualizado": "2026-11-02",
+ "actualizado": "2026-11-03",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-11-02",
-   "diaLiturgico": "",
-   "cita": "Evangelio según San Mateo 25,31-46.",
-   "texto": "Jesús dijo a sus discípulos:\n\"Cuando el Hijo del hombre venga en su gloria rodeado de todos los ángeles, se sentará en su trono glorioso.\nTodas las naciones serán reunidas en su presencia, y él separará a unos de otros, como el pastor separa las ovejas de los cabritos,\ny pondrá a aquellas a su derecha y a estos a su izquierda.\nEntonces el Rey dirá a los que tenga a su derecha: 'Vengan, benditos de mi Padre, y reciban en herencia el Reino que les fue preparado desde el comienzo del mundo,\nporque tuve hambre, y ustedes me dieron de comer; tuve sed, y me dieron de beber; estaba de paso, y me alojaron;\ndesnudo, y me vistieron; enfermo, y me visitaron; preso, y me vinieron a ver'.\nLos justos le responderán: 'Señor, ¿cuándo te vimos hambriento, y te dimos de comer; sediento, y te dimos de beber?\n¿Cuándo te vimos de paso, y te alojamos; desnudo, y te vestimos?\n¿Cuándo te vimos enfermo o preso, y fuimos a verte?'.\nY el Rey les responderá: 'Les aseguro que cada vez que lo hicieron con el más pequeño de mis hermanos, lo hicieron conmigo'.\nLuego dirá a los de su izquierda: 'Aléjense de mí, malditos; vayan al fuego eterno que fue preparado para el demonio y sus ángeles,\nporque tuve hambre, y ustedes no me dieron de comer; tuve sed, y no me dieron de beber;\nestaba de paso, y no me alojaron; desnudo, y no me vistieron; enfermo y preso, y no me visitaron'.\nEstos, a su vez, le preguntarán: 'Señor, ¿cuándo te vimos hambriento o sediento, de paso o desnudo, enfermo o preso, y no te hemos socorrido?'.\nY él les responderá: 'Les aseguro que cada vez que no lo hicieron con el más pequeño de mis hermanos, tampoco lo hicieron conmigo'.\nEstos irán al castigo eterno, y los justos a la Vida eterna\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Libro de la Sabiduría 3,1-9"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 27(26),1.4.7.8.9.13-14"
-    },
-    {
-     "tipo": "Segunda lectura",
-     "cita": "Carta de San Pablo a los Romanos 6,3-9"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Mateo 25,31-46"
-    }
-   ]
-  },
   {
    "fecha": "2026-11-03",
    "diaLiturgico": "Martes de la 31a semana del Tiempo Ordinario",
@@ -147,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Mateo 25,1-13"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-11-09",
+   "diaLiturgico": "Dedicación de la Basílica de San Juan de Letrán",
+   "cita": "Evangelio según San Juan 2,13-22.",
+   "texto": "Se acercaba la Pascua de los judíos. Jesús subió a Jerusalén\ny encontró en el Templo a los vendedores de bueyes, ovejas y palomas y a los cambistas sentados delante de sus mesas.\nHizo un látigo de cuerdas y los echó a todos del Templo, junto con sus ovejas y sus bueyes; desparramó las monedas de los cambistas, derribó sus mesas\ny dijo a los vendedores de palomas: \"Saquen esto de aquí y no hagan de la casa de mi Padre una casa de comercio\".\nY sus discípulos recordaron las palabras de la Escritura: El celo por tu Casa me consumirá.\nEntonces los judíos le preguntaron: \"¿Qué signo nos das para obrar así?\".\nJesús les respondió: \"Destruyan este templo y en tres días lo volveré a levantar\".\nLos judíos le dijeron: \"Han sido necesarios cuarenta y seis años para construir este Templo, ¿y tú lo vas a levantar en tres días?\".\nPero él se refería al templo de su cuerpo.\nPor eso, cuando Jesús resucitó, sus discípulos recordaron que él había dicho esto, y creyeron en la Escritura y en la palabra que había pronunciado.\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Libro de Ezequiel 47,1-2.8-9.12"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 46(45),2-3.5-6.8-9"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Juan 2,13-22"
     }
    ]
   }
