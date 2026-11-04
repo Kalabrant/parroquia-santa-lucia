@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-11-03",
+ "actualizado": "2026-11-04",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-11-03",
-   "diaLiturgico": "Martes de la 31a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 14,15-24.",
-   "texto": "En aquel tiempo:\nUno de los invitados le dijo: \"¡Feliz el que se siente a la mesa en el Reino de Dios!\".\nJesús le respondió: \"Un hombre preparó un gran banquete y convidó a mucha gente.\nA la hora de cenar, mandó a su sirviente que dijera a los invitados: 'Vengan, todo está preparado'.\nPero todos, sin excepción, empezaron a excusarse. El primero le dijo: 'Acabo de comprar un campo y tengo que ir a verlo. Te ruego me disculpes'.\nEl segundo dijo: 'He comprado cinco yuntas de bueyes y voy a probarlos. Te ruego me disculpes'.\nY un tercero respondió: 'Acabo de casarme y por esa razón no puedo ir'.\nA su regreso, el sirviente contó todo esto al dueño de casa, y este, irritado, le dijo: 'Recorre en seguida las plazas y las calles de la ciudad, y trae aquí a los pobres, a los lisiados, a los ciegos y a los paralíticos'.\nVolvió el sirviente y dijo: 'Señor, tus órdenes se han cumplido y aún sobra lugar'.\nEl señor le respondió: 'Ve a los caminos y a lo largo de los cercos, e insiste a la gente para que entre, de manera que se llene mi casa.\nPorque les aseguro que ninguno de los que antes fueron invitados ha de probar mi cena'\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Carta de San Pablo a los Filipenses 2,5-11"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 22(21),26b-27.28-30a.31-32"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 14,15-24"
-    }
-   ]
-  },
   {
    "fecha": "2026-11-04",
    "diaLiturgico": "Miércoles de la 31a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Juan 2,13-22"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-11-10",
+   "diaLiturgico": "Martes de la 32a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 17,7-10.",
+   "texto": "El Señor dijó:\n«Supongamos que uno de ustedes tiene un servidor para arar o cuidar el ganado. Cuando este regresa del campo, ¿acaso le dirá: 'Ven pronto y siéntate a la mesa'?\n¿No le dirá más bien: 'Prepárame la cena y recógete la túnica para servirme hasta que yo haya comido y bebido, y tú comerás y beberás después'?\n¿Deberá mostrarse agradecido con el servidor porque hizo lo que se le mandó?\nAsí también ustedes, cuando hayan hecho todo lo que se les mande, digan: 'Somos simples servidores, no hemos hecho más que cumplir con nuestro deber'.»\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Carta de San Pablo a Tito 2,1-8.11-14"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 37(36),3-4.18.23.27.29"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 17,7-10"
     }
    ]
   }
