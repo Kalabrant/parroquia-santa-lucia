@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-11-04",
+ "actualizado": "2026-11-05",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-11-04",
-   "diaLiturgico": "Miércoles de la 31a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 14,25-33.",
-   "texto": "Junto con Jesús iba un gran gentío, y él, dándose vuelta, les dijo:\n\"Cualquiera que venga a mí y no me ame más que a su padre y a su madre, a su mujer y a sus hijos, a sus hermanos y hermanas, y hasta a su propia vida, no puede ser mi discípulo.\nEl que no carga con su cruz y me sigue, no puede ser mi discípulo.\n¿Quién de ustedes, si quiere edificar una torre, no se sienta primero a calcular los gastos, para ver si tiene con qué terminarla?\nNo sea que una vez puestos los cimientos, no pueda acabar y todos los que lo vean se rían de él, diciendo:\n'Este comenzó a edificar y no pudo terminar'.\n¿Y qué rey, cuando sale en campaña contra otro, no se sienta antes a considerar si con diez mil hombres puede enfrentar al que viene contra él con veinte mil?\nPor el contrario, mientras el otro rey está todavía lejos, envía una embajada para negociar la paz.\nDe la misma manera, cualquiera de ustedes que no renuncie a todo lo que posee, no puede ser mi discípulo.\"\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Carta de San Pablo a los Filipenses 2,12-18"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 27(26),1.4.13-14"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 14,25-33"
-    }
-   ]
-  },
   {
    "fecha": "2026-11-05",
    "diaLiturgico": "Jueves de la 31a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 17,7-10"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-11-11",
+   "diaLiturgico": "Miércoles de la 32a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 17,11-19.",
+   "texto": "Mientras se dirigía a Jerusalén, Jesús pasaba a través de Samaría y Galilea.\nAl entrar en un poblado, le salieron al encuentro diez leprosos, que se detuvieron a distancia\ny empezaron a gritarle: \"¡Jesús, Maestro, ten compasión de nosotros!\".\nAl verlos, Jesús les dijo: \"Vayan a presentarse a los sacerdotes\". Y en el camino quedaron purificados.\nUno de ellos, al comprobar que estaba curado, volvió atrás alabando a Dios en voz alta\ny se arrojó a los pies de Jesús con el rostro en tierra, dándole gracias. Era un samaritano.\nJesús le dijo entonces: \"¿Cómo, no quedaron purificados los diez? Los otros nueve, ¿dónde están?\n¿Ninguno volvió a dar gracias a Dios, sino este extranjero?\".\nY agregó: \"Levántate y vete, tu fe te ha salvado\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Carta de San Pablo a Tito 3,1-7"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 23(22),1-3a.3b-4.5.6"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 17,11-19"
     }
    ]
   }
