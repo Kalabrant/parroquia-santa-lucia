@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-11-06",
+ "actualizado": "2026-11-07",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-11-06",
-   "diaLiturgico": "Viernes de la 31a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 16,1-8.",
-   "texto": "Jesús decía a sus discípulos:\n\"Había un hombre rico que tenía un administrador, al cual acusaron de malgastar sus bienes.\nLo llamó y le dijo: '¿Qué es lo que me han contado de ti? Dame cuenta de tu administración, porque ya no ocuparás más ese puesto'.\nEl administrador pensó entonces: '¿Qué voy a hacer ahora que mi señor me quita el cargo? ¿Cavar? No tengo fuerzas. ¿Pedir limosna? Me da vergüenza.\n¡Ya sé lo que voy a hacer para que, al dejar el puesto, haya quienes me reciban en su casa!'.\nLlamó uno por uno a los deudores de su señor y preguntó al primero: '¿Cuánto debes a mi señor?'.\n'Veinte barriles de aceite', le respondió. El administrador le dijo: 'Toma tu recibo, siéntate en seguida, y anota diez'.\nDespués preguntó a otro: 'Y tú, ¿cuánto debes?'. 'Cuatrocientos quintales de trigo', le respondió. El administrador le dijo: 'Toma tu recibo y anota trescientos'.\nY el señor alabó a este administrador deshonesto, por haber obrado tan hábilmente. Porque los hijos de este mundo son más astutos en su trato con los demás que los hijos de la luz.\"\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Carta de San Pablo a los Filipenses 3,17-21.4,1"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 122(121),1-2.3-4a.4b-5"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 16,1-8"
-    }
-   ]
-  },
   {
    "fecha": "2026-11-07",
    "diaLiturgico": "Sábado de la 31a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 17,20-25"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-11-13",
+   "diaLiturgico": "Viernes de la 32a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 17,26-37.",
+   "texto": "Jesús dijo a sus discípulos:\n\"En los días del Hijo del hombre sucederá como en tiempos de Noé.\nLa gente comía, bebía y se casaba, hasta el día en que Noé entró en el arca y llegó el diluvio, que los hizo morir a todos.\nSucederá como en tiempos de Lot: se comía y se bebía, se compraba y se vendía, se plantaba y se construía.\nPero el día en que Lot salió de Sodoma, cayó del cielo una lluvia de fuego y de azufre que los hizo morir a todos.\nLo mismo sucederá el Día en que se manifieste el Hijo del hombre.\nEn ese Día, el que esté en la azotea y tenga sus cosas en la casa, no baje a buscarlas. Igualmente, el que esté en el campo, no vuelva atrás.\nAcuérdense de la mujer de Lot.\nEl que trate de salvar su vida, la perderá; y el que la pierda, la conservará.\nLes aseguro que en esa noche, de dos hombres que estén comiendo juntos, uno será llevado y el otro dejado;\nde dos mujeres que estén moliendo juntas, una será llevada y la otra dejada\".\nEntonces le preguntaron: «¿Dónde sucederá esto, Señor?»\nJesús les respondió: \"Donde esté el cadáver, se juntarán los buitres\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Epístola II de San Juan 1,4-9"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 119(118),1.2.10.11.17.18"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 17,26-37"
     }
    ]
   }
