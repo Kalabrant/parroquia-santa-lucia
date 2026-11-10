@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-11-09",
+ "actualizado": "2026-11-10",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-11-09",
-   "diaLiturgico": "Dedicación de la Basílica de San Juan de Letrán",
-   "cita": "Evangelio según San Juan 2,13-22.",
-   "texto": "Se acercaba la Pascua de los judíos. Jesús subió a Jerusalén\ny encontró en el Templo a los vendedores de bueyes, ovejas y palomas y a los cambistas sentados delante de sus mesas.\nHizo un látigo de cuerdas y los echó a todos del Templo, junto con sus ovejas y sus bueyes; desparramó las monedas de los cambistas, derribó sus mesas\ny dijo a los vendedores de palomas: \"Saquen esto de aquí y no hagan de la casa de mi Padre una casa de comercio\".\nY sus discípulos recordaron las palabras de la Escritura: El celo por tu Casa me consumirá.\nEntonces los judíos le preguntaron: \"¿Qué signo nos das para obrar así?\".\nJesús les respondió: \"Destruyan este templo y en tres días lo volveré a levantar\".\nLos judíos le dijeron: \"Han sido necesarios cuarenta y seis años para construir este Templo, ¿y tú lo vas a levantar en tres días?\".\nPero él se refería al templo de su cuerpo.\nPor eso, cuando Jesús resucitó, sus discípulos recordaron que él había dicho esto, y creyeron en la Escritura y en la palabra que había pronunciado.\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Libro de Ezequiel 47,1-2.8-9.12"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 46(45),2-3.5-6.8-9"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Juan 2,13-22"
-    }
-   ]
-  },
   {
    "fecha": "2026-11-10",
    "diaLiturgico": "Martes de la 32a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Mateo 25,14-30"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-11-16",
+   "diaLiturgico": "Lunes de la 33a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 18,35-43.",
+   "texto": "Cuando se acercaba a Jericó, un ciego estaba sentado al borde del camino, pidiendo limosna.\nAl oír que pasaba mucha gente, preguntó qué sucedía.\nLe respondieron que pasaba Jesús de Nazaret.\nEl ciego se puso a gritar: \"¡Jesús, Hijo de David, ten compasión de mí!\".\nLos que iban delante lo reprendían para que se callara, pero él gritaba más fuerte: \"¡Hijo de David, ten compasión de mí!\".\nJesús se detuvo y mandó que se lo trajeran. Cuando lo tuvo a su lado, le preguntó:\n\"¿Qué quieres que haga por ti?\". \"Señor, que yo vea otra vez\".\nY Jesús le dijo: \"Recupera la vista, tu fe te ha salvado\".\nEn el mismo momento, el ciego recuperó la vista y siguió a Jesús, glorificando a Dios. Al ver esto, todo el pueblo alababa a Dios.\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Apocalipsis 1,1-4.2,1-5a"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 1,1-2.3.4.6"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 18,35-43"
     }
    ]
   }
