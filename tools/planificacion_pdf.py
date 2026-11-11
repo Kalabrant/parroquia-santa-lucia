@@ -222,7 +222,7 @@ CALENDARIO = [
              "Eucaristía que presida el Obispo",
              "Servidores y Sociedad de Santa Lucía"),
             ("2026-11-14", None, "Sábado 14", "BAJADA DE SANTA LUCÍA",
-             "Eucaristía por la mañana\nBajada por la tarde, con homenaje gaitero\n"
+             "Eucaristía (9:00 a. m.)\nSolemne Bajada (6:00 p. m.), con homenaje gaitero\n"
              "Recorrido: Natividad, Federación, Dos Rosas, Nueva Venecia, Belén, "
              "Santa Lucía, Nueva Belloso, Casanova, Natividad y templo",
              "Servidores de Santa Lucía"),
@@ -234,18 +234,22 @@ CALENDARIO = [
              "Sra. Verónica Rosales, Sr. Gustavo Velazco y Sra. Gisela Aranguren"),
             ("2026-11-22", None, "Domingo 22", "Cristo Rey del Universo\nSanta Cecilia",
              "Eucaristías dominicales\nEncuentro con los coros parroquiales tras la "
-             "misa de 6:00 p. m.\nLa réplica en Guarero (9:00 a. m.) y Paraguaipoa "
-             "(5:00 p. m.)", "Coros Parroquiales\nServidores de Santa Lucía"),
-            ("2026-11-27", None, "Viernes 27", "Peregrinación de la réplica",
-             "Parroquia Cristo Rey, Curva de Molina (6:00 p. m.)",
+             "misa de 6:00 p. m.\nSanta Lucía peregrina a Paraguaipoa y Guarero: "
+             "traslado (7:00 a. m.)", "Coros Parroquiales\nServidores de Santa Lucía"),
+            ("2026-11-25", None, "Miércoles 25", "Peregrinación de Santa Lucía",
+             "Parroquia Sagrada Familia, San Miguel: traslado (3:00 p. m.)",
+             "Servidores de Santa Lucía"),
+            ("2026-11-27", None, "Viernes 27", "Peregrinación de Santa Lucía",
+             "Parroquia Cristo Rey, La Curva: traslado (4:00 p. m.)",
              "Servidores de Santa Lucía"),
             ("2026-11-28", None, "Sábado 28", "Encuentro de Santa Lucía y La Chinita",
-             "La réplica en Potrerito (mañana) y El Carmelo (Eucaristía, tarde)\n"
-             "Encuentro con la procesión patronal de La Chinita (8:00 p. m.)",
+             "Potreritos y Nuestra Señora del Carmen, La Cañada de Urdaneta: traslado "
+             "(7:00 a. m.)\nEncuentro con Nuestra Señora de Chiquinquirá (7:00 p. m.), "
+             "av. 7 con calle 89E, antes Soledad, entre calle Plaza y Colón",
              "Servidores de Santa Lucía y Flores de Misericordia"),
             ("2026-11-29", None, "Domingo 29", "I Domingo de Adviento",
-             "Eucaristías dominicales y bendición de las coronas\nLa réplica en San "
-             "Benito del Bajo y Santísimo Cristo de San Francisco (por confirmar)",
+             "Eucaristías dominicales y bendición de las coronas\nPurísima Madre de Dios "
+             "y San Benito, El Bajo: traslado (7:00 a. m.)",
              "Servidores del Altar\nServidores de Santa Lucía"),
         ],
     },
@@ -256,29 +260,38 @@ CALENDARIO = [
             ("2026-12-04", "2026-12-12", "Viernes 4 al\nsábado 12", "Novena a Santa Lucía",
              "Rezo de la novena (5:30 p. m.) y Eucaristía (6:00 p. m.), con un grupo "
              "responsable cada día", "Todos los grupos, por días"),
-            ("2026-12-05", "2026-12-06", "Sábado 5 y\ndomingo 6", "Peregrinación de la réplica",
-             "Sábado: muelle de El Moján y lancha a Isla de Toa, donde pasa el día\n"
-             "Domingo (3:00–4:00 p. m.): de Isla de Toa a la Iglesia San Rafael de "
-             "El Moján; Eucaristía (6:00 p. m.)",
+            ("2026-12-04", None, "Viernes 4", "Peregrinación de Santa Lucía",
+             "Parroquia Buen Pastor: traslado (4:00 p. m.)",
+             "Servidores de Santa Lucía"),
+            ("2026-12-05", "2026-12-06", "Sábado 5 y\ndomingo 6", "Peregrinación de Santa Lucía",
+             "Sábado: Isla de Toas, traslado (6:00 a. m.)\n"
+             "Domingo: San Rafael del Moján, traslado (6:00 a. m.)",
              "Servidores de Santa Lucía"),
             ("2026-12-08", None, "Martes 8",
              "Solemnidad de la Inmaculada Concepción\nCumpleaños del Párroco",
              "Novena (5:30 p. m.) y Eucaristía (6:00 p. m.)\nTortazo comunitario",
              "Sociedades y Servidores del Altar"),
-            ("2026-12-11", None, "Viernes 11", "Peregrinación de la réplica",
-             "Iglesia Nuestra Señora de Guadalupe (5:00 p. m.)",
+            ("2026-12-10", None, "Jueves 10", "Peregrinación de Santa Lucía",
+             "Capilla de Santa Rosa: traslado (5:00 p. m.)",
              "Servidores de Santa Lucía"),
-            ("2026-12-12", None, "Sábado 12", "Novena — último día\nMañanitas a Santa Lucía",
-             "Novena, Eucaristía y mañanitas (11:00 p. m.)",
+            ("2026-12-11", None, "Viernes 11", "Peregrinación de Santa Lucía",
+             "Nuestra Señora de Guadalupe, Sierra Maestra: traslado (4:00 p. m.)",
+             "Servidores de Santa Lucía"),
+            ("2026-12-12", None, "Sábado 12", "Vísperas de Santa Lucía\nMañanitas",
+             "Último día de novena (5:30 p. m.), Eucaristía (6:00 p. m.) y mañanitas "
+             "a la medianoche (12:00 a. m.)",
              "Servidores y Sociedad de Santa Lucía"),
             ("2026-12-13", None, "Domingo 13", "SOLEMNIDAD DE SANTA LUCÍA",
-             "Eucaristías solemnes y procesión\nRecorrido: Múcura, Candelaria, Plaza de "
+             "Eucaristías solemnes (9:00 a. m., 11:00 a. m. y 6:00 p. m.) y, luego, "
+             "Procesión Solemne\nRecorrido: Múcura, Candelaria, Plaza de "
              "la Muñeca, San Ramón, Nueva Belloso, San Luis, Belén, San Pablo, El Rosal, "
              "El Valle, Santa Lucía, Triana, San Antonio, Santa Genoveva, Nueva Belloso "
              "y Santa Lucía hasta el templo",
              "Todos los grupos parroquiales"),
-            ("2026-12-14", None, "Lunes 14", "Ofrenda de los chimbángueles",
-             "Ofrenda a Santa Lucía", "—"),
+            ("2026-12-14", None, "Lunes 14", "Encuentro de San Benito con Santa Lucía",
+             "Eucaristía (6:00 p. m.) y ofrenda de los chimbángueles", "—"),
+            ("2026-12-15", None, "Martes 15", "Subida de Santa Lucía",
+             "Eucaristía (6:00 a. m.)", "Servidores de Santa Lucía"),
             ("2026-12-15", "2026-12-23", "Martes 15 al\nmiércoles 23", "Misas de aguinaldo",
              "Eucaristía (6:00 a. m.), con una intención y un grupo responsable cada día",
              "Por grupos"),
