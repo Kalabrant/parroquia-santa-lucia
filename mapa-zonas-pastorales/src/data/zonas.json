@@ -13,12 +13,22 @@
       "fiesta": "13 de Diciembre",
       "genero": "F"
     },
-    "comunidadPalabra": {
-      "dia": "Martes",
-      "hora": "7:00 PM",
-      "lugar": "Casa de la señora Elida Gómez de Acosta",
-      "referencia": "La comunidad se reúne en su casa."
-    }
+    "comunidadesPalabra": [
+      {
+        "nombre": "Santa Lucía 1",
+        "dia": "Martes",
+        "hora": "7:00 PM",
+        "lugar": "Casa de la señora Elida Gómez de Acosta",
+        "referencia": "La comunidad se reúne en su casa."
+      },
+      {
+        "nombre": "Santa Lucía 2",
+        "dia": "Lunes",
+        "hora": "7:00 PM",
+        "lugar": "Casa de la Sra. María de Aranguren",
+        "referencia": "La comunidad se reúne en su casa."
+      }
+    ]
   },
   {
     "id": 2,
@@ -34,12 +44,14 @@
       "fiesta": "8 de Septiembre",
       "genero": "F"
     },
-    "comunidadPalabra": {
-      "dia": "Viernes",
-      "hora": "7:00 PM",
-      "lugar": "Frente a la casa de Lucía Urdaneta",
-      "referencia": "Calle Nueva Venecia, esquina con calle Dos Rosas, cerca del antiguo Cine América."
-    }
+    "comunidadesPalabra": [
+      {
+        "dia": "Viernes",
+        "hora": "7:00 PM",
+        "lugar": "Frente a la casa de Lucía Urdaneta",
+        "referencia": "Calle Nueva Venecia, esquina con calle Dos Rosas, cerca del antiguo Cine América."
+      }
+    ]
   },
   {
     "id": 3,
@@ -54,7 +66,15 @@
       "hagiografia": "Advocación mariana que nos recuerda la constante ayuda y socorro que la Virgen brinda a sus devotos. Su ícono oriental nos enseña a acudir a ella con confianza filial en los momentos de angustia, sabiendo que sus brazos siempre están abiertos para consolarnos.",
       "fiesta": "27 de Junio",
       "genero": "F"
-    }
+    },
+    "comunidadesPalabra": [
+      {
+        "dia": "Martes",
+        "hora": "7:00 PM",
+        "lugar": "Casa de la Sra. Raidius Franco",
+        "referencia": "Frente a la Plaza de Los Niños."
+      }
+    ]
   },
   {
     "id": 4,
@@ -70,12 +90,14 @@
       "fiesta": "22 de Mayo",
       "genero": "F"
     },
-    "comunidadPalabra": {
-      "dia": "Lunes",
-      "hora": "7:00 PM",
-      "lugar": "Casa de la familia Barrios González",
-      "referencia": "A una cuadra del Boulevard."
-    }
+    "comunidadesPalabra": [
+      {
+        "dia": "Lunes",
+        "hora": "7:00 PM",
+        "lugar": "Casa de la familia Barrios González",
+        "referencia": "A una cuadra del Boulevard."
+      }
+    ]
   },
   {
     "id": 5,

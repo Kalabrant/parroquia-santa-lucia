@@ -76,15 +76,20 @@ export default function SidebarNav({ activeZoneId, onZoneSelect }) {
                       isActive ? "text-white/80" : `text-gray-500`
                     )}>{zona.eslogan}</span>
                   )}
-                  {zona.comunidadPalabra && (
+                  {zona.comunidadesPalabra?.length > 0 && (
                     <span
-                      title="Aquí ya se reúne una Comunidad de la Palabra"
+                      title={zona.comunidadesPalabra.length > 1
+                        ? `Aquí ya se reúnen ${zona.comunidadesPalabra.length} Comunidades de la Palabra`
+                        : "Aquí ya se reúne una Comunidad de la Palabra"}
                       className={cn(
                         "inline-flex items-center gap-1 mt-1.5 text-[0.65rem] font-bold uppercase tracking-wide transition-colors",
                         isActive ? "text-white/80" : "text-gray-500"
                       )}
                     >
-                      <BookOpen className="w-3 h-3 shrink-0" /> Comunidad de la Palabra
+                      <BookOpen className="w-3 h-3 shrink-0" />
+                      {zona.comunidadesPalabra.length > 1
+                        ? `${zona.comunidadesPalabra.length} Comunidades de la Palabra`
+                        : "Comunidad de la Palabra"}
                     </span>
                   )}
                 </div>

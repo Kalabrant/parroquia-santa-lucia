@@ -84,7 +84,7 @@ export default function ZoneDetails({ activeZoneId, onClose }) {
               )}
 
               {/* Sección: Comunidad de la Palabra del sector */}
-              {zona.comunidadPalabra && (
+              {zona.comunidadesPalabra?.length > 0 && (
                 <motion.section
                   initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }}
                   className="bg-white/70 p-5 rounded-2xl border border-crema"
@@ -92,25 +92,36 @@ export default function ZoneDetails({ activeZoneId, onClose }) {
                   <div className={cn("flex items-center gap-2 mb-3", theme.text)}>
                     <BookOpen className="w-5 h-5" />
                     <h3 className="text-xl font-serif font-bold m-0 border-none">
-                      Comunidad de la Palabra
+                      {zona.comunidadesPalabra.length > 1 ? "Comunidades de la Palabra" : "Comunidad de la Palabra"}
                     </h3>
                   </div>
 
-                  <p className="flex items-center gap-2 text-sm font-bold text-marron-madera mb-3">
-                    <CalendarClock className="w-4 h-4 shrink-0" />
-                    {zona.comunidadPalabra.dia} · {zona.comunidadPalabra.hora}
-                  </p>
-
-                  <div className="flex items-start gap-2 mb-1">
-                    <MapPin className={cn("w-4 h-4 shrink-0 mt-1", theme.text)} />
-                    <div>
-                      <h4 className="font-bold text-base leading-tight">{zona.comunidadPalabra.lugar}</h4>
-                      {zona.comunidadPalabra.referencia && (
-                        <p className="text-gray-600 leading-relaxed text-sm mt-1">
-                          {zona.comunidadPalabra.referencia}
+                  <div className="space-y-5">
+                    {zona.comunidadesPalabra.map((c, i) => (
+                      <div key={i} className={cn(i > 0 && "pt-5 border-t border-crema")}>
+                        {c.nombre && (
+                          <p className={cn("text-xs font-bold uppercase tracking-wider mb-1", theme.text)}>
+                            {c.nombre}
+                          </p>
+                        )}
+                        <p className="flex items-center gap-2 text-sm font-bold text-marron-madera mb-3">
+                          <CalendarClock className="w-4 h-4 shrink-0" />
+                          {c.dia} · {c.hora}
                         </p>
-                      )}
-                    </div>
+
+                        <div className="flex items-start gap-2 mb-1">
+                          <MapPin className={cn("w-4 h-4 shrink-0 mt-1", theme.text)} />
+                          <div>
+                            <h4 className="font-bold text-base leading-tight">{c.lugar}</h4>
+                            {c.referencia && (
+                              <p className="text-gray-600 leading-relaxed text-sm mt-1">
+                                {c.referencia}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
 
                   <a
