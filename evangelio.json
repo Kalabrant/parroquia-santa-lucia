@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-11-10",
+ "actualizado": "2026-11-11",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-11-10",
-   "diaLiturgico": "Martes de la 32a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 17,7-10.",
-   "texto": "El Señor dijó:\n«Supongamos que uno de ustedes tiene un servidor para arar o cuidar el ganado. Cuando este regresa del campo, ¿acaso le dirá: 'Ven pronto y siéntate a la mesa'?\n¿No le dirá más bien: 'Prepárame la cena y recógete la túnica para servirme hasta que yo haya comido y bebido, y tú comerás y beberás después'?\n¿Deberá mostrarse agradecido con el servidor porque hizo lo que se le mandó?\nAsí también ustedes, cuando hayan hecho todo lo que se les mande, digan: 'Somos simples servidores, no hemos hecho más que cumplir con nuestro deber'.»\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Carta de San Pablo a Tito 2,1-8.11-14"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 37(36),3-4.18.23.27.29"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 17,7-10"
-    }
-   ]
-  },
   {
    "fecha": "2026-11-11",
    "diaLiturgico": "Miércoles de la 32a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 18,35-43"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-11-17",
+   "diaLiturgico": "Martes de la 33a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 19,1-10.",
+   "texto": "Jesús entró en Jericó y atravesaba la ciudad.\nAllí vivía un hombre muy rico llamado Zaqueo, que era jefe de los publicanos.\nEl quería ver quién era Jesús, pero no podía a causa de la multitud, porque era de baja estatura.\nEntonces se adelantó y subió a un sicomoro para poder verlo, porque iba a pasar por allí.\nAl llegar a ese lugar, Jesús miró hacia arriba y le dijo: \"Zaqueo, baja pronto, porque hoy tengo que alojarme en tu casa\".\nZaqueo bajó rápidamente y lo recibió con alegría.\nAl ver esto, todos murmuraban, diciendo: \"Se ha ido a alojar en casa de un pecador\".\nPero Zaqueo dijo resueltamente al Señor: \"Señor, voy a dar la mitad de mis bienes a los pobres, y si he perjudicado a alguien, le daré cuatro veces más\".\nY Jesús le dijo: \"Hoy ha llegado la salvación a esta casa, ya que también este hombre es un hijo de Abraham,\nporque el Hijo del hombre vino a buscar y a salvar lo que estaba perdido\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Apocalipsis 3,1-6.14-22"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 15(14),2-3ab.3cd-4ab.5"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 19,1-10"
     }
    ]
   }
