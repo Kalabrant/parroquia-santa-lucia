@@ -25,15 +25,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=34">
-    <script>window.__vSitio=34;</script>
-    <script src="js/sitio.js?v=34" defer></script>
-    <script src="js/buscador.js?v=34" defer></script>
-    <script src="js/lucia.js?v=34" defer></script>
-    <script src="js/agenda-datos.js?v=34"></script>
-    <script src="js/descubre-datos.js?v=34"></script>
-    <script src="js/portada.js?v=34" defer></script>
-    <script src="js/descubre.js?v=34" defer></script>
+    <link rel="stylesheet" href="style.css?v=35">
+    <script>window.__vSitio=35;</script>
+    <script src="js/sitio.js?v=35" defer></script>
+    <script src="js/buscador.js?v=35" defer></script>
+    <script src="js/lucia.js?v=35" defer></script>
+    <script src="js/agenda-datos.js?v=35"></script>
+    <script src="js/descubre-datos.js?v=35"></script>
+    <script src="js/fiestas-datos.js?v=35"></script>
+    <script src="js/portada.js?v=35" defer></script>
+    <script src="js/descubre.js?v=35" defer></script>
 <!--/#meta-->
 </head>
 <body>
@@ -145,6 +146,38 @@
         </div>
         <a href="horarios.html" class="franja-enlace">Todos los horarios</a>
     </div>
+</section>
+
+<!-- FIESTAS PATRONALES 2026 — tarjeta temporal. Se oculta sola al llegar
+     FIESTAS.cierre (js/fiestas-datos.js). Pasadas las fiestas, borrar este bloque. -->
+<section class="fiestas-portada" id="fiestas-portada" aria-label="Fiestas Patronales 2026">
+    <a class="fiestas-tarjeta" href="fiestas-patronales.html">
+        <span class="fiestas-brillo" aria-hidden="true"></span>
+        <img class="fiestas-logo" src="fiestas-2026/logo-150.webp" width="640" height="515" alt="150 años" loading="lazy" decoding="async">
+        <span class="fiestas-texto">
+            <span class="fiestas-sobre">Fiestas Patronales 2026</span>
+            <strong class="fiestas-titulo">Santa Lucía</strong>
+            <span class="fiestas-proxima" id="fiestas-portada-proxima">Del 14 de noviembre al 15 de diciembre · «Fieles a la Tradición, abiertos a la Misión»</span>
+            <span class="fiestas-cta">Ver el programa &rarr;</span>
+        </span>
+        <span class="fiestas-foto"><img src="fiestas-2026/santa-lucia-bajada.webp" width="402" height="477" alt="" decoding="async" loading="lazy"></span>
+    </a>
+    <script>
+    (function () {
+        var caja = document.getElementById('fiestas-portada');
+        if (typeof FIESTAS_API === 'undefined') return;
+        if (FIESTAS_API.cerrado()) { caja.hidden = true; return; }
+        var pr = FIESTAS_API.proxima(), x = pr.actual;
+        if (!x) return;
+        var el = document.getElementById('fiestas-portada-proxima');
+        el.textContent = '';
+        var b = document.createElement('b');
+        b.textContent = pr.enCurso ? 'En este momento: ' : 'Próxima actividad: ';
+        el.appendChild(b);
+        el.appendChild(document.createTextNode(FIESTAS_API.tituloActo(x) + ' — ' +
+            FIESTAS_API.fechaCercana(x.fecha) + ', ' + x.horaTexto));
+    })();
+    </script>
 </section>
 
 <!-- La homilía más reciente: la genera tools/voz_del_pastor.py -->

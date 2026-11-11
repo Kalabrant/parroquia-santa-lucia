@@ -7,7 +7,8 @@
     "seccion": null,
     "datos": [
       "js/agenda-datos.js",
-      "js/descubre-datos.js"
+      "js/descubre-datos.js",
+      "js/fiestas-datos.js"
     ],
     "scripts": [
       "js/portada.js",
@@ -72,6 +73,18 @@
     "imagen": "foto-contacto.webp",
     "seccion": null,
     "tramites": true
+  },
+  "fiestas-patronales.html": {
+    "titulo": "Fiestas Patronales 2026 | Parroquia Santa Lucía",
+    "desc": "Programa oficial de las Fiestas Patronales en honor a Santa Lucía 2026: la Bajada, la peregrinación, la novena y la Solemnidad del 13 de diciembre. 150 años.",
+    "imagen": "fiestas-2026/santa-lucia-presbiterio.webp",
+    "seccion": null,
+    "datos": [
+      "js/fiestas-datos.js"
+    ],
+    "scripts": [
+      "js/fiestas.js"
+    ]
   },
   "150-anos.html": {
     "titulo": "150 Años | Parroquia Santa Lucía",
