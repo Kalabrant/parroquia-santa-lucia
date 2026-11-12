@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-11-11",
+ "actualizado": "2026-11-12",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-11-11",
-   "diaLiturgico": "Miércoles de la 32a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 17,11-19.",
-   "texto": "Mientras se dirigía a Jerusalén, Jesús pasaba a través de Samaría y Galilea.\nAl entrar en un poblado, le salieron al encuentro diez leprosos, que se detuvieron a distancia\ny empezaron a gritarle: \"¡Jesús, Maestro, ten compasión de nosotros!\".\nAl verlos, Jesús les dijo: \"Vayan a presentarse a los sacerdotes\". Y en el camino quedaron purificados.\nUno de ellos, al comprobar que estaba curado, volvió atrás alabando a Dios en voz alta\ny se arrojó a los pies de Jesús con el rostro en tierra, dándole gracias. Era un samaritano.\nJesús le dijo entonces: \"¿Cómo, no quedaron purificados los diez? Los otros nueve, ¿dónde están?\n¿Ninguno volvió a dar gracias a Dios, sino este extranjero?\".\nY agregó: \"Levántate y vete, tu fe te ha salvado\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Carta de San Pablo a Tito 3,1-7"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 23(22),1-3a.3b-4.5.6"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 17,11-19"
-    }
-   ]
-  },
   {
    "fecha": "2026-11-12",
    "diaLiturgico": "Jueves de la 32a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 19,1-10"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-11-18",
+   "diaLiturgico": "Miércoles de la 33a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 19,11-28.",
+   "texto": "Jesús dijo una parábola, porque estaba cerca de Jerusalén y la gente pensaba que el Reino de Dios iba a aparecer de un momento a otro.\nEl les dijo: \"Un hombre de familia noble fue a un país lejano para recibir la investidura real y regresar en seguida.\nLlamó a diez de sus servidores y les entregó cien monedas de plata a cada uno, diciéndoles: 'Háganlas producir hasta que yo vuelva'.\nPero sus conciudadanos lo odiaban y enviaron detrás de él una embajada encargada de decir: 'No queremos que este sea nuestro rey'.\nAl regresar, investido de la dignidad real, hizo llamar a los servidores a quienes había dado el dinero, para saber lo que había ganado cada uno.\nEl primero se presentó y le dijo: 'Señor, tus cien monedas de plata han producido diez veces más'.\n'Está bien, buen servidor, le respondió, ya que has sido fiel en tan poca cosa, recibe el gobierno de diez ciudades'.\nLlegó el segundo y le dijo: 'Señor, tus cien monedas de plata han producido cinco veces más'.\nA él también le dijo: 'Tú estarás al frente de cinco ciudades'.\nLlegó el otro y le dijo: 'Señor, aquí tienes tus cien monedas de plata, que guardé envueltas en un pañuelo.\nPorque tuve miedo de ti, que eres un hombre exigente, que quieres percibir lo que no has depositado y cosechar lo que no has sembrado'.\nEl le respondió: 'Yo te juzgo por tus propias palabras, mal servidor. Si sabías que soy un hombre exigente, que quiero percibir lo que no deposité y cosechar lo que no sembré,\n¿por qué no entregaste mi dinero en préstamo? A mi regreso yo lo hubiera recuperado con intereses'.\nY dijo a los que estaban allí: 'Quítenle las cien monedas y dénselas al que tiene diez veces más'.\n'¡Pero, señor, le respondieron, ya tiene mil!'.\nLes aseguro que al que tiene, se le dará; pero al que no tiene, se le quitará aún lo que tiene.\nEn cuanto a mis enemigos, que no me han querido por rey, tráiganlos aquí y mátenlos en mi presencia\".\nDespués de haber dicho esto, Jesús siguió adelante, subiendo a Jerusalén.\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Apocalipsis 4,1-11"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 150(149),1-2.3-4.5-6"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 19,11-28"
     }
    ]
   }
