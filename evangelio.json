@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-11-12",
+ "actualizado": "2026-11-13",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-11-12",
-   "diaLiturgico": "Jueves de la 32a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 17,20-25.",
-   "texto": "Los fariseos le preguntaron cuándo llegará el Reino de Dios. El les respondió: \"El Reino de Dios no viene ostensiblemente,\ny no se podrá decir: 'Está aquí' o 'Está allí'. Porque el Reino de Dios está entre ustedes\".\nJesús dijo después a sus discípulos: \"Vendrá el tiempo en que ustedes desearán ver uno solo de los días del Hijo del hombre y no lo verán.\nLes dirán: 'Está aquí' o 'Está allí', pero no corran a buscarlo.\nComo el relámpago brilla de un extremo al otro del cielo, así será el Hijo del hombre cuando llegue su Día.\nPero antes tendrá que sufrir mucho y será rechazado por esta generación.\"\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Carta de San Pablo a Filemón 1,7-20"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 146(145),7.8-9a.9bc-10"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 17,20-25"
-    }
-   ]
-  },
   {
    "fecha": "2026-11-13",
    "diaLiturgico": "Viernes de la 32a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 19,11-28"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-11-19",
+   "diaLiturgico": "Jueves de la 33a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 19,41-44.",
+   "texto": "Cuando estuvo cerca y vio la ciudad, se puso a llorar por ella,\ndiciendo: \"¡Si tú también hubieras comprendido en este día el mensaje de paz! Pero ahora está oculto a tus ojos.\nVendrán días desastrosos para ti, en que tus enemigos te cercarán con empalizadas, te sitiarán y te atacarán por todas partes.\nTe arrasarán junto con tus hijos, que están dentro de ti, y no dejarán en ti piedra sobre piedra, porque no has sabido reconocer el tiempo en que fuiste visitada por Dios\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Apocalipsis 5,1-10"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 149(148),1-2.3-4.5-6a.9b"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 19,41-44"
     }
    ]
   }
