@@ -2,6 +2,28 @@
   "_comentario": "Entradas de La voz del pastor. Tras editar, ejecuta 'py tools/sincronizar.py'.",
   "entradas": [
     {
+      "titulo": "No seamos novios eternos de Dios",
+      "resumen": "Quien no se compromete con el Señor no puede esperar que Él se comprometa. El primer signo del compromiso es la oración constante, como un café con Jesús.",
+      "cita": "Lc 18, 1-8",
+      "parrafos": [
+        "A mí me desespera un poco, como pastor y como cristiano, la gente que no se termina de comprometer. Imagínense a un hombre de cuarenta años que lleva veinte de novio con la misma mujer. Cuando le pregunto por qué no se casan, responde: «Porque no sabemos, vamos a ver». Sin decirlo, está diciendo: quiero dejar la puerta abierta para irme cuando me dé la gana. ¿Cómo se puede vivir una relación donde el otro no te da seguridad?",
+        "Lo digo porque hoy prácticamente comienzan las fiestas patronales de Santa Lucía, y mucha gente que no viene a misa viene corriendo a la parroquia. Yo me pregunto por la seriedad de ese compromiso. Son como novios eternos de Dios: «Voy a la iglesia de vez en cuando, rezo un Ave María antes de dormir, pero no me pidan más». Si tú no te comprometes con el Señor, el Señor, que es justo, no se va a comprometer contigo.",
+        "> Es preciso orar siempre sin desfallecer (Lc 18, 1).",
+        "El primer signo de que una persona se compromete a llevar la vida cristiana es la oración. Oramos porque lo necesitamos: sin la ayuda del Señor no vas a poder con esta vida; te va a comer la tristeza, la rutina, la depresión. La oración hace verdaderos milagros, pero ¿cómo pretendes un milagro en tu familia si no le das tiempo al Señor?",
+        "Estudiando este versículo me fui salmo por salmo. «Tengo siempre presente al Señor» (Sal 16 [15], 8). Pasamos la vida haciendo un montón de cosas y nos acordamos de Santa Bárbara cuando truena: solo cuando me enfermo o tengo una situación difícil me acuerdo de Dios. Pero Él quiere estar siempre a nuestro lado, dándonos su alegría, su paz y su dulzura, y eso es fruto de la oración constante.",
+        "«Su alabanza está siempre en mi boca» (Sal 34 [33], 2). Quien ora crece en la fe, y la fe te hace entender que Dios te ama en las buenas y en las malas, y que en las malas permite ese proceso para tu santidad. Lo contrario de alabar es renegar: «Si me amaras no estaría en Venezuela con esta situación». Quien no ora tiene una fe pequeñita y solo habla bonito de Dios cuando le va bien.",
+        "«Busquen al Señor y su poder, busquen continuamente su rostro» (Sal 105 [104], 4). No hay cosa más sabrosa que tomarse un café con la persona que uno quiere: no vas por el café, sino porque la quieres. Eso es la oración: Santa Teresa dice que es tratar de amistad con quien sabemos que nos ama. Es tomarte un café con Jesús, sin el café y a veces con él. Yo, cuando me pongo a orar, me preparo un cafecito: un sorbito de café y una alabanza.",
+        "Jesús nos dice: «Estén en vela, orando en todo tiempo, para que tengan fuerza» (Lc 21, 36). ¿De dónde vamos a sacar la fuerza y la gracia para seguir adelante si no nos pegamos al Señor, que es la fuente de la misericordia y de la alegría? Oramos porque nosotros no podemos con la vida, pero Dios sí puede. Por eso san Pablo insiste: «Oren constantemente» (1 Tes 5, 17).",
+        "En la oración Dios lo pone todo. Tú solamente tienes que poner una cosa, y esa cosa se llama fidelidad. Hay que orar con la Palabra de Dios todos los días. Si lo hago, ya no me tengo que preocupar de nada más, porque el Señor, con su fuerza y con su gracia, se encargará."
+      ],
+      "instagram": "A mí me desespera un poco la gente que no se termina de comprometer. Imagínense a un hombre que lleva veinte años de novio con la misma mujer: sin decirlo, deja la puerta abierta para irse cuando le dé la gana.\n\nAsí son muchos con Dios: novios eternos. «Voy a la iglesia de vez en cuando, rezo un Ave María antes de dormir, pero no me pidan más». Si tú no te comprometes con el Señor, el Señor, que es justo, no se va a comprometer contigo.\n\n«Es preciso orar siempre sin desfallecer» (Lc 18, 1). El primer signo del compromiso es la oración. Oramos porque lo necesitamos: sin la ayuda del Señor te come la tristeza, la rutina, la depresión.\n\nNo hay cosa más sabrosa que tomarse un café con la persona que uno quiere. Eso es la oración: tomarte un café con Jesús. Yo, cuando oro, me preparo un cafecito: un sorbito de café y una alabanza.\n\nEn la oración Dios lo pone todo. Tú solamente tienes que poner una cosa: fidelidad. Ora con la Palabra de Dios todos los días, y el Señor, con su fuerza y su gracia, se encargará.",
+      "alt": "Acuarela de una mesa sencilla junto a una ventana al amanecer, con dos tazas de café, una Biblia abierta y un rosario.",
+      "prompt": "A quiet morning prayer corner: a simple wooden table by an open window at dawn, two steaming cups of coffee facing each other, an open Bible and a wooden rosary beside them, soft golden light streaming in, a sense of an invisible friend's presence, delicate traditional watercolor painting on textured paper, soft washes, gentle light, warm earth tones with touches of sky blue, sacred and serene atmosphere, loose brushwork, white paper edges, no text, no letters, no people",
+      "flow": "Proyecto «nov 14 - 09:47», variante 2 (Coffee and Bible by window), 2K reescalado",
+      "fecha": "2026-11-14",
+      "imagen": "voz-del-pastor/img/2026-11-14.webp"
+    },
+    {
       "titulo": "Por muy chismosa que sea la gente, Jesucristo no se va",
       "resumen": "No buscamos al Señor en milagrerías ni en una Iglesia perfecta: venimos porque Jesús está en medio de su comunidad, aun con sus defectos.",
       "cita": "Lc 17, 20-25",
