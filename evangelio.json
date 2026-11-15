@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-11-14",
+ "actualizado": "2026-11-15",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-11-14",
-   "diaLiturgico": "Sábado de la 32a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 18,1-8.",
-   "texto": "Jesús enseñó con una parábola que era necesario orar siempre sin desanimarse:\n\"En una ciudad había un juez que no temía a Dios ni le importaban los hombres;\ny en la misma ciudad vivía una viuda que recurría a él, diciéndole: 'Te ruego que me hagas justicia contra mi adversario'.\nDurante mucho tiempo el juez se negó, pero después dijo: 'Yo no temo a Dios ni me importan los hombres,\npero como esta viuda me molesta, le haré justicia para que no venga continuamente a fastidiarme'\".\nY el Señor dijo: \"Oigan lo que dijo este juez injusto.\nY Dios, ¿no hará justicia a sus elegidos, que claman a él día y noche, aunque los haga esperar?\nLes aseguro que en un abrir y cerrar de ojos les hará justicia. Pero cuando venga el Hijo del hombre, ¿encontrará fe sobre la tierra?\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Epístola III de San Juan 1,5-8"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 112(111),1-2.3-4.5-6"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 18,1-8"
-    }
-   ]
-  },
   {
    "fecha": "2026-11-15",
    "diaLiturgico": "33er domingo del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 19,45-48"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-11-21",
+   "diaLiturgico": "Sábado de la 33a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 20,27-40.",
+   "texto": "Se acercaron a Jesús algunos saduceos, que niegan la resurrección,\ny le dijeron: \"Maestro, Moisés nos ha ordenado: Si alguien está casado y muere sin tener hijos, que su hermano, para darle descendencia, se case con la viuda.\nAhora bien, había siete hermanos. El primero se casó y murió sin tener hijos.\nEl segundo\nse casó con la viuda, y luego el tercero. Y así murieron los siete sin dejar descendencia.\nFinalmente, también murió la mujer.\nCuando resuciten los muertos, ¿de quién será esposa, ya que los siete la tuvieron por mujer?\".\nJesús les respondió: \"En este mundo los hombres y las mujeres se casan,\npero los que sean juzgados dignos de participar del mundo futuro y de la resurrección, no se casarán.\nYa no pueden morir, porque son semejantes a los ángeles y son hijos de Dios, al ser hijos de la resurrección.\nQue los muertos van a resucitar, Moisés lo ha dado a entender en el pasaje de la zarza, cuando llama al Señor el Dios de Abraham, el Dios de Isaac y el Dios de Jacob.\nPorque él no es un Dios de muertos, sino de vivientes; todos, en efecto, viven para él\".\nTomando la palabra, algunos escribas le dijeron: \"Maestro, has hablado bien\".\nY ya no se atrevían a preguntarle nada.\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Apocalipsis 11,4-12"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 144(143),1.2.9-10"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 20,27-40"
     }
    ]
   }
