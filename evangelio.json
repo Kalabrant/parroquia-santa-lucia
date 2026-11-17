@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-11-16",
+ "actualizado": "2026-11-17",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-11-16",
-   "diaLiturgico": "Lunes de la 33a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 18,35-43.",
-   "texto": "Cuando se acercaba a Jericó, un ciego estaba sentado al borde del camino, pidiendo limosna.\nAl oír que pasaba mucha gente, preguntó qué sucedía.\nLe respondieron que pasaba Jesús de Nazaret.\nEl ciego se puso a gritar: \"¡Jesús, Hijo de David, ten compasión de mí!\".\nLos que iban delante lo reprendían para que se callara, pero él gritaba más fuerte: \"¡Hijo de David, ten compasión de mí!\".\nJesús se detuvo y mandó que se lo trajeran. Cuando lo tuvo a su lado, le preguntó:\n\"¿Qué quieres que haga por ti?\". \"Señor, que yo vea otra vez\".\nY Jesús le dijo: \"Recupera la vista, tu fe te ha salvado\".\nEn el mismo momento, el ciego recuperó la vista y siguió a Jesús, glorificando a Dios. Al ver esto, todo el pueblo alababa a Dios.\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Apocalipsis 1,1-4.2,1-5a"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 1,1-2.3.4.6"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 18,35-43"
-    }
-   ]
-  },
   {
    "fecha": "2026-11-17",
    "diaLiturgico": "Martes de la 33a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Mateo 25,31-46"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-11-23",
+   "diaLiturgico": "Lunes de la 34a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 21,1-4.",
+   "texto": "Levantando los ojos, Jesús vio a unos ricos que ponían sus ofrendas en el tesoro del Templo.\nVio también a una viuda de condición muy humilde, que ponía dos pequeñas monedas de cobre,\ny dijo: \"Les aseguro que esta pobre viuda ha dado más que nadie.\nPorque todos los demás dieron como ofrenda algo de lo que les sobraba, pero ella, de su indigencia, dio todo lo que tenía para vivir.\"\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Apocalipsis 14,1-3.4b-5"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 24(23),1-2.3-4ab.5-6"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 21,1-4"
     }
    ]
   }
