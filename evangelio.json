@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-11-17",
+ "actualizado": "2026-11-18",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-11-17",
-   "diaLiturgico": "Martes de la 33a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 19,1-10.",
-   "texto": "Jesús entró en Jericó y atravesaba la ciudad.\nAllí vivía un hombre muy rico llamado Zaqueo, que era jefe de los publicanos.\nEl quería ver quién era Jesús, pero no podía a causa de la multitud, porque era de baja estatura.\nEntonces se adelantó y subió a un sicomoro para poder verlo, porque iba a pasar por allí.\nAl llegar a ese lugar, Jesús miró hacia arriba y le dijo: \"Zaqueo, baja pronto, porque hoy tengo que alojarme en tu casa\".\nZaqueo bajó rápidamente y lo recibió con alegría.\nAl ver esto, todos murmuraban, diciendo: \"Se ha ido a alojar en casa de un pecador\".\nPero Zaqueo dijo resueltamente al Señor: \"Señor, voy a dar la mitad de mis bienes a los pobres, y si he perjudicado a alguien, le daré cuatro veces más\".\nY Jesús le dijo: \"Hoy ha llegado la salvación a esta casa, ya que también este hombre es un hijo de Abraham,\nporque el Hijo del hombre vino a buscar y a salvar lo que estaba perdido\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Apocalipsis 3,1-6.14-22"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 15(14),2-3ab.3cd-4ab.5"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 19,1-10"
-    }
-   ]
-  },
   {
    "fecha": "2026-11-18",
    "diaLiturgico": "Miércoles de la 33a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 21,1-4"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-11-24",
+   "diaLiturgico": "Martes de la 34a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 21,5-11.",
+   "texto": "Como algunos, hablando del Templo, decían que estaba adornado con hermosas piedras y ofrendas votivas, Jesús dijo:\n\"De todo lo que ustedes contemplan, un día no quedará piedra sobre piedra: todo será destruido\".\nEllos le preguntaron: \"Maestro, ¿cuándo tendrá lugar esto, y cuál será la señal de que va a suceder?\".\nJesús respondió: \"Tengan cuidado, no se dejen engañar, porque muchos se presentarán en mi Nombre, diciendo: 'Soy yo', y también: 'El tiempo está cerca'. No los sigan.\nCuando oigan hablar de guerras y revoluciones no se alarmen; es necesario que esto ocurra antes, pero no llegará tan pronto el fin\".\nDespués les dijo: \"Se levantará nación contra nación y reino contra reino.\nHabrá grandes terremotos; peste y hambre en muchas partes; se verán también fenómenos aterradores y grandes señales en el cielo.\"\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Apocalipsis 14,14-19"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 96(95),10.11-12.13"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 21,5-11"
     }
    ]
   }
