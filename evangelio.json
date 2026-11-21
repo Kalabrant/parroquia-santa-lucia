@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-11-20",
+ "actualizado": "2026-11-21",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-11-20",
-   "diaLiturgico": "Viernes de la 33a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 19,45-48.",
-   "texto": "Jesús al entrar al Templo, se puso a echar a los vendedores,\ndiciéndoles: \"Está escrito: Mi casa será una casa de oración, pero ustedes la han convertido en una cueva de ladrones\".\nY diariamente enseñaba en el Templo. Los sumos sacerdotes, los escribas y los más importantes del pueblo, buscaban la forma de matarlo.\nPero no sabían cómo hacerlo, porque todo el pueblo lo escuchaba y estaba pendiente de sus palabras.\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Apocalipsis 10,8-11"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 119(118),14.24.72.103.111.131"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 19,45-48"
-    }
-   ]
-  },
   {
    "fecha": "2026-11-21",
    "diaLiturgico": "Sábado de la 33a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 21,20-28"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-11-27",
+   "diaLiturgico": "Viernes de la 34a semana del Tiempo Ordinario",
+   "cita": "Evangelio según San Lucas 21,29-33.",
+   "texto": "Jesús hizo a sus discípulos esta comparación:\n\"Miren lo que sucede con la higuera o con cualquier otro árbol.\nCuando comienza a echar brotes, ustedes se dan cuenta de que se acerca el verano.\nAsí también, cuando vean que suceden todas estas cosas, sepan que el Reino de Dios está cerca.\nLes aseguro que no pasará esta generación hasta que se cumpla todo esto.\nEl cielo y la tierra pasarán, pero mis palabras no pasarán.\"\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Apocalipsis 20,1-4.11-15.21,1-2"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 84(83),3.4.5-6a.8a"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Lucas 21,29-33"
     }
    ]
   }
