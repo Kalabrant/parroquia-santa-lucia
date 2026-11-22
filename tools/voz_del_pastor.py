@@ -192,11 +192,18 @@ def pagina_entrada(cfg, paginas, nav_tpl, pie_tpl, e, anterior, siguiente):
 
     figura = ""
     if e.get("imagen"):
+        dimensiones = e.get("dimensiones_imagen")
+        atributos = 'width="1600" height="900"'
+        if dimensiones:
+            ancho, alto = map(int, dimensiones)
+            atributos = 'width="{}" height="{}" style="aspect-ratio: {} / {}"'.format(
+                ancho, alto, ancho, alto)
+        pie_imagen = e.get("pie_imagen", "Ilustración en acuarela creada con inteligencia artificial.")
         figura = (
             '<figure class="voz-imagen">\n'
-            '            <img src="../{}" alt="{}" width="1600" height="900" fetchpriority="high">\n'
-            '            <figcaption>Ilustración en acuarela creada con inteligencia artificial.</figcaption>\n'
-            '        </figure>'.format(esc(e["imagen"]), esc(e.get("alt", "")))
+            '            <img src="../{}" alt="{}" {} fetchpriority="high">\n'
+            '            <figcaption>{}</figcaption>\n'
+            '        </figure>'.format(esc(e["imagen"]), esc(e.get("alt", "")), atributos, esc(pie_imagen))
         )
 
     vecinas = []
