@@ -1,31 +1,7 @@
 {
- "actualizado": "2026-11-22",
+ "actualizado": "2026-11-23",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-11-22",
-   "diaLiturgico": "",
-   "cita": "Evangelio según San Mateo 25,31-46.",
-   "texto": "Jesús dijo a sus discípulos:\n\"Cuando el Hijo del hombre venga en su gloria rodeado de todos los ángeles, se sentará en su trono glorioso.\nTodas las naciones serán reunidas en su presencia, y él separará a unos de otros, como el pastor separa las ovejas de los cabritos,\ny pondrá a aquellas a su derecha y a estos a su izquierda.\nEntonces el Rey dirá a los que tenga a su derecha: 'Vengan, benditos de mi Padre, y reciban en herencia el Reino que les fue preparado desde el comienzo del mundo,\nporque tuve hambre, y ustedes me dieron de comer; tuve sed, y me dieron de beber; estaba de paso, y me alojaron;\ndesnudo, y me vistieron; enfermo, y me visitaron; preso, y me vinieron a ver'.\nLos justos le responderán: 'Señor, ¿cuándo te vimos hambriento, y te dimos de comer; sediento, y te dimos de beber?\n¿Cuándo te vimos de paso, y te alojamos; desnudo, y te vestimos?\n¿Cuándo te vimos enfermo o preso, y fuimos a verte?'.\nY el Rey les responderá: 'Les aseguro que cada vez que lo hicieron con el más pequeño de mis hermanos, lo hicieron conmigo'.\nLuego dirá a los de su izquierda: 'Aléjense de mí, malditos; vayan al fuego eterno que fue preparado para el demonio y sus ángeles,\nporque tuve hambre, y ustedes no me dieron de comer; tuve sed, y no me dieron de beber;\nestaba de paso, y no me alojaron; desnudo, y no me vistieron; enfermo y preso, y no me visitaron'.\nEstos, a su vez, le preguntarán: 'Señor, ¿cuándo te vimos hambriento o sediento, de paso o desnudo, enfermo o preso, y no te hemos socorrido?'.\nY él les responderá: 'Les aseguro que cada vez que no lo hicieron con el más pequeño de mis hermanos, tampoco lo hicieron conmigo'.\nEstos irán al castigo eterno, y los justos a la Vida eterna\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Libro de Ezequiel 34,11-12.15-17"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 23(22),1-2a.2b-3.5.6"
-    },
-    {
-     "tipo": "Segunda lectura",
-     "cita": "Carta I de San Pablo a los Corintios 15,20-26.28"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Mateo 25,31-46"
-    }
-   ]
-  },
   {
    "fecha": "2026-11-23",
    "diaLiturgico": "Lunes de la 34a semana del Tiempo Ordinario",
@@ -143,6 +119,30 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Lucas 21,34-36"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-11-29",
+   "diaLiturgico": "1er domingo de Adviento",
+   "cita": "Evangelio según San Marcos 13,33-37.",
+   "texto": "En aquél tiempo, Jesús dijo a sus discípulos:\n\"Tengan cuidado y estén prevenidos, porque no saben cuándo llegará el momento.\nSerá como un hombre que se va de viaje, deja su casa al cuidado de sus servidores, asigna a cada uno su tarea, y recomienda al portero que permanezca en vela.\nEstén prevenidos, entonces, porque no saben cuándo llegará el dueño de casa, si al atardecer, a medianoche, al canto del gallo o por la mañana.\nNo sea que llegue de improviso y los encuentre dormidos.\nY esto que les digo a ustedes, lo digo a todos: ¡Estén prevenidos!\".\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Libro de Isaías 63,16b-17.19b.64,2b-7"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 80(79),2ac.3b.15-16.18-19"
+    },
+    {
+     "tipo": "Segunda lectura",
+     "cita": "Carta I de San Pablo a los Corintios 1,3-9"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Marcos 13,33-37"
     }
    ]
   }
