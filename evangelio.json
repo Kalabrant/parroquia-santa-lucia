@@ -1,27 +1,7 @@
 {
- "actualizado": "2026-11-23",
+ "actualizado": "2026-11-24",
  "fuente": "evangelizo.org",
  "dias": [
-  {
-   "fecha": "2026-11-23",
-   "diaLiturgico": "Lunes de la 34a semana del Tiempo Ordinario",
-   "cita": "Evangelio según San Lucas 21,1-4.",
-   "texto": "Levantando los ojos, Jesús vio a unos ricos que ponían sus ofrendas en el tesoro del Templo.\nVio también a una viuda de condición muy humilde, que ponía dos pequeñas monedas de cobre,\ny dijo: \"Les aseguro que esta pobre viuda ha dado más que nadie.\nPorque todos los demás dieron como ofrenda algo de lo que les sobraba, pero ella, de su indigencia, dio todo lo que tenía para vivir.\"\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
-   "lecturas": [
-    {
-     "tipo": "Primera lectura",
-     "cita": "Apocalipsis 14,1-3.4b-5"
-    },
-    {
-     "tipo": "Salmo responsorial",
-     "cita": "Salmo 24(23),1-2.3-4ab.5-6"
-    },
-    {
-     "tipo": "Evangelio",
-     "cita": "Evangelio según San Lucas 21,1-4"
-    }
-   ]
-  },
   {
    "fecha": "2026-11-24",
    "diaLiturgico": "Martes de la 34a semana del Tiempo Ordinario",
@@ -143,6 +123,26 @@
     {
      "tipo": "Evangelio",
      "cita": "Evangelio según San Marcos 13,33-37"
+    }
+   ]
+  },
+  {
+   "fecha": "2026-11-30",
+   "diaLiturgico": "",
+   "cita": "Evangelio según San Mateo 4,18-22.",
+   "texto": "Mientras caminaba a orillas del mar de Galilea, Jesús vio a dos hermanos: a Simón, llamado Pedro, y a su hermano Andrés, que echaban las redes al mar porque eran pescadores.\nEntonces les dijo: \"Síganme, y yo los haré pescadores de hombres\".\nInmediatamente, ellos dejaron las redes y lo siguieron.\nContinuando su camino, vio a otros dos hermanos: a Santiago, hijo de Zebedeo, y a su hermano Juan, que estaban en la barca con Zebedeo, su padre, arreglando las redes; y Jesús los llamó.\nInmediatamente, ellos dejaron la barca y a su padre, y lo siguieron.\nExtraído de la Biblia: Libro del Pueblo de Dios.\nPara recibir cada mañana el Evangelio por correo electrónico, registrarse: evangeliodeldia.org",
+   "lecturas": [
+    {
+     "tipo": "Primera lectura",
+     "cita": "Carta de San Pablo a los Romanos 10,9-18"
+    },
+    {
+     "tipo": "Salmo responsorial",
+     "cita": "Salmo 19(18),2-3.4-5"
+    },
+    {
+     "tipo": "Evangelio",
+     "cita": "Evangelio según San Mateo 4,18-22"
     }
    ]
   }
