@@ -91,6 +91,13 @@ En `partials/nav.html`. Después sincroniza.
 3. `py tools/sincronizar.py`. El menú, el pie, las etiquetas, las migas de pan
    y el sitemap se generan solos.
 
+### Ocultar una página sin borrarla
+En `paginas.json`, añade `"oculta": true` a su ficha y quita cualquier enlace
+manual que apunte a ella (tarjetas, botones). Después sincroniza. La página
+sigue existiendo, pero sale del sitemap, del buscador, de «¿Has visto…?» y de
+la avatar, y lleva `noindex` para que Google no la muestre. Para publicarla,
+borra `"oculta": true`, vuelve a poner sus enlaces y sincroniza.
+
 ### Añadir actividades a la agenda
 En `js/agenda-datos.js`. Copia una línea de `EVENTOS` y cambia los datos.
 La portada, la agenda y el buscador se actualizan solos.

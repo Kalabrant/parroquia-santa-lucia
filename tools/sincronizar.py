@@ -56,6 +56,17 @@ def reemplazar_bloque(html, nombre, contenido):
     return html, False
 
 
+def es_oculta(meta):
+    """Página aún no publicada: existe y se sincroniza, pero no se anuncia.
+    Se marca con "oculta": true en paginas.json. Queda fuera del sitemap,
+    del buscador, de «¿Has visto…?» y de la avatar, y lleva noindex."""
+    return isinstance(meta, dict) and bool(meta.get("oculta"))
+
+
+def paginas_ocultas():
+    return {p for p, m in cargar_json(TOOLS / "paginas.json").items() if es_oculta(m)}
+
+
 def envolver(nombre, contenido):
     return MARCA_INI.format(nombre) + "\n" + contenido + "\n" + MARCA_FIN.format(nombre)
 
@@ -92,6 +103,10 @@ def construir_head(cfg, pagina, meta, tiene_iconos_fa):
         '<title>{}</title>'.format(meta["titulo"]),
         '<meta name="description" content="{}">'.format(meta["desc"]),
         '<link rel="canonical" href="{}">'.format(url),
+    ]
+    if es_oculta(meta):
+        partes.append('<meta name="robots" content="noindex, nofollow">')
+    partes += [
         '',
         '<meta property="og:type" content="website">',
         '<meta property="og:site_name" content="{}">'.format(sitio["nombre"]),
@@ -496,7 +511,7 @@ def generar_sitemap(cfg, paginas):
 
     filas = []
     for pagina, meta in paginas.items():
-        if pagina.startswith("_"):
+        if pagina.startswith("_") or es_oculta(meta):
             continue
         if not (RAIZ / pagina).exists():
             continue
@@ -522,7 +537,7 @@ def generar_indice_busqueda(paginas):
     registros = []
 
     for pagina, meta in paginas.items():
-        if pagina.startswith("_"):
+        if pagina.startswith("_") or es_oculta(meta):
             continue
         ruta = RAIZ / pagina
         if not ruta.exists():
@@ -599,7 +614,7 @@ def generar_descubre(paginas):
 
     fichas = []
     for pagina, meta in paginas.items():
-        if pagina.startswith("_") or pagina in FUERA:
+        if pagina.startswith("_") or pagina in FUERA or es_oculta(meta):
             continue
         if not (RAIZ / pagina).exists():
             continue
@@ -629,6 +644,13 @@ def generar_lucia(cfg):
     js/lucia.js lo descarga la primera vez que hace falta, no en cada página.
     """
     datos = cargar_json(TOOLS / "lucia.json")
+    # Las intenciones que solo llevan a páginas ocultas se apartan hasta que
+    # la página se publique (basta quitar "oculta" en paginas.json).
+    ocultas = paginas_ocultas()
+    datos["intenciones"] = [
+        it for it in datos["intenciones"]
+        if not (it.get("enlaces") and all(u.split("#")[0] in ocultas for _, u in it["enlaces"]))
+    ]
     plantillas = cfg["whatsappPlantillas"]
     errores = []
 

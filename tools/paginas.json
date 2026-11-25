@@ -225,7 +225,8 @@
     "titulo": "Camino Neocatecumenal | Parroquia Santa Lucía",
     "desc": "Las comunidades del Camino Neocatecumenal en la Parroquia Santa Lucía: catequesis, celebración de la Palabra y Eucaristía en pequeña comunidad.",
     "imagen": "intro-neocatecumenal.webp",
-    "seccion": "comunidad.html"
+    "seccion": "comunidad.html",
+    "oculta": true
   },
   "renovacion-carismatica.html": {
     "titulo": "Renovación Carismática Católica | Parroquia Santa Lucía",
